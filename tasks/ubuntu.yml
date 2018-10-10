@@ -29,8 +29,8 @@
 
 - name: apt-get install
   apt:
-    name: "{{ item.name }}"
-    state: "{{ item.state }}"
-    install_recommends: "no"
+    name: "{{ item.name | default(None) or omit }}"
+    state: "{{ item.state | default(None) or omit }}"
+    install_recommends: "{{ item.install_recommends | default(None) or omit }}"
   with_items: "{{ _apt }}"
   tags: php
