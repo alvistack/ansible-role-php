@@ -37,3 +37,9 @@
         php --version
       register: php_version_result
       changed_when: php_version_result.rc != 0
+    
+    - name: composer --version
+      shell: |
+        composer --version
+      register: composer_version_result
+      changed_when: composer_version_result.rc != 0

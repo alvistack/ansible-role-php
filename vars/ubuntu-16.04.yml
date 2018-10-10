@@ -18,6 +18,7 @@ _apt_repository: [
   { state: "present", repo: "ppa:ondrej/php" },
 ]
 _apt: [
+  { state: "latest", name: "php5.6-cli" },
   { state: "latest", name: "geoip-database" },
   { state: "latest", name: "geoip-database-extra" },
   { state: "latest", name: "imagemagick" },
@@ -30,7 +31,6 @@ _apt: [
   { state: "latest", name: "php-xdebug" },
   { state: "latest", name: "php5.6-bcmath" },
   { state: "latest", name: "php5.6-bz2" },
-  { state: "latest", name: "php5.6-cli" },
   { state: "latest", name: "php5.6-curl" },
   { state: "latest", name: "php5.6-gd" },
   { state: "latest", name: "php5.6-imap" },

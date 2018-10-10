@@ -17,12 +17,12 @@
 _yum: [
   { state: "latest", name: "https://centos6.iuscommunity.org/ius-release.rpm" },
   { state: "latest", name: "epel-release" },
+  { state: "latest", name: "php72u-cli" },
   { state: "latest", name: "GeoIP-GeoLite-data" },
   { state: "latest", name: "GeoIP-GeoLite-data-extra" },
   { state: "latest", name: "ImageMagick" },
   { state: "latest", name: "mysql" },
   { state: "latest", name: "php72u-bcmath" },
-  { state: "latest", name: "php72u-cli" },
   { state: "latest", name: "php72u-gd" },
   { state: "latest", name: "php72u-imap" },
   { state: "latest", name: "php72u-ldap" },
