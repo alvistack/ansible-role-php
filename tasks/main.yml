@@ -46,24 +46,34 @@
 
 - name: install composer globally
   shell: |
-    curl -skL https://getcomposer.org/download/1.7.2/composer.phar > /usr/local/bin/composer
-    chown root:root /usr/local/bin/composer
-    chmod 777 /usr/local/bin/composer
+    curl -skL https://getcomposer.org/download/1.7.2/composer.phar > $COMPOSER_BIN_DIR/composer
+    chown root:root $COMPOSER_BIN_DIR/composer
+    chmod 777 $COMPOSER_BIN_DIR/composer
+    mkdir -p $COMPOSER_HOME
+    chown root:root $COMPOSER_HOME
   args:
     creates: "/usr/local/bin/composer"
+    warn: false
+  environment:
+    COMPOSER_HOME: "/usr/local/share/composer"
+    COMPOSER_BIN_DIR: "/usr/local/bin"
   tags: php
 
 - name: composer self-update
   shell: |
     composer self-update --no-interaction
+  args:
+    warn: false
   register: composer_self_update_result
   changed_when: "'You are already using composer' not in composer_self_update_result.stderr"
   tags: php
 
 - name: composer global init
   shell: |
-    mkdir -p $COMPOSER_HOME
     composer global init --no-interaction
+  args:
+    creates: "/usr/local/share/composer/composer.json"
+    warn: false
   register: composer_global_init_result
   changed_when: composer_global_init_result.rc != 0
   environment:
@@ -74,11 +84,25 @@
 - name: composer global require
   shell: |
     composer global {{ item.status }} {{ item.name }} --no-interaction
+  args:
+    warn: false
   with_items:
     - { status: 'require', name: 'hirak/prestissimo:@stable' }
     - { status: 'require', name: 'consolidation/cgr:@stable' }
   register: composer_global_require_result
   changed_when: composer_global_require_result.rc != 0
+  environment:
+    COMPOSER_HOME: "/usr/local/share/composer"
+    COMPOSER_BIN_DIR: "/usr/local/bin"
+  tags: php
+
+- name: composer global update
+  shell: |
+    composer global update
+  args:
+    warn: false
+  register: composer_global_update_result
+  changed_when: composer_global_update_result.rc != 0
   environment:
     COMPOSER_HOME: "/usr/local/share/composer"
     COMPOSER_BIN_DIR: "/usr/local/bin"
