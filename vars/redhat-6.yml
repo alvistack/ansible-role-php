@@ -15,8 +15,11 @@
 # limitations under the License.
 
 _yum: [
-  { state: "latest", name: "epel-release" },
   { state: "latest", name: "https://centos6.iuscommunity.org/ius-release.rpm" },
+  { state: "latest", name: "epel-release" },
+  { state: "latest", name: "GeoIP-GeoLite-data" },
+  { state: "latest", name: "GeoIP-GeoLite-data-extra" },
+  { state: "latest", name: "ImageMagick" },
   { state: "latest", name: "mysql" },
   { state: "latest", name: "php56u-bcmath" },
   { state: "latest", name: "php56u-cli" },
@@ -28,8 +31,8 @@ _yum: [
   { state: "latest", name: "php56u-opcache" },
   { state: "latest", name: "php56u-pecl-apcu" },
   { state: "latest", name: "php56u-pecl-geoip" },
+  { state: "latest", name: "php56u-pecl-imagick" },
   { state: "latest", name: "php56u-pecl-memcached" },
-  { state: "latest", name: "php56u-pecl-uuid" },
   { state: "latest", name: "php56u-pecl-xdebug" },
   { state: "latest", name: "php56u-pgsql" },
   { state: "latest", name: "php56u-soap" },
