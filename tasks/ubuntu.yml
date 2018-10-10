@@ -31,5 +31,6 @@
   apt:
     name: "{{ item.name }}"
     state: "{{ item.state }}"
+    install_recommends: "no"
   with_items: "{{ _apt }}"
   tags: php

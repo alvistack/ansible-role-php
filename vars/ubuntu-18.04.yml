@@ -22,6 +22,7 @@ _apt: [
   { state: "latest", name: "geoip-database" },
   { state: "latest", name: "geoip-database-extra" },
   { state: "latest", name: "imagemagick" },
+  { state: "latest", name: "libssl-dev" },
   { state: "latest", name: "mysql-client" },
   { state: "latest", name: "php-apcu" },
   { state: "latest", name: "php-apcu-bc" },
