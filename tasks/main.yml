@@ -83,12 +83,12 @@
 
 - name: composer global require
   shell: |
-    composer global {{ item.status }} {{ item.name }} --no-interaction
+    composer global {{ item.state }} {{ item.name }} --no-interaction
   args:
     warn: false
   with_items:
-    - { status: 'require', name: 'hirak/prestissimo:@stable' }
-    - { status: 'require', name: 'consolidation/cgr:@stable' }
+    - { state: 'require', name: 'hirak/prestissimo:@stable' }
+    - { state: 'require', name: 'consolidation/cgr:@stable' }
   register: composer_global_require_result
   changed_when: composer_global_require_result.rc != 0
   environment:
@@ -120,4 +120,27 @@
     - { path: "/etc/profile.d/composer.sh", regexp: "^export COMPOSER_HOME=", line: "export COMPOSER_HOME=/usr/local/share/composer" }
     - { path: "/etc/profile.d/composer.sh", regexp: "^export COMPOSER_BIN_DIR=", line: "export COMPOSER_BIN_DIR=/usr/local/bin" }
     - { path: "/etc/profile.d/composer.sh", regexp: "^export CGR_BIN_DIR=", line: "export CGR_BIN_DIR=/usr/local/share/composer" }
+  tags: php
+
+- name: cgr require
+  shell: |
+    cgr {{ item.state }} {{ item.name }}
+  with_items: "{{ _cgr }}"
+  register: cgr_require_result
+  changed_when: cgr_require_result.rc != 0
+  environment:
+    COMPOSER_HOME: "/usr/local/share/composer"
+    COMPOSER_BIN_DIR: "/usr/local/bin"
+    CGR_BIN_DIR: "/usr/local/bin"
+  tags: php
+
+- name: cgr update
+  shell: |
+    cgr update
+  register: cgr_update_result
+  changed_when: "'Package operations:' in cgr_update_result.stderr"
+  environment:
+    COMPOSER_HOME: "/usr/local/share/composer"
+    COMPOSER_BIN_DIR: "/usr/local/bin"
+    CGR_BIN_DIR: "/usr/local/bin"
   tags: php

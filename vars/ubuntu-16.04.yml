@@ -52,3 +52,7 @@ _apt: [
   { state: "latest", name: "postgresql-client" },
   { state: "latest", name: "sqlite3" },
 ]
+_cgr: [
+  { state: "require", name: "phpunit/phpunit:@stable" },
+  { state: "require", name: "squizlabs/php_codesniffer:@stable" },
+]
