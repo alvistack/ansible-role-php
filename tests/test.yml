@@ -37,12 +37,24 @@
         php --version
       register: php_version_result
       changed_when: php_version_result.rc != 0
-    
+
     - name: composer --version
       shell: |
         composer --version
       register: composer_version_result
       changed_when: composer_version_result.rc != 0
+
+    - name: phpunit --version
+      shell: |
+        phpunit --version
+      register: phpunit_version_result
+      changed_when: phpunit_version_result.rc != 0
+
+    - name: phpcs --version
+      shell: |
+        phpcs --version
+      register: phpcs_version_result
+      changed_when: phpcs_version_result.rc != 0
 
     - name: su -l -s /bin/bash -c 'echo $COMPOSER_HOME'
       shell: |
