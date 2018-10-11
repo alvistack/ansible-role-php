@@ -19,7 +19,6 @@ _yum: [
   { state: "latest", name: "epel-release" },
   { state: "latest", name: "php56u-cli" },
   { state: "latest", name: "GeoIP-GeoLite-data" },
-  { state: "latest", name: "GeoIP-GeoLite-data-extra" },
   { state: "latest", name: "ImageMagick" },
   { state: "latest", name: "mysql" },
   { state: "latest", name: "php56u-bcmath" },
