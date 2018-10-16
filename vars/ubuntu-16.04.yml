@@ -24,7 +24,7 @@ _apt: [
   { state: "latest", name: "imagemagick" },
   { state: "latest", name: "libssl-dev" },
   { state: "latest", name: "mysql-client" },
-  { state: "latest", name: "php-apcu", install_recommends: "no" },
+  { state: "latest", name: "php-apcu" },
   { state: "latest", name: "php-geoip" },
   { state: "latest", name: "php-imagick" },
   { state: "latest", name: "php-memcached" },
