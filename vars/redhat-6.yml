@@ -41,3 +41,7 @@ _yum: [
   { state: "latest", name: "postgresql" },
   { state: "latest", name: "sqlite2" },
 ]
+_cgr: [
+  { state: "require", name: "phpunit/phpunit:@stable" },
+  { state: "require", name: "squizlabs/php_codesniffer:@stable" },
+]
