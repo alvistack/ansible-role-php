@@ -2,6 +2,8 @@
 
 ## 2.1.0 - TBC
 
+  - Upgrade composer to 1.7.3 (https://github.com/composer/composer/pull/7649)
+
 ## 2.0.0 - 2018-10-25
 
   - Ininitial release for Ansible 2.6
