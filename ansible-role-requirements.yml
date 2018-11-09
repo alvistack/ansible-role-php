@@ -11,3 +11,7 @@
 - name: yum
   src: https://github.com/alvistack/ansible-role-yum
   version: develop
+
+- name: git
+  src: https://github.com/alvistack/ansible-role-git
+  version: develop
