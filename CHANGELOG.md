@@ -2,6 +2,8 @@
 
 ## 2.1.0 - TBC
 
+## 2.0.1 - 2018-11-09
+
   - Upgrade composer to 1.7.3 (https://github.com/composer/composer/pull/7649)
   - Install more dev tools with cgr
 
