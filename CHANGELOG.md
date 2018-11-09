@@ -1,5 +1,12 @@
 # Ansible Role for PHP
 
+## 2.1.0 - TBC
+
+## 2.0.1 - 2018-11-09
+
+  - Upgrade composer to 1.7.3 (https://github.com/composer/composer/pull/7649)
+  - Install more dev tools with cgr
+
 ## 2.0.0 - 2018-10-25
 
   - Ininitial release for Ansible 2.6

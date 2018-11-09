@@ -27,6 +27,7 @@
   roles:
     - role: apt
     - role: yum
+    - role: git
     - role: php
 
 - hosts: all

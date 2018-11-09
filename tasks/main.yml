@@ -46,7 +46,7 @@
 
 - name: install composer globally
   shell: |
-    curl -skL https://getcomposer.org/download/1.7.2/composer.phar > $COMPOSER_BIN_DIR/composer
+    curl -skL https://getcomposer.org/download/1.7.3/composer.phar > $COMPOSER_BIN_DIR/composer
     chown root:root $COMPOSER_BIN_DIR/composer
     chmod 777 $COMPOSER_BIN_DIR/composer
     mkdir -p $COMPOSER_HOME
@@ -66,6 +66,7 @@
     warn: false
   register: composer_self_update_result
   changed_when: "'You are already using composer' not in composer_self_update_result.stderr"
+  ignore_errors: yes
   tags: php
 
 - name: composer global init
