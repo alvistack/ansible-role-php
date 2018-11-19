@@ -53,11 +53,10 @@
       register: phpcs_version_result
       changed_when: phpcs_version_result.rc != 0
 
-    - name: su -l -s /bin/bash -c 'echo $COMPOSER_HOME'
+    - name: echo $COMPOSER_HOME
       shell: |
-        su -l -s /bin/bash -c 'echo $COMPOSER_HOME'
-      args:
-        warn: false
+        . /etc/profile.d/composer.sh
+        echo $COMPOSER_HOME
       register: composer_home_result
       changed_when: composer_home_result.rc != 0
       failed_when: "'/usr/local/share/composer' not in composer_home_result.stdout"

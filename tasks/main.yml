@@ -66,70 +66,68 @@
     - { dest: "/usr/local/share/composer", mode: "0755", state: "directory" }
   tags: php
 
-- name: install composer globally
+- name: install composer globally (snapshot channel)
   shell: |
-    curl -skL https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+    . /etc/profile.d/composer.sh
+    curl -skL https://getcomposer.org/installer | php -- \
+      --snapshot \
+      --install-dir=/usr/local/bin \
+      --filename=composer
   args:
     creates: "/usr/local/bin/composer"
-    warn: false
   tags: php
 
-- name: composer self-update
-  command: composer self-update --no-interaction
+- name: composer self-update (stable channel)
+  shell: |
+    . /etc/profile.d/composer.sh
+    composer self-update --stable --no-interaction
   register: composer_self_update_result
   changed_when: "'You are already using composer' not in composer_self_update_result.stderr"
   ignore_errors: yes
   tags: php
 
 - name: composer global init
-  command: composer global init --no-interaction
+  shell: |
+    . /etc/profile.d/composer.sh
+    composer global init --no-interaction
   args:
     creates: "/usr/local/share/composer/composer.json"
   register: composer_global_init_result
   changed_when: composer_global_init_result.rc != 0
-  environment:
-    COMPOSER_HOME: "/usr/local/share/composer"
-    COMPOSER_BIN_DIR: "/usr/local/bin"
   tags: php
 
 - name: composer global require
-  command: composer global {{ item.state }} {{ item.name }} --no-interaction
+  shell: |
+    . /etc/profile.d/composer.sh
+    composer global {{ item.state }} {{ item.name }} --no-interaction
   with_items:
     - { state: 'require', name: 'hirak/prestissimo:@stable' }
     - { state: 'require', name: 'consolidation/cgr:@stable' }
   register: composer_global_require_result
   changed_when: composer_global_require_result.rc != 0
-  environment:
-    COMPOSER_HOME: "/usr/local/share/composer"
-    COMPOSER_BIN_DIR: "/usr/local/bin"
   tags: php
 
 - name: composer global update
-  command: composer global update
+  shell: |
+    . /etc/profile.d/composer.sh
+    composer global update
   register: composer_global_update_result
   changed_when: composer_global_update_result.rc != 0
-  environment:
-    COMPOSER_HOME: "/usr/local/share/composer"
-    COMPOSER_BIN_DIR: "/usr/local/bin"
   tags: php
 
 - name: cgr require
-  command: cgr {{ item.state }} {{ item.name }}
+  shell: |
+    . /etc/profile.d/composer.sh
+    cgr {{ item.state }} {{ item.name }}
   with_items: "{{ _cgr }}"
   register: cgr_require_result
   changed_when: cgr_require_result.rc != 0
-  environment:
-    COMPOSER_HOME: "/usr/local/share/composer"
-    COMPOSER_BIN_DIR: "/usr/local/bin"
-    CGR_BIN_DIR: "/usr/local/bin"
   tags: php
 
 - name: cgr update
-  command: cgr update
+  shell: |
+    . /etc/profile.d/composer.sh
+    cgr update
   register: cgr_update_result
   changed_when: "'Package operations:' in cgr_update_result.stderr"
-  environment:
-    COMPOSER_HOME: "/usr/local/share/composer"
-    COMPOSER_BIN_DIR: "/usr/local/bin"
-    CGR_BIN_DIR: "/usr/local/bin"
   tags: php
