@@ -5,6 +5,7 @@
   - Upgrade composer to 1.7.3 (<https://github.com/composer/composer/pull/7649>)
   - Install more dev tools with cgr
   - CI with ansible-lint and galaxy-lint-rules
+  - Install composer globally with official installer (<https://getcomposer.org/installer>)
 
 ## 2.0.0 - 2018-10-25
 

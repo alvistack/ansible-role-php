@@ -66,18 +66,16 @@
     - { dest: "/usr/local/share/composer", mode: "0755", state: "directory" }
   tags: php
 
-- name: install composer globally (snapshot channel)
+- name: install composer globally
   shell: |
-    curl -skL https://getcomposer.org/composer.phar -o /usr/local/bin/composer
-    chown root:root /usr/local/bin/composer
-    chmod 777 /usr/local/bin/composer
+    curl -skL https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
   args:
     creates: "/usr/local/bin/composer"
     warn: false
   tags: php
 
-- name: composer self-update (stable channel)
-  command: composer self-update --stable --no-interaction
+- name: composer self-update
+  command: composer self-update --no-interaction
   register: composer_self_update_result
   changed_when: "'You are already using composer' not in composer_self_update_result.stderr"
   ignore_errors: yes
