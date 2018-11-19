@@ -2,9 +2,14 @@
 
 ## 2.1.0 - TBC
 
-  - Upgrade composer to 1.7.3 (<https://github.com/composer/composer/pull/7649>)
+### Major Changes
+
+  - Install composer globally with official installer (<https://getcomposer.org/installer>)
   - Install more dev tools with cgr
   - CI with ansible-lint and galaxy-lint-rules
+  - Create `/etc/profile.d/composer.sh` with templates
+  - Source `/etc/profile.d/composer.sh` for environment variables
+
 
 ## 2.0.0 - 2018-10-25
 

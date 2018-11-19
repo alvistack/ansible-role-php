@@ -34,34 +34,29 @@
   remote_user: root
   tasks:
     - name: php --version
-      shell: |
-        php --version
+      command: php --version
       register: php_version_result
       changed_when: php_version_result.rc != 0
 
     - name: composer --version
-      shell: |
-        composer --version
+      command: composer --version
       register: composer_version_result
       changed_when: composer_version_result.rc != 0
 
     - name: phpunit --version
-      shell: |
-        phpunit --version
+      command: phpunit --version
       register: phpunit_version_result
       changed_when: phpunit_version_result.rc != 0
 
     - name: phpcs --version
-      shell: |
-        phpcs --version
+      command: phpcs --version
       register: phpcs_version_result
       changed_when: phpcs_version_result.rc != 0
 
-    - name: su -l -s /bin/bash -c 'echo $COMPOSER_HOME'
+    - name: echo $COMPOSER_HOME
       shell: |
-        su -l -s /bin/bash -c 'echo $COMPOSER_HOME'
-      args:
-        warn: false
+        . /etc/profile.d/composer.sh
+        echo $COMPOSER_HOME
       register: composer_home_result
       changed_when: composer_home_result.rc != 0
       failed_when: "'/usr/local/share/composer' not in composer_home_result.stdout"

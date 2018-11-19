@@ -44,26 +44,43 @@
     loop_var: "loop_var"
   tags: php
 
-- name: install composer globally
-  shell: |
-    curl -skL https://getcomposer.org/download/1.7.3/composer.phar > $COMPOSER_BIN_DIR/composer
-    chown root:root $COMPOSER_BIN_DIR/composer
-    chmod 777 $COMPOSER_BIN_DIR/composer
-    mkdir -p $COMPOSER_HOME
-    chown root:root $COMPOSER_HOME
-  args:
-    creates: "/usr/local/bin/composer"
-    warn: false
-  environment:
-    COMPOSER_HOME: "/usr/local/share/composer"
-    COMPOSER_BIN_DIR: "/usr/local/bin"
+- name: copy templates
+  template:
+    src: "{{ item.dest }}.j2"
+    dest: "/{{ item.dest }}"
+    owner: "{{ item.owner | default('root') }}"
+    group: "{{ item.group | default('root') }}"
+    mode: "{{ item.mode | default('0644') }}"
+  with_items:
+    - { dest: "etc/profile.d/composer.sh" }
   tags: php
 
-- name: composer self-update
+- name: prepare files
+  file:
+    dest: "{{ item.dest }}"
+    owner: "{{ item.owner | default('root') }}"
+    group: "{{ item.group | default('root') }}"
+    mode: "{{ item.mode | default('0644') }}"
+    state: "{{ item.state | default('file') }}"
+  with_items:
+    - { dest: "/usr/local/share/composer", mode: "0755", state: "directory" }
+  tags: php
+
+- name: install composer globally (snapshot channel)
   shell: |
-    composer self-update --no-interaction
+    . /etc/profile.d/composer.sh
+    curl -skL https://getcomposer.org/installer | php -- \
+      --snapshot \
+      --install-dir=/usr/local/bin \
+      --filename=composer
   args:
-    warn: false
+    creates: "/usr/local/bin/composer"
+  tags: php
+
+- name: composer self-update (stable channel)
+  shell: |
+    . /etc/profile.d/composer.sh
+    composer self-update --stable --no-interaction
   register: composer_self_update_result
   changed_when: "'You are already using composer' not in composer_self_update_result.stderr"
   ignore_errors: yes
@@ -71,77 +88,46 @@
 
 - name: composer global init
   shell: |
+    . /etc/profile.d/composer.sh
     composer global init --no-interaction
   args:
     creates: "/usr/local/share/composer/composer.json"
-    warn: false
   register: composer_global_init_result
   changed_when: composer_global_init_result.rc != 0
-  environment:
-    COMPOSER_HOME: "/usr/local/share/composer"
-    COMPOSER_BIN_DIR: "/usr/local/bin"
   tags: php
 
 - name: composer global require
   shell: |
+    . /etc/profile.d/composer.sh
     composer global {{ item.state }} {{ item.name }} --no-interaction
-  args:
-    warn: false
   with_items:
     - { state: 'require', name: 'hirak/prestissimo:@stable' }
     - { state: 'require', name: 'consolidation/cgr:@stable' }
   register: composer_global_require_result
   changed_when: composer_global_require_result.rc != 0
-  environment:
-    COMPOSER_HOME: "/usr/local/share/composer"
-    COMPOSER_BIN_DIR: "/usr/local/bin"
   tags: php
 
 - name: composer global update
   shell: |
+    . /etc/profile.d/composer.sh
     composer global update
-  args:
-    warn: false
   register: composer_global_update_result
   changed_when: composer_global_update_result.rc != 0
-  environment:
-    COMPOSER_HOME: "/usr/local/share/composer"
-    COMPOSER_BIN_DIR: "/usr/local/bin"
-  tags: php
-
-- name: update /etc/profile.d/composer.sh
-  lineinfile:
-    path: "{{ item.path }}"
-    regexp: "{{ item.regexp }}"
-    line: "{{ item.line }}"
-    insertafter: "EOF"
-    state: "present"
-    create: "yes"
-  with_items:
-    - { path: "/etc/profile.d/composer.sh", regexp: "^export COMPOSER_HOME=", line: "export COMPOSER_HOME=/usr/local/share/composer" }
-    - { path: "/etc/profile.d/composer.sh", regexp: "^export COMPOSER_BIN_DIR=", line: "export COMPOSER_BIN_DIR=/usr/local/bin" }
-    - { path: "/etc/profile.d/composer.sh", regexp: "^export CGR_BIN_DIR=", line: "export CGR_BIN_DIR=/usr/local/share/composer" }
   tags: php
 
 - name: cgr require
   shell: |
+    . /etc/profile.d/composer.sh
     cgr {{ item.state }} {{ item.name }}
   with_items: "{{ _cgr }}"
   register: cgr_require_result
   changed_when: cgr_require_result.rc != 0
-  environment:
-    COMPOSER_HOME: "/usr/local/share/composer"
-    COMPOSER_BIN_DIR: "/usr/local/bin"
-    CGR_BIN_DIR: "/usr/local/bin"
   tags: php
 
 - name: cgr update
   shell: |
+    . /etc/profile.d/composer.sh
     cgr update
   register: cgr_update_result
   changed_when: "'Package operations:' in cgr_update_result.stderr"
-  environment:
-    COMPOSER_HOME: "/usr/local/share/composer"
-    COMPOSER_BIN_DIR: "/usr/local/bin"
-    CGR_BIN_DIR: "/usr/local/bin"
   tags: php
