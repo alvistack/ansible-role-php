@@ -46,13 +46,13 @@
 
 - name: copy templates
   template:
-    src: "{{ item.dest }}.j2"
-    dest: "/{{ item.dest }}"
+    src: "./templates{{ item.dest }}.j2"
+    dest: "{{ item.dest }}"
     owner: "{{ item.owner | default('root') }}"
     group: "{{ item.group | default('root') }}"
     mode: "{{ item.mode | default('0644') }}"
   with_items:
-    - { dest: "etc/profile.d/composer.sh" }
+    - { dest: "/etc/profile.d/composer.sh" }
   tags: php
 
 - name: prepare files
@@ -68,38 +68,37 @@
 
 - name: install composer globally (snapshot channel)
   shell: |
-    . /etc/profile.d/composer.sh
     curl -skL https://getcomposer.org/installer | php -- \
       --snapshot \
       --install-dir=/usr/local/bin \
       --filename=composer
   args:
     creates: "/usr/local/bin/composer"
+    warn: false
   tags: php
 
 - name: composer self-update (stable channel)
-  shell: |
-    . /etc/profile.d/composer.sh
-    composer self-update --stable --no-interaction
+  command: su -l -s /bin/bash -c 'composer self-update --stable --no-interaction'
+  args:
+    warn: false
   register: composer_self_update_result
   changed_when: "'You are already using composer' not in composer_self_update_result.stderr"
   ignore_errors: yes
   tags: php
 
 - name: composer global init
-  shell: |
-    . /etc/profile.d/composer.sh
-    composer global init --no-interaction
+  command: su -l -s /bin/bash -c 'composer global init --no-interaction'
   args:
     creates: "/usr/local/share/composer/composer.json"
+    warn: false
   register: composer_global_init_result
   changed_when: composer_global_init_result.rc != 0
   tags: php
 
 - name: composer global require
-  shell: |
-    . /etc/profile.d/composer.sh
-    composer global {{ item.state }} {{ item.name }} --no-interaction
+  command: su -l -s /bin/bash -c 'composer global {{ item.state }} {{ item.name }} --no-interaction'
+  args:
+    warn: false
   with_items:
     - { state: 'require', name: 'hirak/prestissimo:@stable' }
     - { state: 'require', name: 'consolidation/cgr:@stable' }
@@ -108,26 +107,26 @@
   tags: php
 
 - name: composer global update
-  shell: |
-    . /etc/profile.d/composer.sh
-    composer global update
+  command: su -l -s /bin/bash -c 'composer global update'
+  args:
+    warn: false
   register: composer_global_update_result
   changed_when: composer_global_update_result.rc != 0
   tags: php
 
 - name: cgr require
-  shell: |
-    . /etc/profile.d/composer.sh
-    cgr {{ item.state }} {{ item.name }}
+  command: su -l -s /bin/bash -c 'cgr {{ item.state }} {{ item.name }}'
+  args:
+    warn: false
   with_items: "{{ _cgr }}"
   register: cgr_require_result
   changed_when: cgr_require_result.rc != 0
   tags: php
 
 - name: cgr update
-  shell: |
-    . /etc/profile.d/composer.sh
-    cgr update
+  command: su -l -s /bin/bash -c 'cgr update'
+  args:
+    warn: false
   register: cgr_update_result
   changed_when: "'Package operations:' in cgr_update_result.stderr"
   tags: php

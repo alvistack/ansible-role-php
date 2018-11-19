@@ -8,8 +8,8 @@
   - Install more dev tools with cgr
   - CI with ansible-lint and galaxy-lint-rules
   - Create `/etc/profile.d/composer.sh` with templates
-  - Source `/etc/profile.d/composer.sh` for environment variables
-
+  - Source environment variables with `su -l -s /bin/bash -c`
+  - Use shell only when shell functionality is required
 
 ## 2.0.0 - 2018-10-25
 
