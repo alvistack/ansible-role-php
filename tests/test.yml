@@ -54,8 +54,7 @@
       changed_when: phpcs_version_result.rc != 0
 
     - name: su -l -s /bin/bash -c 'echo $COMPOSER_HOME'
-      shell: |
-        su -l -s /bin/bash -c 'echo $COMPOSER_HOME'
+      command: su -l -s /bin/bash -c 'echo $COMPOSER_HOME'
       args:
         warn: false
       register: composer_home_result

@@ -78,8 +78,7 @@
   tags: php
 
 - name: composer self-update (stable channel)
-  shell: |
-    su -l -s /bin/bash -c 'composer self-update --stable --no-interaction'
+  command: su -l -s /bin/bash -c 'composer self-update --stable --no-interaction'
   args:
     warn: false
   register: composer_self_update_result
@@ -88,8 +87,7 @@
   tags: php
 
 - name: composer global init
-  shell: |
-    su -l -s /bin/bash -c 'composer global init --no-interaction'
+  command: su -l -s /bin/bash -c 'composer global init --no-interaction'
   args:
     creates: "/usr/local/share/composer/composer.json"
     warn: false
@@ -98,8 +96,7 @@
   tags: php
 
 - name: composer global require
-  shell: |
-    su -l -s /bin/bash -c 'composer global {{ item.state }} {{ item.name }} --no-interaction'
+  command: su -l -s /bin/bash -c 'composer global {{ item.state }} {{ item.name }} --no-interaction'
   args:
     warn: false
   with_items:
@@ -110,8 +107,7 @@
   tags: php
 
 - name: composer global update
-  shell: |
-    su -l -s /bin/bash -c 'composer global update'
+  command: su -l -s /bin/bash -c 'composer global update'
   args:
     warn: false
   register: composer_global_update_result
@@ -119,8 +115,7 @@
   tags: php
 
 - name: cgr require
-  shell: |
-    su -l -s /bin/bash -c 'cgr {{ item.state }} {{ item.name }}'
+  command: su -l -s /bin/bash -c 'cgr {{ item.state }} {{ item.name }}'
   args:
     warn: false
   with_items: "{{ _cgr }}"
@@ -129,8 +124,7 @@
   tags: php
 
 - name: cgr update
-  shell: |
-    su -l -s /bin/bash -c 'cgr update'
+  command: su -l -s /bin/bash -c 'cgr update'
   args:
     warn: false
   register: cgr_update_result
