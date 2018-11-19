@@ -55,7 +55,7 @@
 
     - name: echo $COMPOSER_HOME
       shell: |
-        . /etc/profile.d/composer.sh
+        . /etc/profile
         echo $COMPOSER_HOME
       register: composer_home_result
       changed_when: composer_home_result.rc != 0

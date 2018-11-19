@@ -68,7 +68,7 @@
 
 - name: install composer globally (snapshot channel)
   shell: |
-    . /etc/profile.d/composer.sh
+    . /etc/profile
     curl -skL https://getcomposer.org/installer | php -- \
       --snapshot \
       --install-dir=/usr/local/bin \
@@ -79,7 +79,7 @@
 
 - name: composer self-update (stable channel)
   shell: |
-    . /etc/profile.d/composer.sh
+    . /etc/profile
     composer self-update --stable --no-interaction
   register: composer_self_update_result
   changed_when: "'You are already using composer' not in composer_self_update_result.stderr"
@@ -88,7 +88,7 @@
 
 - name: composer global init
   shell: |
-    . /etc/profile.d/composer.sh
+    . /etc/profile
     composer global init --no-interaction
   args:
     creates: "/usr/local/share/composer/composer.json"
@@ -98,7 +98,7 @@
 
 - name: composer global require
   shell: |
-    . /etc/profile.d/composer.sh
+    . /etc/profile
     composer global {{ item.state }} {{ item.name }} --no-interaction
   with_items:
     - { state: 'require', name: 'hirak/prestissimo:@stable' }
@@ -109,7 +109,7 @@
 
 - name: composer global update
   shell: |
-    . /etc/profile.d/composer.sh
+    . /etc/profile
     composer global update
   register: composer_global_update_result
   changed_when: composer_global_update_result.rc != 0
@@ -117,7 +117,7 @@
 
 - name: cgr require
   shell: |
-    . /etc/profile.d/composer.sh
+    . /etc/profile
     cgr {{ item.state }} {{ item.name }}
   with_items: "{{ _cgr }}"
   register: cgr_require_result
@@ -126,7 +126,7 @@
 
 - name: cgr update
   shell: |
-    . /etc/profile.d/composer.sh
+    . /etc/profile
     cgr update
   register: cgr_update_result
   changed_when: "'Package operations:' in cgr_update_result.stderr"
