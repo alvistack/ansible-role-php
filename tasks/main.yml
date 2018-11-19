@@ -46,13 +46,13 @@
 
 - name: copy templates
   template:
-    src: "{{ item.dest }}.j2"
-    dest: "/{{ item.dest }}"
+    src: "./templates{{ item.dest }}.j2"
+    dest: "{{ item.dest }}"
     owner: "{{ item.owner | default('root') }}"
     group: "{{ item.group | default('root') }}"
     mode: "{{ item.mode | default('0644') }}"
   with_items:
-    - { dest: "etc/profile.d/composer.sh" }
+    - { dest: "/etc/profile.d/composer.sh" }
   tags: php
 
 - name: prepare files
