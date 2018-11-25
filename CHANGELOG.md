@@ -10,6 +10,7 @@
   - Create `/etc/profile.d/composer.sh` with templates
   - Source environment variables with `su -l -s /bin/bash -c`
   - Use shell only when shell functionality is required
+  - Replace tests from Docker to LXD
 
 ## 2.0.0 - 2018-10-25
 
