@@ -75,14 +75,17 @@
   args:
     creates: "/usr/local/bin/composer"
     warn: false
+  register: result
+  until: result is succeeded
   tags: php
 
 - name: composer self-update (stable channel)
   command: su -l -s /bin/bash -c 'composer self-update --stable --no-interaction'
   args:
     warn: false
-  register: composer_self_update_result
-  changed_when: "'You are already using composer' not in composer_self_update_result.stderr"
+  register: result
+  until: result is succeeded
+  changed_when: "'You are already using composer' not in result.stderr"
   ignore_errors: yes
   tags: php
 
@@ -91,8 +94,8 @@
   args:
     creates: "/usr/local/share/composer/composer.json"
     warn: false
-  register: composer_global_init_result
-  changed_when: composer_global_init_result.rc != 0
+  register: result
+  changed_when: result is not succeeded
   tags: php
 
 - name: composer global require
@@ -102,16 +105,18 @@
   with_items:
     - { state: 'require', name: 'hirak/prestissimo:@stable' }
     - { state: 'require', name: 'consolidation/cgr:@stable' }
-  register: composer_global_require_result
-  changed_when: composer_global_require_result.rc != 0
+  register: result
+  until: result is succeeded
+  changed_when: result is not succeeded
   tags: php
 
 - name: composer global update
   command: su -l -s /bin/bash -c 'composer global update'
   args:
     warn: false
-  register: composer_global_update_result
-  changed_when: composer_global_update_result.rc != 0
+  register: result
+  until: result is succeeded
+  changed_when: result is not succeeded
   tags: php
 
 - name: cgr require
@@ -119,14 +124,16 @@
   args:
     warn: false
   with_items: "{{ _cgr }}"
-  register: cgr_require_result
-  changed_when: cgr_require_result.rc != 0
+  register: result
+  until: result is succeeded
+  changed_when: result is not succeeded
   tags: php
 
 - name: cgr update
   command: su -l -s /bin/bash -c 'cgr update'
   args:
     warn: false
-  register: cgr_update_result
-  changed_when: "'Package operations:' in cgr_update_result.stderr"
+  register: result
+  until: result is succeeded
+  changed_when: "'Package operations:' in result.stderr"
   tags: php
