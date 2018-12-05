@@ -11,6 +11,8 @@
   - Source environment variables with `su -l -s /bin/bash -c`
   - Use shell only when shell functionality is required
   - Replace tests from Docker to LXD
+  - Don't install epel-release, conflict with RHEL
+  - Don't install ius-release, assume yum already handle it
 
 ## 2.0.0 - 2018-10-25
 
