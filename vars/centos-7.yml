@@ -16,7 +16,6 @@
 
 _yum: [
   { state: "latest", name: "https://centos7.iuscommunity.org/ius-release.rpm" },
-  { state: "latest", name: "epel-release" },
   { state: "latest", name: "php72u-cli" },
   { state: "latest", name: "GeoIP-data" },
   { state: "latest", name: "ImageMagick" },
