@@ -15,7 +15,6 @@
 # limitations under the License.
 
 _yum: [
-  { state: "latest", name: "https://centos6.iuscommunity.org/ius-release.rpm" },
   { state: "latest", name: "php56u-cli" },
   { state: "latest", name: "GeoIP-GeoLite-data" },
   { state: "latest", name: "ImageMagick" },
