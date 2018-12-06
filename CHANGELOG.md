@@ -13,6 +13,9 @@
   - Replace tests from Docker to LXD
   - Don't install epel-release, conflict with RHEL
   - Don't install ius-release, assume yum already handle it
+  - Default install PHP 5.6 on Ubuntu 16.04 and CentOS 6
+  - Default install PHP 7.2 on Ubuntu 18.04 and CentOS 7
+  - Optionally override PHP version with defaults/main.yml
 
 ## 2.0.0 - 2018-10-25
 
