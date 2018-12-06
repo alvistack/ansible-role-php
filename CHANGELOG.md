@@ -1,16 +1,27 @@
 # Ansible Role for PHP
 
-## 2.1.0 - TBC
+## 2.2.0 - TBC
 
 ### Major Changes
 
-  - Install composer globally with official installer (<https://getcomposer.org/installer>)
-  - Install more dev tools with cgr
-  - CI with ansible-lint and galaxy-lint-rules
-  - Create `/etc/profile.d/composer.sh` with templates
-  - Source environment variables with `su -l -s /bin/bash -c`
+## 2.1.0 - 2018-12-06
+
+### Major Changes
+
+  - CI with yamllint, ansible-lint and ansible-playbook --syntax-check
+  - CI with LXD, improve systemd support
   - Use shell only when shell functionality is required
-  - Replace tests from Docker to LXD
+  - Install composer globally with official installer (<https://getcomposer.org/installer>)
+  - Template `/etc/profile.d/composer.sh` for environment variables
+  - Source environment variables with `su -l -s /bin/bash -c`
+  - Default install PHP 5.6 on Ubuntu 16.04 and CentOS 6
+  - Default install PHP 7.2 on Ubuntu 18.04 and CentOS 7
+  - Support override with defaults/main.yml
+
+### CentOS
+
+  - Don't install epel-release, conflict with RHEL
+  - Don't install ius-release, assume yum already handle it
 
 ## 2.0.0 - 2018-10-25
 

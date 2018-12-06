@@ -35,28 +35,28 @@
   tasks:
     - name: php --version
       command: php --version
-      register: php_version_result
-      changed_when: php_version_result.rc != 0
+      register: result
+      changed_when: result is not succeeded
 
     - name: composer --version
       command: composer --version
-      register: composer_version_result
-      changed_when: composer_version_result.rc != 0
+      register: result
+      changed_when: result is not succeeded
 
     - name: phpunit --version
       command: phpunit --version
-      register: phpunit_version_result
-      changed_when: phpunit_version_result.rc != 0
+      register: result
+      changed_when: result is not succeeded
 
     - name: phpcs --version
       command: phpcs --version
-      register: phpcs_version_result
-      changed_when: phpcs_version_result.rc != 0
+      register: result
+      changed_when: result is not succeeded
 
     - name: su -l -s /bin/bash -c 'echo $COMPOSER_HOME'
       command: su -l -s /bin/bash -c 'echo $COMPOSER_HOME'
       args:
         warn: false
-      register: composer_home_result
-      changed_when: composer_home_result.rc != 0
-      failed_when: "'/usr/local/share/composer' not in composer_home_result.stdout"
+      register: result
+      changed_when: result is not succeeded
+      failed_when: "'/usr/local/share/composer' not in result.stdout"
