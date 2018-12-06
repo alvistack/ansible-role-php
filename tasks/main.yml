@@ -123,7 +123,7 @@
   command: su -l -s /bin/bash -c 'cgr {{ item.state }} {{ item.name }}'
   args:
     warn: false
-  with_items: "{{ _cgr }}"
+  with_items: "{{ cgr }}"
   register: result
   until: result is succeeded
   changed_when: result is not succeeded
