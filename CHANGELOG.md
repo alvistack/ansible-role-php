@@ -1,8 +1,18 @@
 # Ansible Role for PHP
 
-## 2.2.0 - TBC
+## 2.3.0 - TBC
 
 ### Major Changes
+
+## 2.2.0 - 2019-01-26
+
+### Major Changes
+
+  - Improve variables default value handling
+
+### CentOS
+
+  - Enable IUS manually
 
 ## 2.1.0 - 2018-12-06
 
