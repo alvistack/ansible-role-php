@@ -24,7 +24,7 @@
         - "{{ ansible_distribution | lower }}.yml"
         - "{{ ansible_os_family | lower }}.yml"
       paths: "../vars"
-      skip: "yes"
+      skip: true
   loop_control:
     loop_var: "loop_var"
   tags: php
@@ -39,7 +39,7 @@
         - "{{ ansible_distribution | lower }}.yml"
         - "{{ ansible_os_family | lower }}.yml"
       paths: "."
-      skip: "yes"
+      skip: true
   loop_control:
     loop_var: "loop_var"
   tags: php
@@ -86,7 +86,7 @@
   register: result
   until: result is succeeded
   changed_when: "'You are already using composer' not in result.stderr"
-  ignore_errors: yes
+  ignore_errors: true
   tags: php
 
 - name: composer global init
