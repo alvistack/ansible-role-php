@@ -22,9 +22,12 @@ _yum: [
   { state: "latest", name: "GeoIP-data" },
   { state: "latest", name: "ImageMagick" },
   { state: "latest", name: "mysql" },
+  { state: "latest", name: "postgresql" },
+  { state: "latest", name: "sqlite2" },
   { state: "latest", name: "php72u-bcmath" },
   { state: "latest", name: "php72u-gd" },
   { state: "latest", name: "php72u-imap" },
+  { state: "latest", name: "php72u-json" },
   { state: "latest", name: "php72u-ldap" },
   { state: "latest", name: "php72u-mbstring" },
   { state: "latest", name: "php72u-mysqlnd" },
@@ -39,8 +42,6 @@ _yum: [
   { state: "latest", name: "php72u-tidy" },
   { state: "latest", name: "php72u-xml" },
   { state: "latest", name: "php72u-xmlrpc" },
-  { state: "latest", name: "postgresql" },
-  { state: "latest", name: "sqlite2" },
 ]
 _cgr: [
   { state: "require", name: "drupal/coder:@stable" },

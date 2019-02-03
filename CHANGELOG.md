@@ -4,6 +4,14 @@
 
 ### Major Changes
 
+### Ubuntu 16.04
+
+  - Upgrade to PHP 7.1
+
+### CentOS 6
+
+  - Upgrade to PHP 7.1
+
 ## 2.3.0 - 2019-01-30
 
 ### Major Changes

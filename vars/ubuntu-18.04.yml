@@ -24,6 +24,8 @@ _apt: [
   { state: "latest", name: "imagemagick" },
   { state: "latest", name: "libssl-dev" },
   { state: "latest", name: "mysql-client" },
+  { state: "latest", name: "postgresql-client" },
+  { state: "latest", name: "sqlite3" },
   { state: "latest", name: "php-apcu" },
   { state: "latest", name: "php-apcu-bc" },
   { state: "latest", name: "php-geoip" },
@@ -50,8 +52,6 @@ _apt: [
   { state: "latest", name: "php7.2-xmlrpc" },
   { state: "latest", name: "php7.2-xsl" },
   { state: "latest", name: "php7.2-zip" },
-  { state: "latest", name: "postgresql-client" },
-  { state: "latest", name: "sqlite3" },
 ]
 _cgr: [
   { state: "require", name: "drupal/coder:@stable" },
