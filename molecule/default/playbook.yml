@@ -17,8 +17,7 @@
 - hosts: all
   remote_user: root
   roles:
-    - role: apt
-    - role: yum
+    - role: bootstrap
     - role: git
     - role: php
 
