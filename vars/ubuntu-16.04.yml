@@ -17,7 +17,7 @@
 _apt_repository: [
   { state: "present", repo: "ppa:ondrej/php" },
 ]
-_apt: [
+_package: [
   { state: "latest", name: "php7.1-cli" },
   { state: "latest", name: "geoip-database" },
   { state: "latest", name: "geoip-database-extra" },

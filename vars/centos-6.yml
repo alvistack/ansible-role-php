@@ -17,7 +17,7 @@
 _yum_repository: [
   { state: "latest", name: "https://centos6.iuscommunity.org/ius-release.rpm" },
 ]
-_yum: [
+_package: [
   { state: "latest", name: "php71u-cli" },
   { state: "latest", name: "GeoIP-GeoLite-data" },
   { state: "latest", name: "ImageMagick" },
