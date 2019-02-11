@@ -68,21 +68,24 @@
 
 - name: install composer globally (snapshot channel)
   shell: |
+    set -o pipefail
     curl -skL https://getcomposer.org/installer | php -- \
       --snapshot \
       --install-dir=/usr/local/bin \
       --filename=composer
   args:
+    executable: "/bin/bash"
     creates: "/usr/local/bin/composer"
-    warn: false
   register: result
   until: result is succeeded
   tags: php
 
 - name: composer self-update (stable channel)
-  command: su -l -s /bin/bash -c 'composer self-update --stable --no-interaction'
+  shell: |
+    set -o pipefail
+    su -l -s /bin/bash -c 'composer self-update --stable --no-interaction'
   args:
-    warn: false
+    executable: "/bin/bash"
   register: result
   until: result is succeeded
   changed_when: "'You are already using composer' not in result.stderr"
@@ -90,18 +93,22 @@
   tags: php
 
 - name: composer global init
-  command: su -l -s /bin/bash -c 'composer global init --no-interaction'
+  shell: |
+    set -o pipefail
+    su -l -s /bin/bash -c 'composer global init --no-interaction'
   args:
+    executable: "/bin/bash"
     creates: "/usr/local/share/composer/composer.json"
-    warn: false
   register: result
   changed_when: result is not succeeded
   tags: php
 
 - name: composer global require
-  command: su -l -s /bin/bash -c 'composer global {{ item.state }} {{ item.name }} --no-interaction'
+  shell: |
+    set -o pipefail
+    su -l -s /bin/bash -c 'composer global {{ item.state }} {{ item.name }} --no-interaction'
   args:
-    warn: false
+    executable: "/bin/bash"
   with_items:
     - { state: 'require', name: 'hirak/prestissimo:@stable' }
     - { state: 'require', name: 'consolidation/cgr:@stable' }
@@ -111,18 +118,22 @@
   tags: php
 
 - name: composer global update
-  command: su -l -s /bin/bash -c 'composer global update'
+  shell: |
+    set -o pipefail
+    su -l -s /bin/bash -c 'composer global update'
   args:
-    warn: false
+    executable: "/bin/bash"
   register: result
   until: result is succeeded
   changed_when: result is not succeeded
   tags: php
 
 - name: cgr require
-  command: su -l -s /bin/bash -c 'cgr {{ item.state }} {{ item.name }}'
+  shell: |
+    set -o pipefail
+    su -l -s /bin/bash -c 'cgr {{ item.state }} {{ item.name }}'
   args:
-    warn: false
+    executable: "/bin/bash"
   with_items: "{{ cgr }}"
   register: result
   until: result is succeeded
@@ -130,9 +141,11 @@
   tags: php
 
 - name: cgr update
-  command: su -l -s /bin/bash -c 'cgr update'
+  shell: |
+    set -o pipefail
+    su -l -s /bin/bash -c 'cgr update'
   args:
-    warn: false
+    executable: "/bin/bash"
   register: result
   until: result is succeeded
   changed_when: "'Package operations:' in result.stderr"
