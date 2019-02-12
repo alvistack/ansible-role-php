@@ -14,16 +14,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-_yum_repository: [
+_repository: [
   { state: "latest", name: "https://centos6.iuscommunity.org/ius-release.rpm" },
 ]
 _package: [
-  { state: "latest", name: "php56u-cli", enablerepo: "ius-archive" },
   { state: "latest", name: "GeoIP-GeoLite-data" },
   { state: "latest", name: "ImageMagick" },
   { state: "latest", name: "mysql" },
   { state: "latest", name: "postgresql" },
   { state: "latest", name: "sqlite2" },
+  { state: "latest", name: "php56u-cli", enablerepo: "ius-archive" },
   { state: "latest", name: "php56u-bcmath", enablerepo: "ius-archive" },
   { state: "latest", name: "php56u-gd", enablerepo: "ius-archive" },
   { state: "latest", name: "php56u-imap", enablerepo: "ius-archive" },

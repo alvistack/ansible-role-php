@@ -14,11 +14,20 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Specify PHP repositorys.
-repository: "{{ _repository }}"
+- name: zypper addrepo
+  zypper_repository:
+    name: "{{ item.name | default(None) or omit }}"
+    repo: "{{ item.repo | default(None) or omit }}"
+    state: "{{ item.state | default(None) or omit }}"
+    auto_import_keys: true
+  with_items: "{{ repository }}"
+  tags: php
 
-# Specify PHP packages.
-package: "{{ _package }}"
-
-# Specify CGR packages.
-cgr: "{{ _cgr }}"
+- name: zypper install
+  zypper:
+    name: "{{ item.name }}"
+    state: "{{ item.state }}"
+  with_items: "{{ package }}"
+  register: result
+  until: result is succeeded
+  tags: php
