@@ -17,8 +17,7 @@
 _apt_repository: [
   { state: "present", repo: "ppa:ondrej/php" },
 ]
-_apt: [
-  { state: "latest", name: "php7.2-cli" },
+_package: [
   { state: "latest", name: "geoip-database" },
   { state: "latest", name: "geoip-database-extra" },
   { state: "latest", name: "imagemagick" },
@@ -26,6 +25,7 @@ _apt: [
   { state: "latest", name: "mysql-client" },
   { state: "latest", name: "postgresql-client" },
   { state: "latest", name: "sqlite3" },
+  { state: "latest", name: "php7.2-cli" },
   { state: "latest", name: "php-apcu" },
   { state: "latest", name: "php-apcu-bc" },
   { state: "latest", name: "php-geoip" },

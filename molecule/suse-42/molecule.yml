@@ -14,23 +14,31 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-- name: yum-config-manager --add-repo
-  yum:
-    name: "{{ item.name | default(None) or omit }}"
-    state: "{{ item.state | default(None) or omit }}"
-  with_items: "{{ _yum_repository }}"
-  register: result
-  until: result is succeeded
-  changed_when: false
-  ignore_errors: true
-  tags: php
-
-- name: yum install
-  yum:
-    name: "{{ item.name }}"
-    state: "{{ item.state }}"
-    enablerepo: "{{ item.enablerepo | default(None) or omit }}"
-  with_items: "{{ package }}"
-  register: result
-  until: result is succeeded
-  tags: php
+scenario:
+  name: suse-42
+driver:
+  name: lxd
+platforms:
+  - name: ${LXC_ID}-1
+    url: unix:/var/snap/lxd/common/lxd/unix.socket
+    source:
+      server: https://images.linuxcontainers.org
+      alias: opensuse/42.3/amd64
+lint:
+  name: yamllint
+dependency:
+  name: galaxy
+  options:
+    role-file: ansible-role-requirements.yml
+    roles-path: ${ANSIBLE_ROLES_PATH}
+    ignore-errors: true
+provisioner:
+  name: ansible
+  env:
+    ANSIBLE_ROLES_PATH: ${ANSIBLE_ROLES_PATH}
+  lint:
+    name: ansible-lint
+verifier:
+  name: testinfra
+  lint:
+    name: flake8

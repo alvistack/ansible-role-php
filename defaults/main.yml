@@ -14,11 +14,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Specify PHP packages for APT.
-apt: "{{ _apt }}"
+# Specify PHP repositorys.
+repository: "{{ _repository }}"
 
-# Specifiy PHP packages for YUM.
-yum: "{{ _yum }}"
+# Specify PHP packages.
+package: "{{ _package }}"
 
 # Specify CGR packages.
 cgr: "{{ _cgr }}"

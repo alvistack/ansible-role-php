@@ -4,13 +4,8 @@
 
 ### Major Changes
 
-### Ubuntu 16.04
-
-  - Upgrade to PHP 7.1
-
-### CentOS 6
-
-  - Upgrade to PHP 7.1
+  - Unify variable name as `repository` and `package`
+  - Add openSUSE Leap 42/15 support
 
 ## 2.3.0 - 2019-01-30
 

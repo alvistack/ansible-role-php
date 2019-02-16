@@ -14,16 +14,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-_yum_repository: [
+_repository: [
   { state: "latest", name: "https://centos7.iuscommunity.org/ius-release.rpm" },
 ]
-_yum: [
-  { state: "latest", name: "php72u-cli" },
+_package: [
   { state: "latest", name: "GeoIP-data" },
   { state: "latest", name: "ImageMagick" },
   { state: "latest", name: "mysql" },
   { state: "latest", name: "postgresql" },
-  { state: "latest", name: "sqlite2" },
+  { state: "latest", name: "sqlite" },
+  { state: "latest", name: "php72u-cli" },
   { state: "latest", name: "php72u-bcmath" },
   { state: "latest", name: "php72u-gd" },
   { state: "latest", name: "php72u-imap" },

@@ -14,33 +14,34 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-_yum_repository: [
+_repository: [
   { state: "latest", name: "https://centos6.iuscommunity.org/ius-release.rpm" },
 ]
-_yum: [
-  { state: "latest", name: "php71u-cli" },
+_package: [
   { state: "latest", name: "GeoIP-GeoLite-data" },
   { state: "latest", name: "ImageMagick" },
   { state: "latest", name: "mysql" },
   { state: "latest", name: "postgresql" },
   { state: "latest", name: "sqlite2" },
-  { state: "latest", name: "php71u-bcmath" },
-  { state: "latest", name: "php71u-gd" },
-  { state: "latest", name: "php71u-imap" },
-  { state: "latest", name: "php71u-json" },
-  { state: "latest", name: "php71u-ldap" },
-  { state: "latest", name: "php71u-mbstring" },
-  { state: "latest", name: "php71u-mysqlnd" },
-  { state: "latest", name: "php71u-opcache" },
-  { state: "latest", name: "php71u-pecl-apcu" },
-  { state: "latest", name: "php71u-pecl-geoip" },
-  { state: "latest", name: "php71u-pecl-imagick" },
-  { state: "latest", name: "php71u-pecl-xdebug" },
-  { state: "latest", name: "php71u-pgsql" },
-  { state: "latest", name: "php71u-soap" },
-  { state: "latest", name: "php71u-tidy" },
-  { state: "latest", name: "php71u-xml" },
-  { state: "latest", name: "php71u-xmlrpc" },
+  { state: "latest", name: "php56u-cli", enablerepo: "ius-archive" },
+  { state: "latest", name: "php56u-bcmath", enablerepo: "ius-archive" },
+  { state: "latest", name: "php56u-gd", enablerepo: "ius-archive" },
+  { state: "latest", name: "php56u-imap", enablerepo: "ius-archive" },
+  { state: "latest", name: "php56u-json", enablerepo: "ius-archive" },
+  { state: "latest", name: "php56u-ldap", enablerepo: "ius-archive" },
+  { state: "latest", name: "php56u-mbstring", enablerepo: "ius-archive" },
+  { state: "latest", name: "php56u-mysqlnd", enablerepo: "ius-archive" },
+  { state: "latest", name: "php56u-opcache", enablerepo: "ius-archive" },
+  { state: "latest", name: "php56u-pecl-apcu", enablerepo: "ius-archive" },
+  { state: "latest", name: "php56u-pecl-geoip", enablerepo: "ius-archive" },
+  { state: "latest", name: "php56u-pecl-imagick", enablerepo: "ius-archive" },
+  { state: "latest", name: "php56u-pecl-memcached", enablerepo: "ius-archive" },
+  { state: "latest", name: "php56u-pecl-xdebug", enablerepo: "ius-archive" },
+  { state: "latest", name: "php56u-pgsql", enablerepo: "ius-archive" },
+  { state: "latest", name: "php56u-soap", enablerepo: "ius-archive" },
+  { state: "latest", name: "php56u-tidy", enablerepo: "ius-archive" },
+  { state: "latest", name: "php56u-xml", enablerepo: "ius-archive" },
+  { state: "latest", name: "php56u-xmlrpc", enablerepo: "ius-archive" },
 ]
 _cgr: [
   { state: "require", name: "drupal/coder:@stable" },

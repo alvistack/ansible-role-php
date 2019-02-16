@@ -14,22 +14,19 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-- name: yum-config-manager --add-repo
-  yum:
+- name: zypper addrepo
+  zypper_repository:
     name: "{{ item.name | default(None) or omit }}"
+    repo: "{{ item.repo | default(None) or omit }}"
     state: "{{ item.state | default(None) or omit }}"
-  with_items: "{{ _yum_repository }}"
-  register: result
-  until: result is succeeded
-  changed_when: false
-  ignore_errors: true
+    auto_import_keys: true
+  with_items: "{{ repository }}"
   tags: php
 
-- name: yum install
-  yum:
+- name: zypper install
+  zypper:
     name: "{{ item.name }}"
     state: "{{ item.state }}"
-    enablerepo: "{{ item.enablerepo | default(None) or omit }}"
   with_items: "{{ package }}"
   register: result
   until: result is succeeded
