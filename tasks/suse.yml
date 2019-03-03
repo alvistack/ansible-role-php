@@ -16,9 +16,9 @@
 
 - name: zypper addrepo
   zypper_repository:
-    name: "{{ item.name | default(None) or omit }}"
-    repo: "{{ item.repo | default(None) or omit }}"
-    state: "{{ item.state | default(None) or omit }}"
+    name: "{{ item.name }}"
+    repo: "{{ item.repo }}"
+    state: "{{ item.state }}"
     auto_import_keys: true
   with_items: "{{ repository }}"
   tags: php
