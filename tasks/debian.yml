@@ -18,7 +18,7 @@
   apt_repository:
     repo: "{{ item.repo }}"
     state: "{{ item.state }}"
-  with_items: "{{ _apt_repository }}"
+  with_items: "{{ repository }}"
   tags: php
 
 - name: apt-get install
