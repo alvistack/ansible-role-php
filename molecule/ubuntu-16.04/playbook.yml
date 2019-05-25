@@ -16,12 +16,14 @@
 
 - hosts: all
   remote_user: root
+  become: true
   roles:
     - role: git
     - role: php
 
 - hosts: all
   remote_user: root
+  become: true
   tasks:
     - name: php --version
       command: php --version
