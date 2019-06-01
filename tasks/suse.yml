@@ -18,8 +18,9 @@
   zypper_repository:
     name: "{{ item.name }}"
     repo: "{{ item.repo }}"
-    auto_import_keys: "{{ item.auto_import_keys }}"
     state: "{{ item.state }}"
+    auto_import_keys: true
+    autorefresh: true
   with_items: "{{ repository }}"
   tags: php
 

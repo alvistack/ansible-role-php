@@ -18,7 +18,6 @@ _repository: [
   {
     name: "php72",
     repo: "http://download.opensuse.org/repositories/devel:/languages:/php:/php72/openSUSE_Leap_15.0",
-    auto_import_keys: true,
     state: "present",
   },
 ]
