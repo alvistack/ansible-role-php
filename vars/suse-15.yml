@@ -15,7 +15,11 @@
 # limitations under the License.
 
 _repository: [
-  { state: "present", name: "php72", repo: "http://download.opensuse.org/repositories/devel:/languages:/php:/php72/openSUSE_Leap_15.0" },
+  {
+    name: "php72",
+    repo: "http://download.opensuse.org/repositories/devel:/languages:/php:/php72/openSUSE_Leap_15.0",
+    state: "present",
+  },
 ]
 _package: [
   { state: "latest", name: "GeoIP-data" },
