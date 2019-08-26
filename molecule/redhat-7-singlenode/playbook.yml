@@ -1,0 +1,54 @@
+---
+
+# (c) Wong Hoi Sing Edison <hswong3i@pantarei-design.com>
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+- hosts: all
+  remote_user: root
+  become: true
+  roles:
+    - role: git
+    - role: php
+
+- hosts: all
+  remote_user: root
+  become: true
+  tasks:
+    - name: php --version
+      command: php --version
+      register: result
+      changed_when: result is not succeeded
+
+    - name: composer --version
+      command: composer --version
+      register: result
+      changed_when: result is not succeeded
+
+    - name: phpunit --version
+      command: phpunit --version
+      register: result
+      changed_when: result is not succeeded
+
+    - name: phpcs --version
+      command: phpcs --version
+      register: result
+      changed_when: result is not succeeded
+
+    - name: su -l -s /bin/bash -c 'echo $COMPOSER_HOME'
+      command: su -l -s /bin/bash -c 'echo $COMPOSER_HOME'
+      args:
+        warn: false
+      register: result
+      changed_when: result is not succeeded
+      failed_when: "'/usr/local/share/composer' not in result.stdout"
