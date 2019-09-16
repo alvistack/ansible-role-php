@@ -52,12 +52,3 @@ _package: [
   { state: "latest", name: "php7-xsl" },
   { state: "latest", name: "php7-zip" },
 ]
-_cgr: [
-  { state: "require", name: "drupal/coder:@stable" },
-  { state: "require", name: "drupal/console:@stable" },
-  { state: "require", name: "drush/drush:~8.1" },
-  { state: "require", name: "friendsofphp/php-cs-fixer:@stable" },
-  { state: "require", name: "phpunit/phpunit:@stable" },
-  { state: "require", name: "sami/sami:@stable" },
-  { state: "require", name: "squizlabs/php_codesniffer:@stable" },
-]
