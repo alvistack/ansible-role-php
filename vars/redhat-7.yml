@@ -14,6 +14,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+_php_fpm_service:
+  "7.3": "php-fpm"
+  "7.2": "php-fpm"
+  "7.1": "php-fpm"
+
 _repository:
   "7.3":
     - { state: "latest", name: "https://rhel7.iuscommunity.org/ius-release.rpm" }
@@ -24,12 +29,14 @@ _repository:
 
 _package:
   "7.3":
+    - { state: "latest", name: "redhat-lsb" }
     - { state: "latest", name: "GeoIP-data" }
     - { state: "latest", name: "ImageMagick" }
     - { state: "latest", name: "mysql" }
     - { state: "latest", name: "postgresql" }
     - { state: "latest", name: "sqlite" }
     - { state: "latest", name: "php73-cli" }
+    - { state: "latest", name: "php73-fpm" }
     - { state: "latest", name: "php73-bcmath" }
     - { state: "latest", name: "php73-gd" }
     - { state: "latest", name: "php73-imap" }
@@ -49,12 +56,14 @@ _package:
     - { state: "latest", name: "php73-xml" }
     - { state: "latest", name: "php73-xmlrpc" }
   "7.2":
+    - { state: "latest", name: "redhat-lsb" }
     - { state: "latest", name: "GeoIP-data" }
     - { state: "latest", name: "ImageMagick" }
     - { state: "latest", name: "mysql" }
     - { state: "latest", name: "postgresql" }
     - { state: "latest", name: "sqlite" }
     - { state: "latest", name: "php72u-cli" }
+    - { state: "latest", name: "php72u-fpm" }
     - { state: "latest", name: "php72u-bcmath" }
     - { state: "latest", name: "php72u-gd" }
     - { state: "latest", name: "php72u-imap" }
@@ -74,12 +83,14 @@ _package:
     - { state: "latest", name: "php72u-xml" }
     - { state: "latest", name: "php72u-xmlrpc" }
   "7.1":
+    - { state: "latest", name: "redhat-lsb" }
     - { state: "latest", name: "GeoIP-data" }
     - { state: "latest", name: "ImageMagick" }
     - { state: "latest", name: "mysql" }
     - { state: "latest", name: "postgresql" }
     - { state: "latest", name: "sqlite" }
     - { state: "latest", name: "php71u-cli" }
+    - { state: "latest", name: "php71u-fpm" }
     - { state: "latest", name: "php71u-bcmath" }
     - { state: "latest", name: "php71u-gd" }
     - { state: "latest", name: "php71u-imap" }

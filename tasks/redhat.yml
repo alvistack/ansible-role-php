@@ -33,4 +33,6 @@
   loop: "{{ php_package }}"
   register: result
   until: result is succeeded
+  notify:
+    - php | systemctl restart
   tags: php
