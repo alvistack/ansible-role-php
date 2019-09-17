@@ -4,6 +4,9 @@
 
 ### Major Changes
 
+  - Abstract package parameters with multiple version support
+  - Install both php-cli and php-fpm
+
 ## 3.3.0 - 2019-08-27
 
 ### Major Changes

@@ -14,41 +14,131 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-_repository: [
-  { state: "present", repo: "ppa:ondrej/php" },
-]
-_package: [
-  { state: "latest", name: "geoip-database" },
-  { state: "latest", name: "geoip-database-extra" },
-  { state: "latest", name: "imagemagick" },
-  { state: "latest", name: "libssl-dev" },
-  { state: "latest", name: "mysql-client" },
-  { state: "latest", name: "postgresql-client" },
-  { state: "latest", name: "sqlite3" },
-  { state: "latest", name: "php5.6-cli" },
-  { state: "latest", name: "php-apcu" },
-  { state: "latest", name: "php-geoip" },
-  { state: "latest", name: "php-imagick" },
-  { state: "latest", name: "php-memcached" },
-  { state: "latest", name: "php-uuid" },
-  { state: "latest", name: "php-xdebug" },
-  { state: "latest", name: "php5.6-bcmath" },
-  { state: "latest", name: "php5.6-bz2" },
-  { state: "latest", name: "php5.6-curl" },
-  { state: "latest", name: "php5.6-gd" },
-  { state: "latest", name: "php5.6-imap" },
-  { state: "latest", name: "php5.6-intl" },
-  { state: "latest", name: "php5.6-json" },
-  { state: "latest", name: "php5.6-ldap" },
-  { state: "latest", name: "php5.6-mbstring" },
-  { state: "latest", name: "php5.6-mysql" },
-  { state: "latest", name: "php5.6-opcache" },
-  { state: "latest", name: "php5.6-pgsql" },
-  { state: "latest", name: "php5.6-soap" },
-  { state: "latest", name: "php5.6-sqlite3" },
-  { state: "latest", name: "php5.6-tidy" },
-  { state: "latest", name: "php5.6-xml" },
-  { state: "latest", name: "php5.6-xmlrpc" },
-  { state: "latest", name: "php5.6-xsl" },
-  { state: "latest", name: "php5.6-zip" },
-]
+_php_fpm_service:
+  "7.3": "php7.3-fpm"
+  "7.2": "php7.2-fpm"
+  "7.1": "php7.1-fpm"
+
+_repository:
+  "7.3":
+    - { state: "present", repo: "ppa:ondrej/php" }
+  "7.2":
+    - { state: "present", repo: "ppa:ondrej/php" }
+  "7.1":
+    - { state: "present", repo: "ppa:ondrej/php" }
+
+_package:
+  "7.3":
+    - { state: "latest", name: "lsb-base" }
+    - { state: "latest", name: "lsb-release" }
+    - { state: "latest", name: "geoip-database" }
+    - { state: "latest", name: "geoip-database-extra" }
+    - { state: "latest", name: "imagemagick" }
+    - { state: "latest", name: "libssl-dev" }
+    - { state: "latest", name: "mysql-client" }
+    - { state: "latest", name: "postgresql-client" }
+    - { state: "latest", name: "sqlite3" }
+    - { state: "latest", name: "php7.3-cli" }
+    - { state: "latest", name: "php7.3-fpm" }
+    - { state: "latest", name: "php-apcu" }
+    - { state: "latest", name: "php-apcu-bc" }
+    - { state: "latest", name: "php-geoip" }
+    - { state: "latest", name: "php-imagick" }
+    - { state: "latest", name: "php-memcached" }
+    - { state: "latest", name: "php-uuid" }
+    - { state: "latest", name: "php-xdebug" }
+    - { state: "latest", name: "php7.3-bcmath" }
+    - { state: "latest", name: "php7.3-bz2" }
+    - { state: "latest", name: "php7.3-curl" }
+    - { state: "latest", name: "php7.3-gd" }
+    - { state: "latest", name: "php7.3-imap" }
+    - { state: "latest", name: "php7.3-intl" }
+    - { state: "latest", name: "php7.3-json" }
+    - { state: "latest", name: "php7.3-ldap" }
+    - { state: "latest", name: "php7.3-mbstring" }
+    - { state: "latest", name: "php7.3-mysql" }
+    - { state: "latest", name: "php7.3-opcache" }
+    - { state: "latest", name: "php7.3-pgsql" }
+    - { state: "latest", name: "php7.3-soap" }
+    - { state: "latest", name: "php7.3-sqlite3" }
+    - { state: "latest", name: "php7.3-tidy" }
+    - { state: "latest", name: "php7.3-xml" }
+    - { state: "latest", name: "php7.3-xmlrpc" }
+    - { state: "latest", name: "php7.3-xsl" }
+    - { state: "latest", name: "php7.3-zip" }
+  "7.2":
+    - { state: "latest", name: "lsb-base" }
+    - { state: "latest", name: "lsb-release" }
+    - { state: "latest", name: "geoip-database" }
+    - { state: "latest", name: "geoip-database-extra" }
+    - { state: "latest", name: "imagemagick" }
+    - { state: "latest", name: "libssl-dev" }
+    - { state: "latest", name: "mysql-client" }
+    - { state: "latest", name: "postgresql-client" }
+    - { state: "latest", name: "sqlite3" }
+    - { state: "latest", name: "php7.2-cli" }
+    - { state: "latest", name: "php7.2-fpm" }
+    - { state: "latest", name: "php-apcu" }
+    - { state: "latest", name: "php-apcu-bc" }
+    - { state: "latest", name: "php-geoip" }
+    - { state: "latest", name: "php-imagick" }
+    - { state: "latest", name: "php-memcached" }
+    - { state: "latest", name: "php-uuid" }
+    - { state: "latest", name: "php-xdebug" }
+    - { state: "latest", name: "php7.2-bcmath" }
+    - { state: "latest", name: "php7.2-bz2" }
+    - { state: "latest", name: "php7.2-curl" }
+    - { state: "latest", name: "php7.2-gd" }
+    - { state: "latest", name: "php7.2-imap" }
+    - { state: "latest", name: "php7.2-intl" }
+    - { state: "latest", name: "php7.2-json" }
+    - { state: "latest", name: "php7.2-ldap" }
+    - { state: "latest", name: "php7.2-mbstring" }
+    - { state: "latest", name: "php7.2-mysql" }
+    - { state: "latest", name: "php7.2-opcache" }
+    - { state: "latest", name: "php7.2-pgsql" }
+    - { state: "latest", name: "php7.2-soap" }
+    - { state: "latest", name: "php7.2-sqlite3" }
+    - { state: "latest", name: "php7.2-tidy" }
+    - { state: "latest", name: "php7.2-xml" }
+    - { state: "latest", name: "php7.2-xmlrpc" }
+    - { state: "latest", name: "php7.2-xsl" }
+    - { state: "latest", name: "php7.2-zip" }
+  "7.1":
+    - { state: "latest", name: "lsb-base" }
+    - { state: "latest", name: "lsb-release" }
+    - { state: "latest", name: "geoip-database" }
+    - { state: "latest", name: "geoip-database-extra" }
+    - { state: "latest", name: "imagemagick" }
+    - { state: "latest", name: "libssl-dev" }
+    - { state: "latest", name: "mysql-client" }
+    - { state: "latest", name: "postgresql-client" }
+    - { state: "latest", name: "sqlite3" }
+    - { state: "latest", name: "php7.1-cli" }
+    - { state: "latest", name: "php7.1-fpm" }
+    - { state: "latest", name: "php-apcu" }
+    - { state: "latest", name: "php-apcu-bc" }
+    - { state: "latest", name: "php-geoip" }
+    - { state: "latest", name: "php-imagick" }
+    - { state: "latest", name: "php-memcached" }
+    - { state: "latest", name: "php-uuid" }
+    - { state: "latest", name: "php-xdebug" }
+    - { state: "latest", name: "php7.1-bcmath" }
+    - { state: "latest", name: "php7.1-bz2" }
+    - { state: "latest", name: "php7.1-curl" }
+    - { state: "latest", name: "php7.1-gd" }
+    - { state: "latest", name: "php7.1-imap" }
+    - { state: "latest", name: "php7.1-intl" }
+    - { state: "latest", name: "php7.1-json" }
+    - { state: "latest", name: "php7.1-ldap" }
+    - { state: "latest", name: "php7.1-mbstring" }
+    - { state: "latest", name: "php7.1-mysql" }
+    - { state: "latest", name: "php7.1-opcache" }
+    - { state: "latest", name: "php7.1-pgsql" }
+    - { state: "latest", name: "php7.1-soap" }
+    - { state: "latest", name: "php7.1-sqlite3" }
+    - { state: "latest", name: "php7.1-tidy" }
+    - { state: "latest", name: "php7.1-xml" }
+    - { state: "latest", name: "php7.1-xmlrpc" }
+    - { state: "latest", name: "php7.1-xsl" }
+    - { state: "latest", name: "php7.1-zip" }

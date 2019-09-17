@@ -18,7 +18,7 @@
   apt_repository:
     repo: "{{ item.repo }}"
     state: "{{ item.state }}"
-  loop: "{{ repository }}"
+  loop: "{{ php_repository }}"
   tags: php
 
 - name: apt-get install
@@ -26,7 +26,9 @@
     name: "{{ item.name }}"
     state: "{{ item.state }}"
     install_recommends: false
-  loop: "{{ package }}"
+  loop: "{{ php_package }}"
   register: result
   until: result is succeeded
+  notify:
+    - php | systemctl restart
   tags: php
