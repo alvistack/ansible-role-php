@@ -14,11 +14,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Specify PHP repositorys.
-repository: "{{ _repository }}"
+# PHP release.
+php_release: "7.3"
+
+# Specify PHP repository.
+php_repository: "{{ _repository[php_release] }}"
 
 # Specify PHP packages.
-package: "{{ _package }}"
+php_package: "{{ _package[php_release] }}"
 
 # Specify CGR packages.
 cgr: "{{ _cgr }}"

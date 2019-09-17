@@ -14,11 +14,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-_cgr: [
-  { state: "require", name: "drupal/coder:@stable" },
-  { state: "require", name: "drush/drush-launcher:@stable" },
-  { state: "require", name: "friendsofphp/php-cs-fixer:@stable" },
-  { state: "require", name: "phpunit/phpunit:@stable" },
-  { state: "require", name: "sami/sami:@stable" },
-  { state: "require", name: "squizlabs/php_codesniffer:@stable" },
-]
+_cgr:
+  - { state: "require", name: "drupal/coder:@stable" }
+  - { state: "require", name: "drush/drush-launcher:@stable" }
+  - { state: "require", name: "friendsofphp/php-cs-fixer:@stable" }
+  - { state: "require", name: "phpunit/phpunit:@stable" }
+  - { state: "require", name: "sami/sami:@stable" }
+  - { state: "require", name: "squizlabs/php_codesniffer:@stable" }
