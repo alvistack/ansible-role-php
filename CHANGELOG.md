@@ -1,9 +1,14 @@
 # Ansible Role for PHP
 
-## 3.4.0 - TBC
+## 3.5.0 - TBC
 
 ### Major Changes
 
+## 3.4.0 - 2019-09-18
+
+### Major Changes
+
+  - Run molecule test manually on Travis CI
   - Abstract package parameters with multiple version support
   - Install both php-cli and php-fpm
 
