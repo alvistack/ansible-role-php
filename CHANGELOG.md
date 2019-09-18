@@ -4,6 +4,7 @@
 
 ### Major Changes
 
+  - Run molecule test manually on Travis CI
   - Abstract package parameters with multiple version support
   - Install both php-cli and php-fpm
 
