@@ -21,11 +21,11 @@ _php_fpm_service:
 
 _repository:
   "7.3":
-    - { state: "present", name: "devel:languages:php", repo: "https://download.opensuse.org/repositories/devel:/languages:/php/openSUSE_Leap_15.0" }
+    - { state: "present", name: "devel:languages:php", repo: "https://download.opensuse.org/repositories/devel:/languages:/php/openSUSE_Leap_15.1" }
   "7.2":
-    - { state: "present", name: "devel:languages:php:php72", repo: "http://download.opensuse.org/repositories/devel:/languages:/php:/php72/openSUSE_Leap_15.0" }
+    - { state: "present", name: "devel:languages:php:php72", repo: "http://download.opensuse.org/repositories/devel:/languages:/php:/php72/openSUSE_Leap_15.1" }
   "7.1":
-    - { state: "present", name: "devel:languages:php:php71", repo: "http://download.opensuse.org/repositories/devel:/languages:/php:/php71/openSUSE_Leap_15.0" }
+    - { state: "present", name: "devel:languages:php:php71", repo: "http://download.opensuse.org/repositories/devel:/languages:/php:/php71/openSUSE_Leap_15.1" }
 
 _package:
   "7.3":
