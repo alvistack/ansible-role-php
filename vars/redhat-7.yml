@@ -21,10 +21,13 @@ _php_fpm_service:
 
 _repository:
   "7.3":
+    - { state: "latest", name: "https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm" }
     - { state: "latest", name: "https://rhel7.iuscommunity.org/ius-release.rpm" }
   "7.2":
+    - { state: "latest", name: "https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm" }
     - { state: "latest", name: "https://rhel7.iuscommunity.org/ius-release.rpm" }
   "7.1":
+    - { state: "latest", name: "https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm" }
     - { state: "latest", name: "https://rhel7.iuscommunity.org/ius-release.rpm" }
 
 _package:
