@@ -52,7 +52,6 @@ _package:
     - { state: "latest", name: "php73-pecl-geoip" }
     - { state: "latest", name: "php73-pecl-imagick" }
     - { state: "latest", name: "php73-pecl-memcached" }
-    - { state: "latest", name: "php73-pecl-xdebug" }
     - { state: "latest", name: "php73-pgsql" }
     - { state: "latest", name: "php73-soap" }
     - { state: "latest", name: "php73-tidy" }
@@ -79,7 +78,6 @@ _package:
     - { state: "latest", name: "php72u-pecl-geoip" }
     - { state: "latest", name: "php72u-pecl-imagick" }
     - { state: "latest", name: "php72u-pecl-memcached" }
-    - { state: "latest", name: "php72u-pecl-xdebug" }
     - { state: "latest", name: "php72u-pgsql" }
     - { state: "latest", name: "php72u-soap" }
     - { state: "latest", name: "php72u-tidy" }
@@ -106,7 +104,6 @@ _package:
     - { state: "latest", name: "php71u-pecl-geoip" }
     - { state: "latest", name: "php71u-pecl-imagick" }
     - { state: "latest", name: "php71u-pecl-memcached" }
-    - { state: "latest", name: "php71u-pecl-xdebug" }
     - { state: "latest", name: "php71u-pgsql" }
     - { state: "latest", name: "php71u-soap" }
     - { state: "latest", name: "php71u-tidy" }

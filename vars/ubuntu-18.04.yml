@@ -47,7 +47,6 @@ _package:
     - { state: "latest", name: "php-memcached" }
     - { state: "latest", name: "php-redis" }
     - { state: "latest", name: "php-uuid" }
-    - { state: "latest", name: "php-xdebug" }
     - { state: "latest", name: "php7.3-bcmath" }
     - { state: "latest", name: "php7.3-bz2" }
     - { state: "latest", name: "php7.3-curl" }
@@ -86,7 +85,6 @@ _package:
     - { state: "latest", name: "php-memcached" }
     - { state: "latest", name: "php-redis" }
     - { state: "latest", name: "php-uuid" }
-    - { state: "latest", name: "php-xdebug" }
     - { state: "latest", name: "php7.2-bcmath" }
     - { state: "latest", name: "php7.2-bz2" }
     - { state: "latest", name: "php7.2-curl" }
@@ -125,7 +123,6 @@ _package:
     - { state: "latest", name: "php-memcached" }
     - { state: "latest", name: "php-redis" }
     - { state: "latest", name: "php-uuid" }
-    - { state: "latest", name: "php-xdebug" }
     - { state: "latest", name: "php7.1-bcmath" }
     - { state: "latest", name: "php7.1-bz2" }
     - { state: "latest", name: "php7.1-curl" }
