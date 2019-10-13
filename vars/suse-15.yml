@@ -36,6 +36,7 @@ _package:
     - { state: "latest", name: "ca-certificates" }
     - { state: "latest", name: "ca-certificates-cacert" }
     - { state: "latest", name: "ca-certificates-mozilla" }
+    - { state: "latest", name: "ca-certificates-steamtricks" }
     - { state: "latest", name: "mysql" }
     - { state: "latest", name: "postgresql" }
     - { state: "latest", name: "sqlite3" }
@@ -43,6 +44,7 @@ _package:
     - { state: "latest", name: "php7-fpm" }
     - { state: "latest", name: "php7-bcmath" }
     - { state: "latest", name: "php7-bz2" }
+    - { state: "latest", name: "php7-calendar" }
     - { state: "latest", name: "php7-curl" }
     - { state: "latest", name: "php7-gd" }
     - { state: "latest", name: "php7-intl" }
@@ -69,6 +71,7 @@ _package:
     - { state: "latest", name: "ca-certificates" }
     - { state: "latest", name: "ca-certificates-cacert" }
     - { state: "latest", name: "ca-certificates-mozilla" }
+    - { state: "latest", name: "ca-certificates-steamtricks" }
     - { state: "latest", name: "mysql" }
     - { state: "latest", name: "postgresql" }
     - { state: "latest", name: "sqlite3" }
@@ -76,6 +79,7 @@ _package:
     - { state: "latest", name: "php7-fpm" }
     - { state: "latest", name: "php7-bcmath" }
     - { state: "latest", name: "php7-bz2" }
+    - { state: "latest", name: "php7-calendar" }
     - { state: "latest", name: "php7-curl" }
     - { state: "latest", name: "php7-gd" }
     - { state: "latest", name: "php7-intl" }
@@ -102,6 +106,7 @@ _package:
     - { state: "latest", name: "ca-certificates" }
     - { state: "latest", name: "ca-certificates-cacert" }
     - { state: "latest", name: "ca-certificates-mozilla" }
+    - { state: "latest", name: "ca-certificates-steamtricks" }
     - { state: "latest", name: "mysql" }
     - { state: "latest", name: "postgresql" }
     - { state: "latest", name: "sqlite3" }
@@ -109,6 +114,7 @@ _package:
     - { state: "latest", name: "php7-fpm" }
     - { state: "latest", name: "php7-bcmath" }
     - { state: "latest", name: "php7-bz2" }
+    - { state: "latest", name: "php7-calendar" }
     - { state: "latest", name: "php7-curl" }
     - { state: "latest", name: "php7-gd" }
     - { state: "latest", name: "php7-intl" }
