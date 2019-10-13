@@ -46,6 +46,7 @@ _package:
     - { state: "latest", name: "php-imagick" }
     - { state: "latest", name: "php-memcached" }
     - { state: "latest", name: "php-redis" }
+    - { state: "latest", name: "php-ssh2" }
     - { state: "latest", name: "php-uuid" }
     - { state: "latest", name: "php-xdebug" }
     - { state: "latest", name: "php7.3-bcmath" }
@@ -85,6 +86,7 @@ _package:
     - { state: "latest", name: "php-imagick" }
     - { state: "latest", name: "php-memcached" }
     - { state: "latest", name: "php-redis" }
+    - { state: "latest", name: "php-ssh2" }
     - { state: "latest", name: "php-uuid" }
     - { state: "latest", name: "php-xdebug" }
     - { state: "latest", name: "php7.2-bcmath" }
@@ -124,6 +126,7 @@ _package:
     - { state: "latest", name: "php-imagick" }
     - { state: "latest", name: "php-memcached" }
     - { state: "latest", name: "php-redis" }
+    - { state: "latest", name: "php-ssh2" }
     - { state: "latest", name: "php-uuid" }
     - { state: "latest", name: "php-xdebug" }
     - { state: "latest", name: "php7.1-bcmath" }
