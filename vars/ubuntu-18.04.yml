@@ -35,9 +35,6 @@ _package:
     - { state: "latest", name: "geoip-database-extra" }
     - { state: "latest", name: "imagemagick" }
     - { state: "latest", name: "libssl-dev" }
-    - { state: "latest", name: "mysql-client" }
-    - { state: "latest", name: "postgresql-client" }
-    - { state: "latest", name: "sqlite3" }
     - { state: "latest", name: "php7.3-cli" }
     - { state: "latest", name: "php7.3-fpm" }
     - { state: "latest", name: "php-apcu" }
@@ -73,9 +70,6 @@ _package:
     - { state: "latest", name: "geoip-database-extra" }
     - { state: "latest", name: "imagemagick" }
     - { state: "latest", name: "libssl-dev" }
-    - { state: "latest", name: "mysql-client" }
-    - { state: "latest", name: "postgresql-client" }
-    - { state: "latest", name: "sqlite3" }
     - { state: "latest", name: "php7.2-cli" }
     - { state: "latest", name: "php7.2-fpm" }
     - { state: "latest", name: "php-apcu" }
@@ -111,9 +105,6 @@ _package:
     - { state: "latest", name: "geoip-database-extra" }
     - { state: "latest", name: "imagemagick" }
     - { state: "latest", name: "libssl-dev" }
-    - { state: "latest", name: "mysql-client" }
-    - { state: "latest", name: "postgresql-client" }
-    - { state: "latest", name: "sqlite3" }
     - { state: "latest", name: "php7.1-cli" }
     - { state: "latest", name: "php7.1-fpm" }
     - { state: "latest", name: "php-apcu" }
