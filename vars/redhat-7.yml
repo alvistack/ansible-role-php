@@ -15,33 +15,61 @@
 # limitations under the License.
 
 _php_fpm_service:
+  "7.4": "php-fpm"
   "7.3": "php-fpm"
   "7.2": "php-fpm"
-  "7.1": "php-fpm"
 
 _repository:
+  "7.4":
+    - { state: "latest", name: "https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm" }
+    - { state: "latest", name: "https://rpms.remirepo.net/enterprise/remi-release-7.rpm" }
   "7.3":
     - { state: "latest", name: "https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm" }
     - { state: "latest", name: "https://rpms.remirepo.net/enterprise/remi-release-7.rpm" }
   "7.2":
     - { state: "latest", name: "https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm" }
     - { state: "latest", name: "https://rpms.remirepo.net/enterprise/remi-release-7.rpm" }
-  "7.1":
-    - { state: "latest", name: "https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm" }
-    - { state: "latest", name: "https://rpms.remirepo.net/enterprise/remi-release-7.rpm" }
 
 _yum_config_manager:
+  "7.4":
+    - { state: "enable", name: "rhel-7-server-optional-rpms" }
+    - { state: "enable", name: "remi-php74" }
   "7.3":
     - { state: "enable", name: "rhel-7-server-optional-rpms" }
     - { state: "enable", name: "remi-php73" }
   "7.2":
     - { state: "enable", name: "rhel-7-server-optional-rpms" }
     - { state: "enable", name: "remi-php72" }
-  "7.1":
-    - { state: "enable", name: "rhel-7-server-optional-rpms" }
-    - { state: "enable", name: "remi-php71" }
 
 _package:
+  "7.4":
+    - { state: "latest", name: "redhat-lsb" }
+    - { state: "latest", name: "GeoIP-data" }
+    - { state: "latest", name: "ImageMagick" }
+    - { state: "latest", name: "php-cli" }
+    - { state: "latest", name: "php-fpm" }
+    - { state: "latest", name: "php-bcmath" }
+    - { state: "latest", name: "php-gd" }
+    - { state: "latest", name: "php-imap" }
+    - { state: "latest", name: "php-intl" }
+    - { state: "latest", name: "php-json" }
+    - { state: "latest", name: "php-ldap" }
+    - { state: "latest", name: "php-mbstring" }
+    - { state: "latest", name: "php-mysqlnd" }
+    - { state: "latest", name: "php-opcache" }
+    - { state: "latest", name: "php-pecl-apcu" }
+    - { state: "latest", name: "php-pecl-apcu-bc" }
+    - { state: "latest", name: "php-pecl-geoip" }
+    - { state: "latest", name: "php-pecl-imagick" }
+    - { state: "latest", name: "php-pecl-memcached" }
+    - { state: "latest", name: "php-pecl-redis" }
+    - { state: "latest", name: "php-pecl-uuid" }
+    - { state: "latest", name: "php-pgsql" }
+    - { state: "latest", name: "php-soap" }
+    - { state: "latest", name: "php-tidy" }
+    - { state: "latest", name: "php-xml" }
+    - { state: "latest", name: "php-xmlrpc" }
+    - { state: "latest", name: "php-zip" }
   "7.3":
     - { state: "latest", name: "redhat-lsb" }
     - { state: "latest", name: "GeoIP-data" }
@@ -71,34 +99,6 @@ _package:
     - { state: "latest", name: "php-xmlrpc" }
     - { state: "latest", name: "php-zip" }
   "7.2":
-    - { state: "latest", name: "redhat-lsb" }
-    - { state: "latest", name: "GeoIP-data" }
-    - { state: "latest", name: "ImageMagick" }
-    - { state: "latest", name: "php-cli" }
-    - { state: "latest", name: "php-fpm" }
-    - { state: "latest", name: "php-bcmath" }
-    - { state: "latest", name: "php-gd" }
-    - { state: "latest", name: "php-imap" }
-    - { state: "latest", name: "php-intl" }
-    - { state: "latest", name: "php-json" }
-    - { state: "latest", name: "php-ldap" }
-    - { state: "latest", name: "php-mbstring" }
-    - { state: "latest", name: "php-mysqlnd" }
-    - { state: "latest", name: "php-opcache" }
-    - { state: "latest", name: "php-pecl-apcu" }
-    - { state: "latest", name: "php-pecl-apcu-bc" }
-    - { state: "latest", name: "php-pecl-geoip" }
-    - { state: "latest", name: "php-pecl-imagick" }
-    - { state: "latest", name: "php-pecl-memcached" }
-    - { state: "latest", name: "php-pecl-redis" }
-    - { state: "latest", name: "php-pecl-uuid" }
-    - { state: "latest", name: "php-pgsql" }
-    - { state: "latest", name: "php-soap" }
-    - { state: "latest", name: "php-tidy" }
-    - { state: "latest", name: "php-xml" }
-    - { state: "latest", name: "php-xmlrpc" }
-    - { state: "latest", name: "php-zip" }
-  "7.1":
     - { state: "latest", name: "redhat-lsb" }
     - { state: "latest", name: "GeoIP-data" }
     - { state: "latest", name: "ImageMagick" }
