@@ -15,19 +15,55 @@
 # limitations under the License.
 
 _php_fpm_service:
+  "7.4": "php7.4-fpm"
   "7.3": "php7.3-fpm"
   "7.2": "php7.2-fpm"
-  "7.1": "php7.1-fpm"
 
 _repository:
+  "7.4":
+    - { state: "present", repo: "ppa:ondrej/php" }
   "7.3":
     - { state: "present", repo: "ppa:ondrej/php" }
   "7.2":
     - { state: "present", repo: "ppa:ondrej/php" }
-  "7.1":
-    - { state: "present", repo: "ppa:ondrej/php" }
 
 _package:
+  "7.4":
+    - { state: "latest", name: "lsb-base" }
+    - { state: "latest", name: "lsb-release" }
+    - { state: "latest", name: "geoip-database" }
+    - { state: "latest", name: "geoip-database-extra" }
+    - { state: "latest", name: "imagemagick" }
+    - { state: "latest", name: "libssl-dev" }
+    - { state: "latest", name: "php7.4-cli" }
+    - { state: "latest", name: "php7.4-fpm" }
+    - { state: "latest", name: "php-apcu" }
+    - { state: "latest", name: "php-apcu-bc" }
+    - { state: "latest", name: "php-geoip" }
+    - { state: "latest", name: "php-imagick" }
+    - { state: "latest", name: "php-memcached" }
+    - { state: "latest", name: "php-redis" }
+    - { state: "latest", name: "php-ssh2" }
+    - { state: "latest", name: "php-uuid" }
+    - { state: "latest", name: "php7.4-bcmath" }
+    - { state: "latest", name: "php7.4-bz2" }
+    - { state: "latest", name: "php7.4-curl" }
+    - { state: "latest", name: "php7.4-gd" }
+    - { state: "latest", name: "php7.4-imap" }
+    - { state: "latest", name: "php7.4-intl" }
+    - { state: "latest", name: "php7.4-json" }
+    - { state: "latest", name: "php7.4-ldap" }
+    - { state: "latest", name: "php7.4-mbstring" }
+    - { state: "latest", name: "php7.4-mysql" }
+    - { state: "latest", name: "php7.4-opcache" }
+    - { state: "latest", name: "php7.4-pgsql" }
+    - { state: "latest", name: "php7.4-soap" }
+    - { state: "latest", name: "php7.4-sqlite3" }
+    - { state: "latest", name: "php7.4-tidy" }
+    - { state: "latest", name: "php7.4-xml" }
+    - { state: "latest", name: "php7.4-xmlrpc" }
+    - { state: "latest", name: "php7.4-xsl" }
+    - { state: "latest", name: "php7.4-zip" }
   "7.3":
     - { state: "latest", name: "lsb-base" }
     - { state: "latest", name: "lsb-release" }
@@ -100,39 +136,3 @@ _package:
     - { state: "latest", name: "php7.2-xmlrpc" }
     - { state: "latest", name: "php7.2-xsl" }
     - { state: "latest", name: "php7.2-zip" }
-  "7.1":
-    - { state: "latest", name: "lsb-base" }
-    - { state: "latest", name: "lsb-release" }
-    - { state: "latest", name: "geoip-database" }
-    - { state: "latest", name: "geoip-database-extra" }
-    - { state: "latest", name: "imagemagick" }
-    - { state: "latest", name: "libssl-dev" }
-    - { state: "latest", name: "php7.1-cli" }
-    - { state: "latest", name: "php7.1-fpm" }
-    - { state: "latest", name: "php-apcu" }
-    - { state: "latest", name: "php-apcu-bc" }
-    - { state: "latest", name: "php-geoip" }
-    - { state: "latest", name: "php-imagick" }
-    - { state: "latest", name: "php-memcached" }
-    - { state: "latest", name: "php-redis" }
-    - { state: "latest", name: "php-ssh2" }
-    - { state: "latest", name: "php-uuid" }
-    - { state: "latest", name: "php7.1-bcmath" }
-    - { state: "latest", name: "php7.1-bz2" }
-    - { state: "latest", name: "php7.1-curl" }
-    - { state: "latest", name: "php7.1-gd" }
-    - { state: "latest", name: "php7.1-imap" }
-    - { state: "latest", name: "php7.1-intl" }
-    - { state: "latest", name: "php7.1-json" }
-    - { state: "latest", name: "php7.1-ldap" }
-    - { state: "latest", name: "php7.1-mbstring" }
-    - { state: "latest", name: "php7.1-mysql" }
-    - { state: "latest", name: "php7.1-opcache" }
-    - { state: "latest", name: "php7.1-pgsql" }
-    - { state: "latest", name: "php7.1-soap" }
-    - { state: "latest", name: "php7.1-sqlite3" }
-    - { state: "latest", name: "php7.1-tidy" }
-    - { state: "latest", name: "php7.1-xml" }
-    - { state: "latest", name: "php7.1-xmlrpc" }
-    - { state: "latest", name: "php7.1-xsl" }
-    - { state: "latest", name: "php7.1-zip" }
