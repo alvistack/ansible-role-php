@@ -25,6 +25,13 @@
   ignore_errors: true
   tags: php
 
+- name: yum-config-manager --enable
+  command: yum-config-manager --{{ item.state }} {{ item.name }}
+  loop: "{{ _yum_config_manager[php_release] }}"
+  changed_when: false
+  ignore_errors: true
+  tags: php
+
 - name: yum install
   yum:
     name: "{{ item.name }}"

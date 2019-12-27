@@ -22,90 +22,104 @@ _php_fpm_service:
 _repository:
   "7.3":
     - { state: "latest", name: "https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm" }
-    - { state: "latest", name: "https://centos7.iuscommunity.org/ius-release.rpm" }
+    - { state: "latest", name: "https://rpms.remirepo.net/enterprise/remi-release-7.rpm" }
   "7.2":
     - { state: "latest", name: "https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm" }
-    - { state: "latest", name: "https://centos7.iuscommunity.org/ius-release.rpm" }
+    - { state: "latest", name: "https://rpms.remirepo.net/enterprise/remi-release-7.rpm" }
   "7.1":
     - { state: "latest", name: "https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm" }
-    - { state: "latest", name: "https://centos7.iuscommunity.org/ius-release.rpm" }
+    - { state: "latest", name: "https://rpms.remirepo.net/enterprise/remi-release-7.rpm" }
+
+_yum_config_manager:
+  "7.3":
+    - { state: "enable", name: "remi-php73" }
+  "7.2":
+    - { state: "enable", name: "remi-php72" }
+  "7.1":
+    - { state: "enable", name: "remi-php71" }
 
 _package:
   "7.3":
     - { state: "latest", name: "redhat-lsb" }
     - { state: "latest", name: "GeoIP-data" }
     - { state: "latest", name: "ImageMagick" }
-    - { state: "latest", name: "mysql" }
-    - { state: "latest", name: "postgresql" }
-    - { state: "latest", name: "sqlite" }
-    - { state: "latest", name: "php73-cli" }
-    - { state: "latest", name: "php73-fpm" }
-    - { state: "latest", name: "php73-bcmath" }
-    - { state: "latest", name: "php73-gd" }
-    - { state: "latest", name: "php73-imap" }
-    - { state: "latest", name: "php73-json" }
-    - { state: "latest", name: "php73-ldap" }
-    - { state: "latest", name: "php73-mbstring" }
-    - { state: "latest", name: "php73-mysqlnd" }
-    - { state: "latest", name: "php73-opcache" }
-    - { state: "latest", name: "php73-pecl-apcu" }
-    - { state: "latest", name: "php73-pecl-geoip" }
-    - { state: "latest", name: "php73-pecl-imagick" }
-    - { state: "latest", name: "php73-pecl-memcached" }
-    - { state: "latest", name: "php73-pgsql" }
-    - { state: "latest", name: "php73-soap" }
-    - { state: "latest", name: "php73-tidy" }
-    - { state: "latest", name: "php73-xml" }
-    - { state: "latest", name: "php73-xmlrpc" }
+    - { state: "latest", name: "php-cli" }
+    - { state: "latest", name: "php-fpm" }
+    - { state: "latest", name: "php-bcmath" }
+    - { state: "latest", name: "php-gd" }
+    - { state: "latest", name: "php-imap" }
+    - { state: "latest", name: "php-intl" }
+    - { state: "latest", name: "php-json" }
+    - { state: "latest", name: "php-ldap" }
+    - { state: "latest", name: "php-mbstring" }
+    - { state: "latest", name: "php-mysqlnd" }
+    - { state: "latest", name: "php-opcache" }
+    - { state: "latest", name: "php-pecl-apcu" }
+    - { state: "latest", name: "php-pecl-apcu-bc" }
+    - { state: "latest", name: "php-pecl-geoip" }
+    - { state: "latest", name: "php-pecl-imagick" }
+    - { state: "latest", name: "php-pecl-memcached" }
+    - { state: "latest", name: "php-pecl-redis" }
+    - { state: "latest", name: "php-pecl-uuid" }
+    - { state: "latest", name: "php-pgsql" }
+    - { state: "latest", name: "php-soap" }
+    - { state: "latest", name: "php-tidy" }
+    - { state: "latest", name: "php-xml" }
+    - { state: "latest", name: "php-xmlrpc" }
+    - { state: "latest", name: "php-zip" }
   "7.2":
     - { state: "latest", name: "redhat-lsb" }
     - { state: "latest", name: "GeoIP-data" }
     - { state: "latest", name: "ImageMagick" }
-    - { state: "latest", name: "mysql" }
-    - { state: "latest", name: "postgresql" }
-    - { state: "latest", name: "sqlite" }
-    - { state: "latest", name: "php72u-cli" }
-    - { state: "latest", name: "php72u-fpm" }
-    - { state: "latest", name: "php72u-bcmath" }
-    - { state: "latest", name: "php72u-gd" }
-    - { state: "latest", name: "php72u-imap" }
-    - { state: "latest", name: "php72u-json" }
-    - { state: "latest", name: "php72u-ldap" }
-    - { state: "latest", name: "php72u-mbstring" }
-    - { state: "latest", name: "php72u-mysqlnd" }
-    - { state: "latest", name: "php72u-opcache" }
-    - { state: "latest", name: "php72u-pecl-apcu" }
-    - { state: "latest", name: "php72u-pecl-geoip" }
-    - { state: "latest", name: "php72u-pecl-imagick" }
-    - { state: "latest", name: "php72u-pecl-memcached" }
-    - { state: "latest", name: "php72u-pgsql" }
-    - { state: "latest", name: "php72u-soap" }
-    - { state: "latest", name: "php72u-tidy" }
-    - { state: "latest", name: "php72u-xml" }
-    - { state: "latest", name: "php72u-xmlrpc" }
+    - { state: "latest", name: "php-cli" }
+    - { state: "latest", name: "php-fpm" }
+    - { state: "latest", name: "php-bcmath" }
+    - { state: "latest", name: "php-gd" }
+    - { state: "latest", name: "php-imap" }
+    - { state: "latest", name: "php-intl" }
+    - { state: "latest", name: "php-json" }
+    - { state: "latest", name: "php-ldap" }
+    - { state: "latest", name: "php-mbstring" }
+    - { state: "latest", name: "php-mysqlnd" }
+    - { state: "latest", name: "php-opcache" }
+    - { state: "latest", name: "php-pecl-apcu" }
+    - { state: "latest", name: "php-pecl-apcu-bc" }
+    - { state: "latest", name: "php-pecl-geoip" }
+    - { state: "latest", name: "php-pecl-imagick" }
+    - { state: "latest", name: "php-pecl-memcached" }
+    - { state: "latest", name: "php-pecl-redis" }
+    - { state: "latest", name: "php-pecl-uuid" }
+    - { state: "latest", name: "php-pgsql" }
+    - { state: "latest", name: "php-soap" }
+    - { state: "latest", name: "php-tidy" }
+    - { state: "latest", name: "php-xml" }
+    - { state: "latest", name: "php-xmlrpc" }
+    - { state: "latest", name: "php-zip" }
   "7.1":
     - { state: "latest", name: "redhat-lsb" }
     - { state: "latest", name: "GeoIP-data" }
     - { state: "latest", name: "ImageMagick" }
-    - { state: "latest", name: "mysql" }
-    - { state: "latest", name: "postgresql" }
-    - { state: "latest", name: "sqlite" }
-    - { state: "latest", name: "php71u-cli" }
-    - { state: "latest", name: "php71u-fpm" }
-    - { state: "latest", name: "php71u-bcmath" }
-    - { state: "latest", name: "php71u-gd" }
-    - { state: "latest", name: "php71u-imap" }
-    - { state: "latest", name: "php71u-json" }
-    - { state: "latest", name: "php71u-ldap" }
-    - { state: "latest", name: "php71u-mbstring" }
-    - { state: "latest", name: "php71u-mysqlnd" }
-    - { state: "latest", name: "php71u-opcache" }
-    - { state: "latest", name: "php71u-pecl-apcu" }
-    - { state: "latest", name: "php71u-pecl-geoip" }
-    - { state: "latest", name: "php71u-pecl-imagick" }
-    - { state: "latest", name: "php71u-pecl-memcached" }
-    - { state: "latest", name: "php71u-pgsql" }
-    - { state: "latest", name: "php71u-soap" }
-    - { state: "latest", name: "php71u-tidy" }
-    - { state: "latest", name: "php71u-xml" }
-    - { state: "latest", name: "php71u-xmlrpc" }
+    - { state: "latest", name: "php-cli" }
+    - { state: "latest", name: "php-fpm" }
+    - { state: "latest", name: "php-bcmath" }
+    - { state: "latest", name: "php-gd" }
+    - { state: "latest", name: "php-imap" }
+    - { state: "latest", name: "php-intl" }
+    - { state: "latest", name: "php-json" }
+    - { state: "latest", name: "php-ldap" }
+    - { state: "latest", name: "php-mbstring" }
+    - { state: "latest", name: "php-mysqlnd" }
+    - { state: "latest", name: "php-opcache" }
+    - { state: "latest", name: "php-pecl-apcu" }
+    - { state: "latest", name: "php-pecl-apcu-bc" }
+    - { state: "latest", name: "php-pecl-geoip" }
+    - { state: "latest", name: "php-pecl-imagick" }
+    - { state: "latest", name: "php-pecl-memcached" }
+    - { state: "latest", name: "php-pecl-redis" }
+    - { state: "latest", name: "php-pecl-uuid" }
+    - { state: "latest", name: "php-pgsql" }
+    - { state: "latest", name: "php-soap" }
+    - { state: "latest", name: "php-tidy" }
+    - { state: "latest", name: "php-xml" }
+    - { state: "latest", name: "php-xmlrpc" }
+    - { state: "latest", name: "php-zip" }
