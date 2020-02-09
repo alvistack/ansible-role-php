@@ -43,16 +43,22 @@
       changed_when: result is not succeeded
 
     - name: composer --version
+      environment:
+        PATH: "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
       command: composer --version
       register: result
       changed_when: result is not succeeded
 
     - name: phpunit --version
+      environment:
+        PATH: "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
       command: phpunit --version
       register: result
       changed_when: result is not succeeded
 
     - name: phpcs --version
+      environment:
+        PATH: "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
       command: phpcs --version
       register: result
       changed_when: result is not succeeded
