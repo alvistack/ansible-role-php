@@ -85,11 +85,9 @@
   tags: php
 
 - name: composer self-update (stable channel)
-  shell: |
-    set -o pipefail
-    su -l -s /bin/bash -c 'composer self-update --stable --no-interaction'
-  args:
-    executable: "/bin/bash"
+  environment:
+    PATH: "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+  command: composer self-update --stable --no-interaction
   register: result
   until: result is succeeded
   changed_when: "'You are already using composer' not in result.stderr"
@@ -97,22 +95,19 @@
   tags: php
 
 - name: composer global init
-  shell: |
-    set -o pipefail
-    su -l -s /bin/bash -c 'composer global init --no-interaction'
+  environment:
+    PATH: "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+  command: composer global init --no-interaction
   args:
-    executable: "/bin/bash"
     creates: "/usr/local/share/composer/composer.json"
   register: result
   changed_when: result is not succeeded
   tags: php
 
 - name: composer global require
-  shell: |
-    set -o pipefail
-    su -l -s /bin/bash -c 'composer global {{ item.state }} {{ item.name }} --no-interaction'
-  args:
-    executable: "/bin/bash"
+  environment:
+    PATH: "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+  command: composer global {{ item.state }} {{ item.name }} --no-interaction
   loop:
     - { state: 'require', name: 'hirak/prestissimo:@stable' }
     - { state: 'require', name: 'consolidation/cgr:@stable' }
@@ -122,22 +117,18 @@
   tags: php
 
 - name: composer global update
-  shell: |
-    set -o pipefail
-    su -l -s /bin/bash -c 'composer global update'
-  args:
-    executable: "/bin/bash"
+  environment:
+    PATH: "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+  command: composer global update
   register: result
   until: result is succeeded
   changed_when: result is not succeeded
   tags: php
 
 - name: cgr require
-  shell: |
-    set -o pipefail
-    su -l -s /bin/bash -c 'cgr {{ item.state }} {{ item.name }}'
-  args:
-    executable: "/bin/bash"
+  environment:
+    PATH: "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+  command: cgr {{ item.state }} {{ item.name }}
   loop: "{{ cgr }}"
   register: result
   until: result is succeeded
@@ -145,11 +136,9 @@
   tags: php
 
 - name: cgr update
-  shell: |
-    set -o pipefail
-    su -l -s /bin/bash -c 'cgr update'
-  args:
-    executable: "/bin/bash"
+  environment:
+    PATH: "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+  command: cgr update
   register: result
   until: result is succeeded
   changed_when: "'Package operations:' in result.stderr"
