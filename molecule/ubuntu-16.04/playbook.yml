@@ -64,9 +64,11 @@
       changed_when: result is not succeeded
 
     - name: su -l -s /bin/bash -c 'echo $COMPOSER_HOME'
-      command: su -l -s /bin/bash -c 'echo $COMPOSER_HOME'
+      shell: |
+        set -o pipefail
+        su -l -s /bin/bash -c 'echo $COMPOSER_HOME'
       args:
-        warn: false
+        executable: "/bin/bash"
       register: result
       changed_when: result is not succeeded
       failed_when: "'/usr/local/share/composer' not in result.stdout"
