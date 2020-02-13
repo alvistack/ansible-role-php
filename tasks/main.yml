@@ -176,6 +176,10 @@
   changed_when: "'Package operations:' in result.stderr"
   tags: php
 
+- name: flush handlers
+  meta: flush_handlers
+  tags: php
+
 - name: enable service
   service:
     name: "{{ php_fpm_service }}"
@@ -183,8 +187,4 @@
     enabled: true
   changed_when: false
   ignore_errors: true
-  tags: php
-
-- name: flush handlers
-  meta: flush_handlers
   tags: php
