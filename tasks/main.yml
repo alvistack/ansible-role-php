@@ -57,6 +57,7 @@
     state: "{{ item.state | default('directory') }}"
   loop:
     - { dest: "/usr/local/share/composer" }
+    - { dest: "{{ composer_download.dest | dirname }}" }
   tags: php
 
 - name: copy templates
@@ -70,31 +71,44 @@
     - { dest: "/etc/profile.d/composer.sh" }
   tags: php
 
-- name: install composer globally (snapshot channel)
-  shell: |
-    set -o pipefail
-    curl -skL https://getcomposer.org/installer | php -- \
-      --snapshot \
-      --install-dir=/usr/local/bin \
-      --filename=composer
-  args:
-    executable: "/bin/bash"
-    creates: "/usr/local/bin/composer"
-  register: result
-  until: result is succeeded
+- name: download archive
+  vars:
+    ansible_python_interpreter: "python3"
+  get_url:
+    url: "{{ item.url }}"
+    dest: "{{ item.dest }}"
+    checksum: "{{ item.checksum }}"
+    timeout: 300
+  loop:
+    - "{{ composer_download }}"
+  register: get_url_result
+  until: get_url_result is succeeded
   tags: php
 
-- name: composer self-update (stable channel)
-  environment:
-    PATH: "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-    COMPOSER_HOME: "/usr/local/share/composer"
-    COMPOSER_BIN_DIR: "/usr/local/bin"
-    CGR_BIN_DIR: "/usr/local/bin"
-  command: composer self-update --stable --no-interaction
-  register: result
-  until: result is succeeded
-  changed_when: "'You are already using composer' not in result.stderr"
-  ignore_errors: true
+- name: unarchive package
+  shell: |
+    set -o pipefail
+    cd /usr/local/bin
+    TMP_DIR="`mktemp -d`" \
+      && cp {{ composer_download.dest }} $TMP_DIR/composer \
+      && chown root:root $TMP_DIR/composer \
+      && chmod 0755 $TMP_DIR/composer \
+      && mv $TMP_DIR/composer . \
+      && rm -rf $TMP_DIR
+  args:
+    executable: "/bin/bash"
+  when: get_url_result is changed
+  tags: php
+
+- name: prepare files
+  file:
+    dest: "{{ item.dest }}"
+    owner: "{{ item.owner | default('root') }}"
+    group: "{{ item.group | default('root') }}"
+    mode: "{{ item.mode | default('0644') }}"
+    state: "{{ item.state | default('file') }}"
+  loop:
+    - { dest: "/usr/local/bin/composer", mode: "0755" }
   tags: php
 
 - name: composer global init

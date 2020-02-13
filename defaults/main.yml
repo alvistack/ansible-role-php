@@ -26,5 +26,11 @@ php_repository: "{{ _repository[php_release] }}"
 # Specify PHP packages.
 php_package: "{{ _package[php_release] }}"
 
+# Composer version.
+composer_version: "1.9.3"
+
+# Composer download details.
+composer_download: "{{ _composer_download[composer_version] }}"
+
 # Specify CGR packages.
 cgr: "{{ _cgr }}"
