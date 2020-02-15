@@ -32,7 +32,6 @@ _package:
     - { state: "latest", name: "lsb-base" }
     - { state: "latest", name: "lsb-release" }
     - { state: "latest", name: "geoip-database" }
-    - { state: "latest", name: "geoip-database-extra" }
     - { state: "latest", name: "imagemagick" }
     - { state: "latest", name: "libssl-dev" }
     - { state: "latest", name: "php7.4-cli" }
@@ -67,7 +66,6 @@ _package:
     - { state: "latest", name: "lsb-base" }
     - { state: "latest", name: "lsb-release" }
     - { state: "latest", name: "geoip-database" }
-    - { state: "latest", name: "geoip-database-extra" }
     - { state: "latest", name: "imagemagick" }
     - { state: "latest", name: "libssl-dev" }
     - { state: "latest", name: "php7.3-cli" }
@@ -102,7 +100,6 @@ _package:
     - { state: "latest", name: "lsb-base" }
     - { state: "latest", name: "lsb-release" }
     - { state: "latest", name: "geoip-database" }
-    - { state: "latest", name: "geoip-database-extra" }
     - { state: "latest", name: "imagemagick" }
     - { state: "latest", name: "libssl-dev" }
     - { state: "latest", name: "php7.2-cli" }
