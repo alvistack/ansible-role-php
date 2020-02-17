@@ -17,7 +17,7 @@
 - hosts: all
   remote_user: root
   become: true
-  post_tasks:
+  tasks:
     - name: php --version
       command: php --version
       register: result

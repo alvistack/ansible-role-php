@@ -21,5 +21,6 @@
     - role: bootstrap
     - role: locales
     - role: timezone
+    - role: python
     - role: git
     - role: php
