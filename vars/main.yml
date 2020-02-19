@@ -17,7 +17,7 @@
 _composer_download:
   1.9.3:
     url: "https://getcomposer.org/download/1.9.3/composer.phar"
-    dest: "/var/cache/ansible/composer-1.9.3.phar"
+    dest: "{{ ansible_user_dir }}/.ansible/tmp/composer-1.9.3.phar"
     checksum: "sha1:dd3ac103d2a78b905c1826e1090b5bd5c8e649bc"
 
 _cgr:
