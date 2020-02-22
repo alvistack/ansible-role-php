@@ -21,14 +21,20 @@ _php_fpm_service:
 
 _repository:
   "7.4":
-    - { state: "latest", name: "https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm" }
-    - { state: "latest", name: "https://rpms.remirepo.net/enterprise/remi-release-7.rpm" }
+    - name: "https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm"
+      state: "latest"
+    - name: "https://rpms.remirepo.net/enterprise/remi-release-7.rpm"
+      state: "latest"
   "7.3":
-    - { state: "latest", name: "https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm" }
-    - { state: "latest", name: "https://rpms.remirepo.net/enterprise/remi-release-7.rpm" }
+    - name: "https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm"
+      state: "latest"
+    - name: "https://rpms.remirepo.net/enterprise/remi-release-7.rpm"
+      state: "latest"
   "7.2":
-    - { state: "latest", name: "https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm" }
-    - { state: "latest", name: "https://rpms.remirepo.net/enterprise/remi-release-7.rpm" }
+    - name: "https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm"
+      state: "latest"
+    - name: "https://rpms.remirepo.net/enterprise/remi-release-7.rpm"
+      state: "latest"
 
 _yum_config_manager:
   "7.4":
