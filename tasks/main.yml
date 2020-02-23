@@ -89,7 +89,7 @@
   shell: |
     set -o pipefail
     cd /usr/local/bin
-    TMP_DIR="`mktemp -d`" \
+    TMP_DIR="$(mktemp -d)" \
       && cp {{ composer_download.dest }} $TMP_DIR/composer \
       && chown root:root $TMP_DIR/composer \
       && chmod 0755 $TMP_DIR/composer \
