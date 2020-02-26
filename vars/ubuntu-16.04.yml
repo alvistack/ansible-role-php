@@ -21,11 +21,14 @@ _php_fpm_service:
 
 _repository:
   "7.4":
-    - { state: "present", repo: "ppa:ondrej/php" }
+    - repo: "ppa:ondrej/php"
+      state: "present"
   "7.3":
-    - { state: "present", repo: "ppa:ondrej/php" }
+    - repo: "ppa:ondrej/php"
+      state: "present"
   "7.2":
-    - { state: "present", repo: "ppa:ondrej/php" }
+    - repo: "ppa:ondrej/php"
+      state: "present"
 
 _package:
   "7.4":
