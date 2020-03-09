@@ -51,7 +51,7 @@
     - php | systemctl restart
   tags: php
 
-- name: copy files
+- name: copy /etc/php7/fpm/*
   copy:
     dest: "{{ item.dest }}"
     src: "{{ item.src }}"
