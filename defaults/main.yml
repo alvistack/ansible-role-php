@@ -27,7 +27,7 @@ php_repository: "{{ _repository[php_release] }}"
 php_package: "{{ _package[php_release] }}"
 
 # Composer version.
-composer_version: "1.9.3"
+composer_version: "1.10.0"
 
 # Composer download details.
 composer_download: "{{ _composer_download[composer_version] }}"
