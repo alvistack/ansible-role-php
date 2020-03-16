@@ -15,12 +15,16 @@
 # limitations under the License.
 
 _composer_download:
+  1.10.1:
+    url: "https://github.com/composer/composer/releases/download/1.10.1/composer.phar"
+    dest: "{{ ansible_user_dir }}/.ansible/tmp/composer-1.10.1.phar"
+    checksum: "sha1:fa51d7b32dbfb52eaeb8aa8a5112ab33017cc0b9"
   1.10.0:
-    url: "https://getcomposer.org/download/1.10.0/composer.phar"
+    url: "https://github.com/composer/composer/releases/download/1.10.0/composer.phar"
     dest: "{{ ansible_user_dir }}/.ansible/tmp/composer-1.10.0.phar"
     checksum: "sha1:c7bf42e4f1ed8956f6d5b9aa6081532496b48d01"
   1.9.3:
-    url: "https://getcomposer.org/download/1.9.3/composer.phar"
+    url: "https://github.com/composer/composer/releases/download/1.9.3/composer.phar"
     dest: "{{ ansible_user_dir }}/.ansible/tmp/composer-1.9.3.phar"
     checksum: "sha1:dd3ac103d2a78b905c1826e1090b5bd5c8e649bc"
 
