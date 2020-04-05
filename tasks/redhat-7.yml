@@ -26,7 +26,7 @@
   yum:
     name: "{{ item.name }}"
     state: "{{ item.state }}"
-  loop: "{{ php_repository }}"
+  loop: "{{ _yum_repository[php_release] }}"
   register: result
   until: result is succeeded
   changed_when: false
@@ -44,8 +44,7 @@
   yum:
     name: "{{ item.name }}"
     state: "{{ item.state }}"
-    enablerepo: "{{ item.enablerepo | default(None) or omit }}"
-  loop: "{{ php_package }}"
+  loop: "{{ _yum[php_release] }}"
   register: result
   until: result is succeeded
   notify:

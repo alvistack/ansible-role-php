@@ -19,7 +19,7 @@ _php_fpm_service:
   "7.3": "php7.3-fpm"
   "7.2": "php7.2-fpm"
 
-_repository:
+_apt_repository:
   "7.4":
     - repo: "ppa:ondrej/php"
       state: "present"
@@ -30,7 +30,7 @@ _repository:
     - repo: "ppa:ondrej/php"
       state: "present"
 
-_package:
+_apt:
   "7.4":
     - { state: "latest", name: "lsb-base" }
     - { state: "latest", name: "lsb-release" }
