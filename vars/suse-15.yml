@@ -19,7 +19,7 @@ _php_fpm_service:
   "7.3": "php-fpm"
   "7.2": "php-fpm"
 
-_repository:
+_zypper_repository:
   "7.4":
     - name: "devel:languages:php"
       repo: "https://download.opensuse.org/repositories/devel:/languages:/php/openSUSE_Leap_15.1"
@@ -33,16 +33,13 @@ _repository:
       repo: "https://download.opensuse.org/repositories/devel:/languages:/php:/php72/openSUSE_Leap_15.1"
       state: "present"
 
-_package:
+_zypper:
   "7.4":
     - { state: "latest", name: "lsb" }
     - { state: "latest", name: "lsb-release" }
     - { state: "latest", name: "GeoIP-data" }
     - { state: "latest", name: "ImageMagick" }
     - { state: "latest", name: "ca-certificates" }
-    - { state: "latest", name: "ca-certificates-cacert" }
-    - { state: "latest", name: "ca-certificates-mozilla" }
-    - { state: "latest", name: "ca-certificates-steamtricks" }
     - { state: "latest", name: "php7" }
     - { state: "latest", name: "php7-fpm" }
     - { state: "latest", name: "php7-bcmath" }
@@ -72,9 +69,6 @@ _package:
     - { state: "latest", name: "GeoIP-data" }
     - { state: "latest", name: "ImageMagick" }
     - { state: "latest", name: "ca-certificates" }
-    - { state: "latest", name: "ca-certificates-cacert" }
-    - { state: "latest", name: "ca-certificates-mozilla" }
-    - { state: "latest", name: "ca-certificates-steamtricks" }
     - { state: "latest", name: "php7" }
     - { state: "latest", name: "php7-fpm" }
     - { state: "latest", name: "php7-bcmath" }
@@ -104,9 +98,6 @@ _package:
     - { state: "latest", name: "GeoIP-data" }
     - { state: "latest", name: "ImageMagick" }
     - { state: "latest", name: "ca-certificates" }
-    - { state: "latest", name: "ca-certificates-cacert" }
-    - { state: "latest", name: "ca-certificates-mozilla" }
-    - { state: "latest", name: "ca-certificates-steamtricks" }
     - { state: "latest", name: "php7" }
     - { state: "latest", name: "php7-fpm" }
     - { state: "latest", name: "php7-bcmath" }

@@ -21,33 +21,30 @@ _php_fpm_service:
 
 _rpm_repository:
   "7.4":
-    - name: "https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm"
+    - name: "https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm"
       state: "latest"
-    - name: "https://rpms.remirepo.net/enterprise/remi-release-7.rpm"
+    - name: "https://rpms.remirepo.net/enterprise/remi-release-8.rpm"
       state: "latest"
   "7.3":
-    - name: "https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm"
+    - name: "https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm"
       state: "latest"
-    - name: "https://rpms.remirepo.net/enterprise/remi-release-7.rpm"
+    - name: "https://rpms.remirepo.net/enterprise/remi-release-8.rpm"
       state: "latest"
   "7.2":
-    - name: "https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm"
+    - name: "https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm"
       state: "latest"
-    - name: "https://rpms.remirepo.net/enterprise/remi-release-7.rpm"
+    - name: "https://rpms.remirepo.net/enterprise/remi-release-8.rpm"
       state: "latest"
 
-_yum_config_manager:
+_dnf_module:
   "7.4":
-    - { state: "enable", name: "rhel-7-server-optional-rpms" }
-    - { state: "enable", name: "remi-php74" }
+    - { state: "present", name: "@php:remi-7.4" }
   "7.3":
-    - { state: "enable", name: "rhel-7-server-optional-rpms" }
-    - { state: "enable", name: "remi-php73" }
+    - { state: "present", name: "@php:remi-7.3" }
   "7.2":
-    - { state: "enable", name: "rhel-7-server-optional-rpms" }
-    - { state: "enable", name: "remi-php72" }
+    - { state: "present", name: "@php:remi-7.2" }
 
-_yum:
+_dnf:
   "7.4":
     - { state: "latest", name: "redhat-lsb" }
     - { state: "latest", name: "GeoIP-data" }

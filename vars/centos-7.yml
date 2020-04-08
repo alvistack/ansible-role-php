@@ -19,7 +19,7 @@ _php_fpm_service:
   "7.3": "php-fpm"
   "7.2": "php-fpm"
 
-_repository:
+_rpm_repository:
   "7.4":
     - name: "https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm"
       state: "latest"
@@ -44,7 +44,7 @@ _yum_config_manager:
   "7.2":
     - { state: "enable", name: "remi-php72" }
 
-_package:
+_yum:
   "7.4":
     - { state: "latest", name: "redhat-lsb" }
     - { state: "latest", name: "GeoIP-data" }

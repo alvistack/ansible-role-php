@@ -14,29 +14,37 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-- name: apt-get install gnupg
-  apt:
-    name: "gnupg"
+- name: yum install yum-utils
+  yum:
+    name: "yum-utils"
     state: "present"
-  register: result
-  until: result is succeeded
+  changed_when: false
+  ignore_errors: true
   tags: php
 
-- name: apt-add-repository
-  apt_repository:
-    repo: "{{ item.repo }}"
-    state: "{{ item.state }}"
-  loop: "{{ _apt_repository[php_release] }}"
-  register: result
-  until: result is succeeded
-  tags: php
-
-- name: apt-get install
-  apt:
+- name: yum-config-manager --add-repo
+  yum:
     name: "{{ item.name }}"
     state: "{{ item.state }}"
-    install_recommends: false
-  loop: "{{ _apt[php_release] }}"
+  loop: "{{ _rpm_repository[php_release] }}"
+  register: result
+  until: result is succeeded
+  changed_when: false
+  ignore_errors: true
+  tags: php
+
+- name: yum-config-manager --enable
+  command: yum-config-manager --{{ item.state }} {{ item.name }}
+  loop: "{{ _yum_config_manager[php_release] }}"
+  changed_when: false
+  ignore_errors: true
+  tags: php
+
+- name: yum install
+  yum:
+    name: "{{ item.name }}"
+    state: "{{ item.state }}"
+  loop: "{{ _yum[php_release] }}"
   register: result
   until: result is succeeded
   notify:

@@ -14,38 +14,39 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-- name: yum install yum-utils
-  yum:
+- name: dnf install yum-utils
+  dnf:
     name: "yum-utils"
     state: "present"
   changed_when: false
   ignore_errors: true
   tags: php
 
-- name: yum-config-manager --add-repo
-  yum:
+- name: dnf install
+  dnf:
     name: "{{ item.name }}"
     state: "{{ item.state }}"
-  loop: "{{ php_repository }}"
+  loop: "{{ _rpm_repository[php_release] }}"
   register: result
   until: result is succeeded
   changed_when: false
   ignore_errors: true
   tags: php
 
-- name: yum-config-manager --enable
-  command: yum-config-manager --{{ item.state }} {{ item.name }}
-  loop: "{{ _yum_config_manager[php_release] }}"
+- name: dnf module install
+  dnf:
+    name: "{{ item.name }}"
+    state: "{{ item.state }}"
+  loop: "{{ _dnf_module[php_release] }}"
   changed_when: false
   ignore_errors: true
   tags: php
 
-- name: yum install
-  yum:
+- name: dnf install
+  dnf:
     name: "{{ item.name }}"
     state: "{{ item.state }}"
-    enablerepo: "{{ item.enablerepo | default(None) or omit }}"
-  loop: "{{ php_package }}"
+  loop: "{{ _dnf[php_release] }}"
   register: result
   until: result is succeeded
   notify:

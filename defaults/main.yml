@@ -20,12 +20,6 @@ php_release: "7.4"
 # Service name for php-fpm.
 php_fpm_service: "{{ _php_fpm_service[php_release] }}"
 
-# Specify PHP repository.
-php_repository: "{{ _repository[php_release] }}"
-
-# Specify PHP packages.
-php_package: "{{ _package[php_release] }}"
-
 # Composer version.
 composer_version: "1.10.1"
 
