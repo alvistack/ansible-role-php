@@ -44,7 +44,6 @@ _apt:
     - { state: "latest", name: "php-geoip" }
     - { state: "latest", name: "php-imagick" }
     - { state: "latest", name: "php-memcached" }
-    - { state: "latest", name: "php-redis" }
     - { state: "latest", name: "php-uuid" }
     - { state: "latest", name: "php7.4-bcmath" }
     - { state: "latest", name: "php7.4-bz2" }
@@ -78,7 +77,6 @@ _apt:
     - { state: "latest", name: "php-geoip" }
     - { state: "latest", name: "php-imagick" }
     - { state: "latest", name: "php-memcached" }
-    - { state: "latest", name: "php-redis" }
     - { state: "latest", name: "php-uuid" }
     - { state: "latest", name: "php7.3-bcmath" }
     - { state: "latest", name: "php7.3-bz2" }
@@ -112,7 +110,6 @@ _apt:
     - { state: "latest", name: "php-geoip" }
     - { state: "latest", name: "php-imagick" }
     - { state: "latest", name: "php-memcached" }
-    - { state: "latest", name: "php-redis" }
     - { state: "latest", name: "php-uuid" }
     - { state: "latest", name: "php7.2-bcmath" }
     - { state: "latest", name: "php7.2-bz2" }
