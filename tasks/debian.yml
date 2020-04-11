@@ -22,6 +22,24 @@
   until: result is succeeded
   tags: php
 
+- name: apt-get install software-properties-common
+  apt:
+    name: "software-properties-common"
+    state: "present"
+  register: result
+  until: result is succeeded
+  tags: php
+
+- name: apt-key add
+  apt_key:
+    url: "{{ item.url }}"
+    id: "{{ item.id }}"
+    state: "{{ item.state }}"
+  loop: "{{ _apt_key[php_release] }}"
+  register: result
+  until: result is succeeded
+  tags: php
+
 - name: apt-add-repository
   apt_repository:
     repo: "{{ item.repo }}"
@@ -33,7 +51,8 @@
 
 - name: apt-get install
   apt:
-    name: "{{ item.name }}"
+    name: "{{ item.name | default(None) or omit }}"
+    deb: "{{ item.deb | default(None) or omit }}"
     state: "{{ item.state }}"
     install_recommends: false
   loop: "{{ _apt[php_release] }}"

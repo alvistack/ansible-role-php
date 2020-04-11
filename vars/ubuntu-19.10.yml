@@ -19,6 +19,11 @@ _php_fpm_service:
   "7.3": "php7.3-fpm"
   "7.2": "php7.2-fpm"
 
+_apt_key:
+  "7.4": []
+  "7.3": []
+  "7.2": []
+
 _apt_repository:
   "7.4":
     - repo: "ppa:ondrej/php"
