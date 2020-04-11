@@ -53,7 +53,7 @@
   apt:
     name: "{{ item.name | default(None) or omit }}"
     deb: "{{ item.deb | default(None) or omit }}"
-    state: "{{ item.state }}"
+    state: "{{ item.state | default('present') }}"
     install_recommends: false
   loop: "{{ _apt[php_release] }}"
   register: result

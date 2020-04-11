@@ -46,7 +46,7 @@ _apt_repository:
 
 _apt:
   "7.4":
-    - { state: "present", deb: "http://archive.ubuntu.com/ubuntu/pool/main/libf/libffi/libffi6_3.2.1-9_amd64.deb" }
+    - { deb: "http://archive.ubuntu.com/ubuntu/pool/main/libf/libffi/libffi6_3.2.1-9_amd64.deb" }
     - { state: "latest", name: "lsb-base" }
     - { state: "latest", name: "lsb-release" }
     - { state: "latest", name: "geoip-database" }
@@ -80,7 +80,7 @@ _apt:
     - { state: "latest", name: "php7.4-xsl" }
     - { state: "latest", name: "php7.4-zip" }
   "7.3":
-    - { state: "present", deb: "http://archive.ubuntu.com/ubuntu/pool/main/libf/libffi/libffi6_3.2.1-9_amd64.deb" }
+    - { deb: "http://archive.ubuntu.com/ubuntu/pool/main/libf/libffi/libffi6_3.2.1-9_amd64.deb" }
     - { state: "latest", name: "lsb-base" }
     - { state: "latest", name: "lsb-release" }
     - { state: "latest", name: "geoip-database" }
@@ -114,7 +114,7 @@ _apt:
     - { state: "latest", name: "php7.3-xsl" }
     - { state: "latest", name: "php7.3-zip" }
   "7.2":
-    - { state: "present", deb: "http://archive.ubuntu.com/ubuntu/pool/main/libf/libffi/libffi6_3.2.1-9_amd64.deb" }
+    - { deb: "http://archive.ubuntu.com/ubuntu/pool/main/libf/libffi/libffi6_3.2.1-9_amd64.deb" }
     - { state: "latest", name: "lsb-base" }
     - { state: "latest", name: "lsb-release" }
     - { state: "latest", name: "geoip-database" }
