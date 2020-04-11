@@ -14,17 +14,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# PHP release.
-php_release: "7.4"
-
-# Service name for php-fpm.
-php_fpm_service: "{{ _php_fpm_service[php_release] }}"
-
-# Composer version.
-composer_version: "1.10.5"
-
-# Composer download details.
-composer_download: "{{ _composer_download[composer_version] }}"
-
-# Specify CGR packages.
-cgr: "{{ _cgr }}"
+- hosts: localhost
+  connection: local
+  remote_user: root
+  become: true
+  gather_facts: false
+  tasks:
+    - name: docker rm
+      docker_container:
+        name: "{{ item.name }}"
+        state: "absent"
+      loop_control:
+        label: "{{ item.name }}"
+      loop: "{{ molecule_yml.platforms }}"

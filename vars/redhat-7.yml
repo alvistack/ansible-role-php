@@ -68,7 +68,6 @@ _yum:
     - { state: "latest", name: "php-pecl-geoip" }
     - { state: "latest", name: "php-pecl-imagick" }
     - { state: "latest", name: "php-pecl-memcached" }
-    - { state: "latest", name: "php-pecl-redis" }
     - { state: "latest", name: "php-pecl-uuid" }
     - { state: "latest", name: "php-pgsql" }
     - { state: "latest", name: "php-soap" }
@@ -96,7 +95,6 @@ _yum:
     - { state: "latest", name: "php-pecl-geoip" }
     - { state: "latest", name: "php-pecl-imagick" }
     - { state: "latest", name: "php-pecl-memcached" }
-    - { state: "latest", name: "php-pecl-redis" }
     - { state: "latest", name: "php-pecl-uuid" }
     - { state: "latest", name: "php-pgsql" }
     - { state: "latest", name: "php-soap" }
@@ -124,7 +122,6 @@ _yum:
     - { state: "latest", name: "php-pecl-geoip" }
     - { state: "latest", name: "php-pecl-imagick" }
     - { state: "latest", name: "php-pecl-memcached" }
-    - { state: "latest", name: "php-pecl-redis" }
     - { state: "latest", name: "php-pecl-uuid" }
     - { state: "latest", name: "php-pgsql" }
     - { state: "latest", name: "php-soap" }
