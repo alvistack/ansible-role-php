@@ -180,7 +180,7 @@
   meta: flush_handlers
   tags: php
 
-- name: start service
+- name: systemctl start php-fpm
   service:
     name: "{{ php_fpm_service }}"
     state: "started"
