@@ -14,7 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-- name: php | systemctl restart
+- name: php | systemctl restart php-fpm
   service:
     name: "{{ php_fpm_service }}"
     state: "restarted"

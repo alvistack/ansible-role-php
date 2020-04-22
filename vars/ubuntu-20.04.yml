@@ -16,13 +16,28 @@
 
 _php_fpm_service:
   "7.4": "php7.4-fpm"
-  "7.3": ~
-  "7.2": ~
+  "7.3": "php7.3-fpm"
+  "7.2": "php7.2-fpm"
+
+_apt_key:
+  "7.4": []
+  "7.3":
+    - url: "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x14AA40EC0831756756D7F66C4F4EA0AAE5267A6C"
+      id: "14AA40EC0831756756D7F66C4F4EA0AAE5267A6C"
+      state: "present"
+  "7.2":
+    - url: "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x14AA40EC0831756756D7F66C4F4EA0AAE5267A6C"
+      id: "14AA40EC0831756756D7F66C4F4EA0AAE5267A6C"
+      state: "present"
 
 _apt_repository:
   "7.4": []
-  "7.3": []
-  "7.2": []
+  "7.3":
+    - repo: "deb http://ppa.launchpad.net/ondrej/php/ubuntu eoan main"
+      state: "present"
+  "7.2":
+    - repo: "deb http://ppa.launchpad.net/ondrej/php/ubuntu eoan main"
+      state: "present"
 
 _apt:
   "7.4":
@@ -58,5 +73,69 @@ _apt:
     - { state: "latest", name: "php7.4-xmlrpc" }
     - { state: "latest", name: "php7.4-xsl" }
     - { state: "latest", name: "php7.4-zip" }
-  "7.3": []
-  "7.2": []
+  "7.3":
+    - { state: "latest", name: "lsb-base" }
+    - { state: "latest", name: "lsb-release" }
+    - { state: "latest", name: "geoip-database" }
+    - { state: "latest", name: "imagemagick" }
+    - { state: "latest", name: "libssl-dev" }
+    - { state: "latest", name: "php7.3-cli" }
+    - { state: "latest", name: "php7.3-fpm" }
+    - { state: "present", name: "php-apcu=5.1.18+4.0.11-1+ubuntu19.10.1+deb.sury.org+1" }
+    - { state: "present", name: "php-apcu-bc=1.0.5-1+ubuntu19.10.1+deb.sury.org+20191129" }
+    - { state: "present", name: "php-geoip=1.1.1-4+ubuntu19.10.1+deb.sury.org+20191129" }
+    - { state: "latest", name: "php-imagick" }
+    - { state: "latest", name: "php-memcached" }
+    - { state: "latest", name: "php-uuid" }
+    - { state: "latest", name: "php7.3-bcmath" }
+    - { state: "latest", name: "php7.3-bz2" }
+    - { state: "latest", name: "php7.3-curl" }
+    - { state: "latest", name: "php7.3-gd" }
+    - { state: "latest", name: "php7.3-imap" }
+    - { state: "latest", name: "php7.3-intl" }
+    - { state: "latest", name: "php7.3-json" }
+    - { state: "latest", name: "php7.3-ldap" }
+    - { state: "latest", name: "php7.3-mbstring" }
+    - { state: "latest", name: "php7.3-mysql" }
+    - { state: "latest", name: "php7.3-opcache" }
+    - { state: "latest", name: "php7.3-pgsql" }
+    - { state: "latest", name: "php7.3-soap" }
+    - { state: "latest", name: "php7.3-sqlite3" }
+    - { state: "latest", name: "php7.3-tidy" }
+    - { state: "latest", name: "php7.3-xml" }
+    - { state: "latest", name: "php7.3-xmlrpc" }
+    - { state: "latest", name: "php7.3-xsl" }
+    - { state: "latest", name: "php7.3-zip" }
+  "7.2":
+    - { state: "latest", name: "lsb-base" }
+    - { state: "latest", name: "lsb-release" }
+    - { state: "latest", name: "geoip-database" }
+    - { state: "latest", name: "imagemagick" }
+    - { state: "latest", name: "libssl-dev" }
+    - { state: "latest", name: "php7.2-cli" }
+    - { state: "latest", name: "php7.2-fpm" }
+    - { state: "present", name: "php-apcu=5.1.18+4.0.11-1+ubuntu19.10.1+deb.sury.org+1" }
+    - { state: "present", name: "php-apcu-bc=1.0.5-1+ubuntu19.10.1+deb.sury.org+20191129" }
+    - { state: "present", name: "php-geoip=1.1.1-4+ubuntu19.10.1+deb.sury.org+20191129" }
+    - { state: "latest", name: "php-imagick" }
+    - { state: "latest", name: "php-memcached" }
+    - { state: "latest", name: "php-uuid" }
+    - { state: "latest", name: "php7.2-bcmath" }
+    - { state: "latest", name: "php7.2-bz2" }
+    - { state: "latest", name: "php7.2-curl" }
+    - { state: "latest", name: "php7.2-gd" }
+    - { state: "latest", name: "php7.2-imap" }
+    - { state: "latest", name: "php7.2-intl" }
+    - { state: "latest", name: "php7.2-json" }
+    - { state: "latest", name: "php7.2-ldap" }
+    - { state: "latest", name: "php7.2-mbstring" }
+    - { state: "latest", name: "php7.2-mysql" }
+    - { state: "latest", name: "php7.2-opcache" }
+    - { state: "latest", name: "php7.2-pgsql" }
+    - { state: "latest", name: "php7.2-soap" }
+    - { state: "latest", name: "php7.2-sqlite3" }
+    - { state: "latest", name: "php7.2-tidy" }
+    - { state: "latest", name: "php7.2-xml" }
+    - { state: "latest", name: "php7.2-xmlrpc" }
+    - { state: "latest", name: "php7.2-xsl" }
+    - { state: "latest", name: "php7.2-zip" }
