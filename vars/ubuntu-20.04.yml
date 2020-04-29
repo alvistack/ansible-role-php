@@ -38,10 +38,10 @@ _apt_repository:
     - repo: "deb http://ppa.launchpad.net/ondrej/php/ubuntu focal main"
       state: "present"
   "7.3":
-    - repo: "deb http://ppa.launchpad.net/ondrej/php/ubuntu eoan main"
+    - repo: "deb http://ppa.launchpad.net/ondrej/php/ubuntu focal main"
       state: "present"
   "7.2":
-    - repo: "deb http://ppa.launchpad.net/ondrej/php/ubuntu eoan main"
+    - repo: "deb http://ppa.launchpad.net/ondrej/php/ubuntu focal main"
       state: "present"
 
 _apt:
