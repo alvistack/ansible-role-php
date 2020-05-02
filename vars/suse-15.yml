@@ -36,7 +36,6 @@ _zypper_repository:
 _zypper:
   "7.4":
     - { state: "latest", name: "lsb" }
-    - { state: "latest", name: "lsb-release" }
     - { state: "latest", name: "GeoIP-data" }
     - { state: "latest", name: "ImageMagick" }
     - { state: "latest", name: "ca-certificates" }
@@ -65,7 +64,6 @@ _zypper:
     - { state: "latest", name: "php7-zip" }
   "7.3":
     - { state: "latest", name: "lsb" }
-    - { state: "latest", name: "lsb-release" }
     - { state: "latest", name: "GeoIP-data" }
     - { state: "latest", name: "ImageMagick" }
     - { state: "latest", name: "ca-certificates" }
@@ -94,7 +92,6 @@ _zypper:
     - { state: "latest", name: "php7-zip" }
   "7.2":
     - { state: "latest", name: "lsb" }
-    - { state: "latest", name: "lsb-release" }
     - { state: "latest", name: "GeoIP-data" }
     - { state: "latest", name: "ImageMagick" }
     - { state: "latest", name: "ca-certificates" }

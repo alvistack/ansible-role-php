@@ -46,7 +46,6 @@ _apt_repository:
 
 _apt:
   "7.4":
-    - { state: "latest", name: "lsb-base" }
     - { state: "latest", name: "lsb-release" }
     - { state: "latest", name: "geoip-database" }
     - { state: "latest", name: "imagemagick" }
@@ -79,7 +78,6 @@ _apt:
     - { state: "latest", name: "php7.4-xsl" }
     - { state: "latest", name: "php7.4-zip" }
   "7.3":
-    - { state: "latest", name: "lsb-base" }
     - { state: "latest", name: "lsb-release" }
     - { state: "latest", name: "geoip-database" }
     - { state: "latest", name: "imagemagick" }
@@ -112,7 +110,6 @@ _apt:
     - { state: "latest", name: "php7.3-xsl" }
     - { state: "latest", name: "php7.3-zip" }
   "7.2":
-    - { state: "latest", name: "lsb-base" }
     - { state: "latest", name: "lsb-release" }
     - { state: "latest", name: "geoip-database" }
     - { state: "latest", name: "imagemagick" }
