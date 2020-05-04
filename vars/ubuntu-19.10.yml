@@ -46,7 +46,6 @@ _apt_repository:
 
 _apt:
   "7.4":
-    - { state: "latest", name: "lsb-base" }
     - { state: "latest", name: "lsb-release" }
     - { state: "latest", name: "geoip-database" }
     - { state: "latest", name: "imagemagick" }
@@ -57,7 +56,7 @@ _apt:
     - { state: "latest", name: "php-apcu-bc" }
     - { state: "latest", name: "php-geoip" }
     - { state: "latest", name: "php-imagick" }
-    - { state: "latest", name: "php-memcached" }
+    - { state: "latest", name: "php-memcache" }
     - { state: "latest", name: "php-uuid" }
     - { state: "latest", name: "php7.4-bcmath" }
     - { state: "latest", name: "php7.4-bz2" }
@@ -79,7 +78,6 @@ _apt:
     - { state: "latest", name: "php7.4-xsl" }
     - { state: "latest", name: "php7.4-zip" }
   "7.3":
-    - { state: "latest", name: "lsb-base" }
     - { state: "latest", name: "lsb-release" }
     - { state: "latest", name: "geoip-database" }
     - { state: "latest", name: "imagemagick" }
@@ -90,7 +88,7 @@ _apt:
     - { state: "latest", name: "php-apcu-bc" }
     - { state: "latest", name: "php-geoip" }
     - { state: "latest", name: "php-imagick" }
-    - { state: "latest", name: "php-memcached" }
+    - { state: "latest", name: "php-memcache" }
     - { state: "latest", name: "php-uuid" }
     - { state: "latest", name: "php7.3-bcmath" }
     - { state: "latest", name: "php7.3-bz2" }
@@ -112,7 +110,6 @@ _apt:
     - { state: "latest", name: "php7.3-xsl" }
     - { state: "latest", name: "php7.3-zip" }
   "7.2":
-    - { state: "latest", name: "lsb-base" }
     - { state: "latest", name: "lsb-release" }
     - { state: "latest", name: "geoip-database" }
     - { state: "latest", name: "imagemagick" }
@@ -123,7 +120,7 @@ _apt:
     - { state: "latest", name: "php-apcu-bc" }
     - { state: "latest", name: "php-geoip" }
     - { state: "latest", name: "php-imagick" }
-    - { state: "latest", name: "php-memcached" }
+    - { state: "latest", name: "php-memcache" }
     - { state: "latest", name: "php-uuid" }
     - { state: "latest", name: "php7.2-bcmath" }
     - { state: "latest", name: "php7.2-bz2" }
