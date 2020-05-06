@@ -21,10 +21,10 @@ _php_fpm_service:
 
 _rpm_repository:
   "7.4":
-    - name: "https://rpms.remirepo.net/fedora/remi-release-30.rpm"
+    - name: "https://rpms.remirepo.net/fedora/remi-release-31.rpm"
       state: "latest"
   "7.3":
-    - name: "https://rpms.remirepo.net/fedora/remi-release-30.rpm"
+    - name: "https://rpms.remirepo.net/fedora/remi-release-31.rpm"
       state: "latest"
   "7.2": []
 
