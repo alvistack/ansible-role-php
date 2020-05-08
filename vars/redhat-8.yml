@@ -36,6 +36,14 @@ _rpm_repository:
     - name: "https://rpms.remirepo.net/enterprise/remi-release-8.rpm"
       state: "latest"
 
+_dnf_config_manager:
+  "7.4":
+    - { state: "enable", name: "remi" }
+  "7.3":
+    - { state: "enable", name: "remi" }
+  "7.2":
+    - { state: "enable", name: "remi" }
+
 _dnf_module:
   "7.4":
     - { state: "present", name: "@php:remi-7.4" }

@@ -15,6 +15,10 @@
 # limitations under the License.
 
 _composer_download:
+  1.10.6:
+    url: "https://github.com/composer/composer/releases/download/1.10.6/composer.phar"
+    dest: "{{ ansible_user_dir }}/.ansible/tmp/composer-1.10.6.phar"
+    checksum: "sha1:8c03acf860298f5895eca5500c0113c1a5b68997"
   1.10.5:
     url: "https://github.com/composer/composer/releases/download/1.10.5/composer.phar"
     dest: "{{ ansible_user_dir }}/.ansible/tmp/composer-1.10.5.phar"

@@ -33,6 +33,13 @@
   ignore_errors: true
   tags: php
 
+- name: dnf config-manager
+  command: dnf config-manager --set-{{ item.state }} {{ item.name }}
+  loop: "{{ _dnf_config_manager[php_release] }}"
+  changed_when: false
+  ignore_errors: true
+  tags: php
+
 - name: dnf module install
   dnf:
     name: "{{ item.name }}"

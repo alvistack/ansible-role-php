@@ -17,40 +17,30 @@
 _php_fpm_service:
   "7.4": "php-fpm"
   "7.3": "php-fpm"
-  "7.2": "php-fpm"
+  "7.2": ~
 
 _rpm_repository:
   "7.4":
-    - name: "https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm"
-      state: "latest"
-    - name: "https://rpms.remirepo.net/enterprise/remi-release-8.rpm"
+    - name: "https://rpms.remirepo.net/fedora/remi-release-32.rpm"
       state: "latest"
   "7.3":
-    - name: "https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm"
+    - name: "https://rpms.remirepo.net/fedora/remi-release-32.rpm"
       state: "latest"
-    - name: "https://rpms.remirepo.net/enterprise/remi-release-8.rpm"
-      state: "latest"
-  "7.2":
-    - name: "https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm"
-      state: "latest"
-    - name: "https://rpms.remirepo.net/enterprise/remi-release-8.rpm"
-      state: "latest"
+  "7.2": []
 
 _dnf_config_manager:
   "7.4":
     - { state: "enable", name: "remi" }
   "7.3":
     - { state: "enable", name: "remi" }
-  "7.2":
-    - { state: "enable", name: "remi" }
+  "7.2": []
 
 _dnf_module:
   "7.4":
     - { state: "present", name: "@php:remi-7.4" }
   "7.3":
     - { state: "present", name: "@php:remi-7.3" }
-  "7.2":
-    - { state: "present", name: "@php:remi-7.2" }
+  "7.2": []
 
 _dnf:
   "7.4":
@@ -107,30 +97,4 @@ _dnf:
     - { state: "latest", name: "php-xml" }
     - { state: "latest", name: "php-xmlrpc" }
     - { state: "latest", name: "php-zip" }
-  "7.2":
-    - { state: "latest", name: "redhat-lsb" }
-    - { state: "latest", name: "GeoIP-data" }
-    - { state: "latest", name: "ImageMagick" }
-    - { state: "latest", name: "php-cli" }
-    - { state: "latest", name: "php-fpm" }
-    - { state: "latest", name: "php-bcmath" }
-    - { state: "latest", name: "php-gd" }
-    - { state: "latest", name: "php-imap" }
-    - { state: "latest", name: "php-intl" }
-    - { state: "latest", name: "php-json" }
-    - { state: "latest", name: "php-ldap" }
-    - { state: "latest", name: "php-mbstring" }
-    - { state: "latest", name: "php-mysqlnd" }
-    - { state: "latest", name: "php-opcache" }
-    - { state: "latest", name: "php-pecl-apcu" }
-    - { state: "latest", name: "php-pecl-apcu-bc" }
-    - { state: "latest", name: "php-pecl-geoip" }
-    - { state: "latest", name: "php-pecl-imagick" }
-    - { state: "latest", name: "php-pecl-memcache" }
-    - { state: "latest", name: "php-pecl-uuid" }
-    - { state: "latest", name: "php-pgsql" }
-    - { state: "latest", name: "php-soap" }
-    - { state: "latest", name: "php-tidy" }
-    - { state: "latest", name: "php-xml" }
-    - { state: "latest", name: "php-xmlrpc" }
-    - { state: "latest", name: "php-zip" }
+  "7.2": []

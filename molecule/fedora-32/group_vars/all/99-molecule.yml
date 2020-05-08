@@ -13,18 +13,3 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
-# PHP release.
-php_release: "7.4"
-
-# Service name for php-fpm.
-php_fpm_service: "{{ _php_fpm_service[php_release] }}"
-
-# Composer version.
-composer_version: "1.10.6"
-
-# Composer download details.
-composer_download: "{{ _composer_download[composer_version] }}"
-
-# Specify CGR packages.
-cgr: "{{ _cgr }}"
