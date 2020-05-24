@@ -44,10 +44,11 @@
       register: result
       changed_when: result is not succeeded
 
-    - name: su -l -s /bin/bash -c 'echo $COMPOSER_HOME'
+    - name: echo $COMPOSER_HOME
       shell: |
         set -o pipefail
-        su -l -s /bin/bash -c 'echo $COMPOSER_HOME'
+        source /etc/profile
+        echo $COMPOSER_HOME
       args:
         executable: "/bin/bash"
       register: result
