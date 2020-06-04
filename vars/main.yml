@@ -15,6 +15,10 @@
 # limitations under the License.
 
 _composer_download:
+  1.10.7:
+    url: "https://github.com/composer/composer/releases/download/1.10.7/composer.phar"
+    dest: "{{ ansible_user_dir }}/.ansible/tmp/composer-1.10.7.phar"
+    checksum: "sha1:75d98f30df958296249aa14efc622216166b57dd"
   1.10.6:
     url: "https://github.com/composer/composer/releases/download/1.10.6/composer.phar"
     dest: "{{ ansible_user_dir }}/.ansible/tmp/composer-1.10.6.phar"
@@ -23,26 +27,6 @@ _composer_download:
     url: "https://github.com/composer/composer/releases/download/1.10.5/composer.phar"
     dest: "{{ ansible_user_dir }}/.ansible/tmp/composer-1.10.5.phar"
     checksum: "sha1:a5cc6616123f22df9d148f0b79b20d1e4c4b61d2"
-  1.10.4:
-    url: "https://github.com/composer/composer/releases/download/1.10.4/composer.phar"
-    dest: "{{ ansible_user_dir }}/.ansible/tmp/composer-1.10.4.phar"
-    checksum: "sha1:c3d0480fc94a687c06605dcf1d7c753b54e63089"
-  1.10.3:
-    url: "https://github.com/composer/composer/releases/download/1.10.3/composer.phar"
-    dest: "{{ ansible_user_dir }}/.ansible/tmp/composer-1.10.3.phar"
-    checksum: "sha1:b5df1f5db6a59096665bfbbabb84c7bdfc526e3e"
-  1.10.2:
-    url: "https://github.com/composer/composer/releases/download/1.10.2/composer.phar"
-    dest: "{{ ansible_user_dir }}/.ansible/tmp/composer-1.10.2.phar"
-    checksum: "sha1:1a00a2e11c15e3186802d6a692807b7f4926ffd2"
-  1.10.1:
-    url: "https://github.com/composer/composer/releases/download/1.10.1/composer.phar"
-    dest: "{{ ansible_user_dir }}/.ansible/tmp/composer-1.10.1.phar"
-    checksum: "sha1:72e36ee0b447f49cb4872d39dcab7dc76ea2bdb2"
-  1.10.0:
-    url: "https://github.com/composer/composer/releases/download/1.10.0/composer.phar"
-    dest: "{{ ansible_user_dir }}/.ansible/tmp/composer-1.10.0.phar"
-    checksum: "sha1:14b9d3df167fe1eed1dc50d8a418035b45d7b116"
   1.9.3:
     url: "https://github.com/composer/composer/releases/download/1.9.3/composer.phar"
     dest: "{{ ansible_user_dir }}/.ansible/tmp/composer-1.9.3.phar"

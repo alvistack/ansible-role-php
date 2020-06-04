@@ -114,11 +114,12 @@
 - name: composer global init
   environment:
     PATH: "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-    COMPOSER_HOME: "/usr/local/share/composer"
-    COMPOSER_BIN_DIR: "/usr/local/bin"
-    CGR_BIN_DIR: "/usr/local/bin"
-  command: composer global init --no-interaction
+  shell: |
+    set -o pippefail
+    source /etc/profile
+    composer global init --no-interaction
   args:
+    executable: "/bin/bash"
     creates: "/usr/local/share/composer/composer.json"
   register: result
   changed_when: result is not succeeded
@@ -127,10 +128,12 @@
 - name: composer global require
   environment:
     PATH: "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-    COMPOSER_HOME: "/usr/local/share/composer"
-    COMPOSER_BIN_DIR: "/usr/local/bin"
-    CGR_BIN_DIR: "/usr/local/bin"
-  command: composer global {{ item.state }} {{ item.name }} --no-interaction
+  shell: |
+    set -o pippefail
+    source /etc/profile
+    composer global {{ item.state }} {{ item.name }} --no-interaction
+  args:
+    executable: "/bin/bash"
   loop:
     - { state: 'require', name: 'hirak/prestissimo:@stable' }
     - { state: 'require', name: 'consolidation/cgr:@stable' }
@@ -142,10 +145,12 @@
 - name: composer global update
   environment:
     PATH: "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-    COMPOSER_HOME: "/usr/local/share/composer"
-    COMPOSER_BIN_DIR: "/usr/local/bin"
-    CGR_BIN_DIR: "/usr/local/bin"
-  command: composer global update
+  shell: |
+    set -o pippefail
+    source /etc/profile
+    composer global update
+  args:
+    executable: "/bin/bash"
   register: result
   until: result is succeeded
   changed_when: result is not succeeded
@@ -154,10 +159,12 @@
 - name: cgr require
   environment:
     PATH: "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-    COMPOSER_HOME: "/usr/local/share/composer"
-    COMPOSER_BIN_DIR: "/usr/local/bin"
-    CGR_BIN_DIR: "/usr/local/bin"
-  command: cgr {{ item.state }} {{ item.name }}
+  shell: |
+    set -o pippefail
+    source /etc/profile
+    cgr {{ item.state }} {{ item.name }}
+  args:
+    executable: "/bin/bash"
   loop: "{{ cgr }}"
   register: result
   until: result is succeeded
@@ -167,10 +174,12 @@
 - name: cgr update
   environment:
     PATH: "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-    COMPOSER_HOME: "/usr/local/share/composer"
-    COMPOSER_BIN_DIR: "/usr/local/bin"
-    CGR_BIN_DIR: "/usr/local/bin"
-  command: cgr update
+  shell: |
+    set -o pippefail
+    source /etc/profile
+    cgr update
+  args:
+    executable: "/bin/bash"
   register: result
   until: result is succeeded
   changed_when: "'Package operations:' in result.stderr"
