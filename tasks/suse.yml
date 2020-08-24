@@ -50,7 +50,7 @@
   register: result
   until: result is succeeded
   notify:
-    - php | systemctl restart php-fpm
+    - php | systemctl restart php-fpm.service
   tags: php
 
 - name: copy /etc/php7/fpm/*
@@ -66,5 +66,5 @@
     - { dest: "/etc/php7/fpm/php-fpm.conf", src: "/etc/php7/fpm/php-fpm.conf.default" }
     - { dest: "/etc/php7/fpm/php-fpm.d/www.conf", src: "/etc/php7/fpm/php-fpm.d/www.conf.default" }
   notify:
-    - php | systemctl restart php-fpm
+    - php | systemctl restart php-fpm.service
   tags: php

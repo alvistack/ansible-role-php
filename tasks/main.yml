@@ -186,7 +186,7 @@
   changed_when: "'Package operations:' in result.stderr"
   tags: php
 
-- name: systemctl start php-fpm
+- name: systemctl start php-fpm.service
   service:
     name: "{{ php_fpm_service }}"
     state: "started"
