@@ -15,9 +15,9 @@
 # limitations under the License.
 
 _php_fpm_service:
-  "7.4": "php7.4-fpm"
-  "7.3": "php7.3-fpm"
-  "7.2": "php7.2-fpm"
+  "7.4": "php7.4-fpm.service"
+  "7.3": "php7.3-fpm.service"
+  "7.2": "php7.2-fpm.service"
 
 _apt_key:
   "7.4":

@@ -15,9 +15,9 @@
 # limitations under the License.
 
 _php_fpm_service:
-  "7.4": "php-fpm"
-  "7.3": "php-fpm"
-  "7.2": "php-fpm"
+  "7.4": "php-fpm.service"
+  "7.3": "php-fpm.service"
+  "7.2": "php-fpm.service"
 
 _rpm_repository:
   "7.4":

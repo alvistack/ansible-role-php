@@ -57,5 +57,5 @@
   register: result
   until: result is succeeded
   notify:
-    - php | systemctl restart php-fpm
+    - php | systemctl restart php-fpm.service
   tags: php
