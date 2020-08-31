@@ -1,7 +1,7 @@
 # Ansible Role for PHP
 
 [![Travis](https://img.shields.io/travis/com/alvistack/ansible-role-php.svg)](https://travis-ci.com/alvistack/ansible-role-php)
-[![GitHub release](https://img.shields.io/github/release/alvistack/ansible-role-php.svg)](https://github.com/alvistack/ansible-role-php)
+[![GitHub release](https://img.shields.io/github/release/alvistack/ansible-role-php.svg)](https://github.com/alvistack/ansible-role-php/releases)
 [![GitHub license](https://img.shields.io/github/license/alvistack/ansible-role-php.svg)](https://github.com/alvistack/ansible-role-php/blob/master/LICENSE)
 [![Ansible Role](https://img.shields.io/badge/galaxy-alvistack.php-blue.svg)](https://galaxy.ansible.com/alvistack/php)
 
