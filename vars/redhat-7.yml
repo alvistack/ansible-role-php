@@ -14,7 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-_php_fpm_service:
+_service:
   "7.4": "php-fpm.service"
   "7.3": "php-fpm.service"
   "7.2": "php-fpm.service"
