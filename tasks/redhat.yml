@@ -14,12 +14,22 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-- name: dnf install yum-utils
+- name: dnf install gnupg2
   dnf:
-    name: "yum-utils"
+    name: "gnupg2"
     state: "present"
-  changed_when: false
-  ignore_errors: true
+  register: result
+  until: result is succeeded
+  tags: php
+
+- name: rpm --import
+  rpm_key:
+    key: "{{ item.key }}"
+    fingerprint: "{{ item.fingerprint }}"
+    state: "{{ item.state }}"
+  loop: "{{ _rpm_key[php_release] }}"
+  register: result
+  until: result is succeeded
   tags: php
 
 - name: dnf install
@@ -31,6 +41,14 @@
   until: result is succeeded
   changed_when: false
   ignore_errors: true
+  tags: php
+
+- name: dnf install yum-utils
+  dnf:
+    name: "yum-utils"
+    state: "present"
+  register: result
+  until: result is succeeded
   tags: php
 
 - name: dnf config-manager

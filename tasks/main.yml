@@ -188,7 +188,7 @@
 
 - name: systemctl start php-fpm.service
   service:
-    name: "{{ php_fpm_service }}"
+    name: "{{ _service[php_release] }}"
     state: "started"
     enabled: true
   changed_when: false

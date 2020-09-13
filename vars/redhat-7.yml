@@ -14,10 +14,33 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-_php_fpm_service:
+_service:
   "7.4": "php-fpm.service"
   "7.3": "php-fpm.service"
   "7.2": "php-fpm.service"
+
+_rpm_key:
+  "7.4":
+    - key: "https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7"
+      fingerprint: "91E97D7C4A5E96F17F3E888F6A2FAEA2352C64E5"
+      state: "present"
+    - key: "https://rpms.remirepo.net/RPM-GPG-KEY-remi"
+      fingerprint: "1EE04CCE88A4AE4AA29A5DF5004E6F4700F97F56"
+      state: "present"
+  "7.3":
+    - key: "https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7"
+      fingerprint: "91E97D7C4A5E96F17F3E888F6A2FAEA2352C64E5"
+      state: "present"
+    - key: "https://rpms.remirepo.net/RPM-GPG-KEY-remi"
+      fingerprint: "1EE04CCE88A4AE4AA29A5DF5004E6F4700F97F56"
+      state: "present"
+  "7.2":
+    - key: "https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7"
+      fingerprint: "91E97D7C4A5E96F17F3E888F6A2FAEA2352C64E5"
+      state: "present"
+    - key: "https://rpms.remirepo.net/RPM-GPG-KEY-remi"
+      fingerprint: "1EE04CCE88A4AE4AA29A5DF5004E6F4700F97F56"
+      state: "present"
 
 _rpm_repository:
   "7.4":

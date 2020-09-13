@@ -14,32 +14,36 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-_php_fpm_service:
+_service:
   "7.4": "php-fpm.service"
-  "7.3": "php-fpm.service"
+  "7.3": ~
   "7.2": ~
+
+_rpm_key:
+  "7.4":
+    - key: "https://rpms.remirepo.net/RPM-GPG-KEY-remi2020"
+      fingerprint: "34C10BDBCC6F1B252E50BA1A0714919E4C21A808"
+      state: "present"
+  "7.3": []
+  "7.2": []
 
 _rpm_repository:
   "7.4":
     - name: "https://rpms.remirepo.net/fedora/remi-release-32.rpm"
       state: "latest"
-  "7.3":
-    - name: "https://rpms.remirepo.net/fedora/remi-release-32.rpm"
-      state: "latest"
+  "7.3": []
   "7.2": []
 
 _dnf_config_manager:
   "7.4":
     - { state: "enable", name: "remi" }
-  "7.3":
-    - { state: "enable", name: "remi" }
+  "7.3": []
   "7.2": []
 
 _dnf_module:
   "7.4":
     - { state: "present", name: "@php:remi-7.4" }
-  "7.3":
-    - { state: "present", name: "@php:remi-7.3" }
+  "7.3": []
   "7.2": []
 
 _dnf:
@@ -70,31 +74,5 @@ _dnf:
     - { state: "latest", name: "php-xml" }
     - { state: "latest", name: "php-xmlrpc" }
     - { state: "latest", name: "php-zip" }
-  "7.3":
-    - { state: "latest", name: "redhat-lsb" }
-    - { state: "latest", name: "GeoIP-data" }
-    - { state: "latest", name: "ImageMagick" }
-    - { state: "latest", name: "php-cli" }
-    - { state: "latest", name: "php-fpm" }
-    - { state: "latest", name: "php-bcmath" }
-    - { state: "latest", name: "php-gd" }
-    - { state: "latest", name: "php-imap" }
-    - { state: "latest", name: "php-intl" }
-    - { state: "latest", name: "php-json" }
-    - { state: "latest", name: "php-ldap" }
-    - { state: "latest", name: "php-mbstring" }
-    - { state: "latest", name: "php-mysqlnd" }
-    - { state: "latest", name: "php-opcache" }
-    - { state: "latest", name: "php-pecl-apcu" }
-    - { state: "latest", name: "php-pecl-apcu-bc" }
-    - { state: "latest", name: "php-pecl-geoip" }
-    - { state: "latest", name: "php-pecl-imagick" }
-    - { state: "latest", name: "php-pecl-memcache" }
-    - { state: "latest", name: "php-pecl-uuid" }
-    - { state: "latest", name: "php-pgsql" }
-    - { state: "latest", name: "php-soap" }
-    - { state: "latest", name: "php-tidy" }
-    - { state: "latest", name: "php-xml" }
-    - { state: "latest", name: "php-xmlrpc" }
-    - { state: "latest", name: "php-zip" }
+  "7.3": []
   "7.2": []
