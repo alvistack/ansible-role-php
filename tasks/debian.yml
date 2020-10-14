@@ -20,7 +20,6 @@
     state: "present"
   register: result
   until: result is succeeded
-  tags: php
 
 - name: apt-key add
   apt_key:
@@ -30,7 +29,6 @@
   loop: "{{ _apt_key[php_release] }}"
   register: result
   until: result is succeeded
-  tags: php
 
 - name: apt-add-repository
   apt_repository:
@@ -40,7 +38,6 @@
   loop: "{{ _apt_repository[php_release] }}"
   register: result
   until: result is succeeded
-  tags: php
 
 - name: apt-get install
   apt:
@@ -52,4 +49,3 @@
   until: result is succeeded
   notify:
     - php | systemctl restart php-fpm.service
-  tags: php

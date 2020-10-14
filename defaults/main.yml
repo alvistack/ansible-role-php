@@ -18,7 +18,7 @@
 php_release: "7.4"
 
 # Composer version.
-composer_version: "1.10.13"
+composer_version: "1.10.15"
 
 # Composer download details.
 composer_download: "{{ _composer_download[composer_version] }}"

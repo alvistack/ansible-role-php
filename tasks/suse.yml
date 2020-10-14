@@ -22,7 +22,6 @@
     state: "present"
   register: result
   until: result is succeeded
-  tags: php
 
 - name: zypper addrepo
   vars:
@@ -37,7 +36,6 @@
   loop: "{{ _zypper_repository[php_release] }}"
   register: result
   until: result is succeeded
-  tags: php
 
 - name: zypper install
   vars:
@@ -51,7 +49,6 @@
   until: result is succeeded
   notify:
     - php | systemctl restart php-fpm.service
-  tags: php
 
 - name: copy /etc/php7/fpm/*
   copy:
@@ -67,4 +64,3 @@
     - { dest: "/etc/php7/fpm/php-fpm.d/www.conf", src: "/etc/php7/fpm/php-fpm.d/www.conf.default" }
   notify:
     - php | systemctl restart php-fpm.service
-  tags: php

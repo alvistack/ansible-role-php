@@ -20,7 +20,6 @@
     state: "present"
   register: result
   until: result is succeeded
-  tags: php
 
 - name: rpm --import
   rpm_key:
@@ -30,7 +29,6 @@
   loop: "{{ _rpm_key[php_release] }}"
   register: result
   until: result is succeeded
-  tags: php
 
 - name: yum-config-manager --add-repo
   yum:
@@ -41,7 +39,6 @@
   until: result is succeeded
   changed_when: false
   ignore_errors: true
-  tags: php
 
 - name: yum install yum-utils
   yum:
@@ -49,14 +46,12 @@
     state: "present"
   register: result
   until: result is succeeded
-  tags: php
 
 - name: yum-config-manager --enable
   command: yum-config-manager --{{ item.state }} {{ item.name }}
   loop: "{{ _yum_config_manager[php_release] }}"
   changed_when: false
   ignore_errors: true
-  tags: php
 
 - name: yum install
   yum:
@@ -67,4 +62,3 @@
   until: result is succeeded
   notify:
     - php | systemctl restart php-fpm.service
-  tags: php
