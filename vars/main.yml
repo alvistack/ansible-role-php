@@ -15,6 +15,10 @@
 # limitations under the License.
 
 _composer_download:
+  "2.0.7":
+    url: "https://github.com/composer/composer/releases/download/2.0.7/composer.phar"
+    dest: "{{ ansible_user_dir }}/.ansible/tmp/composer-2.0.7.phar"
+    checksum: "sha1:b595b1fdda69ea00525f8e61e817eb05043bb80c"
   "2.0.6":
     url: "https://github.com/composer/composer/releases/download/2.0.6/composer.phar"
     dest: "{{ ansible_user_dir }}/.ansible/tmp/composer-2.0.6.phar"
@@ -23,10 +27,6 @@ _composer_download:
     url: "https://github.com/composer/composer/releases/download/2.0.5/composer.phar"
     dest: "{{ ansible_user_dir }}/.ansible/tmp/composer-2.0.5.phar"
     checksum: "sha1:8463931b18289f03eca64c7961a4f3bf25b772f3"
-  "2.0.4":
-    url: "https://github.com/composer/composer/releases/download/2.0.4/composer.phar"
-    dest: "{{ ansible_user_dir }}/.ansible/tmp/composer-2.0.4.phar"
-    checksum: "sha1:b789b4edcd84b28cfe1d40c78fa915e4fed94a84"
 
 _cgr:
   - { state: "require", name: "drupal/coder:@stable" }
