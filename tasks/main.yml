@@ -127,7 +127,6 @@
   args:
     executable: "/bin/bash"
   loop:
-    - { state: 'require', name: 'hirak/prestissimo:@stable' }
     - { state: 'require', name: 'consolidation/cgr:@stable' }
   register: result
   until: result is succeeded
