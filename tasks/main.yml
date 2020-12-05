@@ -104,26 +104,14 @@
   loop:
     - { dest: "/usr/local/bin/composer", mode: "0755" }
 
-- name: composer global init
-  environment:
-    PATH: "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-  shell: |
-    set -o pippefail
-    source /etc/profile
-    composer global init --no-interaction
-  args:
-    executable: "/bin/bash"
-    creates: "/usr/local/share/composer/composer.json"
-  register: result
-  changed_when: result is not succeeded
-
 - name: composer global require
   environment:
+    COMPOSER_ALLOW_SUPERUSER: "1"
     PATH: "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
   shell: |
     set -o pippefail
     source /etc/profile
-    composer global {{ item.state }} {{ item.name }} --no-interaction
+    composer --no-interaction global {{ item.state }} {{ item.name }}
   args:
     executable: "/bin/bash"
   loop:
@@ -134,11 +122,12 @@
 
 - name: composer global update
   environment:
+    COMPOSER_ALLOW_SUPERUSER: "1"
     PATH: "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
   shell: |
     set -o pippefail
     source /etc/profile
-    composer global update
+    composer --no-interaction global update
   args:
     executable: "/bin/bash"
   register: result
@@ -147,6 +136,7 @@
 
 - name: cgr require
   environment:
+    COMPOSER_ALLOW_SUPERUSER: "1"
     PATH: "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
   shell: |
     set -o pippefail
@@ -161,6 +151,7 @@
 
 - name: cgr update
   environment:
+    COMPOSER_ALLOW_SUPERUSER: "1"
     PATH: "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
   shell: |
     set -o pippefail
