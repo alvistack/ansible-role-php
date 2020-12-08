@@ -53,6 +53,7 @@
     mode: "{{ item.mode | default('0755') }}"
     state: "{{ item.state | default('directory') }}"
   loop:
+    - { dest: "/etc/profile.d" }
     - { dest: "/usr/local/share/composer" }
     - { dest: "{{ composer_download.dest | dirname }}" }
 
