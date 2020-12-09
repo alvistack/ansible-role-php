@@ -83,7 +83,7 @@
 
 - name: unarchive package
   shell: |
-    set -o pipefail
+    set -euo pipefail
     cd /usr/local/bin
     TMP_DIR="$(mktemp -d)" \
       && cp {{ composer_download.dest }} $TMP_DIR/composer \
