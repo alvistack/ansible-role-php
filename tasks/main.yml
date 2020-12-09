@@ -83,7 +83,7 @@
 
 - name: unarchive package
   shell: |
-    set -o pipefail
+    set -euo pipefail
     cd /usr/local/bin
     TMP_DIR="$(mktemp -d)" \
       && cp {{ composer_download.dest }} $TMP_DIR/composer \
@@ -107,7 +107,6 @@
 
 - name: composer global require
   environment:
-    COMPOSER_ALLOW_SUPERUSER: "1"
     PATH: "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
   shell: |
     set -o pippefail
@@ -123,7 +122,6 @@
 
 - name: composer global update
   environment:
-    COMPOSER_ALLOW_SUPERUSER: "1"
     PATH: "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
   shell: |
     set -o pippefail
@@ -137,7 +135,6 @@
 
 - name: cgr require
   environment:
-    COMPOSER_ALLOW_SUPERUSER: "1"
     PATH: "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
   shell: |
     set -o pippefail
@@ -152,7 +149,6 @@
 
 - name: cgr update
   environment:
-    COMPOSER_ALLOW_SUPERUSER: "1"
     PATH: "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
   shell: |
     set -o pippefail
