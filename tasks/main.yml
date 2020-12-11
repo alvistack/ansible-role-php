@@ -109,8 +109,8 @@
   environment:
     PATH: "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
   shell: |
-    set -o pippefail
-    source /etc/profile
+    set -euo pipefail
+    source /etc/profile.d/composer.sh
     composer --no-interaction global {{ item.state }} {{ item.name }}
   args:
     executable: "/bin/bash"
@@ -124,8 +124,8 @@
   environment:
     PATH: "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
   shell: |
-    set -o pippefail
-    source /etc/profile
+    set -euo pipefail
+    source /etc/profile.d/composer.sh
     composer --no-interaction global update
   args:
     executable: "/bin/bash"
@@ -137,8 +137,8 @@
   environment:
     PATH: "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
   shell: |
-    set -o pippefail
-    source /etc/profile
+    set -euo pipefail
+    source /etc/profile.d/composer.sh
     cgr {{ item.state }} {{ item.name }}
   args:
     executable: "/bin/bash"
@@ -151,8 +151,8 @@
   environment:
     PATH: "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
   shell: |
-    set -o pippefail
-    source /etc/profile
+    set -euo pipefail
+    source /etc/profile.d/composer.sh
     cgr update
   args:
     executable: "/bin/bash"

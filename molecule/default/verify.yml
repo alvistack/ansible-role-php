@@ -47,7 +47,7 @@
     - name: echo $COMPOSER_HOME
       shell: |
         set -euo pipefail
-        source /etc/profile
+        source /etc/profile.d/composer.sh
         echo $COMPOSER_HOME
       args:
         executable: "/bin/bash"
