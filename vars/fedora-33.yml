@@ -27,10 +27,11 @@ _rpm_key:
   "7.3": []
   "7.2": []
 
-_rpm_repository:
+_rpm_download:
   "7.4":
-    - name: "https://rpms.remirepo.net/fedora/remi-release-33.rpm"
-      state: "latest"
+    - url: "https://rpms.remirepo.net/fedora/remi-release-33.rpm"
+      dest: "/var/cache/ansible/d5fec213f5fa22ef93f9ab5f23be74a05014251796a2d417246c219c7100f895/remi-release-33.rpm"
+      checksum: "sha256:d5fec213f5fa22ef93f9ab5f23be74a05014251796a2d417246c219c7100f895"
   "7.3": []
   "7.2": []
 

@@ -42,22 +42,28 @@ _rpm_key:
       fingerprint: "1EE04CCE88A4AE4AA29A5DF5004E6F4700F97F56"
       state: "present"
 
-_rpm_repository:
+_rpm_download:
   "7.4":
-    - name: "https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm"
-      state: "latest"
-    - name: "https://rpms.remirepo.net/enterprise/remi-release-7.rpm"
-      state: "latest"
+    - url: "https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm"
+      dest: "/var/cache/ansible/46fa100dbf4c103e1b33f04128a837028d603939ef5d72026c4ab9dadcd55bed/epel-release-latest-7.noarch.rpm"
+      checksum: "sha256:46fa100dbf4c103e1b33f04128a837028d603939ef5d72026c4ab9dadcd55bed"
+    - url: "https://rpms.remirepo.net/enterprise/remi-release-7.rpm"
+      dest: "/var/cache/ansible/ff284a375f4b6a173334d66fde802cdfdd1dcebed7a8f789c5f3715f1d2ebea7/remi-release-7.rpm"
+      checksum: "sha256:ff284a375f4b6a173334d66fde802cdfdd1dcebed7a8f789c5f3715f1d2ebea7"
   "7.3":
-    - name: "https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm"
-      state: "latest"
-    - name: "https://rpms.remirepo.net/enterprise/remi-release-7.rpm"
-      state: "latest"
+    - url: "https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm"
+      dest: "/var/cache/ansible/46fa100dbf4c103e1b33f04128a837028d603939ef5d72026c4ab9dadcd55bed/epel-release-latest-7.noarch.rpm"
+      checksum: "sha256:46fa100dbf4c103e1b33f04128a837028d603939ef5d72026c4ab9dadcd55bed"
+    - url: "https://rpms.remirepo.net/enterprise/remi-release-7.rpm"
+      dest: "/var/cache/ansible/ff284a375f4b6a173334d66fde802cdfdd1dcebed7a8f789c5f3715f1d2ebea7/remi-release-7.rpm"
+      checksum: "sha256:ff284a375f4b6a173334d66fde802cdfdd1dcebed7a8f789c5f3715f1d2ebea7"
   "7.2":
-    - name: "https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm"
-      state: "latest"
-    - name: "https://rpms.remirepo.net/enterprise/remi-release-7.rpm"
-      state: "latest"
+    - url: "https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm"
+      dest: "/var/cache/ansible/46fa100dbf4c103e1b33f04128a837028d603939ef5d72026c4ab9dadcd55bed/epel-release-latest-7.noarch.rpm"
+      checksum: "sha256:46fa100dbf4c103e1b33f04128a837028d603939ef5d72026c4ab9dadcd55bed"
+    - url: "https://rpms.remirepo.net/enterprise/remi-release-7.rpm"
+      dest: "/var/cache/ansible/ff284a375f4b6a173334d66fde802cdfdd1dcebed7a8f789c5f3715f1d2ebea7/remi-release-7.rpm"
+      checksum: "sha256:ff284a375f4b6a173334d66fde802cdfdd1dcebed7a8f789c5f3715f1d2ebea7"
 
 _yum_config_manager:
   "7.4":
