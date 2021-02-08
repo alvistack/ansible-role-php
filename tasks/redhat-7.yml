@@ -77,6 +77,17 @@
   changed_when: false
   ignore_errors: true
 
+- name: prepare directories
+  file:
+    dest: "{{ item.dest }}"
+    owner: "{{ item.owner | default('root') }}"
+    group: "{{ item.group | default('root') }}"
+    mode: "{{ item.mode | default('0755') }}"
+    state: "{{ item.state | default('directory') }}"
+  loop:
+    - { dest: "/run/php-fpm", owner: "apache", group: "apache" }
+    - { dest: "/var/www/html", owner: "apache", group: "apache" }
+
 - name: yum install
   yum:
     name: "{{ item.name }}"
