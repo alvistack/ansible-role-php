@@ -14,6 +14,24 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+- name: groupadd
+  group:
+    name: "apache"
+    gid: "48"
+    system: true
+    state: "present"
+
+- name: useradd
+  user:
+    name: "apache"
+    uid: "48"
+    group: "apache"
+    home: "/usr/share/httpd"
+    shell: "/sbin/nologin"
+    system: true
+    create_home: false
+    state: "present"
+
 - name: dnf install gnupg2
   dnf:
     name: "gnupg2"

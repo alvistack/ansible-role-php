@@ -14,6 +14,24 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+- name: groupadd
+  group:
+    name: "wwwrun"
+    gid: "8"
+    system: true
+    state: "present"
+
+- name: useradd
+  user:
+    name: "wwwrun"
+    uid: "30"
+    group: "wwwrun"
+    home: "/var/lib/wwwrun"
+    shell: "/sbin/nologin"
+    system: true
+    create_home: false
+    state: "present"
+
 - name: zypper install gpg2
   vars:
     ansible_python_interpreter: "python3"
