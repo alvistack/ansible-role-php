@@ -22,15 +22,15 @@ _service:
 _zypper_repository:
   "7.4":
     - name: "devel:languages:php"
-      repo: "https://download.opensuse.org/repositories/devel:/languages:/php/openSUSE_Leap_15.2"
+      repo: "http://download.opensuse.org/repositories/devel:/languages:/php/openSUSE_Leap_15.2"
       state: "present"
   "7.3":
     - name: "devel:languages:php:php73"
-      repo: "https://download.opensuse.org/repositories/devel:/languages:/php:/php73/openSUSE_Leap_15.2"
+      repo: "http://download.opensuse.org/repositories/devel:/languages:/php:/php73/openSUSE_Leap_15.2"
       state: "present"
   "7.2":
     - name: "devel:languages:php:php72"
-      repo: "https://download.opensuse.org/repositories/devel:/languages:/php:/php72/openSUSE_Leap_15.2"
+      repo: "http://download.opensuse.org/repositories/devel:/languages:/php:/php72/openSUSE_Leap_15.2"
       state: "present"
 
 _zypper:
