@@ -14,6 +14,24 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+- name: groupadd
+  group:
+    name: "www-data"
+    gid: "33"
+    system: true
+    state: "present"
+
+- name: useradd
+  user:
+    name: "www-data"
+    uid: "33"
+    group: "www-data"
+    home: "/var/www"
+    shell: "/usr/sbin/nologin"
+    system: true
+    create_home: false
+    state: "present"
+
 - name: apt-get install gnupg
   apt:
     name: "gnupg"
@@ -38,6 +56,17 @@
   loop: "{{ _apt_repository[php_release] }}"
   register: result
   until: result is succeeded
+
+- name: prepare directories
+  file:
+    dest: "{{ item.dest }}"
+    owner: "{{ item.owner | default('root') }}"
+    group: "{{ item.group | default('root') }}"
+    mode: "{{ item.mode | default('0755') }}"
+    state: "{{ item.state | default('directory') }}"
+  loop:
+    - { dest: "/run/php", owner: "www-data", group: "www-data" }
+    - { dest: "/var/www/html", owner: "www-data", group: "www-data" }
 
 - name: apt-get install
   apt:

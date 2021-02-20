@@ -14,6 +14,24 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+- name: groupadd
+  group:
+    name: "apache"
+    gid: "48"
+    system: true
+    state: "present"
+
+- name: useradd
+  user:
+    name: "apache"
+    uid: "48"
+    group: "apache"
+    home: "/usr/share/httpd"
+    shell: "/sbin/nologin"
+    system: true
+    create_home: false
+    state: "present"
+
 - name: yum install gnupg2
   yum:
     name: "gnupg2"
@@ -76,6 +94,17 @@
   loop: "{{ _yum_config_manager[php_release] }}"
   changed_when: false
   ignore_errors: true
+
+- name: prepare directories
+  file:
+    dest: "{{ item.dest }}"
+    owner: "{{ item.owner | default('root') }}"
+    group: "{{ item.group | default('root') }}"
+    mode: "{{ item.mode | default('0755') }}"
+    state: "{{ item.state | default('directory') }}"
+  loop:
+    - { dest: "/run/php-fpm", owner: "apache", group: "apache" }
+    - { dest: "/var/www/html", owner: "apache", group: "apache" }
 
 - name: yum install
   yum:

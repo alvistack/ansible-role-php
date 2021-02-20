@@ -21,27 +21,27 @@ _service:
 
 _apt_key:
   "7.4":
-    - url: "https://packages.sury.org/php/apt.gpg"
+    - url: "http://packages.sury.org/php/apt.gpg"
       id: "15058500A0235D97F5D10063B188E2B695BD4743"
       state: "present"
   "7.3":
-    - url: "https://packages.sury.org/php/apt.gpg"
+    - url: "http://packages.sury.org/php/apt.gpg"
       id: "15058500A0235D97F5D10063B188E2B695BD4743"
       state: "present"
   "7.2":
-    - url: "https://packages.sury.org/php/apt.gpg"
+    - url: "http://packages.sury.org/php/apt.gpg"
       id: "15058500A0235D97F5D10063B188E2B695BD4743"
       state: "present"
 
 _apt_repository:
   "7.4":
-    - repo: "deb https://packages.sury.org/php/ buster main"
+    - repo: "deb http://packages.sury.org/php/ buster main"
       state: "present"
   "7.3":
-    - repo: "deb https://packages.sury.org/php/ buster main"
+    - repo: "deb http://packages.sury.org/php/ buster main"
       state: "present"
   "7.2":
-    - repo: "deb https://packages.sury.org/php/ buster main"
+    - repo: "deb http://packages.sury.org/php/ buster main"
       state: "present"
 
 _apt:

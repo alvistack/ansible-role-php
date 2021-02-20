@@ -14,6 +14,24 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+- name: groupadd
+  group:
+    name: "www"
+    gid: "8"
+    system: true
+    state: "present"
+
+- name: useradd
+  user:
+    name: "wwwrun"
+    uid: "30"
+    group: "www"
+    home: "/var/lib/wwwrun"
+    shell: "/sbin/nologin"
+    system: true
+    create_home: false
+    state: "present"
+
 - name: zypper install gpg2
   vars:
     ansible_python_interpreter: "python3"
@@ -36,6 +54,17 @@
   loop: "{{ _zypper_repository[php_release] }}"
   register: result
   until: result is succeeded
+
+- name: prepare directories
+  file:
+    dest: "{{ item.dest }}"
+    owner: "{{ item.owner | default('root') }}"
+    group: "{{ item.group | default('root') }}"
+    mode: "{{ item.mode | default('0755') }}"
+    state: "{{ item.state | default('directory') }}"
+  loop:
+    - { dest: "/run/php-fpm", owner: "wwwrun", group: "www" }
+    - { dest: "/srv/www", owner: "wwwrun", group: "www" }
 
 - name: zypper install
   vars:
