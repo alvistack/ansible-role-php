@@ -32,13 +32,6 @@
     create_home: false
     state: "present"
 
-- name: yum install gnupg2
-  yum:
-    name: "gnupg2"
-    state: "present"
-  register: result
-  until: result is succeeded
-
 - name: rpm --import
   rpm_key:
     key: "{{ item.key }}"
@@ -81,13 +74,8 @@
     executable: "/bin/bash"
     creates: "{{ item.dest }}.log"
   loop: "{{ _rpm_download[php_release] }}"
-
-- name: yum install yum-utils
-  yum:
-    name: "yum-utils"
-    state: "present"
-  register: result
-  until: result is succeeded
+  changed_when: false
+  ignore_errors: true
 
 - name: yum-config-manager --enable
   command: yum-config-manager --{{ item.state }} {{ item.name }}
