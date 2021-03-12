@@ -14,6 +14,46 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+- name: php | redhat-7 | download archive
+  vars:
+    ansible_python_interpreter: "python3"
+  get_url:
+    url: "{{ item.url }}"
+    dest: "{{ item.dest }}"
+    checksum: "{{ item.checksum }}"
+    mode: "{{ item.mode | default('0644') }}"
+    timeout: 300
+  loop: "{{ _rpm_download[php_release] }}"
+  register: result
+  until: result is succeeded
+
+- name: php | redhat | download archive
+  vars:
+    ansible_python_interpreter: "python3"
+  get_url:
+    url: "{{ item.url }}"
+    dest: "{{ item.dest }}"
+    checksum: "{{ item.checksum }}"
+    mode: "{{ item.mode | default('0644') }}"
+    timeout: 300
+  loop: "{{ _rpm_download[php_release] }}"
+  register: result
+  until: result is succeeded
+
+- name: php | download archive
+  vars:
+    ansible_python_interpreter: "python3"
+  get_url:
+    url: "{{ item.url }}"
+    dest: "{{ item.dest }}"
+    checksum: "{{ item.checksum }}"
+    mode: "{{ item.mode | default('0644') }}"
+    timeout: 300
+  loop:
+    - "{{ composer_download }}"
+  register: result
+  until: result is succeeded
+
 - name: php | systemctl restart php-fpm.service
   service:
     name: "{{ _service[php_release] }}"
