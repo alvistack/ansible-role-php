@@ -18,10 +18,12 @@
   remote_user: root
   become: true
   tasks:
-    - include_role:
+    - name: include role
+      include_role:
         name: git
       tags: git
 
-    - include_role:
+    - name: include role
+      include_role:
         name: php
       tags: php
