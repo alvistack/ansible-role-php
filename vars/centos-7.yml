@@ -46,24 +46,24 @@ _rpm_download:
   "7.4":
     - url: "http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm"
       dest: "/var/cache/ansible/46fa100dbf4c103e1b33f04128a837028d603939ef5d72026c4ab9dadcd55bed/epel-release-latest-7.noarch.rpm"
-      checksum: "sha256:46fa100dbf4c103e1b33f04128a837028d603939ef5d72026c4ab9dadcd55bed"
+      sha256sum: "46fa100dbf4c103e1b33f04128a837028d603939ef5d72026c4ab9dadcd55bed"
     - url: "http://rpms.remirepo.net/enterprise/remi-release-7.rpm"
       dest: "/var/cache/ansible/ff284a375f4b6a173334d66fde802cdfdd1dcebed7a8f789c5f3715f1d2ebea7/remi-release-7.rpm"
-      checksum: "sha256:ff284a375f4b6a173334d66fde802cdfdd1dcebed7a8f789c5f3715f1d2ebea7"
+      sha256sum: "ff284a375f4b6a173334d66fde802cdfdd1dcebed7a8f789c5f3715f1d2ebea7"
   "7.3":
     - url: "http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm"
       dest: "/var/cache/ansible/46fa100dbf4c103e1b33f04128a837028d603939ef5d72026c4ab9dadcd55bed/epel-release-latest-7.noarch.rpm"
-      checksum: "sha256:46fa100dbf4c103e1b33f04128a837028d603939ef5d72026c4ab9dadcd55bed"
+      sha256sum: "46fa100dbf4c103e1b33f04128a837028d603939ef5d72026c4ab9dadcd55bed"
     - url: "http://rpms.remirepo.net/enterprise/remi-release-7.rpm"
       dest: "/var/cache/ansible/ff284a375f4b6a173334d66fde802cdfdd1dcebed7a8f789c5f3715f1d2ebea7/remi-release-7.rpm"
-      checksum: "sha256:ff284a375f4b6a173334d66fde802cdfdd1dcebed7a8f789c5f3715f1d2ebea7"
+      sha256sum: "ff284a375f4b6a173334d66fde802cdfdd1dcebed7a8f789c5f3715f1d2ebea7"
   "7.2":
     - url: "http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm"
       dest: "/var/cache/ansible/46fa100dbf4c103e1b33f04128a837028d603939ef5d72026c4ab9dadcd55bed/epel-release-latest-7.noarch.rpm"
-      checksum: "sha256:46fa100dbf4c103e1b33f04128a837028d603939ef5d72026c4ab9dadcd55bed"
+      sha256sum: "46fa100dbf4c103e1b33f04128a837028d603939ef5d72026c4ab9dadcd55bed"
     - url: "http://rpms.remirepo.net/enterprise/remi-release-7.rpm"
       dest: "/var/cache/ansible/ff284a375f4b6a173334d66fde802cdfdd1dcebed7a8f789c5f3715f1d2ebea7/remi-release-7.rpm"
-      checksum: "sha256:ff284a375f4b6a173334d66fde802cdfdd1dcebed7a8f789c5f3715f1d2ebea7"
+      sha256sum: "ff284a375f4b6a173334d66fde802cdfdd1dcebed7a8f789c5f3715f1d2ebea7"
 
 _yum_config_manager:
   "7.4":
