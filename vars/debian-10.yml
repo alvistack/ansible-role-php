@@ -35,13 +35,13 @@ _apt_key:
 
 _apt_repository:
   "7.4":
-    - repo: "deb http://packages.sury.org/php/ buster main"
+    - repo: "deb http://packages.sury.org/php buster main"
       state: "present"
   "7.3":
-    - repo: "deb http://packages.sury.org/php/ buster main"
+    - repo: "deb http://packages.sury.org/php buster main"
       state: "present"
   "7.2":
-    - repo: "deb http://packages.sury.org/php/ buster main"
+    - repo: "deb http://packages.sury.org/php buster main"
       state: "present"
 
 _apt:
