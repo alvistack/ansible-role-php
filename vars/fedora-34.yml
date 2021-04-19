@@ -1,0 +1,79 @@
+---
+
+# (c) Wong Hoi Sing Edison <hswong3i@pantarei-design.com>
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+_service:
+  "7.4": "php-fpm.service"
+  "7.3": ~
+  "7.2": ~
+
+_rpm_key:
+  "7.4":
+    - key: "http://rpms.remirepo.net/RPM-GPG-KEY-remi2020"
+      fingerprint: "34C10BDBCC6F1B252E50BA1A0714919E4C21A808"
+      state: "present"
+  "7.3": []
+  "7.2": []
+
+_rpm_download:
+  "7.4":
+    - url: "http://rpms.remirepo.net/fedora/remi-release-33.rpm"
+      dest: "/var/cache/ansible/d5fec213f5fa22ef93f9ab5f23be74a05014251796a2d417246c219c7100f895/remi-release-33.rpm"
+      sha256sum: "d5fec213f5fa22ef93f9ab5f23be74a05014251796a2d417246c219c7100f895"
+  "7.3": []
+  "7.2": []
+
+_dnf_config_manager:
+  "7.4":
+    - { state: "enable", name: "remi" }
+  "7.3": []
+  "7.2": []
+
+_dnf_module:
+  "7.4":
+    - { state: "present", name: "@php:remi-7.4" }
+  "7.3": []
+  "7.2": []
+
+_dnf:
+  "7.4":
+    - { state: "latest", name: "redhat-lsb" }
+    - { state: "latest", name: "GeoIP-data" }
+    - { state: "latest", name: "ImageMagick" }
+    - { state: "latest", name: "php-cli" }
+    - { state: "latest", name: "php-fpm" }
+    - { state: "latest", name: "php-bcmath" }
+    - { state: "latest", name: "php-gd" }
+    - { state: "latest", name: "php-imap" }
+    - { state: "latest", name: "php-intl" }
+    - { state: "latest", name: "php-json" }
+    - { state: "latest", name: "php-ldap" }
+    - { state: "latest", name: "php-mbstring" }
+    - { state: "latest", name: "php-mysqlnd" }
+    - { state: "latest", name: "php-opcache" }
+    - { state: "latest", name: "php-pecl-apcu" }
+    - { state: "latest", name: "php-pecl-apcu-bc" }
+    - { state: "latest", name: "php-pecl-geoip" }
+    - { state: "latest", name: "php-pecl-imagick" }
+    - { state: "latest", name: "php-pecl-memcache" }
+    - { state: "latest", name: "php-pecl-uuid" }
+    - { state: "latest", name: "php-pgsql" }
+    - { state: "latest", name: "php-soap" }
+    - { state: "latest", name: "php-tidy" }
+    - { state: "latest", name: "php-xml" }
+    - { state: "latest", name: "php-xmlrpc" }
+    - { state: "latest", name: "php-zip" }
+  "7.3": []
+  "7.2": []
