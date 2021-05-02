@@ -35,13 +35,13 @@ _apt_key:
 
 _apt_repository:
   "7.4":
-    - repo: "deb http://ppa.launchpad.net/ondrej/php/ubuntu groovy main"
+    - repo: "deb http://ppa.launchpad.net/ondrej/php/ubuntu hirsute main"
       state: "present"
   "7.3":
-    - repo: "deb http://ppa.launchpad.net/ondrej/php/ubuntu groovy main"
+    - repo: "deb http://ppa.launchpad.net/ondrej/php/ubuntu hirsute main"
       state: "present"
   "7.2":
-    - repo: "deb http://ppa.launchpad.net/ondrej/php/ubuntu groovy main"
+    - repo: "deb http://ppa.launchpad.net/ondrej/php/ubuntu hirsute main"
       state: "present"
 
 _apt:
