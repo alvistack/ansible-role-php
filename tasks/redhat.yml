@@ -69,13 +69,13 @@
     creates: "{{ item.dest }}.log"
   loop: "{{ _rpm_download[php_release] }}"
   changed_when: false
-  ignore_errors: true
+  failed_when: false
 
 - name: dnf config-manager
   command: dnf config-manager --set-{{ item.state }} {{ item.name }}
   loop: "{{ _dnf_config_manager[php_release] }}"
   changed_when: false
-  ignore_errors: true
+  failed_when: false
 
 - name: dnf module install
   dnf:
@@ -83,7 +83,7 @@
     state: "{{ item.state }}"
   loop: "{{ _dnf_module[php_release] }}"
   changed_when: false
-  ignore_errors: true
+  failed_when: false
 
 - name: prepare directories
   file:
