@@ -126,7 +126,7 @@
   args:
     executable: "/bin/bash"
   loop:
-    - { state: 'require', name: 'consolidation/cgr:@stable' }
+    - { state: 'require', name: 'alvistack/cgr:@stable' }
   register: result
   until: result is succeeded
   changed_when: result is not succeeded
