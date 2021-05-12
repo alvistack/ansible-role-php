@@ -15,28 +15,55 @@
 # limitations under the License.
 
 _service:
+  "8.0": "php-fpm.service"
   "7.4": "php-fpm.service"
   "7.3": "php-fpm.service"
-  "7.2": "php-fpm.service"
 
 _zypper_repository:
+  "8.0":
+    - name: "devel:languages:php"
+      repo: "http://download.opensuse.org/repositories/devel:/languages:/php/openSUSE_Factory"
+      state: "present"
   "7.4":
     - name: "devel:languages:php"
-      repo: "http://download.opensuse.org/repositories/devel:/languages:/php/openSUSE_Leap_15.2"
+      repo: "http://download.opensuse.org/repositories/devel:/languages:/php/openSUSE_Factory"
       state: "present"
   "7.3":
     - name: "devel:languages:php:php73"
       repo: "http://download.opensuse.org/repositories/devel:/languages:/php:/php73/openSUSE_Leap_15.2"
       state: "present"
-  "7.2":
-    - name: "devel:languages:php:php72"
-      repo: "http://download.opensuse.org/repositories/devel:/languages:/php:/php72/openSUSE_Leap_15.2"
-      state: "present"
 
 _zypper:
+  "8.0":
+    - { state: "latest", name: "lsb" }
+    - { state: "latest", name: "xtables-geoip" }
+    - { state: "latest", name: "ImageMagick" }
+    - { state: "latest", name: "ca-certificates" }
+    - { state: "latest", name: "php8" }
+    - { state: "latest", name: "php8-fpm" }
+    - { state: "latest", name: "php8-bcmath" }
+    - { state: "latest", name: "php8-bz2" }
+    - { state: "latest", name: "php8-calendar" }
+    - { state: "latest", name: "php8-curl" }
+    - { state: "latest", name: "php8-gd" }
+    - { state: "latest", name: "php8-intl" }
+    - { state: "latest", name: "php8-ldap" }
+    - { state: "latest", name: "php8-mbstring" }
+    - { state: "latest", name: "php8-mysql" }
+    - { state: "latest", name: "php8-opcache" }
+    - { state: "latest", name: "php8-openssl" }
+    - { state: "latest", name: "php8-pdo" }
+    - { state: "latest", name: "php8-pgsql" }
+    - { state: "latest", name: "php8-phar" }
+    - { state: "latest", name: "php8-soap" }
+    - { state: "latest", name: "php8-sqlite" }
+    - { state: "latest", name: "php8-tidy" }
+    - { state: "latest", name: "php8-tokenizer" }
+    - { state: "latest", name: "php8-xsl" }
+    - { state: "latest", name: "php8-zip" }
   "7.4":
     - { state: "latest", name: "lsb" }
-    - { state: "latest", name: "GeoIP-data" }
+    - { state: "latest", name: "xtables-geoip" }
     - { state: "latest", name: "ImageMagick" }
     - { state: "latest", name: "ca-certificates" }
     - { state: "latest", name: "php7" }
@@ -52,6 +79,7 @@ _zypper:
     - { state: "latest", name: "php7-mbstring" }
     - { state: "latest", name: "php7-mysql" }
     - { state: "latest", name: "php7-opcache" }
+    - { state: "latest", name: "php7-openssl" }
     - { state: "latest", name: "php7-pdo" }
     - { state: "latest", name: "php7-pgsql" }
     - { state: "latest", name: "php7-phar" }
@@ -64,7 +92,7 @@ _zypper:
     - { state: "latest", name: "php7-zip" }
   "7.3":
     - { state: "latest", name: "lsb" }
-    - { state: "latest", name: "GeoIP-data" }
+    - { state: "latest", name: "xtables-geoip" }
     - { state: "latest", name: "ImageMagick" }
     - { state: "latest", name: "ca-certificates" }
     - { state: "latest", name: "php7" }
@@ -80,34 +108,7 @@ _zypper:
     - { state: "latest", name: "php7-mbstring" }
     - { state: "latest", name: "php7-mysql" }
     - { state: "latest", name: "php7-opcache" }
-    - { state: "latest", name: "php7-pdo" }
-    - { state: "latest", name: "php7-pgsql" }
-    - { state: "latest", name: "php7-phar" }
-    - { state: "latest", name: "php7-soap" }
-    - { state: "latest", name: "php7-sqlite" }
-    - { state: "latest", name: "php7-tidy" }
-    - { state: "latest", name: "php7-tokenizer" }
-    - { state: "latest", name: "php7-xmlrpc" }
-    - { state: "latest", name: "php7-xsl" }
-    - { state: "latest", name: "php7-zip" }
-  "7.2":
-    - { state: "latest", name: "lsb" }
-    - { state: "latest", name: "GeoIP-data" }
-    - { state: "latest", name: "ImageMagick" }
-    - { state: "latest", name: "ca-certificates" }
-    - { state: "latest", name: "php7" }
-    - { state: "latest", name: "php7-fpm" }
-    - { state: "latest", name: "php7-bcmath" }
-    - { state: "latest", name: "php7-bz2" }
-    - { state: "latest", name: "php7-calendar" }
-    - { state: "latest", name: "php7-curl" }
-    - { state: "latest", name: "php7-gd" }
-    - { state: "latest", name: "php7-intl" }
-    - { state: "latest", name: "php7-json" }
-    - { state: "latest", name: "php7-ldap" }
-    - { state: "latest", name: "php7-mbstring" }
-    - { state: "latest", name: "php7-mysql" }
-    - { state: "latest", name: "php7-opcache" }
+    - { state: "latest", name: "php7-openssl" }
     - { state: "latest", name: "php7-pdo" }
     - { state: "latest", name: "php7-pgsql" }
     - { state: "latest", name: "php7-phar" }

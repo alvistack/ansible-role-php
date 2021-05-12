@@ -15,39 +15,73 @@
 # limitations under the License.
 
 _service:
+  "8.0": "php-fpm.service"
   "7.4": "php-fpm.service"
   "7.3": ~
-  "7.2": ~
 
 _rpm_key:
+  "8.0":
+    - key: "http://rpms.remirepo.net/RPM-GPG-KEY-remi2020"
+      fingerprint: "34C10BDBCC6F1B252E50BA1A0714919E4C21A808"
+      state: "present"
   "7.4":
     - key: "http://rpms.remirepo.net/RPM-GPG-KEY-remi2020"
       fingerprint: "34C10BDBCC6F1B252E50BA1A0714919E4C21A808"
       state: "present"
   "7.3": []
-  "7.2": []
 
 _rpm_download:
+  "8.0":
+    - url: "http://rpms.remirepo.net/fedora/remi-release-33.rpm"
+      dest: "/var/cache/ansible/64d55dec5165e642b4eff8ecf13d34a31a9b96251ad0228ee2157c9a19c33134/remi-release-33.rpm"
+      sha256sum: "64d55dec5165e642b4eff8ecf13d34a31a9b96251ad0228ee2157c9a19c33134"
   "7.4":
     - url: "http://rpms.remirepo.net/fedora/remi-release-33.rpm"
-      dest: "/var/cache/ansible/d5fec213f5fa22ef93f9ab5f23be74a05014251796a2d417246c219c7100f895/remi-release-33.rpm"
-      sha256sum: "d5fec213f5fa22ef93f9ab5f23be74a05014251796a2d417246c219c7100f895"
+      dest: "/var/cache/ansible/64d55dec5165e642b4eff8ecf13d34a31a9b96251ad0228ee2157c9a19c33134/remi-release-33.rpm"
+      sha256sum: "64d55dec5165e642b4eff8ecf13d34a31a9b96251ad0228ee2157c9a19c33134"
   "7.3": []
-  "7.2": []
 
 _dnf_config_manager:
+  "8.0":
+    - { state: "enable", name: "remi" }
   "7.4":
     - { state: "enable", name: "remi" }
   "7.3": []
-  "7.2": []
 
 _dnf_module:
+  "8.0":
+    - { state: "present", name: "@php:remi-8.0" }
   "7.4":
     - { state: "present", name: "@php:remi-7.4" }
   "7.3": []
-  "7.2": []
 
 _dnf:
+  "8.0":
+    - { state: "latest", name: "redhat-lsb" }
+    - { state: "latest", name: "GeoIP-data" }
+    - { state: "latest", name: "ImageMagick" }
+    - { state: "latest", name: "php-cli" }
+    - { state: "latest", name: "php-fpm" }
+    - { state: "latest", name: "php-bcmath" }
+    - { state: "latest", name: "php-gd" }
+    - { state: "latest", name: "php-imap" }
+    - { state: "latest", name: "php-intl" }
+    - { state: "latest", name: "php-json" }
+    - { state: "latest", name: "php-ldap" }
+    - { state: "latest", name: "php-mbstring" }
+    - { state: "latest", name: "php-mysqlnd" }
+    - { state: "latest", name: "php-opcache" }
+    - { state: "latest", name: "php-pecl-apcu" }
+    - { state: "latest", name: "php-pecl-geoip" }
+    - { state: "latest", name: "php-pecl-imagick" }
+    - { state: "latest", name: "php-pecl-memcache" }
+    - { state: "latest", name: "php-pecl-uuid" }
+    - { state: "latest", name: "php-pgsql" }
+    - { state: "latest", name: "php-soap" }
+    - { state: "latest", name: "php-tidy" }
+    - { state: "latest", name: "php-xml" }
+    - { state: "latest", name: "php-xmlrpc" }
+    - { state: "latest", name: "php-zip" }
   "7.4":
     - { state: "latest", name: "redhat-lsb" }
     - { state: "latest", name: "GeoIP-data" }
@@ -76,4 +110,3 @@ _dnf:
     - { state: "latest", name: "php-xmlrpc" }
     - { state: "latest", name: "php-zip" }
   "7.3": []
-  "7.2": []
