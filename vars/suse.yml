@@ -59,6 +59,8 @@ _zypper:
     - { state: "latest", name: "php8-sqlite" }
     - { state: "latest", name: "php8-tidy" }
     - { state: "latest", name: "php8-tokenizer" }
+    - { state: "latest", name: "php8-xmlreader" }
+    - { state: "latest", name: "php8-xmlwriter" }
     - { state: "latest", name: "php8-xsl" }
     - { state: "latest", name: "php8-zip" }
   "7.4":
@@ -87,7 +89,9 @@ _zypper:
     - { state: "latest", name: "php7-sqlite" }
     - { state: "latest", name: "php7-tidy" }
     - { state: "latest", name: "php7-tokenizer" }
+    - { state: "latest", name: "php7-xmlreader" }
     - { state: "latest", name: "php7-xmlrpc" }
+    - { state: "latest", name: "php7-xmlwriter" }
     - { state: "latest", name: "php7-xsl" }
     - { state: "latest", name: "php7-zip" }
   "7.3":
@@ -116,6 +120,8 @@ _zypper:
     - { state: "latest", name: "php7-sqlite" }
     - { state: "latest", name: "php7-tidy" }
     - { state: "latest", name: "php7-tokenizer" }
+    - { state: "latest", name: "php7-xmlreader" }
     - { state: "latest", name: "php7-xmlrpc" }
+    - { state: "latest", name: "php7-xmlwriter" }
     - { state: "latest", name: "php7-xsl" }
     - { state: "latest", name: "php7-zip" }
