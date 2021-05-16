@@ -85,7 +85,6 @@
     mode: "{{ item.mode | default('0755') }}"
     state: "{{ item.state | default('directory') }}"
   loop:
-    - { dest: "/run/php-fpm", owner: "apache", group: "apache" }
     - { dest: "/var/www/html", owner: "apache", group: "apache" }
 
 - name: yum install

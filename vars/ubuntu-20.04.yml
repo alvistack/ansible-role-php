@@ -15,36 +15,67 @@
 # limitations under the License.
 
 _service:
+  "8.0": "php8.0-fpm.service"
   "7.4": "php7.4-fpm.service"
   "7.3": "php7.3-fpm.service"
-  "7.2": "php7.2-fpm.service"
 
 _apt_key:
+  "8.0":
+    - url: "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x14AA40EC0831756756D7F66C4F4EA0AAE5267A6C"
+      id: "14AA40EC0831756756D7F66C4F4EA0AAE5267A6C"
+      state: "present"
   "7.4":
     - url: "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x14AA40EC0831756756D7F66C4F4EA0AAE5267A6C"
       id: "14AA40EC0831756756D7F66C4F4EA0AAE5267A6C"
       state: "present"
   "7.3":
-    - url: "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x14AA40EC0831756756D7F66C4F4EA0AAE5267A6C"
-      id: "14AA40EC0831756756D7F66C4F4EA0AAE5267A6C"
-      state: "present"
-  "7.2":
     - url: "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x14AA40EC0831756756D7F66C4F4EA0AAE5267A6C"
       id: "14AA40EC0831756756D7F66C4F4EA0AAE5267A6C"
       state: "present"
 
 _apt_repository:
+  "8.0":
+    - repo: "deb http://ppa.launchpad.net/ondrej/php/ubuntu focal main"
+      state: "present"
   "7.4":
     - repo: "deb http://ppa.launchpad.net/ondrej/php/ubuntu focal main"
       state: "present"
   "7.3":
     - repo: "deb http://ppa.launchpad.net/ondrej/php/ubuntu focal main"
       state: "present"
-  "7.2":
-    - repo: "deb http://ppa.launchpad.net/ondrej/php/ubuntu focal main"
-      state: "present"
 
 _apt:
+  "8.0":
+    - { state: "latest", name: "lsb-release" }
+    - { state: "latest", name: "geoip-database" }
+    - { state: "latest", name: "imagemagick" }
+    - { state: "latest", name: "libssl-dev" }
+    - { state: "latest", name: "php8.0-cli" }
+    - { state: "latest", name: "php8.0-fpm" }
+    - { state: "latest", name: "php-apcu" }
+    - { state: "latest", name: "php-apcu-bc" }
+    - { state: "latest", name: "php-geoip" }
+    - { state: "latest", name: "php-imagick" }
+    - { state: "latest", name: "php-memcache" }
+    - { state: "latest", name: "php-uuid" }
+    - { state: "latest", name: "php8.0-bcmath" }
+    - { state: "latest", name: "php8.0-bz2" }
+    - { state: "latest", name: "php8.0-curl" }
+    - { state: "latest", name: "php8.0-gd" }
+    - { state: "latest", name: "php8.0-imap" }
+    - { state: "latest", name: "php8.0-intl" }
+    - { state: "latest", name: "php8.0-ldap" }
+    - { state: "latest", name: "php8.0-mbstring" }
+    - { state: "latest", name: "php8.0-mysql" }
+    - { state: "latest", name: "php8.0-opcache" }
+    - { state: "latest", name: "php8.0-pgsql" }
+    - { state: "latest", name: "php8.0-soap" }
+    - { state: "latest", name: "php8.0-sqlite3" }
+    - { state: "latest", name: "php8.0-tidy" }
+    - { state: "latest", name: "php8.0-xml" }
+    - { state: "latest", name: "php8.0-xmlrpc" }
+    - { state: "latest", name: "php8.0-xsl" }
+    - { state: "latest", name: "php8.0-zip" }
   "7.4":
     - { state: "latest", name: "lsb-release" }
     - { state: "latest", name: "geoip-database" }
@@ -109,35 +140,3 @@ _apt:
     - { state: "latest", name: "php7.3-xmlrpc" }
     - { state: "latest", name: "php7.3-xsl" }
     - { state: "latest", name: "php7.3-zip" }
-  "7.2":
-    - { state: "latest", name: "lsb-release" }
-    - { state: "latest", name: "geoip-database" }
-    - { state: "latest", name: "imagemagick" }
-    - { state: "latest", name: "libssl-dev" }
-    - { state: "latest", name: "php7.2-cli" }
-    - { state: "latest", name: "php7.2-fpm" }
-    - { state: "latest", name: "php-apcu" }
-    - { state: "latest", name: "php-apcu-bc" }
-    - { state: "latest", name: "php-geoip" }
-    - { state: "latest", name: "php-imagick" }
-    - { state: "latest", name: "php-memcache" }
-    - { state: "latest", name: "php-uuid" }
-    - { state: "latest", name: "php7.2-bcmath" }
-    - { state: "latest", name: "php7.2-bz2" }
-    - { state: "latest", name: "php7.2-curl" }
-    - { state: "latest", name: "php7.2-gd" }
-    - { state: "latest", name: "php7.2-imap" }
-    - { state: "latest", name: "php7.2-intl" }
-    - { state: "latest", name: "php7.2-json" }
-    - { state: "latest", name: "php7.2-ldap" }
-    - { state: "latest", name: "php7.2-mbstring" }
-    - { state: "latest", name: "php7.2-mysql" }
-    - { state: "latest", name: "php7.2-opcache" }
-    - { state: "latest", name: "php7.2-pgsql" }
-    - { state: "latest", name: "php7.2-soap" }
-    - { state: "latest", name: "php7.2-sqlite3" }
-    - { state: "latest", name: "php7.2-tidy" }
-    - { state: "latest", name: "php7.2-xml" }
-    - { state: "latest", name: "php7.2-xmlrpc" }
-    - { state: "latest", name: "php7.2-xsl" }
-    - { state: "latest", name: "php7.2-zip" }
