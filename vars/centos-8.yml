@@ -45,25 +45,25 @@ _rpm_key:
 _rpm_download:
   "8.0":
     - url: "http://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm"
-      dest: "/var/cache/ansible/74bb98b514f1571d15d01b63979cc530811431c8d890dd29edaaca95ca475dd8/epel-release-latest-8.noarch.rpm"
-      sha256sum: "74bb98b514f1571d15d01b63979cc530811431c8d890dd29edaaca95ca475dd8"
+      dest: "/tmp/74bb98b514f1571d15d01b63979cc530811431c8d890dd29edaaca95ca475dd8/epel-release-latest-8.noarch.rpm"
+      checksum: "74bb98b514f1571d15d01b63979cc530811431c8d890dd29edaaca95ca475dd8"
     - url: "http://rpms.remirepo.net/enterprise/remi-release-8.rpm"
-      dest: "/var/cache/ansible/c30d6c191e707aac6699f8c828c411b4076c812c0982b4b4621f2a2f4d9e6047/remi-release-8.rpm"
-      sha256sum: "c30d6c191e707aac6699f8c828c411b4076c812c0982b4b4621f2a2f4d9e6047"
+      dest: "/tmp/c30d6c191e707aac6699f8c828c411b4076c812c0982b4b4621f2a2f4d9e6047/remi-release-8.rpm"
+      checksum: "c30d6c191e707aac6699f8c828c411b4076c812c0982b4b4621f2a2f4d9e6047"
   "7.4":
     - url: "http://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm"
-      dest: "/var/cache/ansible/74bb98b514f1571d15d01b63979cc530811431c8d890dd29edaaca95ca475dd8/epel-release-latest-8.noarch.rpm"
-      sha256sum: "74bb98b514f1571d15d01b63979cc530811431c8d890dd29edaaca95ca475dd8"
+      dest: "/tmp/74bb98b514f1571d15d01b63979cc530811431c8d890dd29edaaca95ca475dd8/epel-release-latest-8.noarch.rpm"
+      checksum: "74bb98b514f1571d15d01b63979cc530811431c8d890dd29edaaca95ca475dd8"
     - url: "http://rpms.remirepo.net/enterprise/remi-release-8.rpm"
-      dest: "/var/cache/ansible/c30d6c191e707aac6699f8c828c411b4076c812c0982b4b4621f2a2f4d9e6047/remi-release-8.rpm"
-      sha256sum: "c30d6c191e707aac6699f8c828c411b4076c812c0982b4b4621f2a2f4d9e6047"
+      dest: "/tmp/c30d6c191e707aac6699f8c828c411b4076c812c0982b4b4621f2a2f4d9e6047/remi-release-8.rpm"
+      checksum: "c30d6c191e707aac6699f8c828c411b4076c812c0982b4b4621f2a2f4d9e6047"
   "7.3":
     - url: "http://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm"
-      dest: "/var/cache/ansible/74bb98b514f1571d15d01b63979cc530811431c8d890dd29edaaca95ca475dd8/epel-release-latest-8.noarch.rpm"
-      sha256sum: "74bb98b514f1571d15d01b63979cc530811431c8d890dd29edaaca95ca475dd8"
+      dest: "/tmp/74bb98b514f1571d15d01b63979cc530811431c8d890dd29edaaca95ca475dd8/epel-release-latest-8.noarch.rpm"
+      checksum: "74bb98b514f1571d15d01b63979cc530811431c8d890dd29edaaca95ca475dd8"
     - url: "http://rpms.remirepo.net/enterprise/remi-release-8.rpm"
-      dest: "/var/cache/ansible/c30d6c191e707aac6699f8c828c411b4076c812c0982b4b4621f2a2f4d9e6047/remi-release-8.rpm"
-      sha256sum: "c30d6c191e707aac6699f8c828c411b4076c812c0982b4b4621f2a2f4d9e6047"
+      dest: "/tmp/c30d6c191e707aac6699f8c828c411b4076c812c0982b4b4621f2a2f4d9e6047/remi-release-8.rpm"
+      checksum: "c30d6c191e707aac6699f8c828c411b4076c812c0982b4b4621f2a2f4d9e6047"
 
 _dnf_config_manager:
   "8.0":

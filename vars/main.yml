@@ -17,16 +17,16 @@
 _composer_download:
   "2.0.14":
     url: "http://github.com/composer/composer/releases/download/2.0.14/composer.phar"
-    dest: "/var/cache/ansible/29454b41558968ca634bf5e2d4d07ff2275d91b637a76d7a05e6747d36dd3473/composer-2.0.14.phar"
-    sha256sum: "29454b41558968ca634bf5e2d4d07ff2275d91b637a76d7a05e6747d36dd3473"
+    dest: "/tmp/29454b41558968ca634bf5e2d4d07ff2275d91b637a76d7a05e6747d36dd3473/composer-2.0.14.phar"
+    checksum: "29454b41558968ca634bf5e2d4d07ff2275d91b637a76d7a05e6747d36dd3473"
   "2.0.13":
     url: "http://github.com/composer/composer/releases/download/2.0.13/composer.phar"
-    dest: "/var/cache/ansible/116fdf07cc926af646635a6abc92d88aff7b02a5dc36538f81c50a7d27366dbf/composer-2.0.13.phar"
-    sha256sum: "116fdf07cc926af646635a6abc92d88aff7b02a5dc36538f81c50a7d27366dbf"
+    dest: "/tmp/116fdf07cc926af646635a6abc92d88aff7b02a5dc36538f81c50a7d27366dbf/composer-2.0.13.phar"
+    checksum: "116fdf07cc926af646635a6abc92d88aff7b02a5dc36538f81c50a7d27366dbf"
   "2.0.12":
     url: "http://github.com/composer/composer/releases/download/2.0.12/composer.phar"
-    dest: "/var/cache/ansible/82ea8c1537cfaceb7e56f6004c7ccdf99ddafce7237c07374d920e635730a631/composer-2.0.12.phar"
-    sha256sum: "82ea8c1537cfaceb7e56f6004c7ccdf99ddafce7237c07374d920e635730a631"
+    dest: "/tmp/82ea8c1537cfaceb7e56f6004c7ccdf99ddafce7237c07374d920e635730a631/composer-2.0.12.phar"
+    checksum: "82ea8c1537cfaceb7e56f6004c7ccdf99ddafce7237c07374d920e635730a631"
 
 _cgr:
   - { state: "require", name: "drupal/coder:@stable" }
