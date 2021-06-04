@@ -14,7 +14,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+_composer_version:
+  "2.1": "2.1.0"
+  "2.0": "2.0.14"
+
 _composer_download:
+  "2.1.0":
+    url: "http://github.com/composer/composer/releases/download/2.1.0/composer.phar"
+    dest: "/tmp/2f8e8f684db5d6bd36a549629f3676e48f008624f499b13dfc7afa2f9cbde16e/composer-2.1.0.phar"
+    checksum: "2f8e8f684db5d6bd36a549629f3676e48f008624f499b13dfc7afa2f9cbde16e"
   "2.0.14":
     url: "http://github.com/composer/composer/releases/download/2.0.14/composer.phar"
     dest: "/tmp/29454b41558968ca634bf5e2d4d07ff2275d91b637a76d7a05e6747d36dd3473/composer-2.0.14.phar"
