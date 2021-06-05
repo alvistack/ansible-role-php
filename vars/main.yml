@@ -15,10 +15,14 @@
 # limitations under the License.
 
 _composer_version:
-  "2.1": "2.1.0"
+  "2.1": "2.1.1"
   "2.0": "2.0.14"
 
 _composer_download:
+  "2.1.1":
+    url: "http://github.com/composer/composer/releases/download/2.1.1/composer.phar"
+    dest: "/tmp/445a577f3d7966ed2327182380047a38179068ad1292f6b88de4e071920121ce/composer-2.1.1.phar"
+    checksum: "445a577f3d7966ed2327182380047a38179068ad1292f6b88de4e071920121ce"
   "2.1.0":
     url: "http://github.com/composer/composer/releases/download/2.1.0/composer.phar"
     dest: "/tmp/2f8e8f684db5d6bd36a549629f3676e48f008624f499b13dfc7afa2f9cbde16e/composer-2.1.0.phar"
