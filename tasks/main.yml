@@ -66,7 +66,7 @@
 
 - name: download archive
   shell: |
-    set -euo pipefail
+    set -euxo pipefail
     TMP_DIR="$(mktemp -d)" \
       && cd $TMP_DIR \
       && mkdir -p .{{ item.dest | dirname }} \
@@ -85,7 +85,7 @@
 
 - name: unarchive package
   shell: |
-    set -euo pipefail
+    set -euxo pipefail
     mkdir -p /var/log/ansible
     exec &> >(tee -a /var/log/ansible/{{ composer_download.checksum }}.log)
     cd /usr/local/bin
@@ -123,7 +123,7 @@
   environment:
     PATH: "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
   shell: |
-    set -euo pipefail
+    set -euxo pipefail
     source /etc/profile.d/composer.sh
     composer --no-interaction global {{ item.state }} {{ item.name }}
   args:
@@ -138,7 +138,7 @@
   environment:
     PATH: "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
   shell: |
-    set -euo pipefail
+    set -euxo pipefail
     source /etc/profile.d/composer.sh
     composer --no-interaction global update
   args:
@@ -151,7 +151,7 @@
   environment:
     PATH: "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
   shell: |
-    set -euo pipefail
+    set -euxo pipefail
     source /etc/profile.d/composer.sh
     cgr {{ item.state }} {{ item.name }}
   args:
@@ -165,7 +165,7 @@
   environment:
     PATH: "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
   shell: |
-    set -euo pipefail
+    set -euxo pipefail
     source /etc/profile.d/composer.sh
     cgr update
   args:
