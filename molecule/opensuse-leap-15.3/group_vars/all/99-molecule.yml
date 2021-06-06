@@ -13,18 +13,3 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
-# PHP release.
-php_release: "8.0"
-
-# Composer release.
-composer_release: "2.1"
-
-# Composer version.
-composer_version: "{{ _composer_version[composer_release] }}"
-
-# Composer download details.
-composer_download: "{{ _composer_download[composer_version] }}"
-
-# Specify CGR packages.
-cgr: "{{ _cgr }}"

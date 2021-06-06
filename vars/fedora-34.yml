@@ -33,12 +33,12 @@ _rpm_key:
 _rpm_download:
   "8.0":
     - url: "http://rpms.remirepo.net/fedora/remi-release-34.rpm"
-      dest: "/var/cache/ansible/c7188d7b536bf6ae6402a97118826ae0ea0571ffbef715376afc54075dfde7be/remi-release-34.rpm"
-      sha256sum: "c7188d7b536bf6ae6402a97118826ae0ea0571ffbef715376afc54075dfde7be"
+      dest: "/tmp/c23c8b0651be9b87dbabdccb14cf568b2d688982cec479b7628a97eb91eb7a2c/remi-release-34.rpm"
+      checksum: "c23c8b0651be9b87dbabdccb14cf568b2d688982cec479b7628a97eb91eb7a2c"
   "7.4":
     - url: "http://rpms.remirepo.net/fedora/remi-release-34.rpm"
-      dest: "/var/cache/ansible/c7188d7b536bf6ae6402a97118826ae0ea0571ffbef715376afc54075dfde7be/remi-release-34.rpm"
-      sha256sum: "c7188d7b536bf6ae6402a97118826ae0ea0571ffbef715376afc54075dfde7be"
+      dest: "/tmp/c23c8b0651be9b87dbabdccb14cf568b2d688982cec479b7628a97eb91eb7a2c/remi-release-34.rpm"
+      checksum: "c23c8b0651be9b87dbabdccb14cf568b2d688982cec479b7628a97eb91eb7a2c"
   "7.3": []
 
 _dnf_config_manager:
