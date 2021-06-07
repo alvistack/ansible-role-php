@@ -21,23 +21,23 @@ _composer_version:
 _composer_download:
   "2.1.1":
     url: "http://github.com/composer/composer/releases/download/2.1.1/composer.phar"
-    dest: "/tmp/445a577f3d7966ed2327182380047a38179068ad1292f6b88de4e071920121ce/composer-2.1.1.phar"
+    dest: "/var/cache/ansible/445a577f3d7966ed2327182380047a38179068ad1292f6b88de4e071920121ce/composer-2.1.1.phar"
     checksum: "445a577f3d7966ed2327182380047a38179068ad1292f6b88de4e071920121ce"
   "2.1.0":
     url: "http://github.com/composer/composer/releases/download/2.1.0/composer.phar"
-    dest: "/tmp/2f8e8f684db5d6bd36a549629f3676e48f008624f499b13dfc7afa2f9cbde16e/composer-2.1.0.phar"
+    dest: "/var/cache/ansible/2f8e8f684db5d6bd36a549629f3676e48f008624f499b13dfc7afa2f9cbde16e/composer-2.1.0.phar"
     checksum: "2f8e8f684db5d6bd36a549629f3676e48f008624f499b13dfc7afa2f9cbde16e"
   "2.0.14":
     url: "http://github.com/composer/composer/releases/download/2.0.14/composer.phar"
-    dest: "/tmp/29454b41558968ca634bf5e2d4d07ff2275d91b637a76d7a05e6747d36dd3473/composer-2.0.14.phar"
+    dest: "/var/cache/ansible/29454b41558968ca634bf5e2d4d07ff2275d91b637a76d7a05e6747d36dd3473/composer-2.0.14.phar"
     checksum: "29454b41558968ca634bf5e2d4d07ff2275d91b637a76d7a05e6747d36dd3473"
   "2.0.13":
     url: "http://github.com/composer/composer/releases/download/2.0.13/composer.phar"
-    dest: "/tmp/116fdf07cc926af646635a6abc92d88aff7b02a5dc36538f81c50a7d27366dbf/composer-2.0.13.phar"
+    dest: "/var/cache/ansible/116fdf07cc926af646635a6abc92d88aff7b02a5dc36538f81c50a7d27366dbf/composer-2.0.13.phar"
     checksum: "116fdf07cc926af646635a6abc92d88aff7b02a5dc36538f81c50a7d27366dbf"
   "2.0.12":
     url: "http://github.com/composer/composer/releases/download/2.0.12/composer.phar"
-    dest: "/tmp/82ea8c1537cfaceb7e56f6004c7ccdf99ddafce7237c07374d920e635730a631/composer-2.0.12.phar"
+    dest: "/var/cache/ansible/82ea8c1537cfaceb7e56f6004c7ccdf99ddafce7237c07374d920e635730a631/composer-2.0.12.phar"
     checksum: "82ea8c1537cfaceb7e56f6004c7ccdf99ddafce7237c07374d920e635730a631"
 
 _cgr:
