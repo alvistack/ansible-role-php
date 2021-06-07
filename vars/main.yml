@@ -15,10 +15,14 @@
 # limitations under the License.
 
 _composer_version:
-  "2.1": "2.1.1"
+  "2.1": "2.1.2"
   "2.0": "2.0.14"
 
 _composer_download:
+  "2.1.2":
+    url: "http://github.com/composer/composer/releases/download/2.1.2/composer.phar"
+    dest: "/var/cache/ansible/2dec01094a6bd571dcc0ed796b6e180aca3833646834b66eb743b7d66787a43d/composer-2.1.2.phar"
+    checksum: "2dec01094a6bd571dcc0ed796b6e180aca3833646834b66eb743b7d66787a43d"
   "2.1.1":
     url: "http://github.com/composer/composer/releases/download/2.1.1/composer.phar"
     dest: "/var/cache/ansible/445a577f3d7966ed2327182380047a38179068ad1292f6b88de4e071920121ce/composer-2.1.1.phar"
