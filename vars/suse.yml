@@ -35,7 +35,7 @@ _zypper_repository:
 
 _zypper:
   "8.0":
-    - { state: "latest", name: "lsb" }
+    - { state: "latest", name: "lsb-release" }
     - { state: "latest", name: "xtables-geoip" }
     - { state: "latest", name: "ImageMagick" }
     - { state: "latest", name: "ca-certificates" }
@@ -64,7 +64,7 @@ _zypper:
     - { state: "latest", name: "php8-xsl" }
     - { state: "latest", name: "php8-zip" }
   "7.4":
-    - { state: "latest", name: "lsb" }
+    - { state: "latest", name: "lsb-release" }
     - { state: "latest", name: "xtables-geoip" }
     - { state: "latest", name: "ImageMagick" }
     - { state: "latest", name: "ca-certificates" }
@@ -95,7 +95,7 @@ _zypper:
     - { state: "latest", name: "php7-xsl" }
     - { state: "latest", name: "php7-zip" }
   "7.3":
-    - { state: "latest", name: "lsb" }
+    - { state: "latest", name: "lsb-release" }
     - { state: "latest", name: "xtables-geoip" }
     - { state: "latest", name: "ImageMagick" }
     - { state: "latest", name: "ca-certificates" }
