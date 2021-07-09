@@ -23,10 +23,10 @@
       register: result
       changed_when: result is not succeeded
 
-    - name: composer --version
+    - name: composer --no-interaction --version
       environment:
         PATH: "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-      command: composer --version
+      command: composer --no-interaction --version
       register: result
       changed_when: result is not succeeded
 
