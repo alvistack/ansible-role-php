@@ -1,10 +1,14 @@
 # Ansible Role for PHP
 
-## 5.1.0 - TBC
+## 5.2.0 - TBC
 
 ### Major Changes
 
-  - Upgrade minimal Ansible community package support to 4.1.0
+## 5.1.0 - 2021-07-18
+
+### Major Changes
+
+  - Upgrade minimal Ansible community package support to 4.2.0
   - Support Debian 11
   - Support openSUSE Leap 15.3
   - Improve download archive logic
@@ -23,9 +27,12 @@
 
 ### Major Changes
 
-  - Bugfix [ansible-lint `namespace`](https://github.com/ansible-community/ansible-lint/pull/1451)
-  - Bugfix [ansible-lint `no-handler`](https://github.com/ansible-community/ansible-lint/pull/1402)
-  - Bugfix [ansible-lint `unnamed-task`](https://github.com/ansible-community/ansible-lint/pull/1413)
+  - Bugfix [ansible-lint
+    `namespace`](https://github.com/ansible-community/ansible-lint/pull/1451)
+  - Bugfix [ansible-lint
+    `no-handler`](https://github.com/ansible-community/ansible-lint/pull/1402)
+  - Bugfix [ansible-lint
+    `unnamed-task`](https://github.com/ansible-community/ansible-lint/pull/1413)
   - Simplify Python dependency with system packages
   - Support RHEL 8 with Molecule
   - Support RHEL 7 with Molecule
@@ -195,7 +202,8 @@
   - CI with yamllint, ansible-lint and ansible-playbook --syntax-check
   - CI with LXD, improve systemd support
   - Use shell only when shell functionality is required
-  - Install composer globally with official installer (<https://getcomposer.org/installer>)
+  - Install composer globally with official installer
+    (<https://getcomposer.org/installer>)
   - Template `/etc/profile.d/composer.sh` for environment variables
   - Source environment variables with `su -l -s /bin/bash -c`
   - Default install PHP 5.6 on Ubuntu 16.04 and CentOS 6
