@@ -21,27 +21,33 @@ _service:
 
 _apt_key:
   "8.0":
-    - url: "http://packages.sury.org/php/apt.gpg"
+    - keyring: "/etc/apt/trusted.gpg.d/sury.gpg"
+      url: "http://packages.sury.org/php/apt.gpg"
       id: "15058500A0235D97F5D10063B188E2B695BD4743"
       state: "present"
   "7.4":
-    - url: "http://packages.sury.org/php/apt.gpg"
+    - keyring: "/etc/apt/trusted.gpg.d/sury.gpg"
+      url: "http://packages.sury.org/php/apt.gpg"
       id: "15058500A0235D97F5D10063B188E2B695BD4743"
       state: "present"
   "7.3":
-    - url: "http://packages.sury.org/php/apt.gpg"
+    - keyring: "/etc/apt/trusted.gpg.d/sury.gpg"
+      url: "http://packages.sury.org/php/apt.gpg"
       id: "15058500A0235D97F5D10063B188E2B695BD4743"
       state: "present"
 
 _apt_repository:
   "8.0":
-    - repo: "deb http://packages.sury.org/php buster main"
+    - filename: "sury"
+      repo: "deb http://packages.sury.org/php buster main"
       state: "present"
   "7.4":
-    - repo: "deb http://packages.sury.org/php buster main"
+    - filename: "sury"
+      repo: "deb http://packages.sury.org/php buster main"
       state: "present"
   "7.3":
-    - repo: "deb http://packages.sury.org/php buster main"
+    - filename: "sury"
+      repo: "deb http://packages.sury.org/php buster main"
       state: "present"
 
 _apt:

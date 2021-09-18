@@ -19,18 +19,53 @@ _service:
   "7.4": "php-fpm.service"
   "7.3": "php-fpm.service"
 
-_zypper_repository:
+_rpm_key:
   "8.0":
-    - name: "devel:languages:php"
-      repo: "http://download.opensuse.org/repositories/devel:/languages:/php/openSUSE_Leap_15.2"
+    - key: "http://download.opensuse.org/repositories/devel:/languages:/php/openSUSE_Leap_15.2/repodata/repomd.xml.key"
+      fingerprint: "55CF98B4BB5BC6CC2E24748F82EE4011CBCA8BB5"
       state: "present"
   "7.4":
-    - name: "devel:languages:php"
-      repo: "http://download.opensuse.org/repositories/devel:/languages:/php/openSUSE_Leap_15.2"
+    - key: "http://download.opensuse.org/repositories/devel:/languages:/php/openSUSE_Leap_15.2/repodata/repomd.xml.key"
+      fingerprint: "55CF98B4BB5BC6CC2E24748F82EE4011CBCA8BB5"
       state: "present"
   "7.3":
-    - name: "devel:languages:php:php73"
-      repo: "http://download.opensuse.org/repositories/devel:/languages:/php:/php73/openSUSE_Leap_15.2"
+    - key: "http://download.opensuse.org/repositories/devel:/languages:/php:/php73/openSUSE_Leap_15.2/repodata/repomd.xml.key"
+      fingerprint: "55CF98B4BB5BC6CC2E24748F82EE4011CBCA8BB5"
+      state: "present"
+
+_yum_repository:
+  "8.0":
+    - file: "devel_languages_php"
+      name: "devel_languages_php"
+      description: "devel:languages:php (openSUSE_Leap_15.2)"
+      baseurl: "http://download.opensuse.org/repositories/devel:/languages:/php/openSUSE_Leap_15.2"
+      enabled: true
+      priority: "2"
+      module_hotfixes: true
+      gpgcheck: true
+      gpgkey: "http://download.opensuse.org/repositories/devel:/languages:/php/openSUSE_Leap_15.2/repodata/repomd.xml.key"
+      state: "present"
+  "7.4":
+    - file: "devel_languages_php"
+      name: "devel_languages_php"
+      description: "devel:languages:php (openSUSE_Leap_15.2)"
+      baseurl: "http://download.opensuse.org/repositories/devel:/languages:/php/openSUSE_Leap_15.2"
+      enabled: true
+      priority: "2"
+      module_hotfixes: true
+      gpgcheck: true
+      gpgkey: "http://download.opensuse.org/repositories/devel:/languages:/php/openSUSE_Leap_15.2/repodata/repomd.xml.key"
+      state: "present"
+  "7.3":
+    - file: "devel_languages_php_php73"
+      name: "devel_languages_php_php73"
+      description: "php 7.3 (openSUSE_Leap_15.2)"
+      baseurl: "http://download.opensuse.org/repositories/devel:/languages:/php:/php73/openSUSE_Leap_15.2"
+      enabled: true
+      priority: "2"
+      module_hotfixes: true
+      gpgcheck: true
+      gpgkey: "http://download.opensuse.org/repositories/devel:/languages:/php:/php73/openSUSE_Leap_15.2/repodata/repomd.xml.key"
       state: "present"
 
 _zypper:
