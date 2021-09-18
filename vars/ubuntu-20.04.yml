@@ -21,27 +21,33 @@ _service:
 
 _apt_key:
   "8.0":
-    - url: "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x14AA40EC0831756756D7F66C4F4EA0AAE5267A6C"
+    - keyring: "/etc/apt/trusted.gpg.d/ondrej.gpg"
+      url: "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x14AA40EC0831756756D7F66C4F4EA0AAE5267A6C"
       id: "14AA40EC0831756756D7F66C4F4EA0AAE5267A6C"
       state: "present"
   "7.4":
-    - url: "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x14AA40EC0831756756D7F66C4F4EA0AAE5267A6C"
+    - keyring: "/etc/apt/trusted.gpg.d/ondrej.gpg"
+      url: "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x14AA40EC0831756756D7F66C4F4EA0AAE5267A6C"
       id: "14AA40EC0831756756D7F66C4F4EA0AAE5267A6C"
       state: "present"
   "7.3":
-    - url: "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x14AA40EC0831756756D7F66C4F4EA0AAE5267A6C"
+    - keyring: "/etc/apt/trusted.gpg.d/ondrej.gpg"
+      url: "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x14AA40EC0831756756D7F66C4F4EA0AAE5267A6C"
       id: "14AA40EC0831756756D7F66C4F4EA0AAE5267A6C"
       state: "present"
 
 _apt_repository:
   "8.0":
-    - repo: "deb http://ppa.launchpad.net/ondrej/php/ubuntu focal main"
+    - filename: "ondrej"
+      repo: "deb http://ppa.launchpad.net/ondrej/php/ubuntu focal main"
       state: "present"
   "7.4":
-    - repo: "deb http://ppa.launchpad.net/ondrej/php/ubuntu focal main"
+    - filename: "ondrej"
+      repo: "deb http://ppa.launchpad.net/ondrej/php/ubuntu focal main"
       state: "present"
   "7.3":
-    - repo: "deb http://ppa.launchpad.net/ondrej/php/ubuntu focal main"
+    - filename: "ondrej"
+      repo: "deb http://ppa.launchpad.net/ondrej/php/ubuntu focal main"
       state: "present"
 
 _apt:
