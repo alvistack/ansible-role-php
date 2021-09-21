@@ -1,5 +1,7 @@
 # Ansible Role for PHP
 
+<img src="/alvistack.svg" width="75" alt="AlviStack">
+
 [![Gitlab pipeline status](https://img.shields.io/gitlab/pipeline/alvistack/ansible-role-php/master)](https://gitlab.com/alvistack/ansible-role-php/-/pipelines)
 [![GitHub release](https://img.shields.io/github/release/alvistack/ansible-role-php.svg)](https://github.com/alvistack/ansible-role-php/releases)
 [![GitHub license](https://img.shields.io/github/license/alvistack/ansible-role-php.svg)](https://github.com/alvistack/ansible-role-php/blob/master/LICENSE)
