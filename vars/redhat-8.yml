@@ -93,7 +93,6 @@ _dnf:
     - { state: "latest", name: "php-imap" }
     - { state: "latest", name: "php-intl" }
     - { state: "latest", name: "php-json" }
-    - { state: "latest", name: "php-ldap" }
     - { state: "latest", name: "php-mbstring" }
     - { state: "latest", name: "php-mysqlnd" }
     - { state: "latest", name: "php-opcache" }
@@ -119,7 +118,6 @@ _dnf:
     - { state: "latest", name: "php-imap" }
     - { state: "latest", name: "php-intl" }
     - { state: "latest", name: "php-json" }
-    - { state: "latest", name: "php-ldap" }
     - { state: "latest", name: "php-mbstring" }
     - { state: "latest", name: "php-mysqlnd" }
     - { state: "latest", name: "php-opcache" }
@@ -146,7 +144,6 @@ _dnf:
     - { state: "latest", name: "php-imap" }
     - { state: "latest", name: "php-intl" }
     - { state: "latest", name: "php-json" }
-    - { state: "latest", name: "php-ldap" }
     - { state: "latest", name: "php-mbstring" }
     - { state: "latest", name: "php-mysqlnd" }
     - { state: "latest", name: "php-opcache" }

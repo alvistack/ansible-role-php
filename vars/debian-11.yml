@@ -70,7 +70,6 @@ _apt:
     - { state: "latest", name: "php8.0-gd" }
     - { state: "latest", name: "php8.0-imap" }
     - { state: "latest", name: "php8.0-intl" }
-    - { state: "latest", name: "php8.0-ldap" }
     - { state: "latest", name: "php8.0-mbstring" }
     - { state: "latest", name: "php8.0-mysql" }
     - { state: "latest", name: "php8.0-opcache" }
@@ -102,7 +101,6 @@ _apt:
     - { state: "latest", name: "php7.4-imap" }
     - { state: "latest", name: "php7.4-intl" }
     - { state: "latest", name: "php7.4-json" }
-    - { state: "latest", name: "php7.4-ldap" }
     - { state: "latest", name: "php7.4-mbstring" }
     - { state: "latest", name: "php7.4-mysql" }
     - { state: "latest", name: "php7.4-opcache" }
@@ -134,7 +132,6 @@ _apt:
     - { state: "latest", name: "php7.3-imap" }
     - { state: "latest", name: "php7.3-intl" }
     - { state: "latest", name: "php7.3-json" }
-    - { state: "latest", name: "php7.3-ldap" }
     - { state: "latest", name: "php7.3-mbstring" }
     - { state: "latest", name: "php7.3-mysql" }
     - { state: "latest", name: "php7.3-opcache" }

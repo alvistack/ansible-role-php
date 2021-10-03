@@ -69,7 +69,6 @@ _zypper:
     - { state: "latest", name: "php8-curl" }
     - { state: "latest", name: "php8-gd" }
     - { state: "latest", name: "php8-intl" }
-    - { state: "latest", name: "php8-ldap" }
     - { state: "latest", name: "php8-mbstring" }
     - { state: "latest", name: "php8-mysql" }
     - { state: "latest", name: "php8-opcache" }
@@ -99,7 +98,6 @@ _zypper:
     - { state: "latest", name: "php7-gd" }
     - { state: "latest", name: "php7-intl" }
     - { state: "latest", name: "php7-json" }
-    - { state: "latest", name: "php7-ldap" }
     - { state: "latest", name: "php7-mbstring" }
     - { state: "latest", name: "php7-mysql" }
     - { state: "latest", name: "php7-opcache" }
