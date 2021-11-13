@@ -39,15 +39,15 @@ _apt_key:
 _apt_repository:
   "8.0":
     - filename: "ondrej"
-      repo: "deb http://ppa.launchpad.net/ondrej/php/ubuntu hirsute main"
+      repo: "deb http://ppa.launchpad.net/ondrej/php/ubuntu impish main"
       state: "present"
   "7.4":
     - filename: "ondrej"
-      repo: "deb http://ppa.launchpad.net/ondrej/php/ubuntu hirsute main"
+      repo: "deb http://ppa.launchpad.net/ondrej/php/ubuntu impish main"
       state: "present"
   "7.3":
     - filename: "ondrej"
-      repo: "deb http://ppa.launchpad.net/ondrej/php/ubuntu hirsute main"
+      repo: "deb http://ppa.launchpad.net/ondrej/php/ubuntu impish main"
       state: "present"
 
 _apt:
