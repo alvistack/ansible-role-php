@@ -4,6 +4,8 @@
 
 ### Major Changes
 
+  - Support PHP 8.1
+  - Remove PHP 7.3 support
   - Support Fedora Rawhide
   - Support Debian Testing
 
