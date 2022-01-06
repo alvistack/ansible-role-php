@@ -15,11 +15,15 @@
 # limitations under the License.
 
 _service:
+  "8.1": "php-fpm.service"
   "8.0": "php-fpm.service"
   "7.4": "php-fpm.service"
-  "7.3": ""
 
 _rpm_key:
+  "8.1":
+    - key: "http://download.opensuse.org/repositories/devel:/languages:/php:/php81/openSUSE_Factory/repodata/repomd.xml.key"
+      fingerprint: "55CF98B4BB5BC6CC2E24748F82EE4011CBCA8BB5"
+      state: "present"
   "8.0":
     - key: "http://download.opensuse.org/repositories/devel:/languages:/php/openSUSE_Factory/repodata/repomd.xml.key"
       fingerprint: "55CF98B4BB5BC6CC2E24748F82EE4011CBCA8BB5"
@@ -28,9 +32,19 @@ _rpm_key:
     - key: "http://download.opensuse.org/repositories/devel:/languages:/php/openSUSE_Factory/repodata/repomd.xml.key"
       fingerprint: "55CF98B4BB5BC6CC2E24748F82EE4011CBCA8BB5"
       state: "present"
-  "7.3": []
 
 _yum_repository:
+  "8.1":
+    - file: "devel_languages_php"
+      name: "devel_languages_php"
+      description: "devel:languages:php (openSUSE_Factory)"
+      baseurl: "http://download.opensuse.org/repositories/devel:/languages:/php:/php81/openSUSE_Factory"
+      enabled: true
+      priority: "2"
+      module_hotfixes: true
+      gpgcheck: true
+      gpgkey: "http://download.opensuse.org/repositories/devel:/languages:/php:/php81/openSUSE_Factory/repodata/repomd.xml.key"
+      state: "present"
   "8.0":
     - file: "devel_languages_php"
       name: "devel_languages_php"
@@ -53,9 +67,36 @@ _yum_repository:
       gpgcheck: true
       gpgkey: "http://download.opensuse.org/repositories/devel:/languages:/php/openSUSE_Factory/repodata/repomd.xml.key"
       state: "present"
-  "7.3": []
 
 _zypper:
+  "8.1":
+    - { state: "latest", name: "lsb-release" }
+    - { state: "latest", name: "xtables-geoip" }
+    - { state: "latest", name: "ImageMagick" }
+    - { state: "latest", name: "ca-certificates" }
+    - { state: "latest", name: "php8" }
+    - { state: "latest", name: "php8-fpm" }
+    - { state: "latest", name: "php8-bcmath" }
+    - { state: "latest", name: "php8-bz2" }
+    - { state: "latest", name: "php8-calendar" }
+    - { state: "latest", name: "php8-curl" }
+    - { state: "latest", name: "php8-gd" }
+    - { state: "latest", name: "php8-intl" }
+    - { state: "latest", name: "php8-mbstring" }
+    - { state: "latest", name: "php8-mysql" }
+    - { state: "latest", name: "php8-opcache" }
+    - { state: "latest", name: "php8-openssl" }
+    - { state: "latest", name: "php8-pdo" }
+    - { state: "latest", name: "php8-pgsql" }
+    - { state: "latest", name: "php8-phar" }
+    - { state: "latest", name: "php8-soap" }
+    - { state: "latest", name: "php8-sqlite" }
+    - { state: "latest", name: "php8-tidy" }
+    - { state: "latest", name: "php8-tokenizer" }
+    - { state: "latest", name: "php8-xmlreader" }
+    - { state: "latest", name: "php8-xmlwriter" }
+    - { state: "latest", name: "php8-xsl" }
+    - { state: "latest", name: "php8-zip" }
   "8.0":
     - { state: "latest", name: "lsb-release" }
     - { state: "latest", name: "xtables-geoip" }
@@ -114,4 +155,3 @@ _zypper:
     - { state: "latest", name: "php7-xmlwriter" }
     - { state: "latest", name: "php7-xsl" }
     - { state: "latest", name: "php7-zip" }
-  "7.3": []

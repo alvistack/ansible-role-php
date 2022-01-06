@@ -15,7 +15,7 @@
 # limitations under the License.
 
 # PHP release.
-php_release: "8.0"
+php_release: "8.1"
 
 # Composer release.
 composer_release: "2.2"
