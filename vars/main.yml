@@ -15,10 +15,14 @@
 # limitations under the License.
 
 _composer_version:
-  "2.2": "2.2.8"
+  "2.2": "2.2.9"
   "1.10": "1.10.25"
 
 _composer_download:
+  "2.2.9":
+    url: "http://github.com/composer/composer/releases/download/2.2.9/composer.phar"
+    dest: "/var/cache/ansible/48f9fdc9ad93904fee96550b45ae03a51f69718502ee855da894b4ad71d2dfe0/composer-2.2.9.phar"
+    checksum: "48f9fdc9ad93904fee96550b45ae03a51f69718502ee855da894b4ad71d2dfe0"
   "2.2.8":
     url: "http://github.com/composer/composer/releases/download/2.2.8/composer.phar"
     dest: "/var/cache/ansible/e1e1c580a237c739ecc1be57cf512e6b741faaa566439257d19ecd739ddfefaf/composer-2.2.8.phar"
@@ -27,10 +31,6 @@ _composer_download:
     url: "http://github.com/composer/composer/releases/download/2.2.7/composer.phar"
     dest: "/var/cache/ansible/10040ded663541990eef8ce1f6fa44cb3b4a47e145efb8e9e59907a15068033d/composer-2.2.7.phar"
     checksum: "10040ded663541990eef8ce1f6fa44cb3b4a47e145efb8e9e59907a15068033d"
-  "2.2.6":
-    url: "http://github.com/composer/composer/releases/download/2.2.6/composer.phar"
-    dest: "/var/cache/ansible/1d58486b891e59e9e064c0d54bb38538f74d6014f75481542c69ad84d4e97704/composer-2.2.6.phar"
-    checksum: "1d58486b891e59e9e064c0d54bb38538f74d6014f75481542c69ad84d4e97704"
   "1.10.25":
     url: "http://github.com/composer/composer/releases/download/1.10.25/composer.phar"
     dest: "/var/cache/ansible/6b089bd8b78b00c3c15d7b13353fbcbdf16a3f5248203c9a3e76f13948f2de92/composer-1.10.25.phar"
