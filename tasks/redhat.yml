@@ -15,25 +15,25 @@
 # limitations under the License.
 
 - name: groupadd
-  group:
+  ansible.builtin.group:
     name: "apache"
     gid: "48"
     system: true
     state: "present"
 
 - name: useradd
-  user:
+  ansible.builtin.user:
     name: "apache"
     uid: "48"
-    group: "apache"
+    ansible.builtin.group: "apache"
     home: "/usr/share/httpd"
-    shell: "/sbin/nologin"
+    ansible.builtin.shell: "/sbin/nologin"
     system: true
     create_home: false
     state: "present"
 
 - name: rpm --import
-  rpm_key:
+  ansible.builtin.rpm_key:
     key: "{{ item.key }}"
     fingerprint: "{{ item.fingerprint }}"
     state: "{{ item.state }}"
@@ -42,7 +42,7 @@
   until: result is succeeded
 
 - name: download archive
-  shell: |
+  ansible.builtin.shell: |
     set -euxo pipefail
     mkdir -p /var/log/ansible
     exec &> >(tee -a /var/log/ansible/{{ item.checksum }}-get_url.log)
@@ -62,7 +62,7 @@
   until: result is succeeded
 
 - name: dnf install
-  shell: |
+  ansible.builtin.shell: |
     set -euxo pipefail
     mkdir -p /var/log/ansible
     exec &> >(tee -a /var/log/ansible/{{ item.checksum }}-unarchive.log)
@@ -75,13 +75,13 @@
   failed_when: false
 
 - name: dnf config-manager
-  command: dnf config-manager --set-{{ item.state }} {{ item.name }}
+  ansible.builtin.command: dnf config-manager --set-{{ item.state }} {{ item.name }}
   loop: "{{ _dnf_config_manager[php_release] }}"
   changed_when: false
   failed_when: false
 
 - name: dnf module install
-  dnf:
+  ansible.builtin.dnf:
     name: "{{ item.name }}"
     state: "{{ item.state }}"
   loop: "{{ _dnf_module[php_release] }}"
@@ -89,17 +89,17 @@
   failed_when: false
 
 - name: prepare directories
-  file:
+  ansible.builtin.file:
     dest: "{{ item.dest }}"
     owner: "{{ item.owner | default('root') }}"
-    group: "{{ item.group | default('root') }}"
+    ansible.builtin.group: "{{ item.group | default('root') }}"
     mode: "{{ item.mode | default('0755') }}"
     state: "{{ item.state | default('directory') }}"
   loop:
     - { dest: "/var/www/html", owner: "apache", group: "apache" }
 
 - name: dnf install
-  dnf:
+  ansible.builtin.dnf:
     name: "{{ item.name }}"
     state: "{{ item.state }}"
   loop: "{{ _dnf[php_release] }}"
