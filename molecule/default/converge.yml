@@ -19,11 +19,11 @@
   become: true
   tasks:
     - name: include role
-      include_role:
+      ansible.builtin.include_role:
         name: git
       tags: git
 
     - name: include role
-      include_role:
+      ansible.builtin.include_role:
         name: php
       tags: php

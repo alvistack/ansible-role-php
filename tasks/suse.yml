@@ -15,19 +15,19 @@
 # limitations under the License.
 
 - name: groupadd
-  group:
+  ansible.builtin.group:
     name: "www"
     gid: "8"
     system: true
     state: "present"
 
 - name: useradd
-  user:
+  ansible.builtin.user:
     name: "wwwrun"
     uid: "30"
-    group: "www"
+    ansible.builtin.group: "www"
     home: "/var/lib/wwwrun"
-    shell: "/sbin/nologin"
+    ansible.builtin.shell: "/sbin/nologin"
     system: true
     create_home: false
     state: "present"
@@ -35,7 +35,7 @@
 - name: rpm --import
   vars:
     ansible_python_interpreter: "python3"
-  rpm_key:
+  ansible.builtin.rpm_key:
     key: "{{ item.key }}"
     fingerprint: "{{ item.fingerprint }}"
     state: "{{ item.state }}"
@@ -44,8 +44,8 @@
   until: result is succeeded
 
 - name: yum-config-manager --add-repo
-  yum_repository:
-    file: "{{ item.file }}"
+  ansible.builtin.yum_repository:
+    ansible.builtin.file: "{{ item.file }}"
     name: "{{ item.name }}"
     description: "{{ item.description }}"
     baseurl: "{{ item.baseurl }}"
@@ -59,10 +59,10 @@
   loop: "{{ _yum_repository[php_release] }}"
 
 - name: prepare directories
-  file:
+  ansible.builtin.file:
     dest: "{{ item.dest }}"
     owner: "{{ item.owner | default('root') }}"
-    group: "{{ item.group | default('root') }}"
+    ansible.builtin.group: "{{ item.group | default('root') }}"
     mode: "{{ item.mode | default('0755') }}"
     state: "{{ item.state | default('directory') }}"
   loop:
@@ -71,7 +71,7 @@
 - name: zypper install
   vars:
     ansible_python_interpreter: "python3"
-  zypper:
+  ansible.builtin.zypper:
     name: "{{ item.name }}"
     state: "{{ item.state }}"
     extra_args: "--allow-vendor-change"
@@ -82,11 +82,11 @@
     - php | systemctl restart php-fpm.service
 
 - name: copy /etc/php7/fpm/*
-  copy:
+  ansible.builtin.copy:
     dest: "{{ item.dest }}"
     src: "{{ item.src }}"
     owner: "{{ item.owner | default('root') }}"
-    group: "{{ item.group | default('root') }}"
+    ansible.builtin.group: "{{ item.group | default('root') }}"
     mode: "{{ item.mode | default('0644') }}"
     remote_src: true
     force: false
@@ -98,11 +98,11 @@
     - php | systemctl restart php-fpm.service
 
 - name: copy /etc/php8/fpm/*
-  copy:
+  ansible.builtin.copy:
     dest: "{{ item.dest }}"
     src: "{{ item.src }}"
     owner: "{{ item.owner | default('root') }}"
-    group: "{{ item.group | default('root') }}"
+    ansible.builtin.group: "{{ item.group | default('root') }}"
     mode: "{{ item.mode | default('0644') }}"
     remote_src: true
     force: false
