@@ -25,9 +25,9 @@
   ansible.builtin.user:
     name: "wwwrun"
     uid: "30"
-    ansible.builtin.group: "www"
+    group: "www"
     home: "/var/lib/wwwrun"
-    ansible.builtin.shell: "/sbin/nologin"
+    shell: "/sbin/nologin"
     system: true
     create_home: false
     state: "present"
@@ -45,7 +45,7 @@
 
 - name: yum-config-manager --add-repo
   ansible.builtin.yum_repository:
-    ansible.builtin.file: "{{ item.file }}"
+    file: "{{ item.file }}"
     name: "{{ item.name }}"
     description: "{{ item.description }}"
     baseurl: "{{ item.baseurl }}"
@@ -62,7 +62,7 @@
   ansible.builtin.file:
     dest: "{{ item.dest }}"
     owner: "{{ item.owner | default('root') }}"
-    ansible.builtin.group: "{{ item.group | default('root') }}"
+    group: "{{ item.group | default('root') }}"
     mode: "{{ item.mode | default('0755') }}"
     state: "{{ item.state | default('directory') }}"
   loop:
@@ -86,7 +86,7 @@
     dest: "{{ item.dest }}"
     src: "{{ item.src }}"
     owner: "{{ item.owner | default('root') }}"
-    ansible.builtin.group: "{{ item.group | default('root') }}"
+    group: "{{ item.group | default('root') }}"
     mode: "{{ item.mode | default('0644') }}"
     remote_src: true
     force: false
@@ -102,7 +102,7 @@
     dest: "{{ item.dest }}"
     src: "{{ item.src }}"
     owner: "{{ item.owner | default('root') }}"
-    ansible.builtin.group: "{{ item.group | default('root') }}"
+    group: "{{ item.group | default('root') }}"
     mode: "{{ item.mode | default('0644') }}"
     remote_src: true
     force: false
