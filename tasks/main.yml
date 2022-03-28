@@ -153,7 +153,7 @@
   ansible.builtin.shell: |
     set -euxo pipefail
     source /etc/profile.d/composer.sh
-    cgr {{ item.state }} {{ item.name }}
+    cgr --no-interaction {{ item.state }} {{ item.name }}
   args:
     executable: "/bin/bash"
   loop: "{{ cgr }}"
@@ -167,7 +167,7 @@
   ansible.builtin.shell: |
     set -euxo pipefail
     source /etc/profile.d/composer.sh
-    cgr update
+    cgr --no-interaction update
   args:
     executable: "/bin/bash"
   register: result
