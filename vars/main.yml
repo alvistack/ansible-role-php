@@ -15,10 +15,22 @@
 # limitations under the License.
 
 _composer_version:
+  "2.3": "2.3.2"
   "2.2": "2.2.10"
-  "1.10": "1.10.25"
 
 _composer_download:
+  "2.3.2":
+    url: "http://github.com/composer/composer/releases/download/2.3.2/composer.phar"
+    dest: "/var/cache/ansible/8ec134fe04ee52cd6465384c535ec61107368d4866ade9e995dcb96d8676f0c3/composer-2.3.2.phar"
+    checksum: "8ec134fe04ee52cd6465384c535ec61107368d4866ade9e995dcb96d8676f0c3"
+  "2.3.1":
+    url: "http://github.com/composer/composer/releases/download/2.3.1/composer.phar"
+    dest: "/var/cache/ansible/35088e641c5e0f463652b20425e2a623095f539fb3a038ba8dccf1ce07f0eca9/composer-2.3.1.phar"
+    checksum: "35088e641c5e0f463652b20425e2a623095f539fb3a038ba8dccf1ce07f0eca9"
+  "2.3.0":
+    url: "http://github.com/composer/composer/releases/download/2.3.0/composer.phar"
+    dest: "/var/cache/ansible/07d7d2adeaccd97eefa96c26bc6742b465b808b77bbf4246cf2b556970c2bcb1/composer-2.3.0.phar"
+    checksum: "07d7d2adeaccd97eefa96c26bc6742b465b808b77bbf4246cf2b556970c2bcb1"
   "2.2.10":
     url: "http://github.com/composer/composer/releases/download/2.2.10/composer.phar"
     dest: "/var/cache/ansible/dc9dfdd2ffb1180d785b5a3d581c946ec6da135f55c9959f21b96fea7d7fb12d/composer-2.2.10.phar"
@@ -31,18 +43,6 @@ _composer_download:
     url: "http://github.com/composer/composer/releases/download/2.2.8/composer.phar"
     dest: "/var/cache/ansible/e1e1c580a237c739ecc1be57cf512e6b741faaa566439257d19ecd739ddfefaf/composer-2.2.8.phar"
     checksum: "e1e1c580a237c739ecc1be57cf512e6b741faaa566439257d19ecd739ddfefaf"
-  "1.10.25":
-    url: "http://github.com/composer/composer/releases/download/1.10.25/composer.phar"
-    dest: "/var/cache/ansible/6b089bd8b78b00c3c15d7b13353fbcbdf16a3f5248203c9a3e76f13948f2de92/composer-1.10.25.phar"
-    checksum: "6b089bd8b78b00c3c15d7b13353fbcbdf16a3f5248203c9a3e76f13948f2de92"
-  "1.10.24":
-    url: "http://github.com/composer/composer/releases/download/1.10.24/composer.phar"
-    dest: "/var/cache/ansible/542ce16add6fd5ecfb0049dd49a0214e69a966a602b42c215adb19438c13a890/composer-1.10.24.phar"
-    checksum: "542ce16add6fd5ecfb0049dd49a0214e69a966a602b42c215adb19438c13a890"
-  "1.10.23":
-    url: "http://github.com/composer/composer/releases/download/1.10.23/composer.phar"
-    dest: "/var/cache/ansible/2fc3ae370a979602a3bc2c950a38db02e51b4ca2072f7b8e15a518b443b835e7/composer-1.10.23.phar"
-    checksum: "2fc3ae370a979602a3bc2c950a38db02e51b4ca2072f7b8e15a518b443b835e7"
 
 _cgr:
   - { state: "require", name: "drupal/coder:@stable" }

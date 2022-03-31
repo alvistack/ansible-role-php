@@ -18,7 +18,7 @@
 php_release: "8.1"
 
 # Composer release.
-composer_release: "2.2"
+composer_release: "2.3"
 
 # Composer version.
 composer_version: "{{ _composer_version[composer_release] }}"
