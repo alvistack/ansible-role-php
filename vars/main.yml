@@ -15,10 +15,14 @@
 # limitations under the License.
 
 _composer_version:
-  "2.3": "2.3.2"
-  "2.2": "2.2.10"
+  "2.3": "2.3.3"
+  "2.2": "2.2.11"
 
 _composer_download:
+  "2.3.3":
+    url: "http://github.com/composer/composer/releases/download/2.3.3/composer.phar"
+    dest: "/var/cache/ansible/d6931ec2b38b41bd0ad62f9d157908e6688bac091bbf0bd6a619c1067b922402/composer-2.3.3.phar"
+    checksum: "d6931ec2b38b41bd0ad62f9d157908e6688bac091bbf0bd6a619c1067b922402"
   "2.3.2":
     url: "http://github.com/composer/composer/releases/download/2.3.2/composer.phar"
     dest: "/var/cache/ansible/8ec134fe04ee52cd6465384c535ec61107368d4866ade9e995dcb96d8676f0c3/composer-2.3.2.phar"
@@ -27,10 +31,10 @@ _composer_download:
     url: "http://github.com/composer/composer/releases/download/2.3.1/composer.phar"
     dest: "/var/cache/ansible/35088e641c5e0f463652b20425e2a623095f539fb3a038ba8dccf1ce07f0eca9/composer-2.3.1.phar"
     checksum: "35088e641c5e0f463652b20425e2a623095f539fb3a038ba8dccf1ce07f0eca9"
-  "2.3.0":
-    url: "http://github.com/composer/composer/releases/download/2.3.0/composer.phar"
-    dest: "/var/cache/ansible/07d7d2adeaccd97eefa96c26bc6742b465b808b77bbf4246cf2b556970c2bcb1/composer-2.3.0.phar"
-    checksum: "07d7d2adeaccd97eefa96c26bc6742b465b808b77bbf4246cf2b556970c2bcb1"
+  "2.2.11":
+    url: "http://github.com/composer/composer/releases/download/2.2.11/composer.phar"
+    dest: "/var/cache/ansible/87c4aa2955437245fe510e6b2c794b17aba9ff6761a832fda4785863a23c5ba4/composer-2.2.11.phar"
+    checksum: "87c4aa2955437245fe510e6b2c794b17aba9ff6761a832fda4785863a23c5ba4"
   "2.2.10":
     url: "http://github.com/composer/composer/releases/download/2.2.10/composer.phar"
     dest: "/var/cache/ansible/dc9dfdd2ffb1180d785b5a3d581c946ec6da135f55c9959f21b96fea7d7fb12d/composer-2.2.10.phar"
@@ -39,10 +43,6 @@ _composer_download:
     url: "http://github.com/composer/composer/releases/download/2.2.9/composer.phar"
     dest: "/var/cache/ansible/48f9fdc9ad93904fee96550b45ae03a51f69718502ee855da894b4ad71d2dfe0/composer-2.2.9.phar"
     checksum: "48f9fdc9ad93904fee96550b45ae03a51f69718502ee855da894b4ad71d2dfe0"
-  "2.2.8":
-    url: "http://github.com/composer/composer/releases/download/2.2.8/composer.phar"
-    dest: "/var/cache/ansible/e1e1c580a237c739ecc1be57cf512e6b741faaa566439257d19ecd739ddfefaf/composer-2.2.8.phar"
-    checksum: "e1e1c580a237c739ecc1be57cf512e6b741faaa566439257d19ecd739ddfefaf"
 
 _cgr:
   - { state: "require", name: "drupal/coder:@stable" }
