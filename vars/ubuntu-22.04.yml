@@ -39,15 +39,15 @@ _apt_key:
 _apt_repository:
   "8.1":
     - filename: "ondrej"
-      repo: "deb http://ppa.launchpad.net/ondrej/php/ubuntu impish main"
+      repo: "deb http://ppa.launchpad.net/ondrej/php/ubuntu jammy main"
       state: "present"
   "8.0":
     - filename: "ondrej"
-      repo: "deb http://ppa.launchpad.net/ondrej/php/ubuntu impish main"
+      repo: "deb http://ppa.launchpad.net/ondrej/php/ubuntu jammy main"
       state: "present"
   "7.4":
     - filename: "ondrej"
-      repo: "deb http://ppa.launchpad.net/ondrej/php/ubuntu impish main"
+      repo: "deb http://ppa.launchpad.net/ondrej/php/ubuntu jammy main"
       state: "present"
 
 _apt:
