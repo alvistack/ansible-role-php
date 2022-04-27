@@ -70,7 +70,6 @@ _yum_repository:
 
 _zypper:
   "8.1":
-    - { state: "latest", name: "lsb-release" }
     - { state: "latest", name: "GeoIP-data" }
     - { state: "latest", name: "ImageMagick" }
     - { state: "latest", name: "ca-certificates" }
@@ -98,7 +97,6 @@ _zypper:
     - { state: "latest", name: "php8-xsl" }
     - { state: "latest", name: "php8-zip" }
   "8.0":
-    - { state: "latest", name: "lsb-release" }
     - { state: "latest", name: "GeoIP-data" }
     - { state: "latest", name: "ImageMagick" }
     - { state: "latest", name: "ca-certificates" }
@@ -126,7 +124,6 @@ _zypper:
     - { state: "latest", name: "php8-xsl" }
     - { state: "latest", name: "php8-zip" }
   "7.4":
-    - { state: "latest", name: "lsb-release" }
     - { state: "latest", name: "GeoIP-data" }
     - { state: "latest", name: "ImageMagick" }
     - { state: "latest", name: "ca-certificates" }

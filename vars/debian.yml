@@ -52,7 +52,6 @@ _apt_repository:
 
 _apt:
   "8.1":
-    - { state: "latest", name: "lsb-release" }
     - { state: "latest", name: "imagemagick" }
     - { state: "latest", name: "libpcre2-8.1" }
     - { state: "latest", name: "libssl-dev" }
@@ -81,7 +80,6 @@ _apt:
     - { state: "latest", name: "php8.1-xsl" }
     - { state: "latest", name: "php8.1-zip" }
   "8.0":
-    - { state: "latest", name: "lsb-release" }
     - { state: "latest", name: "imagemagick" }
     - { state: "latest", name: "libpcre2-8-0" }
     - { state: "latest", name: "libssl-dev" }
@@ -110,7 +108,6 @@ _apt:
     - { state: "latest", name: "php8.0-xsl" }
     - { state: "latest", name: "php8.0-zip" }
   "7.4":
-    - { state: "latest", name: "lsb-release" }
     - { state: "latest", name: "imagemagick" }
     - { state: "latest", name: "libpcre2-8-0" }
     - { state: "latest", name: "libssl-dev" }

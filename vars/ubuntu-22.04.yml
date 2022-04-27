@@ -39,20 +39,19 @@ _apt_key:
 _apt_repository:
   "8.1":
     - filename: "ondrej"
-      repo: "deb http://ppa.launchpad.net/ondrej/php/ubuntu impish main"
+      repo: "deb http://ppa.launchpad.net/ondrej/php/ubuntu jammy main"
       state: "present"
   "8.0":
     - filename: "ondrej"
-      repo: "deb http://ppa.launchpad.net/ondrej/php/ubuntu impish main"
+      repo: "deb http://ppa.launchpad.net/ondrej/php/ubuntu jammy main"
       state: "present"
   "7.4":
     - filename: "ondrej"
-      repo: "deb http://ppa.launchpad.net/ondrej/php/ubuntu impish main"
+      repo: "deb http://ppa.launchpad.net/ondrej/php/ubuntu jammy main"
       state: "present"
 
 _apt:
   "8.1":
-    - { state: "latest", name: "lsb-release" }
     - { state: "latest", name: "imagemagick" }
     - { state: "latest", name: "libpcre2-8-0" }
     - { state: "latest", name: "libssl-dev" }
@@ -81,7 +80,6 @@ _apt:
     - { state: "latest", name: "php8.1-xsl" }
     - { state: "latest", name: "php8.1-zip" }
   "8.0":
-    - { state: "latest", name: "lsb-release" }
     - { state: "latest", name: "imagemagick" }
     - { state: "latest", name: "libpcre2-8-0" }
     - { state: "latest", name: "libssl-dev" }
@@ -110,7 +108,6 @@ _apt:
     - { state: "latest", name: "php8.0-xsl" }
     - { state: "latest", name: "php8.0-zip" }
   "7.4":
-    - { state: "latest", name: "lsb-release" }
     - { state: "latest", name: "imagemagick" }
     - { state: "latest", name: "libpcre2-8-0" }
     - { state: "latest", name: "libssl-dev" }

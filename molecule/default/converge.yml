@@ -20,10 +20,10 @@
   tasks:
     - name: include role
       ansible.builtin.include_role:
-        name: git
-      tags: git
+        name: alvistack.git
+      tags: alvistack.git
 
     - name: include role
       ansible.builtin.include_role:
-        name: php
-      tags: php
+        name: alvistack.php
+      tags: alvistack.php

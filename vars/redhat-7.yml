@@ -78,7 +78,6 @@ _yum_config_manager:
 
 _yum:
   "8.1":
-    - { state: "latest", name: "redhat-lsb" }
     - { state: "latest", name: "GeoIP-data" }
     - { state: "latest", name: "ImageMagick" }
     - { state: "latest", name: "php-cli" }
@@ -103,7 +102,6 @@ _yum:
     - { state: "latest", name: "php-xmlrpc" }
     - { state: "latest", name: "php-zip" }
   "8.0":
-    - { state: "latest", name: "redhat-lsb" }
     - { state: "latest", name: "GeoIP-data" }
     - { state: "latest", name: "ImageMagick" }
     - { state: "latest", name: "php-cli" }
@@ -128,7 +126,6 @@ _yum:
     - { state: "latest", name: "php-xmlrpc" }
     - { state: "latest", name: "php-zip" }
   "7.4":
-    - { state: "latest", name: "redhat-lsb" }
     - { state: "latest", name: "GeoIP-data" }
     - { state: "latest", name: "ImageMagick" }
     - { state: "latest", name: "php-cli" }

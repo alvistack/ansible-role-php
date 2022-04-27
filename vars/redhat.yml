@@ -65,7 +65,6 @@ _dnf_module:
 
 _dnf:
   "8.1":
-    - { state: "latest", name: "redhat-lsb" }
     - { state: "latest", name: "GeoIP-data" }
     - { state: "latest", name: "ImageMagick" }
     - { state: "latest", name: "php-cli" }
@@ -90,7 +89,6 @@ _dnf:
     - { state: "latest", name: "php-xmlrpc" }
     - { state: "latest", name: "php-zip" }
   "8.0":
-    - { state: "latest", name: "redhat-lsb" }
     - { state: "latest", name: "GeoIP-data" }
     - { state: "latest", name: "ImageMagick" }
     - { state: "latest", name: "php-cli" }
@@ -115,7 +113,6 @@ _dnf:
     - { state: "latest", name: "php-xmlrpc" }
     - { state: "latest", name: "php-zip" }
   "7.4":
-    - { state: "latest", name: "redhat-lsb" }
     - { state: "latest", name: "GeoIP-data" }
     - { state: "latest", name: "ImageMagick" }
     - { state: "latest", name: "php-cli" }
