@@ -24,6 +24,9 @@ _rpm_key:
     - key: "http://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-9"
       fingerprint: "FF8AD1344597106ECE813B918A3872BF3228467C"
       state: "present"
+    - key: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/CentOS_9_Stream/repodata/repomd.xml.key"
+      fingerprint: "789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD"
+      state: "present"
     - key: "http://rpms.remirepo.net/RPM-GPG-KEY-remi2018"
       fingerprint: "6B38FEA7231F87F52B9CA9D8555097595F11735A"
       state: "present"
@@ -31,12 +34,18 @@ _rpm_key:
     - key: "http://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-9"
       fingerprint: "FF8AD1344597106ECE813B918A3872BF3228467C"
       state: "present"
+    - key: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/CentOS_9_Stream/repodata/repomd.xml.key"
+      fingerprint: "789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD"
+      state: "present"
     - key: "http://rpms.remirepo.net/RPM-GPG-KEY-remi2018"
       fingerprint: "6B38FEA7231F87F52B9CA9D8555097595F11735A"
       state: "present"
   "7.4":
     - key: "http://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-9"
       fingerprint: "FF8AD1344597106ECE813B918A3872BF3228467C"
+      state: "present"
+    - key: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/CentOS_9_Stream/repodata/repomd.xml.key"
+      fingerprint: "789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD"
       state: "present"
     - key: "http://rpms.remirepo.net/RPM-GPG-KEY-remi2018"
       fingerprint: "6B38FEA7231F87F52B9CA9D8555097595F11735A"
@@ -47,23 +56,58 @@ _rpm_download:
     - url: "http://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm"
       dest: "/var/cache/ansible/d3731f75ac51d998c6c4a71871ae7b62fc6f8bbf236ba609e7d303ec8c3d1390/epel-release-latest-9.noarch.rpm"
       checksum: "d3731f75ac51d998c6c4a71871ae7b62fc6f8bbf236ba609e7d303ec8c3d1390"
-    - url: "http://rpms.remirepo.net/enterprise/remi-release-8.rpm"
-      dest: "/var/cache/ansible/c30d6c191e707aac6699f8c828c411b4076c812c0982b4b4621f2a2f4d9e6047/remi-release-8.rpm"
-      checksum: "c30d6c191e707aac6699f8c828c411b4076c812c0982b4b4621f2a2f4d9e6047"
+    - url: "http://rpms.remirepo.net/enterprise/remi-release-9.rpm"
+      dest: "/var/cache/ansible/a5b93a1f6ca26e351365468f46b1ec824419774570ed68176dac3d6a9be9bbad/remi-release-9.rpm"
+      checksum: "a5b93a1f6ca26e351365468f46b1ec824419774570ed68176dac3d6a9be9bbad"
   "8.0":
     - url: "http://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm"
       dest: "/var/cache/ansible/d3731f75ac51d998c6c4a71871ae7b62fc6f8bbf236ba609e7d303ec8c3d1390/epel-release-latest-9.noarch.rpm"
       checksum: "d3731f75ac51d998c6c4a71871ae7b62fc6f8bbf236ba609e7d303ec8c3d1390"
-    - url: "http://rpms.remirepo.net/enterprise/remi-release-8.rpm"
-      dest: "/var/cache/ansible/c30d6c191e707aac6699f8c828c411b4076c812c0982b4b4621f2a2f4d9e6047/remi-release-8.rpm"
-      checksum: "c30d6c191e707aac6699f8c828c411b4076c812c0982b4b4621f2a2f4d9e6047"
+    - url: "http://rpms.remirepo.net/enterprise/remi-release-9.rpm"
+      dest: "/var/cache/ansible/a5b93a1f6ca26e351365468f46b1ec824419774570ed68176dac3d6a9be9bbad/remi-release-9.rpm"
+      checksum: "a5b93a1f6ca26e351365468f46b1ec824419774570ed68176dac3d6a9be9bbad"
   "7.4":
     - url: "http://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm"
       dest: "/var/cache/ansible/d3731f75ac51d998c6c4a71871ae7b62fc6f8bbf236ba609e7d303ec8c3d1390/epel-release-latest-9.noarch.rpm"
       checksum: "d3731f75ac51d998c6c4a71871ae7b62fc6f8bbf236ba609e7d303ec8c3d1390"
-    - url: "http://rpms.remirepo.net/enterprise/remi-release-8.rpm"
-      dest: "/var/cache/ansible/c30d6c191e707aac6699f8c828c411b4076c812c0982b4b4621f2a2f4d9e6047/remi-release-8.rpm"
-      checksum: "c30d6c191e707aac6699f8c828c411b4076c812c0982b4b4621f2a2f4d9e6047"
+    - url: "http://rpms.remirepo.net/enterprise/remi-release-9.rpm"
+      dest: "/var/cache/ansible/a5b93a1f6ca26e351365468f46b1ec824419774570ed68176dac3d6a9be9bbad/remi-release-9.rpm"
+      checksum: "a5b93a1f6ca26e351365468f46b1ec824419774570ed68176dac3d6a9be9bbad"
+
+_yum_repository:
+  "8.1":
+    - file: "home:alvistack"
+      name: "home_alvistack"
+      description: "home:alvistack (CentOS_9_Stream)"
+      baseurl: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/CentOS_9_Stream"
+      enabled: true
+      priority: "2"
+      module_hotfixes: true
+      gpgcheck: true
+      gpgkey: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/CentOS_9_Stream/repodata/repomd.xml.key"
+      state: "present"
+  "8.0":
+    - file: "home:alvistack"
+      name: "home_alvistack"
+      description: "home:alvistack (CentOS_9_Stream)"
+      baseurl: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/CentOS_9_Stream"
+      enabled: true
+      priority: "2"
+      module_hotfixes: true
+      gpgcheck: true
+      gpgkey: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/CentOS_9_Stream/repodata/repomd.xml.key"
+      state: "present"
+  "7.4":
+    - file: "home:alvistack"
+      name: "home_alvistack"
+      description: "home:alvistack (CentOS_9_Stream)"
+      baseurl: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/CentOS_9_Stream"
+      enabled: true
+      priority: "2"
+      module_hotfixes: true
+      gpgcheck: true
+      gpgkey: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/CentOS_9_Stream/repodata/repomd.xml.key"
+      state: "present"
 
 _dnf_config_manager:
   "8.1":
@@ -106,6 +150,10 @@ _dnf:
     - { state: "latest", name: "php-xml" }
     - { state: "latest", name: "php-xmlrpc" }
     - { state: "latest", name: "php-zip" }
+    - { state: "latest", name: "composer" }
+    - { state: "latest", name: "phpunit" }
+    - { state: "latest", name: "php-codesniffer" }
+    - { state: "latest", name: "php-cs-fixer" }
   "8.0":
     - { state: "latest", name: "GeoIP-data" }
     - { state: "latest", name: "ImageMagick" }
@@ -130,6 +178,10 @@ _dnf:
     - { state: "latest", name: "php-xml" }
     - { state: "latest", name: "php-xmlrpc" }
     - { state: "latest", name: "php-zip" }
+    - { state: "latest", name: "composer" }
+    - { state: "latest", name: "phpunit" }
+    - { state: "latest", name: "php-codesniffer" }
+    - { state: "latest", name: "php-cs-fixer" }
   "7.4":
     - { state: "latest", name: "GeoIP-data" }
     - { state: "latest", name: "ImageMagick" }
@@ -155,3 +207,7 @@ _dnf:
     - { state: "latest", name: "php-xml" }
     - { state: "latest", name: "php-xmlrpc" }
     - { state: "latest", name: "php-zip" }
+    - { state: "latest", name: "composer" }
+    - { state: "latest", name: "phpunit" }
+    - { state: "latest", name: "php-codesniffer" }
+    - { state: "latest", name: "php-cs-fixer" }

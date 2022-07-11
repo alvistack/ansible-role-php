@@ -21,14 +21,23 @@ _service:
 
 _rpm_key:
   "8.1":
+    - key: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/Fedora_36/repodata/repomd.xml.key"
+      fingerprint: "789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD"
+      state: "present"
     - key: "http://rpms.remirepo.net/RPM-GPG-KEY-remi2020"
       fingerprint: "34C10BDBCC6F1B252E50BA1A0714919E4C21A808"
       state: "present"
   "8.0":
+    - key: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/Fedora_36/repodata/repomd.xml.key"
+      fingerprint: "789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD"
+      state: "present"
     - key: "http://rpms.remirepo.net/RPM-GPG-KEY-remi2020"
       fingerprint: "34C10BDBCC6F1B252E50BA1A0714919E4C21A808"
       state: "present"
   "7.4":
+    - key: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/Fedora_36/repodata/repomd.xml.key"
+      fingerprint: "789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD"
+      state: "present"
     - key: "http://rpms.remirepo.net/RPM-GPG-KEY-remi2020"
       fingerprint: "34C10BDBCC6F1B252E50BA1A0714919E4C21A808"
       state: "present"
@@ -46,6 +55,41 @@ _rpm_download:
     - url: "http://rpms.remirepo.net/fedora/remi-release-36.rpm"
       dest: "/var/cache/ansible/cce3777fb18f73e53787b520937140dacdde83a4457b3b173d46525aceed0297/remi-release-36.rpm"
       checksum: "cce3777fb18f73e53787b520937140dacdde83a4457b3b173d46525aceed0297"
+
+_yum_repository:
+  "8.1":
+    - file: "home:alvistack"
+      name: "home_alvistack"
+      description: "home:alvistack (Fedora_36)"
+      baseurl: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/Fedora_36"
+      enabled: true
+      priority: "2"
+      module_hotfixes: true
+      gpgcheck: true
+      gpgkey: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/Fedora_36/repodata/repomd.xml.key"
+      state: "present"
+  "8.0":
+    - file: "home:alvistack"
+      name: "home_alvistack"
+      description: "home:alvistack (Fedora_36)"
+      baseurl: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/Fedora_36"
+      enabled: true
+      priority: "2"
+      module_hotfixes: true
+      gpgcheck: true
+      gpgkey: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/Fedora_36/repodata/repomd.xml.key"
+      state: "present"
+  "7.4":
+    - file: "home:alvistack"
+      name: "home_alvistack"
+      description: "home:alvistack (Fedora_36)"
+      baseurl: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/Fedora_36"
+      enabled: true
+      priority: "2"
+      module_hotfixes: true
+      gpgcheck: true
+      gpgkey: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/Fedora_36/repodata/repomd.xml.key"
+      state: "present"
 
 _dnf_config_manager:
   "8.1":
@@ -88,6 +132,10 @@ _dnf:
     - { state: "latest", name: "php-xml" }
     - { state: "latest", name: "php-xmlrpc" }
     - { state: "latest", name: "php-zip" }
+    - { state: "latest", name: "composer" }
+    - { state: "latest", name: "phpunit" }
+    - { state: "latest", name: "php-codesniffer" }
+    - { state: "latest", name: "php-cs-fixer" }
   "8.0":
     - { state: "latest", name: "GeoIP-data" }
     - { state: "latest", name: "ImageMagick" }
@@ -112,6 +160,10 @@ _dnf:
     - { state: "latest", name: "php-xml" }
     - { state: "latest", name: "php-xmlrpc" }
     - { state: "latest", name: "php-zip" }
+    - { state: "latest", name: "composer" }
+    - { state: "latest", name: "phpunit" }
+    - { state: "latest", name: "php-codesniffer" }
+    - { state: "latest", name: "php-cs-fixer" }
   "7.4":
     - { state: "latest", name: "GeoIP-data" }
     - { state: "latest", name: "ImageMagick" }
@@ -137,3 +189,7 @@ _dnf:
     - { state: "latest", name: "php-xml" }
     - { state: "latest", name: "php-xmlrpc" }
     - { state: "latest", name: "php-zip" }
+    - { state: "latest", name: "composer" }
+    - { state: "latest", name: "phpunit" }
+    - { state: "latest", name: "php-codesniffer" }
+    - { state: "latest", name: "php-cs-fixer" }
