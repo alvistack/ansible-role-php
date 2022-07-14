@@ -24,6 +24,9 @@ _rpm_key:
     - key: "http://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7"
       fingerprint: "91E97D7C4A5E96F17F3E888F6A2FAEA2352C64E5"
       state: "present"
+    - key: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/CentOS_7/repodata/repomd.xml.key"
+      fingerprint: "789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD"
+      state: "present"
     - key: "http://rpms.remirepo.net/RPM-GPG-KEY-remi"
       fingerprint: "1EE04CCE88A4AE4AA29A5DF5004E6F4700F97F56"
       state: "present"
@@ -31,12 +34,18 @@ _rpm_key:
     - key: "http://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7"
       fingerprint: "91E97D7C4A5E96F17F3E888F6A2FAEA2352C64E5"
       state: "present"
+    - key: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/CentOS_7/repodata/repomd.xml.key"
+      fingerprint: "789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD"
+      state: "present"
     - key: "http://rpms.remirepo.net/RPM-GPG-KEY-remi"
       fingerprint: "1EE04CCE88A4AE4AA29A5DF5004E6F4700F97F56"
       state: "present"
   "7.4":
     - key: "http://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7"
       fingerprint: "91E97D7C4A5E96F17F3E888F6A2FAEA2352C64E5"
+      state: "present"
+    - key: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/CentOS_7/repodata/repomd.xml.key"
+      fingerprint: "789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD"
       state: "present"
     - key: "http://rpms.remirepo.net/RPM-GPG-KEY-remi"
       fingerprint: "1EE04CCE88A4AE4AA29A5DF5004E6F4700F97F56"
@@ -48,22 +57,57 @@ _rpm_download:
       dest: "/var/cache/ansible/46fa100dbf4c103e1b33f04128a837028d603939ef5d72026c4ab9dadcd55bed/epel-release-latest-7.noarch.rpm"
       checksum: "46fa100dbf4c103e1b33f04128a837028d603939ef5d72026c4ab9dadcd55bed"
     - url: "http://rpms.remirepo.net/enterprise/remi-release-7.rpm"
-      dest: "/var/cache/ansible/ff284a375f4b6a173334d66fde802cdfdd1dcebed7a8f789c5f3715f1d2ebea7/remi-release-7.rpm"
-      checksum: "ff284a375f4b6a173334d66fde802cdfdd1dcebed7a8f789c5f3715f1d2ebea7"
+      dest: "/var/cache/ansible/278390e66829482b36ab7d96fcc0a997f6f0aa8b0eef84d95bc1bdc492617db1/remi-release-7.rpm"
+      checksum: "278390e66829482b36ab7d96fcc0a997f6f0aa8b0eef84d95bc1bdc492617db1"
   "8.0":
     - url: "http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm"
       dest: "/var/cache/ansible/46fa100dbf4c103e1b33f04128a837028d603939ef5d72026c4ab9dadcd55bed/epel-release-latest-7.noarch.rpm"
       checksum: "46fa100dbf4c103e1b33f04128a837028d603939ef5d72026c4ab9dadcd55bed"
     - url: "http://rpms.remirepo.net/enterprise/remi-release-7.rpm"
-      dest: "/var/cache/ansible/ff284a375f4b6a173334d66fde802cdfdd1dcebed7a8f789c5f3715f1d2ebea7/remi-release-7.rpm"
-      checksum: "ff284a375f4b6a173334d66fde802cdfdd1dcebed7a8f789c5f3715f1d2ebea7"
+      dest: "/var/cache/ansible/278390e66829482b36ab7d96fcc0a997f6f0aa8b0eef84d95bc1bdc492617db1/remi-release-7.rpm"
+      checksum: "278390e66829482b36ab7d96fcc0a997f6f0aa8b0eef84d95bc1bdc492617db1"
   "7.4":
     - url: "http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm"
       dest: "/var/cache/ansible/46fa100dbf4c103e1b33f04128a837028d603939ef5d72026c4ab9dadcd55bed/epel-release-latest-7.noarch.rpm"
       checksum: "46fa100dbf4c103e1b33f04128a837028d603939ef5d72026c4ab9dadcd55bed"
     - url: "http://rpms.remirepo.net/enterprise/remi-release-7.rpm"
-      dest: "/var/cache/ansible/ff284a375f4b6a173334d66fde802cdfdd1dcebed7a8f789c5f3715f1d2ebea7/remi-release-7.rpm"
-      checksum: "ff284a375f4b6a173334d66fde802cdfdd1dcebed7a8f789c5f3715f1d2ebea7"
+      dest: "/var/cache/ansible/278390e66829482b36ab7d96fcc0a997f6f0aa8b0eef84d95bc1bdc492617db1/remi-release-7.rpm"
+      checksum: "278390e66829482b36ab7d96fcc0a997f6f0aa8b0eef84d95bc1bdc492617db1"
+
+_yum_repository:
+  "8.1":
+    - file: "home:alvistack"
+      name: "home_alvistack"
+      description: "home:alvistack (CentOS_7)"
+      baseurl: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/CentOS_7"
+      enabled: true
+      priority: "2"
+      module_hotfixes: true
+      gpgcheck: true
+      gpgkey: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/CentOS_7/repodata/repomd.xml.key"
+      state: "present"
+  "8.0":
+    - file: "home:alvistack"
+      name: "home_alvistack"
+      description: "home:alvistack (CentOS_7)"
+      baseurl: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/CentOS_7"
+      enabled: true
+      priority: "2"
+      module_hotfixes: true
+      gpgcheck: true
+      gpgkey: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/CentOS_7/repodata/repomd.xml.key"
+      state: "present"
+  "7.4":
+    - file: "home:alvistack"
+      name: "home_alvistack"
+      description: "home:alvistack (CentOS_7)"
+      baseurl: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/CentOS_7"
+      enabled: true
+      priority: "2"
+      module_hotfixes: true
+      gpgcheck: true
+      gpgkey: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/CentOS_7/repodata/repomd.xml.key"
+      state: "present"
 
 _yum_config_manager:
   "8.1":
@@ -98,6 +142,10 @@ _yum:
     - { state: "latest", name: "php-xml" }
     - { state: "latest", name: "php-xmlrpc" }
     - { state: "latest", name: "php-zip" }
+    - { state: "latest", name: "composer" }
+    - { state: "latest", name: "phpunit" }
+    - { state: "latest", name: "php-codesniffer" }
+    - { state: "latest", name: "php-cs-fixer" }
   "8.0":
     - { state: "latest", name: "GeoIP-data" }
     - { state: "latest", name: "ImageMagick" }
@@ -122,6 +170,10 @@ _yum:
     - { state: "latest", name: "php-xml" }
     - { state: "latest", name: "php-xmlrpc" }
     - { state: "latest", name: "php-zip" }
+    - { state: "latest", name: "composer" }
+    - { state: "latest", name: "phpunit" }
+    - { state: "latest", name: "php-codesniffer" }
+    - { state: "latest", name: "php-cs-fixer" }
   "7.4":
     - { state: "latest", name: "GeoIP-data" }
     - { state: "latest", name: "ImageMagick" }
@@ -147,3 +199,7 @@ _yum:
     - { state: "latest", name: "php-xml" }
     - { state: "latest", name: "php-xmlrpc" }
     - { state: "latest", name: "php-zip" }
+    - { state: "latest", name: "composer" }
+    - { state: "latest", name: "phpunit" }
+    - { state: "latest", name: "php-codesniffer" }
+    - { state: "latest", name: "php-cs-fixer" }

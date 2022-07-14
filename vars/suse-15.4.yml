@@ -21,20 +21,39 @@ _service:
 
 _rpm_key:
   "8.1":
+    - key: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/openSUSE_Leap_15.4/repodata/repomd.xml.key"
+      fingerprint: "789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD"
+      state: "present"
     - key: "http://downloadcontent.opensuse.org/repositories/devel:/languages:/php/openSUSE_Leap_15.4/repodata/repomd.xml.key"
       fingerprint: "55CF98B4BB5BC6CC2E24748F82EE4011CBCA8BB5"
       state: "present"
   "8.0":
+    - key: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/openSUSE_Leap_15.4/repodata/repomd.xml.key"
+      fingerprint: "789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD"
+      state: "present"
     - key: "http://downloadcontent.opensuse.org/repositories/devel:/languages:/php:/php80/openSUSE_Leap_15.4/repodata/repomd.xml.key"
       fingerprint: "55CF98B4BB5BC6CC2E24748F82EE4011CBCA8BB5"
       state: "present"
   "7.4":
+    - key: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/openSUSE_Leap_15.4/repodata/repomd.xml.key"
+      fingerprint: "789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD"
+      state: "present"
     - key: "http://downloadcontent.opensuse.org/repositories/devel:/languages:/php/openSUSE_Leap_15.4/repodata/repomd.xml.key"
       fingerprint: "55CF98B4BB5BC6CC2E24748F82EE4011CBCA8BB5"
       state: "present"
 
 _yum_repository:
   "8.1":
+    - file: "home_alvistack"
+      name: "home_alvistack"
+      description: "home:alvistack (openSUSE_Leap_15.4)"
+      baseurl: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/openSUSE_Leap_15.4"
+      enabled: true
+      priority: "2"
+      module_hotfixes: true
+      gpgcheck: true
+      gpgkey: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/openSUSE_Leap_15.4/repodata/repomd.xml.key"
+      state: "present"
     - file: "devel_languages_php"
       name: "devel_languages_php"
       description: "devel:languages:php (openSUSE_Leap_15.4)"
@@ -46,6 +65,16 @@ _yum_repository:
       gpgkey: "http://downloadcontent.opensuse.org/repositories/devel:/languages:/php/openSUSE_Leap_15.4/repodata/repomd.xml.key"
       state: "present"
   "8.0":
+    - file: "home_alvistack"
+      name: "home_alvistack"
+      description: "home:alvistack (openSUSE_Leap_15.4)"
+      baseurl: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/openSUSE_Leap_15.4"
+      enabled: true
+      priority: "2"
+      module_hotfixes: true
+      gpgcheck: true
+      gpgkey: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/openSUSE_Leap_15.4/repodata/repomd.xml.key"
+      state: "present"
     - file: "devel_languages_php"
       name: "devel_languages_php"
       description: "devel:languages:php (openSUSE_Leap_15.4)"
@@ -57,6 +86,16 @@ _yum_repository:
       gpgkey: "http://downloadcontent.opensuse.org/repositories/devel:/languages:/php:/php80/openSUSE_Leap_15.4/repodata/repomd.xml.key"
       state: "present"
   "7.4":
+    - file: "home_alvistack"
+      name: "home_alvistack"
+      description: "home:alvistack (openSUSE_Leap_15.4)"
+      baseurl: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/openSUSE_Leap_15.4"
+      enabled: true
+      priority: "2"
+      module_hotfixes: true
+      gpgcheck: true
+      gpgkey: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/openSUSE_Leap_15.4/repodata/repomd.xml.key"
+      state: "present"
     - file: "devel_languages_php"
       name: "devel_languages_php"
       description: "devel:languages:php (openSUSE_Leap_15.4)"
@@ -96,6 +135,10 @@ _zypper:
     - { state: "latest", name: "php8-xmlwriter" }
     - { state: "latest", name: "php8-xsl" }
     - { state: "latest", name: "php8-zip" }
+    - { state: "latest", name: "composer" }
+    - { state: "latest", name: "phpunit" }
+    - { state: "latest", name: "php-codesniffer" }
+    - { state: "latest", name: "php-cs-fixer" }
   "8.0":
     - { state: "latest", name: "GeoIP-data" }
     - { state: "latest", name: "ImageMagick" }
@@ -123,6 +166,10 @@ _zypper:
     - { state: "latest", name: "php8-xmlwriter" }
     - { state: "latest", name: "php8-xsl" }
     - { state: "latest", name: "php8-zip" }
+    - { state: "latest", name: "composer" }
+    - { state: "latest", name: "phpunit" }
+    - { state: "latest", name: "php-codesniffer" }
+    - { state: "latest", name: "php-cs-fixer" }
   "7.4":
     - { state: "latest", name: "GeoIP-data" }
     - { state: "latest", name: "ImageMagick" }
@@ -152,3 +199,7 @@ _zypper:
     - { state: "latest", name: "php7-xmlwriter" }
     - { state: "latest", name: "php7-xsl" }
     - { state: "latest", name: "php7-zip" }
+    - { state: "latest", name: "composer" }
+    - { state: "latest", name: "phpunit" }
+    - { state: "latest", name: "php-codesniffer" }
+    - { state: "latest", name: "php-cs-fixer" }

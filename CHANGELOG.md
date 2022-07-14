@@ -1,10 +1,16 @@
 # Ansible Role for PHP
 
+## 6.2.0 - TBC
+
+### Major Changes
+
 ## 6.1.0 - TBC
 
 ### Major Changes
 
-  - Remove Ubuntu 21.04 support
+  - Support Ansible community package 6.1.0
+  - Revamp composer related with OBS repo
+  - Remove Ubuntu 21.10 support
 
 ## 6.0.0 - 2022-06-22
 

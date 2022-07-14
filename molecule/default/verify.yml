@@ -24,33 +24,21 @@
       changed_when: result is not succeeded
 
     - name: composer --no-interaction --version
-      environment:
-        PATH: "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
       ansible.builtin.command: composer --no-interaction --version
       register: result
       changed_when: result is not succeeded
 
     - name: phpunit --version
-      environment:
-        PATH: "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
       ansible.builtin.command: phpunit --version
       register: result
       changed_when: result is not succeeded
 
     - name: phpcs --version
-      environment:
-        PATH: "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
       ansible.builtin.command: phpcs --version
       register: result
       changed_when: result is not succeeded
 
-    - name: echo $COMPOSER_HOME
-      ansible.builtin.shell: |
-        set -euxo pipefail
-        source /etc/profile.d/composer.sh
-        echo $COMPOSER_HOME
-      args:
-        executable: "/bin/bash"
+    - name: php-cs-fixer --version
+      ansible.builtin.command: php-cs-fixer --version
       register: result
       changed_when: result is not succeeded
-      failed_when: "'/usr/local/share/composer' not in result.stdout"
