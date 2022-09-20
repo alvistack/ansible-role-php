@@ -1,0 +1,172 @@
+---
+
+# (c) Wong Hoi Sing Edison <hswong3i@pantarei-design.com>
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+_service:
+  "8.1": "php8.1-fpm.service"
+  "8.0": "php8.0-fpm.service"
+  "7.4": "php7.4-fpm.service"
+
+_apt_key:
+  "8.1":
+    - keyring: "/etc/apt/trusted.gpg.d/home_alvistack.gpg"
+      url: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_22.10/Release.key"
+      id: "789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD"
+      state: "present"
+    - keyring: "/etc/apt/trusted.gpg.d/ondrej.gpg"
+      url: "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x14AA40EC0831756756D7F66C4F4EA0AAE5267A6C"
+      id: "14AA40EC0831756756D7F66C4F4EA0AAE5267A6C"
+      state: "present"
+  "8.0":
+    - keyring: "/etc/apt/trusted.gpg.d/home_alvistack.gpg"
+      url: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_22.10/Release.key"
+      id: "789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD"
+      state: "present"
+    - keyring: "/etc/apt/trusted.gpg.d/ondrej.gpg"
+      url: "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x14AA40EC0831756756D7F66C4F4EA0AAE5267A6C"
+      id: "14AA40EC0831756756D7F66C4F4EA0AAE5267A6C"
+      state: "present"
+  "7.4":
+    - keyring: "/etc/apt/trusted.gpg.d/home_alvistack.gpg"
+      url: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_22.10/Release.key"
+      id: "789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD"
+      state: "present"
+    - keyring: "/etc/apt/trusted.gpg.d/ondrej.gpg"
+      url: "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x14AA40EC0831756756D7F66C4F4EA0AAE5267A6C"
+      id: "14AA40EC0831756756D7F66C4F4EA0AAE5267A6C"
+      state: "present"
+
+_apt_repository:
+  "8.1":
+    - filename: "home:alvistack"
+      repo: "deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_22.10/ /"
+      state: "present"
+    - filename: "ondrej"
+      repo: "deb http://ppa.launchpad.net/ondrej/php/ubuntu kinetic main"
+      state: "present"
+  "8.0":
+    - filename: "home:alvistack"
+      repo: "deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_22.10/ /"
+      state: "present"
+    - filename: "ondrej"
+      repo: "deb http://ppa.launchpad.net/ondrej/php/ubuntu kinetic main"
+      state: "present"
+  "7.4":
+    - filename: "home:alvistack"
+      repo: "deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_22.10/ /"
+      state: "present"
+    - filename: "ondrej"
+      repo: "deb http://ppa.launchpad.net/ondrej/php/ubuntu kinetic main"
+      state: "present"
+
+_apt:
+  "8.1":
+    - { state: "latest", name: "imagemagick" }
+    - { state: "latest", name: "libpcre2-8-0" }
+    - { state: "latest", name: "libssl-dev" }
+    - { state: "latest", name: "php8.1-cli" }
+    - { state: "latest", name: "php8.1-fpm" }
+    - { state: "latest", name: "php8.1-apcu" }
+    - { state: "latest", name: "php8.1-bcmath" }
+    - { state: "latest", name: "php8.1-bz2" }
+    - { state: "latest", name: "php8.1-curl" }
+    - { state: "latest", name: "php8.1-gd" }
+    - { state: "latest", name: "php8.1-imagick" }
+    - { state: "latest", name: "php8.1-imap" }
+    - { state: "latest", name: "php8.1-intl" }
+    - { state: "latest", name: "php8.1-maxminddb" }
+    - { state: "latest", name: "php8.1-mbstring" }
+    - { state: "latest", name: "php8.1-memcache" }
+    - { state: "latest", name: "php8.1-mysql" }
+    - { state: "latest", name: "php8.1-opcache" }
+    - { state: "latest", name: "php8.1-pgsql" }
+    - { state: "latest", name: "php8.1-soap" }
+    - { state: "latest", name: "php8.1-sqlite3" }
+    - { state: "latest", name: "php8.1-tidy" }
+    - { state: "latest", name: "php8.1-uuid" }
+    - { state: "latest", name: "php8.1-xml" }
+    - { state: "latest", name: "php8.1-xmlrpc" }
+    - { state: "latest", name: "php8.1-xsl" }
+    - { state: "latest", name: "php8.1-zip" }
+    - { state: "latest", name: "composer" }
+    - { state: "latest", name: "phpunit" }
+    - { state: "latest", name: "php-codesniffer" }
+    - { state: "latest", name: "php-cs-fixer" }
+  "8.0":
+    - { state: "latest", name: "imagemagick" }
+    - { state: "latest", name: "libpcre2-8-0" }
+    - { state: "latest", name: "libssl-dev" }
+    - { state: "latest", name: "php8.0-cli" }
+    - { state: "latest", name: "php8.0-fpm" }
+    - { state: "latest", name: "php8.0-apcu" }
+    - { state: "latest", name: "php8.0-bcmath" }
+    - { state: "latest", name: "php8.0-bz2" }
+    - { state: "latest", name: "php8.0-curl" }
+    - { state: "latest", name: "php8.0-gd" }
+    - { state: "latest", name: "php8.0-imagick" }
+    - { state: "latest", name: "php8.0-imap" }
+    - { state: "latest", name: "php8.0-intl" }
+    - { state: "latest", name: "php8.0-maxminddb" }
+    - { state: "latest", name: "php8.0-mbstring" }
+    - { state: "latest", name: "php8.0-memcache" }
+    - { state: "latest", name: "php8.0-mysql" }
+    - { state: "latest", name: "php8.0-opcache" }
+    - { state: "latest", name: "php8.0-pgsql" }
+    - { state: "latest", name: "php8.0-soap" }
+    - { state: "latest", name: "php8.0-sqlite3" }
+    - { state: "latest", name: "php8.0-tidy" }
+    - { state: "latest", name: "php8.0-uuid" }
+    - { state: "latest", name: "php8.0-xml" }
+    - { state: "latest", name: "php8.0-xmlrpc" }
+    - { state: "latest", name: "php8.0-xsl" }
+    - { state: "latest", name: "php8.0-zip" }
+    - { state: "latest", name: "composer" }
+    - { state: "latest", name: "phpunit" }
+    - { state: "latest", name: "php-codesniffer" }
+    - { state: "latest", name: "php-cs-fixer" }
+  "7.4":
+    - { state: "latest", name: "imagemagick" }
+    - { state: "latest", name: "libpcre2-8-0" }
+    - { state: "latest", name: "libssl-dev" }
+    - { state: "latest", name: "php7.4-cli" }
+    - { state: "latest", name: "php7.4-fpm" }
+    - { state: "latest", name: "php7.4-apcu" }
+    - { state: "latest", name: "php7.4-apcu-bc" }
+    - { state: "latest", name: "php7.4-bcmath" }
+    - { state: "latest", name: "php7.4-bz2" }
+    - { state: "latest", name: "php7.4-curl" }
+    - { state: "latest", name: "php7.4-gd" }
+    - { state: "latest", name: "php7.4-imagick" }
+    - { state: "latest", name: "php7.4-imap" }
+    - { state: "latest", name: "php7.4-intl" }
+    - { state: "latest", name: "php7.4-json" }
+    - { state: "latest", name: "php7.4-maxminddb" }
+    - { state: "latest", name: "php7.4-mbstring" }
+    - { state: "latest", name: "php7.4-memcache" }
+    - { state: "latest", name: "php7.4-mysql" }
+    - { state: "latest", name: "php7.4-opcache" }
+    - { state: "latest", name: "php7.4-pgsql" }
+    - { state: "latest", name: "php7.4-soap" }
+    - { state: "latest", name: "php7.4-sqlite3" }
+    - { state: "latest", name: "php7.4-tidy" }
+    - { state: "latest", name: "php7.4-uuid" }
+    - { state: "latest", name: "php7.4-xml" }
+    - { state: "latest", name: "php7.4-xmlrpc" }
+    - { state: "latest", name: "php7.4-xsl" }
+    - { state: "latest", name: "php7.4-zip" }
+    - { state: "latest", name: "composer" }
+    - { state: "latest", name: "phpunit" }
+    - { state: "latest", name: "php-codesniffer" }
+    - { state: "latest", name: "php-cs-fixer" }
