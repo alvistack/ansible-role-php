@@ -54,21 +54,21 @@ _apt_repository:
       repo: "deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_22.10/ /"
       state: "present"
     - filename: "ondrej"
-      repo: "deb http://ppa.launchpad.net/ondrej/php/ubuntu kinetic main"
+      repo: "deb http://ppa.launchpad.net/ondrej/php/ubuntu jammy main"
       state: "present"
   "8.0":
     - filename: "home:alvistack"
       repo: "deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_22.10/ /"
       state: "present"
     - filename: "ondrej"
-      repo: "deb http://ppa.launchpad.net/ondrej/php/ubuntu kinetic main"
+      repo: "deb http://ppa.launchpad.net/ondrej/php/ubuntu jammy main"
       state: "present"
   "7.4":
     - filename: "home:alvistack"
       repo: "deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_22.10/ /"
       state: "present"
     - filename: "ondrej"
-      repo: "deb http://ppa.launchpad.net/ondrej/php/ubuntu kinetic main"
+      repo: "deb http://ppa.launchpad.net/ondrej/php/ubuntu jammy main"
       state: "present"
 
 _apt:
@@ -85,7 +85,7 @@ _apt:
     - { state: "latest", name: "php8.1-gd" }
     - { state: "latest", name: "php8.1-imagick" }
     - { state: "latest", name: "php8.1-imap" }
-    - { state: "latest", name: "php8.1-intl" }
+    - { state: "absent", name: "php8.1-intl" }
     - { state: "latest", name: "php8.1-maxminddb" }
     - { state: "latest", name: "php8.1-mbstring" }
     - { state: "latest", name: "php8.1-memcache" }
@@ -117,7 +117,7 @@ _apt:
     - { state: "latest", name: "php8.0-gd" }
     - { state: "latest", name: "php8.0-imagick" }
     - { state: "latest", name: "php8.0-imap" }
-    - { state: "latest", name: "php8.0-intl" }
+    - { state: "absent", name: "php8.0-intl" }
     - { state: "latest", name: "php8.0-maxminddb" }
     - { state: "latest", name: "php8.0-mbstring" }
     - { state: "latest", name: "php8.0-memcache" }
@@ -150,7 +150,7 @@ _apt:
     - { state: "latest", name: "php7.4-gd" }
     - { state: "latest", name: "php7.4-imagick" }
     - { state: "latest", name: "php7.4-imap" }
-    - { state: "latest", name: "php7.4-intl" }
+    - { state: "absent", name: "php7.4-intl" }
     - { state: "latest", name: "php7.4-json" }
     - { state: "latest", name: "php7.4-maxminddb" }
     - { state: "latest", name: "php7.4-mbstring" }
