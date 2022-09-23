@@ -52,28 +52,6 @@
   register: result
   until: result is succeeded
 
-- name: copy templates | ubuntu
-  ansible.builtin.template:
-    dest: "{{ item.dest }}"
-    src: "{{ item.src | default('./templates' + item.dest + '.j2') }}"
-    owner: "{{ item.owner | default('root') }}"
-    group: "{{ item.group | default('root') }}"
-    mode: "{{ item.mode | default('0644') }}"
-  loop:
-    - { dest: "/etc/apt/preferences.d/99-ondrej.pref" }
-  when: ansible_distribution | lower == "ubuntu"
-
-- name: copy templates | debian
-  ansible.builtin.template:
-    dest: "{{ item.dest }}"
-    src: "{{ item.src | default('./templates' + item.dest + '.j2') }}"
-    owner: "{{ item.owner | default('root') }}"
-    group: "{{ item.group | default('root') }}"
-    mode: "{{ item.mode | default('0644') }}"
-  loop:
-    - { dest: "/etc/apt/preferences.d/99-sury.pref" }
-  when: ansible_distribution | lower == "debian"
-
 - name: prepare directories
   ansible.builtin.file:
     dest: "{{ item.dest }}"
