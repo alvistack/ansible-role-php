@@ -20,26 +20,31 @@
   become: true
   tasks:
     - name: php --version
-      ansible.builtin.command: php --version
+      ansible.builtin.command:
+        cmd: php --version
       register: result
       changed_when: result is not succeeded
 
     - name: composer --no-interaction --version
-      ansible.builtin.command: composer --no-interaction --version
+      ansible.builtin.command:
+        cmd: composer --no-interaction --version
       register: result
       changed_when: result is not succeeded
 
     - name: phpunit --version
-      ansible.builtin.command: phpunit --version
+      ansible.builtin.command:
+        cmd: phpunit --version
       register: result
       changed_when: result is not succeeded
 
     - name: phpcs --version
-      ansible.builtin.command: phpcs --version
+      ansible.builtin.command:
+        cmd: phpcs --version
       register: result
       changed_when: result is not succeeded
 
     - name: php-cs-fixer --version
-      ansible.builtin.command: php-cs-fixer --version
+      ansible.builtin.command:
+        cmd: php-cs-fixer --version
       register: result
       changed_when: result is not succeeded
