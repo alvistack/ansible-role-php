@@ -64,8 +64,9 @@
 
 - name: apt-get install
   ansible.builtin.apt:
-    name: "{{ item.name }}"
     state: "{{ item.state }}"
+    name: "{{ item.name | default(None) or omit }}"
+    deb: "{{ item.deb | default(None) or omit }}"
     install_recommends: false
   loop: "{{ _apt[php_release] }}"
   register: result
