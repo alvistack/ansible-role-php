@@ -57,22 +57,22 @@ _rpm_download:
       dest: "/var/cache/ansible/e2d5ffdd4cfe09dde17018a31d100db611abe88cc6761d9bdc0c1f41efaa5aa0/epel-release-latest-7.noarch.rpm"
       checksum: "e2d5ffdd4cfe09dde17018a31d100db611abe88cc6761d9bdc0c1f41efaa5aa0"
     - url: "http://rpms.remirepo.net/enterprise/remi-release-7.rpm"
-      dest: "/var/cache/ansible/44d5846f05bdab82f2ebf35a27b62a0be4e5dc927b4b2d0f99d8a6c7b6d84f6b/remi-release-7.rpm"
-      checksum: "44d5846f05bdab82f2ebf35a27b62a0be4e5dc927b4b2d0f99d8a6c7b6d84f6b"
+      dest: "/var/cache/ansible/3492926aa9d2e64694327b7a49be6ad9c2d4ca2b0d3becfc3707e415007cc8b5/remi-release-7.rpm"
+      checksum: "3492926aa9d2e64694327b7a49be6ad9c2d4ca2b0d3becfc3707e415007cc8b5"
   "8.0":
     - url: "http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm"
       dest: "/var/cache/ansible/e2d5ffdd4cfe09dde17018a31d100db611abe88cc6761d9bdc0c1f41efaa5aa0/epel-release-latest-7.noarch.rpm"
       checksum: "e2d5ffdd4cfe09dde17018a31d100db611abe88cc6761d9bdc0c1f41efaa5aa0"
     - url: "http://rpms.remirepo.net/enterprise/remi-release-7.rpm"
-      dest: "/var/cache/ansible/44d5846f05bdab82f2ebf35a27b62a0be4e5dc927b4b2d0f99d8a6c7b6d84f6b/remi-release-7.rpm"
-      checksum: "44d5846f05bdab82f2ebf35a27b62a0be4e5dc927b4b2d0f99d8a6c7b6d84f6b"
+      dest: "/var/cache/ansible/3492926aa9d2e64694327b7a49be6ad9c2d4ca2b0d3becfc3707e415007cc8b5/remi-release-7.rpm"
+      checksum: "3492926aa9d2e64694327b7a49be6ad9c2d4ca2b0d3becfc3707e415007cc8b5"
   "7.4":
     - url: "http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm"
       dest: "/var/cache/ansible/e2d5ffdd4cfe09dde17018a31d100db611abe88cc6761d9bdc0c1f41efaa5aa0/epel-release-latest-7.noarch.rpm"
       checksum: "e2d5ffdd4cfe09dde17018a31d100db611abe88cc6761d9bdc0c1f41efaa5aa0"
     - url: "http://rpms.remirepo.net/enterprise/remi-release-7.rpm"
-      dest: "/var/cache/ansible/44d5846f05bdab82f2ebf35a27b62a0be4e5dc927b4b2d0f99d8a6c7b6d84f6b/remi-release-7.rpm"
-      checksum: "44d5846f05bdab82f2ebf35a27b62a0be4e5dc927b4b2d0f99d8a6c7b6d84f6b"
+      dest: "/var/cache/ansible/3492926aa9d2e64694327b7a49be6ad9c2d4ca2b0d3becfc3707e415007cc8b5/remi-release-7.rpm"
+      checksum: "3492926aa9d2e64694327b7a49be6ad9c2d4ca2b0d3becfc3707e415007cc8b5"
 
 _yum_repository:
   "8.1":
