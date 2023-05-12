@@ -44,17 +44,17 @@ _rpm_key:
 
 _rpm_download:
   "8.1":
-    - url: "http://rpms.remirepo.net/fedora/remi-release-36.rpm"
-      dest: "/var/cache/ansible/08c40ffec14b3806679cbcfbb660213dd1bbd8e20df8187b6a0ee6cee0c5e984/remi-release-36.rpm"
-      checksum: "08c40ffec14b3806679cbcfbb660213dd1bbd8e20df8187b6a0ee6cee0c5e984"
+    - url: "http://rpms.remirepo.net/fedora/remi-release-38.rpm"
+      dest: "/var/cache/ansible/e1de17324502542c838ce0436ec1684ffd81d64f4f2d0d9b66883883de7bb178/remi-release-38.rpm"
+      checksum: "e1de17324502542c838ce0436ec1684ffd81d64f4f2d0d9b66883883de7bb178"
   "8.0":
-    - url: "http://rpms.remirepo.net/fedora/remi-release-36.rpm"
-      dest: "/var/cache/ansible/08c40ffec14b3806679cbcfbb660213dd1bbd8e20df8187b6a0ee6cee0c5e984/remi-release-36.rpm"
-      checksum: "08c40ffec14b3806679cbcfbb660213dd1bbd8e20df8187b6a0ee6cee0c5e984"
+    - url: "http://rpms.remirepo.net/fedora/remi-release-38.rpm"
+      dest: "/var/cache/ansible/e1de17324502542c838ce0436ec1684ffd81d64f4f2d0d9b66883883de7bb178/remi-release-38.rpm"
+      checksum: "e1de17324502542c838ce0436ec1684ffd81d64f4f2d0d9b66883883de7bb178"
   "7.4":
-    - url: "http://rpms.remirepo.net/fedora/remi-release-36.rpm"
-      dest: "/var/cache/ansible/08c40ffec14b3806679cbcfbb660213dd1bbd8e20df8187b6a0ee6cee0c5e984/remi-release-36.rpm"
-      checksum: "08c40ffec14b3806679cbcfbb660213dd1bbd8e20df8187b6a0ee6cee0c5e984"
+    - url: "http://rpms.remirepo.net/fedora/remi-release-38.rpm"
+      dest: "/var/cache/ansible/e1de17324502542c838ce0436ec1684ffd81d64f4f2d0d9b66883883de7bb178/remi-release-38.rpm"
+      checksum: "e1de17324502542c838ce0436ec1684ffd81d64f4f2d0d9b66883883de7bb178"
 
 _yum_repository:
   "8.1":
