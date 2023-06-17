@@ -22,7 +22,7 @@ _service:
 _apt_key:
   "8.1":
     - keyring: "/etc/apt/trusted.gpg.d/home_alvistack.gpg"
-      url: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_Testing/Release.key"
+      url: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_12/Release.key"
       id: "789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD"
       state: "present"
     - keyring: "/etc/apt/trusted.gpg.d/sury.gpg"
@@ -31,7 +31,7 @@ _apt_key:
       state: "present"
   "8.0":
     - keyring: "/etc/apt/trusted.gpg.d/home_alvistack.gpg"
-      url: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_Testing/Release.key"
+      url: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_12/Release.key"
       id: "789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD"
       state: "present"
     - keyring: "/etc/apt/trusted.gpg.d/sury.gpg"
@@ -40,7 +40,7 @@ _apt_key:
       state: "present"
   "7.4":
     - keyring: "/etc/apt/trusted.gpg.d/home_alvistack.gpg"
-      url: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_Testing/Release.key"
+      url: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_12/Release.key"
       id: "789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD"
       state: "present"
     - keyring: "/etc/apt/trusted.gpg.d/sury.gpg"
@@ -51,24 +51,24 @@ _apt_key:
 _apt_repository:
   "8.1":
     - filename: "home:alvistack"
-      repo: "deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_Testing/ /"
+      repo: "deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_12/ /"
       state: "present"
     - filename: "sury"
-      repo: "deb http://packages.sury.org/php bullseye main"
+      repo: "deb http://packages.sury.org/php bookworm main"
       state: "present"
   "8.0":
     - filename: "home:alvistack"
-      repo: "deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_Testing/ /"
+      repo: "deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_12/ /"
       state: "present"
     - filename: "sury"
-      repo: "deb http://packages.sury.org/php bullseye main"
+      repo: "deb http://packages.sury.org/php bookworm main"
       state: "present"
   "7.4":
     - filename: "home:alvistack"
-      repo: "deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_Testing/ /"
+      repo: "deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_12/ /"
       state: "present"
     - filename: "sury"
-      repo: "deb http://packages.sury.org/php bullseye main"
+      repo: "deb http://packages.sury.org/php bookworm main"
       state: "present"
 
 _apt:
