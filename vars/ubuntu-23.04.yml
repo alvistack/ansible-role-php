@@ -79,7 +79,6 @@ _apt:
     - { state: "present", deb: "http://archive.ubuntu.com/ubuntu/pool/universe/libg/libgav1/libgav1-0_0.17.0-1build1_amd64.deb" }
     - { state: "present", deb: "http://archive.ubuntu.com/ubuntu/pool/universe/liba/libavif/libavif13_0.9.3-3_amd64.deb" }
     - { state: "present", deb: "http://archive.ubuntu.com/ubuntu/pool/main/l/lerc/liblerc3_3.0+ds-1ubuntu1_amd64.deb" }
-    - { state: "present", deb: "http://archive.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff5_4.4.0-4ubuntu3.3_amd64.deb" }
     - { state: "latest", name: "imagemagick" }
     - { state: "latest", name: "libpcre2-8-0" }
     - { state: "latest", name: "libssl-dev" }
@@ -118,7 +117,6 @@ _apt:
     - { state: "present", deb: "http://archive.ubuntu.com/ubuntu/pool/universe/libg/libgav1/libgav1-0_0.17.0-1build1_amd64.deb" }
     - { state: "present", deb: "http://archive.ubuntu.com/ubuntu/pool/universe/liba/libavif/libavif13_0.9.3-3_amd64.deb" }
     - { state: "present", deb: "http://archive.ubuntu.com/ubuntu/pool/main/l/lerc/liblerc3_3.0+ds-1ubuntu1_amd64.deb" }
-    - { state: "present", deb: "http://archive.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff5_4.4.0-4ubuntu3.3_amd64.deb" }
     - { state: "latest", name: "imagemagick" }
     - { state: "latest", name: "libpcre2-8-0" }
     - { state: "latest", name: "libssl-dev" }
@@ -157,7 +155,6 @@ _apt:
     - { state: "present", deb: "http://archive.ubuntu.com/ubuntu/pool/universe/libg/libgav1/libgav1-0_0.17.0-1build1_amd64.deb" }
     - { state: "present", deb: "http://archive.ubuntu.com/ubuntu/pool/universe/liba/libavif/libavif13_0.9.3-3_amd64.deb" }
     - { state: "present", deb: "http://archive.ubuntu.com/ubuntu/pool/main/l/lerc/liblerc3_3.0+ds-1ubuntu1_amd64.deb" }
-    - { state: "present", deb: "http://archive.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff5_4.4.0-4ubuntu3.3_amd64.deb" }
     - { state: "latest", name: "imagemagick" }
     - { state: "latest", name: "libpcre2-8-0" }
     - { state: "latest", name: "libssl-dev" }
