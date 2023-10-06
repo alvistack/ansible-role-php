@@ -22,7 +22,7 @@ _service:
 _apt_key:
   "8.1":
     - keyring: "/etc/apt/trusted.gpg.d/home_alvistack.gpg"
-      url: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_23.04/Release.key"
+      url: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_23.10/Release.key"
       id: "789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD"
       state: "present"
     - keyring: "/etc/apt/trusted.gpg.d/ondrej.gpg"
@@ -31,7 +31,7 @@ _apt_key:
       state: "present"
   "8.0":
     - keyring: "/etc/apt/trusted.gpg.d/home_alvistack.gpg"
-      url: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_23.04/Release.key"
+      url: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_23.10/Release.key"
       id: "789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD"
       state: "present"
     - keyring: "/etc/apt/trusted.gpg.d/ondrej.gpg"
@@ -40,7 +40,7 @@ _apt_key:
       state: "present"
   "7.4":
     - keyring: "/etc/apt/trusted.gpg.d/home_alvistack.gpg"
-      url: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_23.04/Release.key"
+      url: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_23.10/Release.key"
       id: "789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD"
       state: "present"
     - keyring: "/etc/apt/trusted.gpg.d/ondrej.gpg"
@@ -51,21 +51,21 @@ _apt_key:
 _apt_repository:
   "8.1":
     - filename: "home:alvistack"
-      repo: "deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_23.04/ /"
+      repo: "deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_23.10/ /"
       state: "present"
     - filename: "ondrej"
       repo: "deb http://ppa.launchpad.net/ondrej/php/ubuntu jammy main"
       state: "present"
   "8.0":
     - filename: "home:alvistack"
-      repo: "deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_23.04/ /"
+      repo: "deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_23.10/ /"
       state: "present"
     - filename: "ondrej"
       repo: "deb http://ppa.launchpad.net/ondrej/php/ubuntu jammy main"
       state: "present"
   "7.4":
     - filename: "home:alvistack"
-      repo: "deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_23.04/ /"
+      repo: "deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_23.10/ /"
       state: "present"
     - filename: "ondrej"
       repo: "deb http://ppa.launchpad.net/ondrej/php/ubuntu jammy main"
@@ -79,6 +79,7 @@ _apt:
     - { state: "present", deb: "http://archive.ubuntu.com/ubuntu/pool/universe/libg/libgav1/libgav1-0_0.17.0-1build1_amd64.deb" }
     - { state: "present", deb: "http://archive.ubuntu.com/ubuntu/pool/universe/liba/libavif/libavif13_0.9.3-3_amd64.deb" }
     - { state: "present", deb: "http://archive.ubuntu.com/ubuntu/pool/universe/l/lerc/liblerc3_3.0+ds-1_amd64.deb" }
+    - { state: "present", deb: "http://archive.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff5_4.3.0-6ubuntu0.5_amd64.deb" }
     - { state: "latest", name: "imagemagick" }
     - { state: "latest", name: "libpcre2-8-0" }
     - { state: "latest", name: "libssl-dev" }
@@ -117,6 +118,7 @@ _apt:
     - { state: "present", deb: "http://archive.ubuntu.com/ubuntu/pool/universe/libg/libgav1/libgav1-0_0.17.0-1build1_amd64.deb" }
     - { state: "present", deb: "http://archive.ubuntu.com/ubuntu/pool/universe/liba/libavif/libavif13_0.9.3-3_amd64.deb" }
     - { state: "present", deb: "http://archive.ubuntu.com/ubuntu/pool/universe/l/lerc/liblerc3_3.0+ds-1_amd64.deb" }
+    - { state: "present", deb: "http://archive.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff5_4.3.0-6ubuntu0.5_amd64.deb" }
     - { state: "latest", name: "imagemagick" }
     - { state: "latest", name: "libpcre2-8-0" }
     - { state: "latest", name: "libssl-dev" }
@@ -155,6 +157,7 @@ _apt:
     - { state: "present", deb: "http://archive.ubuntu.com/ubuntu/pool/universe/libg/libgav1/libgav1-0_0.17.0-1build1_amd64.deb" }
     - { state: "present", deb: "http://archive.ubuntu.com/ubuntu/pool/universe/liba/libavif/libavif13_0.9.3-3_amd64.deb" }
     - { state: "present", deb: "http://archive.ubuntu.com/ubuntu/pool/universe/l/lerc/liblerc3_3.0+ds-1_amd64.deb" }
+    - { state: "present", deb: "http://archive.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff5_4.3.0-6ubuntu0.5_amd64.deb" }
     - { state: "latest", name: "imagemagick" }
     - { state: "latest", name: "libpcre2-8-0" }
     - { state: "latest", name: "libssl-dev" }
