@@ -78,7 +78,7 @@ _apt:
     - { state: "present", deb: "http://archive.ubuntu.com/ubuntu/pool/universe/d/dav1d/libdav1d5_0.9.2-1_amd64.deb" }
     - { state: "present", deb: "http://archive.ubuntu.com/ubuntu/pool/universe/libg/libgav1/libgav1-0_0.17.0-1build1_amd64.deb" }
     - { state: "present", deb: "http://archive.ubuntu.com/ubuntu/pool/universe/liba/libavif/libavif13_0.9.3-3_amd64.deb" }
-    - { state: "present", deb: "http://archive.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff5_4.3.0-6ubuntu0.6_amd64.deb" }
+    - { state: "present", deb: "http://archive.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff5_4.3.0-6ubuntu0.7_amd64.deb" }
     - { state: "latest", name: "imagemagick" }
     - { state: "latest", name: "libpcre2-8-0" }
     - { state: "latest", name: "libssl-dev" }
@@ -116,7 +116,7 @@ _apt:
     - { state: "present", deb: "http://archive.ubuntu.com/ubuntu/pool/universe/d/dav1d/libdav1d5_0.9.2-1_amd64.deb" }
     - { state: "present", deb: "http://archive.ubuntu.com/ubuntu/pool/universe/libg/libgav1/libgav1-0_0.17.0-1build1_amd64.deb" }
     - { state: "present", deb: "http://archive.ubuntu.com/ubuntu/pool/universe/liba/libavif/libavif13_0.9.3-3_amd64.deb" }
-    - { state: "present", deb: "http://archive.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff5_4.3.0-6ubuntu0.6_amd64.deb" }
+    - { state: "present", deb: "http://archive.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff5_4.3.0-6ubuntu0.7_amd64.deb" }
     - { state: "latest", name: "imagemagick" }
     - { state: "latest", name: "libpcre2-8-0" }
     - { state: "latest", name: "libssl-dev" }
@@ -154,7 +154,7 @@ _apt:
     - { state: "present", deb: "http://archive.ubuntu.com/ubuntu/pool/universe/d/dav1d/libdav1d5_0.9.2-1_amd64.deb" }
     - { state: "present", deb: "http://archive.ubuntu.com/ubuntu/pool/universe/libg/libgav1/libgav1-0_0.17.0-1build1_amd64.deb" }
     - { state: "present", deb: "http://archive.ubuntu.com/ubuntu/pool/universe/liba/libavif/libavif13_0.9.3-3_amd64.deb" }
-    - { state: "present", deb: "http://archive.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff5_4.3.0-6ubuntu0.6_amd64.deb" }
+    - { state: "present", deb: "http://archive.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff5_4.3.0-6ubuntu0.7_amd64.deb" }
     - { state: "latest", name: "imagemagick" }
     - { state: "latest", name: "libpcre2-8-0" }
     - { state: "latest", name: "libssl-dev" }
