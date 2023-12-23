@@ -22,9 +22,7 @@
     - name: include role
       ansible.builtin.include_role:
         name: alvistack.git
-      tags: alvistack.git
 
     - name: include role
       ansible.builtin.include_role:
         name: alvistack.php
-      tags: alvistack.php
