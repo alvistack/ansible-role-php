@@ -15,34 +15,76 @@
 # limitations under the License.
 
 _service:
+  "8.3": "php-fpm.service"
+  "8.2": "php-fpm.service"
   "8.1": "php-fpm.service"
-  "8.0": "php-fpm.service"
-  "7.4": "php-fpm.service"
 
 _rpm_key:
+  "8.3":
+    - key: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/openSUSE_Leap_15.5/repodata/repomd.xml.key"
+      fingerprint: "789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD"
+      state: "present"
+    - key: "http://downloadcontent.opensuse.org/repositories/devel:/languages:/php:/php83/openSUSE_Leap_15.5/repodata/repomd.xml.key"
+      fingerprint: "55CF98B4BB5BC6CC2E24748F82EE4011CBCA8BB5"
+      state: "present"
+  "8.2":
+    - key: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/openSUSE_Leap_15.5/repodata/repomd.xml.key"
+      fingerprint: "789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD"
+      state: "present"
+    - key: "http://downloadcontent.opensuse.org/repositories/devel:/languages:/php/openSUSE_Leap_15.5/repodata/repomd.xml.key"
+      fingerprint: "55CF98B4BB5BC6CC2E24748F82EE4011CBCA8BB5"
+      state: "present"
   "8.1":
     - key: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/openSUSE_Leap_15.5/repodata/repomd.xml.key"
       fingerprint: "789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD"
       state: "present"
-    - key: "http://downloadcontent.opensuse.org/repositories/devel:/languages:/php/openSUSE_Leap_15.5/repodata/repomd.xml.key"
-      fingerprint: "55CF98B4BB5BC6CC2E24748F82EE4011CBCA8BB5"
-      state: "present"
-  "8.0":
-    - key: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/openSUSE_Leap_15.5/repodata/repomd.xml.key"
-      fingerprint: "789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD"
-      state: "present"
-    - key: "http://downloadcontent.opensuse.org/repositories/devel:/languages:/php:/php80/openSUSE_Leap_15.5/repodata/repomd.xml.key"
-      fingerprint: "55CF98B4BB5BC6CC2E24748F82EE4011CBCA8BB5"
-      state: "present"
-  "7.4":
-    - key: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/openSUSE_Leap_15.5/repodata/repomd.xml.key"
-      fingerprint: "789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD"
-      state: "present"
-    - key: "http://downloadcontent.opensuse.org/repositories/devel:/languages:/php/openSUSE_Leap_15.5/repodata/repomd.xml.key"
+    - key: "http://downloadcontent.opensuse.org/repositories/devel:/languages:/php:/php81/openSUSE_Leap_15.5/repodata/repomd.xml.key"
       fingerprint: "55CF98B4BB5BC6CC2E24748F82EE4011CBCA8BB5"
       state: "present"
 
 _yum_repository:
+  "8.3":
+    - file: "home_alvistack"
+      name: "home_alvistack"
+      description: "home:alvistack (openSUSE_Leap_15.5)"
+      baseurl: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/openSUSE_Leap_15.5"
+      enabled: true
+      priority: "2"
+      module_hotfixes: true
+      gpgcheck: true
+      gpgkey: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/openSUSE_Leap_15.5/repodata/repomd.xml.key"
+      state: "present"
+    - file: "devel_languages_php"
+      name: "devel_languages_php"
+      description: "devel:languages:php (openSUSE_Leap_15.5)"
+      baseurl: "http://downloadcontent.opensuse.org/repositories/devel:/languages:/php:/php83/openSUSE_Leap_15.5"
+      enabled: true
+      priority: "2"
+      module_hotfixes: true
+      gpgcheck: true
+      gpgkey: "http://downloadcontent.opensuse.org/repositories/devel:/languages:/php:/php83/openSUSE_Leap_15.5/repodata/repomd.xml.key"
+      state: "present"
+  "8.2":
+    - file: "home_alvistack"
+      name: "home_alvistack"
+      description: "home:alvistack (openSUSE_Leap_15.5)"
+      baseurl: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/openSUSE_Leap_15.5"
+      enabled: true
+      priority: "2"
+      module_hotfixes: true
+      gpgcheck: true
+      gpgkey: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/openSUSE_Leap_15.5/repodata/repomd.xml.key"
+      state: "present"
+    - file: "devel_languages_php"
+      name: "devel_languages_php"
+      description: "devel:languages:php (openSUSE_Leap_15.5)"
+      baseurl: "http://downloadcontent.opensuse.org/repositories/devel:/languages:/php/openSUSE_Leap_15.5"
+      enabled: true
+      priority: "2"
+      module_hotfixes: true
+      gpgcheck: true
+      gpgkey: "http://downloadcontent.opensuse.org/repositories/devel:/languages:/php/openSUSE_Leap_15.5/repodata/repomd.xml.key"
+      state: "present"
   "8.1":
     - file: "home_alvistack"
       name: "home_alvistack"
@@ -57,57 +99,77 @@ _yum_repository:
     - file: "devel_languages_php"
       name: "devel_languages_php"
       description: "devel:languages:php (openSUSE_Leap_15.5)"
-      baseurl: "http://downloadcontent.opensuse.org/repositories/devel:/languages:/php/openSUSE_Leap_15.5"
+      baseurl: "http://downloadcontent.opensuse.org/repositories/devel:/languages:/php:/php81/openSUSE_Leap_15.5"
       enabled: true
       priority: "2"
       module_hotfixes: true
       gpgcheck: true
-      gpgkey: "http://downloadcontent.opensuse.org/repositories/devel:/languages:/php/openSUSE_Leap_15.5/repodata/repomd.xml.key"
-      state: "present"
-  "8.0":
-    - file: "home_alvistack"
-      name: "home_alvistack"
-      description: "home:alvistack (openSUSE_Leap_15.5)"
-      baseurl: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/openSUSE_Leap_15.5"
-      enabled: true
-      priority: "2"
-      module_hotfixes: true
-      gpgcheck: true
-      gpgkey: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/openSUSE_Leap_15.5/repodata/repomd.xml.key"
-      state: "present"
-    - file: "devel_languages_php"
-      name: "devel_languages_php"
-      description: "devel:languages:php (openSUSE_Leap_15.5)"
-      baseurl: "http://downloadcontent.opensuse.org/repositories/devel:/languages:/php:/php80/openSUSE_Leap_15.5"
-      enabled: true
-      priority: "2"
-      module_hotfixes: true
-      gpgcheck: true
-      gpgkey: "http://downloadcontent.opensuse.org/repositories/devel:/languages:/php:/php80/openSUSE_Leap_15.5/repodata/repomd.xml.key"
-      state: "present"
-  "7.4":
-    - file: "home_alvistack"
-      name: "home_alvistack"
-      description: "home:alvistack (openSUSE_Leap_15.5)"
-      baseurl: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/openSUSE_Leap_15.5"
-      enabled: true
-      priority: "2"
-      module_hotfixes: true
-      gpgcheck: true
-      gpgkey: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/openSUSE_Leap_15.5/repodata/repomd.xml.key"
-      state: "present"
-    - file: "devel_languages_php"
-      name: "devel_languages_php"
-      description: "devel:languages:php (openSUSE_Leap_15.5)"
-      baseurl: "http://downloadcontent.opensuse.org/repositories/devel:/languages:/php/openSUSE_Leap_15.5"
-      enabled: true
-      priority: "2"
-      module_hotfixes: true
-      gpgcheck: true
-      gpgkey: "http://downloadcontent.opensuse.org/repositories/devel:/languages:/php/openSUSE_Leap_15.5/repodata/repomd.xml.key"
+      gpgkey: "http://downloadcontent.opensuse.org/repositories/devel:/languages:/php:/php81/openSUSE_Leap_15.5/repodata/repomd.xml.key"
       state: "present"
 
 _zypper:
+  "8.3":
+    - { state: "latest", name: "GeoIP-data" }
+    - { state: "latest", name: "ImageMagick" }
+    - { state: "latest", name: "ca-certificates" }
+    - { state: "latest", name: "php8" }
+    - { state: "latest", name: "php8-fpm" }
+    - { state: "latest", name: "php8-bcmath" }
+    - { state: "latest", name: "php8-bz2" }
+    - { state: "latest", name: "php8-calendar" }
+    - { state: "latest", name: "php8-curl" }
+    - { state: "latest", name: "php8-gd" }
+    - { state: "latest", name: "php8-intl" }
+    - { state: "latest", name: "php8-mbstring" }
+    - { state: "latest", name: "php8-mysql" }
+    - { state: "latest", name: "php8-opcache" }
+    - { state: "latest", name: "php8-openssl" }
+    - { state: "latest", name: "php8-pdo" }
+    - { state: "latest", name: "php8-pgsql" }
+    - { state: "latest", name: "php8-phar" }
+    - { state: "latest", name: "php8-soap" }
+    - { state: "latest", name: "php8-sqlite" }
+    - { state: "latest", name: "php8-tidy" }
+    - { state: "latest", name: "php8-tokenizer" }
+    - { state: "latest", name: "php8-xmlreader" }
+    - { state: "latest", name: "php8-xmlwriter" }
+    - { state: "latest", name: "php8-xsl" }
+    - { state: "latest", name: "php8-zip" }
+    - { state: "latest", name: "composer" }
+    - { state: "latest", name: "phpunit" }
+    - { state: "latest", name: "php-codesniffer" }
+    - { state: "latest", name: "php-cs-fixer" }
+  "8.2":
+    - { state: "latest", name: "GeoIP-data" }
+    - { state: "latest", name: "ImageMagick" }
+    - { state: "latest", name: "ca-certificates" }
+    - { state: "latest", name: "php8" }
+    - { state: "latest", name: "php8-fpm" }
+    - { state: "latest", name: "php8-bcmath" }
+    - { state: "latest", name: "php8-bz2" }
+    - { state: "latest", name: "php8-calendar" }
+    - { state: "latest", name: "php8-curl" }
+    - { state: "latest", name: "php8-gd" }
+    - { state: "latest", name: "php8-intl" }
+    - { state: "latest", name: "php8-mbstring" }
+    - { state: "latest", name: "php8-mysql" }
+    - { state: "latest", name: "php8-opcache" }
+    - { state: "latest", name: "php8-openssl" }
+    - { state: "latest", name: "php8-pdo" }
+    - { state: "latest", name: "php8-pgsql" }
+    - { state: "latest", name: "php8-phar" }
+    - { state: "latest", name: "php8-soap" }
+    - { state: "latest", name: "php8-sqlite" }
+    - { state: "latest", name: "php8-tidy" }
+    - { state: "latest", name: "php8-tokenizer" }
+    - { state: "latest", name: "php8-xmlreader" }
+    - { state: "latest", name: "php8-xmlwriter" }
+    - { state: "latest", name: "php8-xsl" }
+    - { state: "latest", name: "php8-zip" }
+    - { state: "latest", name: "composer" }
+    - { state: "latest", name: "phpunit" }
+    - { state: "latest", name: "php-codesniffer" }
+    - { state: "latest", name: "php-cs-fixer" }
   "8.1":
     - { state: "latest", name: "GeoIP-data" }
     - { state: "latest", name: "ImageMagick" }
@@ -135,70 +197,6 @@ _zypper:
     - { state: "latest", name: "php8-xmlwriter" }
     - { state: "latest", name: "php8-xsl" }
     - { state: "latest", name: "php8-zip" }
-    - { state: "latest", name: "composer" }
-    - { state: "latest", name: "phpunit" }
-    - { state: "latest", name: "php-codesniffer" }
-    - { state: "latest", name: "php-cs-fixer" }
-  "8.0":
-    - { state: "latest", name: "GeoIP-data" }
-    - { state: "latest", name: "ImageMagick" }
-    - { state: "latest", name: "ca-certificates" }
-    - { state: "latest", name: "php8" }
-    - { state: "latest", name: "php8-fpm" }
-    - { state: "latest", name: "php8-bcmath" }
-    - { state: "latest", name: "php8-bz2" }
-    - { state: "latest", name: "php8-calendar" }
-    - { state: "latest", name: "php8-curl" }
-    - { state: "latest", name: "php8-gd" }
-    - { state: "latest", name: "php8-intl" }
-    - { state: "latest", name: "php8-mbstring" }
-    - { state: "latest", name: "php8-mysql" }
-    - { state: "latest", name: "php8-opcache" }
-    - { state: "latest", name: "php8-openssl" }
-    - { state: "latest", name: "php8-pdo" }
-    - { state: "latest", name: "php8-pgsql" }
-    - { state: "latest", name: "php8-phar" }
-    - { state: "latest", name: "php8-soap" }
-    - { state: "latest", name: "php8-sqlite" }
-    - { state: "latest", name: "php8-tidy" }
-    - { state: "latest", name: "php8-tokenizer" }
-    - { state: "latest", name: "php8-xmlreader" }
-    - { state: "latest", name: "php8-xmlwriter" }
-    - { state: "latest", name: "php8-xsl" }
-    - { state: "latest", name: "php8-zip" }
-    - { state: "latest", name: "composer" }
-    - { state: "latest", name: "phpunit" }
-    - { state: "latest", name: "php-codesniffer" }
-    - { state: "latest", name: "php-cs-fixer" }
-  "7.4":
-    - { state: "latest", name: "GeoIP-data" }
-    - { state: "latest", name: "ImageMagick" }
-    - { state: "latest", name: "ca-certificates" }
-    - { state: "latest", name: "php7" }
-    - { state: "latest", name: "php7-fpm" }
-    - { state: "latest", name: "php7-bcmath" }
-    - { state: "latest", name: "php7-bz2" }
-    - { state: "latest", name: "php7-calendar" }
-    - { state: "latest", name: "php7-curl" }
-    - { state: "latest", name: "php7-gd" }
-    - { state: "latest", name: "php7-intl" }
-    - { state: "latest", name: "php7-json" }
-    - { state: "latest", name: "php7-mbstring" }
-    - { state: "latest", name: "php7-mysql" }
-    - { state: "latest", name: "php7-opcache" }
-    - { state: "latest", name: "php7-openssl" }
-    - { state: "latest", name: "php7-pdo" }
-    - { state: "latest", name: "php7-pgsql" }
-    - { state: "latest", name: "php7-phar" }
-    - { state: "latest", name: "php7-soap" }
-    - { state: "latest", name: "php7-sqlite" }
-    - { state: "latest", name: "php7-tidy" }
-    - { state: "latest", name: "php7-tokenizer" }
-    - { state: "latest", name: "php7-xmlreader" }
-    - { state: "latest", name: "php7-xmlrpc" }
-    - { state: "latest", name: "php7-xmlwriter" }
-    - { state: "latest", name: "php7-xsl" }
-    - { state: "latest", name: "php7-zip" }
     - { state: "latest", name: "composer" }
     - { state: "latest", name: "phpunit" }
     - { state: "latest", name: "php-codesniffer" }

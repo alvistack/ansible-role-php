@@ -58,16 +58,6 @@
     reposdir: "{{ item.reposdir | default('/etc/zypp/repos.d') }}"
   loop: "{{ _yum_repository[php_release] }}"
 
-- name: prepare directories
-  ansible.builtin.file:
-    dest: "{{ item.dest }}"
-    owner: "{{ item.owner | default('root') }}"
-    group: "{{ item.group | default('root') }}"
-    mode: "{{ item.mode | default('0755') }}"
-    state: "{{ item.state | default('directory') }}"
-  loop:
-    - { dest: "/srv/www", owner: "wwwrun", group: "www" }
-
 - name: zypper install
   vars:
     ansible_python_interpreter: "python3"
@@ -78,22 +68,6 @@
   loop: "{{ _zypper[php_release] }}"
   register: result
   until: result is succeeded
-  notify:
-    - php | systemctl restart php-fpm.service
-
-- name: copy /etc/php7/fpm/*
-  ansible.builtin.copy:
-    dest: "{{ item.dest }}"
-    src: "{{ item.src }}"
-    owner: "{{ item.owner | default('root') }}"
-    group: "{{ item.group | default('root') }}"
-    mode: "{{ item.mode | default('0644') }}"
-    remote_src: true
-    force: false
-  loop:
-    - { dest: "/etc/php7/fpm/php-fpm.conf", src: "/etc/php7/fpm/php-fpm.conf.default" }
-    - { dest: "/etc/php7/fpm/php-fpm.d/www.conf", src: "/etc/php7/fpm/php-fpm.d/www.conf.default" }
-  when: php_release == "7.3" or php_release == "7.4"
   notify:
     - php | systemctl restart php-fpm.service
 
@@ -109,6 +83,15 @@
   loop:
     - { dest: "/etc/php8/fpm/php-fpm.conf", src: "/etc/php8/fpm/php-fpm.conf.default" }
     - { dest: "/etc/php8/fpm/php-fpm.d/www.conf", src: "/etc/php8/fpm/php-fpm.d/www.conf.default" }
-  when: php_release == "8.0"
   notify:
     - php | systemctl restart php-fpm.service
+
+- name: prepare directories
+  ansible.builtin.file:
+    dest: "{{ item.dest }}"
+    owner: "{{ item.owner | default('root') }}"
+    group: "{{ item.group | default('root') }}"
+    mode: "{{ item.mode | default('0755') }}"
+    state: "{{ item.state | default('directory') }}"
+  loop:
+    - { dest: "/srv/www", owner: "wwwrun", group: "www" }
