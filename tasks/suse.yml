@@ -71,22 +71,6 @@
   notify:
     - php | systemctl restart php-fpm.service
 
-- name: copy /etc/php7/fpm/*
-  ansible.builtin.copy:
-    dest: "{{ item.dest }}"
-    src: "{{ item.src }}"
-    owner: "{{ item.owner | default('root') }}"
-    group: "{{ item.group | default('root') }}"
-    mode: "{{ item.mode | default('0644') }}"
-    remote_src: true
-    force: false
-  loop:
-    - { dest: "/etc/php7/fpm/php-fpm.conf", src: "/etc/php7/fpm/php-fpm.conf.default" }
-    - { dest: "/etc/php7/fpm/php-fpm.d/www.conf", src: "/etc/php7/fpm/php-fpm.d/www.conf.default" }
-  when: php_release == "7.3" or php_release == "7.4"
-  notify:
-    - php | systemctl restart php-fpm.service
-
 - name: copy /etc/php8/fpm/*
   ansible.builtin.copy:
     dest: "{{ item.dest }}"
@@ -99,7 +83,6 @@
   loop:
     - { dest: "/etc/php8/fpm/php-fpm.conf", src: "/etc/php8/fpm/php-fpm.conf.default" }
     - { dest: "/etc/php8/fpm/php-fpm.d/www.conf", src: "/etc/php8/fpm/php-fpm.d/www.conf.default" }
-  when: php_release == "8.0"
   notify:
     - php | systemctl restart php-fpm.service
 
