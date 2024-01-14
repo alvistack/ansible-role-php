@@ -97,16 +97,6 @@
   changed_when: false
   failed_when: false
 
-- name: prepare directories
-  ansible.builtin.file:
-    dest: "{{ item.dest }}"
-    owner: "{{ item.owner | default('root') }}"
-    group: "{{ item.group | default('root') }}"
-    mode: "{{ item.mode | default('0755') }}"
-    state: "{{ item.state | default('directory') }}"
-  loop:
-    - { dest: "/var/www/html", owner: "apache", group: "apache" }
-
 - name: yum install
   ansible.builtin.yum:
     name: "{{ item.name }}"
@@ -116,3 +106,13 @@
   until: result is succeeded
   notify:
     - php | systemctl restart php-fpm.service
+
+- name: prepare directories
+  ansible.builtin.file:
+    dest: "{{ item.dest }}"
+    owner: "{{ item.owner | default('root') }}"
+    group: "{{ item.group | default('root') }}"
+    mode: "{{ item.mode | default('0755') }}"
+    state: "{{ item.state | default('directory') }}"
+  loop:
+    - { dest: "/var/www/html", owner: "apache", group: "apache" }

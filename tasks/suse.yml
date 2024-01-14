@@ -58,16 +58,6 @@
     reposdir: "{{ item.reposdir | default('/etc/zypp/repos.d') }}"
   loop: "{{ _yum_repository[php_release] }}"
 
-- name: prepare directories
-  ansible.builtin.file:
-    dest: "{{ item.dest }}"
-    owner: "{{ item.owner | default('root') }}"
-    group: "{{ item.group | default('root') }}"
-    mode: "{{ item.mode | default('0755') }}"
-    state: "{{ item.state | default('directory') }}"
-  loop:
-    - { dest: "/srv/www", owner: "wwwrun", group: "www" }
-
 - name: zypper install
   vars:
     ansible_python_interpreter: "python3"
@@ -112,3 +102,13 @@
   when: php_release == "8.0"
   notify:
     - php | systemctl restart php-fpm.service
+
+- name: prepare directories
+  ansible.builtin.file:
+    dest: "{{ item.dest }}"
+    owner: "{{ item.owner | default('root') }}"
+    group: "{{ item.group | default('root') }}"
+    mode: "{{ item.mode | default('0755') }}"
+    state: "{{ item.state | default('directory') }}"
+  loop:
+    - { dest: "/srv/www", owner: "wwwrun", group: "www" }

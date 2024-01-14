@@ -52,16 +52,6 @@
   register: result
   until: result is succeeded
 
-- name: prepare directories
-  ansible.builtin.file:
-    dest: "{{ item.dest }}"
-    owner: "{{ item.owner | default('root') }}"
-    group: "{{ item.group | default('root') }}"
-    mode: "{{ item.mode | default('0755') }}"
-    state: "{{ item.state | default('directory') }}"
-  loop:
-    - { dest: "/var/www/html", owner: "www-data", group: "www-data" }
-
 - name: apt-get install
   ansible.builtin.apt:
     state: "{{ item.state }}"
@@ -73,3 +63,13 @@
   until: result is succeeded
   notify:
     - php | systemctl restart php-fpm.service
+
+- name: prepare directories
+  ansible.builtin.file:
+    dest: "{{ item.dest }}"
+    owner: "{{ item.owner | default('root') }}"
+    group: "{{ item.group | default('root') }}"
+    mode: "{{ item.mode | default('0755') }}"
+    state: "{{ item.state | default('directory') }}"
+  loop:
+    - { dest: "/var/www/html", owner: "www-data", group: "www-data" }

@@ -15,4 +15,4 @@
 # limitations under the License.
 
 # PHP release.
-php_release: "8.1"
+php_release: "8.3"

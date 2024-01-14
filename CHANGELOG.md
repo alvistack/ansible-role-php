@@ -2,6 +2,10 @@
 
 ## 9.2.0 - TBC
 
+-   Support PHP 8.3
+-   Support PHP 8.2
+-   Remove PHP 8.0 support
+-   Remove PHP 7.4 support
 -   Remove Ubuntu 23.04 support
 
 ## 9.1.0 - 2023-12-25
