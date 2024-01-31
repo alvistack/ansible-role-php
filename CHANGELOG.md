@@ -1,7 +1,10 @@
 # Ansible Role for PHP
 
-## 9.2.0 - TBC
+## 9.3.0 - TBC
 
+## 9.2.0 - 2024-01-31
+
+-   Support Ansible community package 9.2.0
 -   Support PHP 8.3
 -   Support PHP 8.2
 -   Remove PHP 8.0 support
