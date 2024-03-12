@@ -15,180 +15,180 @@
 # limitations under the License.
 
 _service:
-  "8.3": "php-fpm.service"
-  "8.2": "php-fpm.service"
-  "8.1": "php-fpm.service"
+  "8.3": php-fpm.service
+  "8.2": php-fpm.service
+  "8.1": php-fpm.service
 
 _rpm_key:
   "8.3":
-    - key: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/Fedora_39/repodata/repomd.xml.key"
-      fingerprint: "789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD"
-      state: "present"
-    - key: "http://rpms.remirepo.net/RPM-GPG-KEY-remi2020"
-      fingerprint: "34C10BDBCC6F1B252E50BA1A0714919E4C21A808"
-      state: "present"
+    - key: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Fedora_39/repodata/repomd.xml.key
+      fingerprint: 789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD
+      state: present
+    - key: http://rpms.remirepo.net/RPM-GPG-KEY-remi2020
+      fingerprint: 34C10BDBCC6F1B252E50BA1A0714919E4C21A808
+      state: present
   "8.2":
-    - key: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/Fedora_39/repodata/repomd.xml.key"
-      fingerprint: "789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD"
-      state: "present"
-    - key: "http://rpms.remirepo.net/RPM-GPG-KEY-remi2020"
-      fingerprint: "34C10BDBCC6F1B252E50BA1A0714919E4C21A808"
-      state: "present"
+    - key: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Fedora_39/repodata/repomd.xml.key
+      fingerprint: 789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD
+      state: present
+    - key: http://rpms.remirepo.net/RPM-GPG-KEY-remi2020
+      fingerprint: 34C10BDBCC6F1B252E50BA1A0714919E4C21A808
+      state: present
   "8.1":
-    - key: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/Fedora_39/repodata/repomd.xml.key"
-      fingerprint: "789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD"
-      state: "present"
-    - key: "http://rpms.remirepo.net/RPM-GPG-KEY-remi2020"
-      fingerprint: "34C10BDBCC6F1B252E50BA1A0714919E4C21A808"
-      state: "present"
+    - key: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Fedora_39/repodata/repomd.xml.key
+      fingerprint: 789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD
+      state: present
+    - key: http://rpms.remirepo.net/RPM-GPG-KEY-remi2020
+      fingerprint: 34C10BDBCC6F1B252E50BA1A0714919E4C21A808
+      state: present
 
 _rpm_download:
   "8.3":
-    - url: "http://rpms.remirepo.net/fedora/remi-release-39.rpm"
-      dest: "/var/cache/ansible/ebb9844aceacc82a382cc6751dc51c14cf03a7f87b13cb3f02e8a61e98df2601/remi-release-39.rpm"
-      checksum: "ebb9844aceacc82a382cc6751dc51c14cf03a7f87b13cb3f02e8a61e98df2601"
+    - url: http://rpms.remirepo.net/fedora/remi-release-39.rpm
+      dest: /var/cache/ansible/ebb9844aceacc82a382cc6751dc51c14cf03a7f87b13cb3f02e8a61e98df2601/remi-release-39.rpm
+      checksum: ebb9844aceacc82a382cc6751dc51c14cf03a7f87b13cb3f02e8a61e98df2601
   "8.2":
-    - url: "http://rpms.remirepo.net/fedora/remi-release-39.rpm"
-      dest: "/var/cache/ansible/ebb9844aceacc82a382cc6751dc51c14cf03a7f87b13cb3f02e8a61e98df2601/remi-release-39.rpm"
-      checksum: "ebb9844aceacc82a382cc6751dc51c14cf03a7f87b13cb3f02e8a61e98df2601"
+    - url: http://rpms.remirepo.net/fedora/remi-release-39.rpm
+      dest: /var/cache/ansible/ebb9844aceacc82a382cc6751dc51c14cf03a7f87b13cb3f02e8a61e98df2601/remi-release-39.rpm
+      checksum: ebb9844aceacc82a382cc6751dc51c14cf03a7f87b13cb3f02e8a61e98df2601
   "8.1":
-    - url: "http://rpms.remirepo.net/fedora/remi-release-39.rpm"
-      dest: "/var/cache/ansible/ebb9844aceacc82a382cc6751dc51c14cf03a7f87b13cb3f02e8a61e98df2601/remi-release-39.rpm"
-      checksum: "ebb9844aceacc82a382cc6751dc51c14cf03a7f87b13cb3f02e8a61e98df2601"
+    - url: http://rpms.remirepo.net/fedora/remi-release-39.rpm
+      dest: /var/cache/ansible/ebb9844aceacc82a382cc6751dc51c14cf03a7f87b13cb3f02e8a61e98df2601/remi-release-39.rpm
+      checksum: ebb9844aceacc82a382cc6751dc51c14cf03a7f87b13cb3f02e8a61e98df2601
 
 _yum_repository:
   "8.3":
-    - file: "home:alvistack"
-      name: "home_alvistack"
-      description: "home:alvistack (Fedora_39)"
-      baseurl: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/Fedora_39"
+    - file: home:alvistack
+      name: home_alvistack
+      description: home:alvistack (Fedora_39)
+      baseurl: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Fedora_39
       enabled: true
       priority: "2"
       module_hotfixes: true
       gpgcheck: true
-      gpgkey: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/Fedora_39/repodata/repomd.xml.key"
-      state: "present"
+      gpgkey: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Fedora_39/repodata/repomd.xml.key
+      state: present
   "8.2":
-    - file: "home:alvistack"
-      name: "home_alvistack"
-      description: "home:alvistack (Fedora_39)"
-      baseurl: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/Fedora_39"
+    - file: home:alvistack
+      name: home_alvistack
+      description: home:alvistack (Fedora_39)
+      baseurl: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Fedora_39
       enabled: true
       priority: "2"
       module_hotfixes: true
       gpgcheck: true
-      gpgkey: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/Fedora_39/repodata/repomd.xml.key"
-      state: "present"
+      gpgkey: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Fedora_39/repodata/repomd.xml.key
+      state: present
   "8.1":
-    - file: "home:alvistack"
-      name: "home_alvistack"
-      description: "home:alvistack (Fedora_39)"
-      baseurl: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/Fedora_39"
+    - file: home:alvistack
+      name: home_alvistack
+      description: home:alvistack (Fedora_39)
+      baseurl: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Fedora_39
       enabled: true
       priority: "2"
       module_hotfixes: true
       gpgcheck: true
-      gpgkey: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/Fedora_39/repodata/repomd.xml.key"
-      state: "present"
+      gpgkey: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Fedora_39/repodata/repomd.xml.key
+      state: present
 
 _dnf_config_manager:
   "8.3":
-    - { state: "enable", name: "remi" }
+    - { state: enable, name: remi }
   "8.2":
-    - { state: "enable", name: "remi" }
+    - { state: enable, name: remi }
   "8.1":
-    - { state: "enable", name: "remi" }
+    - { state: enable, name: remi }
 
 _dnf_module:
   "8.3":
-    - { state: "present", name: "@php:remi-8.3" }
+    - { state: present, name: "@php:remi-8.3" }
   "8.2":
-    - { state: "present", name: "@php:remi-8.2" }
+    - { state: present, name: "@php:remi-8.2" }
   "8.1":
-    - { state: "present", name: "@php:remi-8.1" }
+    - { state: present, name: "@php:remi-8.1" }
 
 _dnf:
   "8.3":
-    - { state: "latest", name: "GeoIP-data" }
-    - { state: "latest", name: "ImageMagick" }
-    - { state: "latest", name: "php-cli" }
-    - { state: "latest", name: "php-fpm" }
-    - { state: "latest", name: "php-bcmath" }
-    - { state: "latest", name: "php-gd" }
-    - { state: "latest", name: "php-imap" }
-    - { state: "latest", name: "php-intl" }
-    - { state: "latest", name: "php-json" }
-    - { state: "latest", name: "php-mbstring" }
-    - { state: "latest", name: "php-mysqlnd" }
-    - { state: "latest", name: "php-opcache" }
-    - { state: "latest", name: "php-pecl-apcu" }
-    - { state: "latest", name: "php-pecl-geoip" }
-    - { state: "latest", name: "php-pecl-imagick" }
-    - { state: "latest", name: "php-pecl-memcache" }
-    - { state: "latest", name: "php-pecl-uuid" }
-    - { state: "latest", name: "php-pgsql" }
-    - { state: "latest", name: "php-soap" }
-    - { state: "latest", name: "php-tidy" }
-    - { state: "latest", name: "php-xml" }
-    - { state: "latest", name: "php-xmlrpc" }
-    - { state: "latest", name: "php-zip" }
-    - { state: "latest", name: "composer" }
-    - { state: "latest", name: "phpunit" }
-    - { state: "latest", name: "php-codesniffer" }
-    - { state: "latest", name: "php-cs-fixer" }
+    - { state: latest, name: GeoIP-data }
+    - { state: latest, name: ImageMagick }
+    - { state: latest, name: php-cli }
+    - { state: latest, name: php-fpm }
+    - { state: latest, name: php-bcmath }
+    - { state: latest, name: php-gd }
+    - { state: latest, name: php-imap }
+    - { state: latest, name: php-intl }
+    - { state: latest, name: php-json }
+    - { state: latest, name: php-mbstring }
+    - { state: latest, name: php-mysqlnd }
+    - { state: latest, name: php-opcache }
+    - { state: latest, name: php-pecl-apcu }
+    - { state: latest, name: php-pecl-geoip }
+    - { state: latest, name: php-pecl-imagick }
+    - { state: latest, name: php-pecl-memcache }
+    - { state: latest, name: php-pecl-uuid }
+    - { state: latest, name: php-pgsql }
+    - { state: latest, name: php-soap }
+    - { state: latest, name: php-tidy }
+    - { state: latest, name: php-xml }
+    - { state: latest, name: php-xmlrpc }
+    - { state: latest, name: php-zip }
+    - { state: latest, name: composer }
+    - { state: latest, name: phpunit }
+    - { state: latest, name: php-codesniffer }
+    - { state: latest, name: php-cs-fixer }
   "8.2":
-    - { state: "latest", name: "GeoIP-data" }
-    - { state: "latest", name: "ImageMagick" }
-    - { state: "latest", name: "php-cli" }
-    - { state: "latest", name: "php-fpm" }
-    - { state: "latest", name: "php-bcmath" }
-    - { state: "latest", name: "php-gd" }
-    - { state: "latest", name: "php-imap" }
-    - { state: "latest", name: "php-intl" }
-    - { state: "latest", name: "php-json" }
-    - { state: "latest", name: "php-mbstring" }
-    - { state: "latest", name: "php-mysqlnd" }
-    - { state: "latest", name: "php-opcache" }
-    - { state: "latest", name: "php-pecl-apcu" }
-    - { state: "latest", name: "php-pecl-geoip" }
-    - { state: "latest", name: "php-pecl-imagick" }
-    - { state: "latest", name: "php-pecl-memcache" }
-    - { state: "latest", name: "php-pecl-uuid" }
-    - { state: "latest", name: "php-pgsql" }
-    - { state: "latest", name: "php-soap" }
-    - { state: "latest", name: "php-tidy" }
-    - { state: "latest", name: "php-xml" }
-    - { state: "latest", name: "php-xmlrpc" }
-    - { state: "latest", name: "php-zip" }
-    - { state: "latest", name: "composer" }
-    - { state: "latest", name: "phpunit" }
-    - { state: "latest", name: "php-codesniffer" }
-    - { state: "latest", name: "php-cs-fixer" }
+    - { state: latest, name: GeoIP-data }
+    - { state: latest, name: ImageMagick }
+    - { state: latest, name: php-cli }
+    - { state: latest, name: php-fpm }
+    - { state: latest, name: php-bcmath }
+    - { state: latest, name: php-gd }
+    - { state: latest, name: php-imap }
+    - { state: latest, name: php-intl }
+    - { state: latest, name: php-json }
+    - { state: latest, name: php-mbstring }
+    - { state: latest, name: php-mysqlnd }
+    - { state: latest, name: php-opcache }
+    - { state: latest, name: php-pecl-apcu }
+    - { state: latest, name: php-pecl-geoip }
+    - { state: latest, name: php-pecl-imagick }
+    - { state: latest, name: php-pecl-memcache }
+    - { state: latest, name: php-pecl-uuid }
+    - { state: latest, name: php-pgsql }
+    - { state: latest, name: php-soap }
+    - { state: latest, name: php-tidy }
+    - { state: latest, name: php-xml }
+    - { state: latest, name: php-xmlrpc }
+    - { state: latest, name: php-zip }
+    - { state: latest, name: composer }
+    - { state: latest, name: phpunit }
+    - { state: latest, name: php-codesniffer }
+    - { state: latest, name: php-cs-fixer }
   "8.1":
-    - { state: "latest", name: "GeoIP-data" }
-    - { state: "latest", name: "ImageMagick" }
-    - { state: "latest", name: "php-cli" }
-    - { state: "latest", name: "php-fpm" }
-    - { state: "latest", name: "php-bcmath" }
-    - { state: "latest", name: "php-gd" }
-    - { state: "latest", name: "php-imap" }
-    - { state: "latest", name: "php-intl" }
-    - { state: "latest", name: "php-json" }
-    - { state: "latest", name: "php-mbstring" }
-    - { state: "latest", name: "php-mysqlnd" }
-    - { state: "latest", name: "php-opcache" }
-    - { state: "latest", name: "php-pecl-apcu" }
-    - { state: "latest", name: "php-pecl-geoip" }
-    - { state: "latest", name: "php-pecl-imagick" }
-    - { state: "latest", name: "php-pecl-memcache" }
-    - { state: "latest", name: "php-pecl-uuid" }
-    - { state: "latest", name: "php-pgsql" }
-    - { state: "latest", name: "php-soap" }
-    - { state: "latest", name: "php-tidy" }
-    - { state: "latest", name: "php-xml" }
-    - { state: "latest", name: "php-xmlrpc" }
-    - { state: "latest", name: "php-zip" }
-    - { state: "latest", name: "composer" }
-    - { state: "latest", name: "phpunit" }
-    - { state: "latest", name: "php-codesniffer" }
-    - { state: "latest", name: "php-cs-fixer" }
+    - { state: latest, name: GeoIP-data }
+    - { state: latest, name: ImageMagick }
+    - { state: latest, name: php-cli }
+    - { state: latest, name: php-fpm }
+    - { state: latest, name: php-bcmath }
+    - { state: latest, name: php-gd }
+    - { state: latest, name: php-imap }
+    - { state: latest, name: php-intl }
+    - { state: latest, name: php-json }
+    - { state: latest, name: php-mbstring }
+    - { state: latest, name: php-mysqlnd }
+    - { state: latest, name: php-opcache }
+    - { state: latest, name: php-pecl-apcu }
+    - { state: latest, name: php-pecl-geoip }
+    - { state: latest, name: php-pecl-imagick }
+    - { state: latest, name: php-pecl-memcache }
+    - { state: latest, name: php-pecl-uuid }
+    - { state: latest, name: php-pgsql }
+    - { state: latest, name: php-soap }
+    - { state: latest, name: php-tidy }
+    - { state: latest, name: php-xml }
+    - { state: latest, name: php-xmlrpc }
+    - { state: latest, name: php-zip }
+    - { state: latest, name: composer }
+    - { state: latest, name: phpunit }
+    - { state: latest, name: php-codesniffer }
+    - { state: latest, name: php-cs-fixer }

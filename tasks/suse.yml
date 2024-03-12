@@ -1,5 +1,4 @@
 ---
-
 # Copyright 2024 Wong Hoi Sing Edison <hswong3i@pantarei-design.com>
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,25 +15,25 @@
 
 - name: groupadd
   ansible.builtin.group:
-    name: "www"
+    name: www
     gid: "8"
     system: true
-    state: "present"
+    state: present
 
 - name: useradd
   ansible.builtin.user:
-    name: "wwwrun"
+    name: wwwrun
     uid: "30"
-    group: "www"
-    home: "/var/lib/wwwrun"
-    shell: "/sbin/nologin"
+    group: www
+    home: /var/lib/wwwrun
+    shell: /sbin/nologin
     system: true
     create_home: false
-    state: "present"
+    state: present
 
 - name: rpm --import
   vars:
-    ansible_python_interpreter: "python3"
+    ansible_python_interpreter: python3
   ansible.builtin.rpm_key:
     key: "{{ item.key }}"
     fingerprint: "{{ item.fingerprint }}"
@@ -60,7 +59,7 @@
 
 - name: zypper install
   vars:
-    ansible_python_interpreter: "python3"
+    ansible_python_interpreter: python3
   community.general.zypper:
     name: "{{ item.name }}"
     state: "{{ item.state }}"
@@ -81,8 +80,8 @@
     remote_src: true
     force: false
   loop:
-    - { dest: "/etc/php8/fpm/php-fpm.conf", src: "/etc/php8/fpm/php-fpm.conf.default" }
-    - { dest: "/etc/php8/fpm/php-fpm.d/www.conf", src: "/etc/php8/fpm/php-fpm.d/www.conf.default" }
+    - { dest: /etc/php8/fpm/php-fpm.conf, src: /etc/php8/fpm/php-fpm.conf.default }
+    - { dest: /etc/php8/fpm/php-fpm.d/www.conf, src: /etc/php8/fpm/php-fpm.d/www.conf.default }
   notify:
     - php | systemctl restart php-fpm.service
 
@@ -94,4 +93,4 @@
     mode: "{{ item.mode | default('0755') }}"
     state: "{{ item.state | default('directory') }}"
   loop:
-    - { dest: "/srv/www", owner: "wwwrun", group: "www" }
+    - { dest: /srv/www, owner: wwwrun, group: www }

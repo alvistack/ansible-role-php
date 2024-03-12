@@ -1,5 +1,4 @@
 ---
-
 # Copyright 2024 Wong Hoi Sing Edison <hswong3i@pantarei-design.com>
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,21 +15,21 @@
 
 - name: groupadd
   ansible.builtin.group:
-    name: "apache"
+    name: apache
     gid: "48"
     system: true
-    state: "present"
+    state: present
 
 - name: useradd
   ansible.builtin.user:
-    name: "apache"
+    name: apache
     uid: "48"
-    group: "apache"
-    home: "/usr/share/httpd"
-    shell: "/sbin/nologin"
+    group: apache
+    home: /usr/share/httpd
+    shell: /sbin/nologin
     system: true
     create_home: false
-    state: "present"
+    state: present
 
 - name: rpm --import
   ansible.builtin.rpm_key:
@@ -56,8 +55,8 @@
         && mv .{{ item.dest }} {{ item.dest }} \
         && rm -rf $TMP_DIR
   args:
-    executable: "/bin/bash"
-    creates: "/var/log/ansible/{{ item.checksum }}-get_url.log"
+    executable: /bin/bash
+    creates: /var/log/ansible/{{ item.checksum }}-get_url.log
   loop: "{{ _rpm_download[php_release] }}"
   register: result
   until: result is succeeded
@@ -70,8 +69,8 @@
       exec &> >(tee -a /var/log/ansible/{{ item.checksum }}-unarchive.log)
       dnf install -y {{ item.dest }}
   args:
-    executable: "/bin/bash"
-    creates: "/var/log/ansible/{{ item.checksum }}-unarchive.log"
+    executable: /bin/bash
+    creates: /var/log/ansible/{{ item.checksum }}-unarchive.log
   loop: "{{ _rpm_download[php_release] }}"
   changed_when: false
   failed_when: false
@@ -123,4 +122,4 @@
     mode: "{{ item.mode | default('0755') }}"
     state: "{{ item.state | default('directory') }}"
   loop:
-    - { dest: "/var/www/html", owner: "apache", group: "apache" }
+    - { dest: /var/www/html, owner: apache, group: apache }
