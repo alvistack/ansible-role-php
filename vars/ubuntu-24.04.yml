@@ -54,21 +54,21 @@ _apt_repository:
       repo: deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.04/ /
       state: present
     - filename: ondrej
-      repo: deb http://ppa.launchpad.net/ondrej/php/ubuntu nobel main
+      repo: deb http://ppa.launchpad.net/ondrej/php/ubuntu noble main
       state: present
   "8.2":
     - filename: home:alvistack
       repo: deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.04/ /
       state: present
     - filename: ondrej
-      repo: deb http://ppa.launchpad.net/ondrej/php/ubuntu nobel main
+      repo: deb http://ppa.launchpad.net/ondrej/php/ubuntu noble main
       state: present
   "8.1":
     - filename: home:alvistack
       repo: deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.04/ /
       state: present
     - filename: ondrej
-      repo: deb http://ppa.launchpad.net/ondrej/php/ubuntu nobel main
+      repo: deb http://ppa.launchpad.net/ondrej/php/ubuntu noble main
       state: present
 
 _apt:
