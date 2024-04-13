@@ -1,0 +1,188 @@
+---
+
+# Copyright 2024 Wong Hoi Sing Edison <hswong3i@pantarei-design.com>
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+_service:
+  "8.3": php8.3-fpm.service
+  "8.2": php8.2-fpm.service
+  "8.1": php8.1-fpm.service
+
+_apt_key:
+  "8.3":
+    - keyring: /etc/apt/trusted.gpg.d/home_alvistack.gpg
+      url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.04/Release.key
+      id: 789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD
+      state: present
+    - keyring: /etc/apt/trusted.gpg.d/ondrej.gpg
+      url: http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x14AA40EC0831756756D7F66C4F4EA0AAE5267A6C
+      id: 14AA40EC0831756756D7F66C4F4EA0AAE5267A6C
+      state: present
+  "8.2":
+    - keyring: /etc/apt/trusted.gpg.d/home_alvistack.gpg
+      url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.04/Release.key
+      id: 789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD
+      state: present
+    - keyring: /etc/apt/trusted.gpg.d/ondrej.gpg
+      url: http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x14AA40EC0831756756D7F66C4F4EA0AAE5267A6C
+      id: 14AA40EC0831756756D7F66C4F4EA0AAE5267A6C
+      state: present
+  "8.1":
+    - keyring: /etc/apt/trusted.gpg.d/home_alvistack.gpg
+      url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.04/Release.key
+      id: 789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD
+      state: present
+    - keyring: /etc/apt/trusted.gpg.d/ondrej.gpg
+      url: http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x14AA40EC0831756756D7F66C4F4EA0AAE5267A6C
+      id: 14AA40EC0831756756D7F66C4F4EA0AAE5267A6C
+      state: present
+
+_apt_repository:
+  "8.3":
+    - filename: home:alvistack
+      repo: deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.04/ /
+      state: present
+    - filename: ondrej
+      repo: deb http://ppa.launchpad.net/ondrej/php/ubuntu jammy main
+      state: present
+  "8.2":
+    - filename: home:alvistack
+      repo: deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.04/ /
+      state: present
+    - filename: ondrej
+      repo: deb http://ppa.launchpad.net/ondrej/php/ubuntu jammy main
+      state: present
+  "8.1":
+    - filename: home:alvistack
+      repo: deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.04/ /
+      state: present
+    - filename: ondrej
+      repo: deb http://ppa.launchpad.net/ondrej/php/ubuntu jammy main
+      state: present
+
+_apt:
+  "8.3":
+    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/main/i/icu/libicu70_70.1-2_amd64.deb }
+    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/main/a/abseil/libabsl20210324_0~20210324.2-2_amd64.deb }
+    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/universe/d/dav1d/libdav1d5_0.9.2-1_amd64.deb }
+    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/universe/libg/libgav1/libgav1-0_0.17.0-1build1_amd64.deb }
+    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/universe/liba/libavif/libavif13_0.9.3-3_amd64.deb }
+    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff5_4.3.0-6ubuntu0.8_amd64.deb }
+    - { state: latest, name: imagemagick }
+    - { state: latest, name: libpcre2-8-0 }
+    - { state: latest, name: libssl-dev }
+    - { state: latest, name: php8.3-cli }
+    - { state: latest, name: php8.3-fpm }
+    - { state: latest, name: php8.3-apcu }
+    - { state: latest, name: php8.3-bcmath }
+    - { state: latest, name: php8.3-bz2 }
+    - { state: latest, name: php8.3-curl }
+    - { state: latest, name: php8.3-gd }
+    - { state: latest, name: php8.3-imagick }
+    - { state: latest, name: php8.3-imap }
+    - { state: latest, name: php8.3-intl }
+    - { state: latest, name: php8.3-maxminddb }
+    - { state: latest, name: php8.3-mbstring }
+    - { state: latest, name: php8.3-memcache }
+    - { state: latest, name: php8.3-mysql }
+    - { state: latest, name: php8.3-opcache }
+    - { state: latest, name: php8.3-pgsql }
+    - { state: latest, name: php8.3-soap }
+    - { state: latest, name: php8.3-sqlite3 }
+    - { state: latest, name: php8.3-tidy }
+    - { state: latest, name: php8.3-uuid }
+    - { state: latest, name: php8.3-xml }
+    - { state: latest, name: php8.3-xmlrpc }
+    - { state: latest, name: php8.3-xsl }
+    - { state: latest, name: php8.3-zip }
+    - { state: latest, name: composer }
+    - { state: latest, name: phpunit }
+    - { state: latest, name: php-codesniffer }
+    - { state: latest, name: php-cs-fixer }
+  "8.2":
+    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/main/i/icu/libicu70_70.1-2_amd64.deb }
+    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/main/a/abseil/libabsl20210324_0~20210324.2-2_amd64.deb }
+    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/universe/d/dav1d/libdav1d5_0.9.2-1_amd64.deb }
+    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/universe/libg/libgav1/libgav1-0_0.17.0-1build1_amd64.deb }
+    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/universe/liba/libavif/libavif13_0.9.3-3_amd64.deb }
+    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff5_4.3.0-6ubuntu0.8_amd64.deb }
+    - { state: latest, name: imagemagick }
+    - { state: latest, name: libpcre2-8-0 }
+    - { state: latest, name: libssl-dev }
+    - { state: latest, name: php8.2-cli }
+    - { state: latest, name: php8.2-fpm }
+    - { state: latest, name: php8.2-apcu }
+    - { state: latest, name: php8.2-bcmath }
+    - { state: latest, name: php8.2-bz2 }
+    - { state: latest, name: php8.2-curl }
+    - { state: latest, name: php8.2-gd }
+    - { state: latest, name: php8.2-imagick }
+    - { state: latest, name: php8.2-imap }
+    - { state: latest, name: php8.2-intl }
+    - { state: latest, name: php8.2-maxminddb }
+    - { state: latest, name: php8.2-mbstring }
+    - { state: latest, name: php8.2-memcache }
+    - { state: latest, name: php8.2-mysql }
+    - { state: latest, name: php8.2-opcache }
+    - { state: latest, name: php8.2-pgsql }
+    - { state: latest, name: php8.2-soap }
+    - { state: latest, name: php8.2-sqlite3 }
+    - { state: latest, name: php8.2-tidy }
+    - { state: latest, name: php8.2-uuid }
+    - { state: latest, name: php8.2-xml }
+    - { state: latest, name: php8.2-xmlrpc }
+    - { state: latest, name: php8.2-xsl }
+    - { state: latest, name: php8.2-zip }
+    - { state: latest, name: composer }
+    - { state: latest, name: phpunit }
+    - { state: latest, name: php-codesniffer }
+    - { state: latest, name: php-cs-fixer }
+  "8.1":
+    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/main/i/icu/libicu70_70.1-2_amd64.deb }
+    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/main/a/abseil/libabsl20210324_0~20210324.2-2_amd64.deb }
+    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/universe/d/dav1d/libdav1d5_0.9.2-1_amd64.deb }
+    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/universe/libg/libgav1/libgav1-0_0.17.0-1build1_amd64.deb }
+    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/universe/liba/libavif/libavif13_0.9.3-3_amd64.deb }
+    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff5_4.3.0-6ubuntu0.8_amd64.deb }
+    - { state: latest, name: imagemagick }
+    - { state: latest, name: libpcre2-8-0 }
+    - { state: latest, name: libssl-dev }
+    - { state: latest, name: php8.1-cli }
+    - { state: latest, name: php8.1-fpm }
+    - { state: latest, name: php8.1-apcu }
+    - { state: latest, name: php8.1-bcmath }
+    - { state: latest, name: php8.1-bz2 }
+    - { state: latest, name: php8.1-curl }
+    - { state: latest, name: php8.1-gd }
+    - { state: latest, name: php8.1-imagick }
+    - { state: latest, name: php8.1-imap }
+    - { state: latest, name: php8.1-intl }
+    - { state: latest, name: php8.1-maxminddb }
+    - { state: latest, name: php8.1-mbstring }
+    - { state: latest, name: php8.1-memcache }
+    - { state: latest, name: php8.1-mysql }
+    - { state: latest, name: php8.1-opcache }
+    - { state: latest, name: php8.1-pgsql }
+    - { state: latest, name: php8.1-soap }
+    - { state: latest, name: php8.1-sqlite3 }
+    - { state: latest, name: php8.1-tidy }
+    - { state: latest, name: php8.1-uuid }
+    - { state: latest, name: php8.1-xml }
+    - { state: latest, name: php8.1-xmlrpc }
+    - { state: latest, name: php8.1-xsl }
+    - { state: latest, name: php8.1-zip }
+    - { state: latest, name: composer }
+    - { state: latest, name: phpunit }
+    - { state: latest, name: php-codesniffer }
+    - { state: latest, name: php-cs-fixer }
