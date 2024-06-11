@@ -21,39 +21,29 @@ _service:
 
 _rpm_key:
   "8.3":
+    - key: http://downloadcontent.opensuse.org/repositories/devel:/languages:/php:/php83/openSUSE_Leap_15.6/repodata/repomd.xml.key
+      fingerprint: E6234A1678CE7256965E3FEC03DB3D1B3E46931C
+      state: present
     - key: http://downloadcontent.opensuse.org/repositories/home:/alvistack/openSUSE_Leap_15.6/repodata/repomd.xml.key
       fingerprint: 789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD
-      state: present
-    - key: http://downloadcontent.opensuse.org/repositories/devel:/languages:/php:/php83/openSUSE_Leap_15.6/repodata/repomd.xml.key
-      fingerprint: 55CF98B4BB5BC6CC2E24748F82EE4011CBCA8BB5
       state: present
   "8.2":
+    - key: http://downloadcontent.opensuse.org/repositories/devel:/languages:/php:/php82/openSUSE_Leap_15.6/repodata/repomd.xml.key
+      fingerprint: E6234A1678CE7256965E3FEC03DB3D1B3E46931C
+      state: present
     - key: http://downloadcontent.opensuse.org/repositories/home:/alvistack/openSUSE_Leap_15.6/repodata/repomd.xml.key
       fingerprint: 789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD
-      state: present
-    - key: http://downloadcontent.opensuse.org/repositories/devel:/languages:/php/openSUSE_Leap_15.6/repodata/repomd.xml.key
-      fingerprint: 55CF98B4BB5BC6CC2E24748F82EE4011CBCA8BB5
       state: present
   "8.1":
+    - key: http://downloadcontent.opensuse.org/repositories/devel:/languages:/php:/php81/openSUSE_Leap_15.6/repodata/repomd.xml.key
+      fingerprint: E6234A1678CE7256965E3FEC03DB3D1B3E46931C
+      state: present
     - key: http://downloadcontent.opensuse.org/repositories/home:/alvistack/openSUSE_Leap_15.6/repodata/repomd.xml.key
       fingerprint: 789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD
-      state: present
-    - key: http://downloadcontent.opensuse.org/repositories/devel:/languages:/php:/php81/openSUSE_Leap_15.6/repodata/repomd.xml.key
-      fingerprint: 55CF98B4BB5BC6CC2E24748F82EE4011CBCA8BB5
       state: present
 
 _yum_repository:
   "8.3":
-    - file: home_alvistack
-      name: home_alvistack
-      description: home:alvistack (openSUSE_Leap_15.6)
-      baseurl: http://downloadcontent.opensuse.org/repositories/home:/alvistack/openSUSE_Leap_15.6
-      enabled: true
-      priority: "2"
-      module_hotfixes: true
-      gpgcheck: true
-      gpgkey: http://downloadcontent.opensuse.org/repositories/home:/alvistack/openSUSE_Leap_15.6/repodata/repomd.xml.key
-      state: present
     - file: devel_languages_php
       name: devel_languages_php
       description: devel:languages:php (openSUSE_Leap_15.6)
@@ -64,7 +54,6 @@ _yum_repository:
       gpgcheck: true
       gpgkey: http://downloadcontent.opensuse.org/repositories/devel:/languages:/php:/php83/openSUSE_Leap_15.6/repodata/repomd.xml.key
       state: present
-  "8.2":
     - file: home_alvistack
       name: home_alvistack
       description: home:alvistack (openSUSE_Leap_15.6)
@@ -75,17 +64,17 @@ _yum_repository:
       gpgcheck: true
       gpgkey: http://downloadcontent.opensuse.org/repositories/home:/alvistack/openSUSE_Leap_15.6/repodata/repomd.xml.key
       state: present
+  "8.2":
     - file: devel_languages_php
       name: devel_languages_php
       description: devel:languages:php (openSUSE_Leap_15.6)
-      baseurl: http://downloadcontent.opensuse.org/repositories/devel:/languages:/php/openSUSE_Leap_15.6
+      baseurl: http://downloadcontent.opensuse.org/repositories/devel:/languages:/php:/php82/openSUSE_Leap_15.6
       enabled: true
       priority: "2"
       module_hotfixes: true
       gpgcheck: true
-      gpgkey: http://downloadcontent.opensuse.org/repositories/devel:/languages:/php/openSUSE_Leap_15.6/repodata/repomd.xml.key
+      gpgkey: http://downloadcontent.opensuse.org/repositories/devel:/languages:/php:/php82/openSUSE_Leap_15.6/repodata/repomd.xml.key
       state: present
-  "8.1":
     - file: home_alvistack
       name: home_alvistack
       description: home:alvistack (openSUSE_Leap_15.6)
@@ -96,6 +85,7 @@ _yum_repository:
       gpgcheck: true
       gpgkey: http://downloadcontent.opensuse.org/repositories/home:/alvistack/openSUSE_Leap_15.6/repodata/repomd.xml.key
       state: present
+  "8.1":
     - file: devel_languages_php
       name: devel_languages_php
       description: devel:languages:php (openSUSE_Leap_15.6)
@@ -106,11 +96,20 @@ _yum_repository:
       gpgcheck: true
       gpgkey: http://downloadcontent.opensuse.org/repositories/devel:/languages:/php:/php81/openSUSE_Leap_15.6/repodata/repomd.xml.key
       state: present
+    - file: home_alvistack
+      name: home_alvistack
+      description: home:alvistack (openSUSE_Leap_15.6)
+      baseurl: http://downloadcontent.opensuse.org/repositories/home:/alvistack/openSUSE_Leap_15.6
+      enabled: true
+      priority: "2"
+      module_hotfixes: true
+      gpgcheck: true
+      gpgkey: http://downloadcontent.opensuse.org/repositories/home:/alvistack/openSUSE_Leap_15.6/repodata/repomd.xml.key
+      state: present
 
 _zypper:
   "8.3":
-    - { state: latest, name: GeoIP-data }
-    - { state: latest, name: ImageMagick }
+    - { state: latest, name: xtables-geoip }
     - { state: latest, name: ca-certificates }
     - { state: latest, name: php8 }
     - { state: latest, name: php8-fpm }
@@ -140,8 +139,7 @@ _zypper:
     - { state: latest, name: php-codesniffer }
     - { state: latest, name: php-cs-fixer }
   "8.2":
-    - { state: latest, name: GeoIP-data }
-    - { state: latest, name: ImageMagick }
+    - { state: latest, name: xtables-geoip }
     - { state: latest, name: ca-certificates }
     - { state: latest, name: php8 }
     - { state: latest, name: php8-fpm }
@@ -171,8 +169,7 @@ _zypper:
     - { state: latest, name: php-codesniffer }
     - { state: latest, name: php-cs-fixer }
   "8.1":
-    - { state: latest, name: GeoIP-data }
-    - { state: latest, name: ImageMagick }
+    - { state: latest, name: xtables-geoip }
     - { state: latest, name: ca-certificates }
     - { state: latest, name: php8 }
     - { state: latest, name: php8-fpm }
