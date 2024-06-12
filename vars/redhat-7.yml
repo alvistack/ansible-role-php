@@ -21,61 +21,49 @@ _service:
 
 _rpm_key:
   "8.3":
-    - key: http://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7
-      fingerprint: 91E97D7C4A5E96F17F3E888F6A2FAEA2352C64E5
+    - key: http://rpms.remirepo.net/RPM-GPG-KEY-remi
+      fingerprint: 1EE04CCE88A4AE4AA29A5DF5004E6F4700F97F56
       state: present
     - key: http://downloadcontent.opensuse.org/repositories/home:/alvistack/CentOS_7/repodata/repomd.xml.key
       fingerprint: 789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD
-      state: present
-    - key: http://rpms.remirepo.net/RPM-GPG-KEY-remi
-      fingerprint: 1EE04CCE88A4AE4AA29A5DF5004E6F4700F97F56
       state: present
   "8.2":
-    - key: http://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7
-      fingerprint: 91E97D7C4A5E96F17F3E888F6A2FAEA2352C64E5
+    - key: http://rpms.remirepo.net/RPM-GPG-KEY-remi
+      fingerprint: 1EE04CCE88A4AE4AA29A5DF5004E6F4700F97F56
       state: present
     - key: http://downloadcontent.opensuse.org/repositories/home:/alvistack/CentOS_7/repodata/repomd.xml.key
       fingerprint: 789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD
       state: present
+  "8.1":
     - key: http://rpms.remirepo.net/RPM-GPG-KEY-remi
       fingerprint: 1EE04CCE88A4AE4AA29A5DF5004E6F4700F97F56
-      state: present
-  "8.1":
-    - key: http://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7
-      fingerprint: 91E97D7C4A5E96F17F3E888F6A2FAEA2352C64E5
       state: present
     - key: http://downloadcontent.opensuse.org/repositories/home:/alvistack/CentOS_7/repodata/repomd.xml.key
       fingerprint: 789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD
       state: present
-    - key: http://rpms.remirepo.net/RPM-GPG-KEY-remi
-      fingerprint: 1EE04CCE88A4AE4AA29A5DF5004E6F4700F97F56
-      state: present
-
-_rpm_download:
-  "8.3":
-    - url: http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
-      dest: /var/cache/ansible/e2d5ffdd4cfe09dde17018a31d100db611abe88cc6761d9bdc0c1f41efaa5aa0/epel-release-latest-7.noarch.rpm
-      checksum: e2d5ffdd4cfe09dde17018a31d100db611abe88cc6761d9bdc0c1f41efaa5aa0
-    - url: http://rpms.remirepo.net/enterprise/remi-release-7.rpm
-      dest: /var/cache/ansible/7883e940deb12f2c4b5ed33a17923407a46e5a0c57c381c5b182a495ab36d315/remi-release-7.rpm
-      checksum: 7883e940deb12f2c4b5ed33a17923407a46e5a0c57c381c5b182a495ab36d315
-  "8.2":
-    - url: http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
-      dest: /var/cache/ansible/e2d5ffdd4cfe09dde17018a31d100db611abe88cc6761d9bdc0c1f41efaa5aa0/epel-release-latest-7.noarch.rpm
-      checksum: e2d5ffdd4cfe09dde17018a31d100db611abe88cc6761d9bdc0c1f41efaa5aa0
-    - url: http://rpms.remirepo.net/enterprise/remi-release-7.rpm
-      dest: /var/cache/ansible/7883e940deb12f2c4b5ed33a17923407a46e5a0c57c381c5b182a495ab36d315/remi-release-7.rpm
-      checksum: 7883e940deb12f2c4b5ed33a17923407a46e5a0c57c381c5b182a495ab36d315
-  "8.1":
-    - url: http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
-      dest: /var/cache/ansible/e2d5ffdd4cfe09dde17018a31d100db611abe88cc6761d9bdc0c1f41efaa5aa0/epel-release-latest-7.noarch.rpm
-      checksum: e2d5ffdd4cfe09dde17018a31d100db611abe88cc6761d9bdc0c1f41efaa5aa0
-    - url: http://rpms.remirepo.net/enterprise/remi-release-7.rpm
-      dest: /var/cache/ansible/7883e940deb12f2c4b5ed33a17923407a46e5a0c57c381c5b182a495ab36d315/remi-release-7.rpm
-      checksum: 7883e940deb12f2c4b5ed33a17923407a46e5a0c57c381c5b182a495ab36d315
 
 _yum_repository:
   "8.3":
+    - file: remi-safe
+      name: remi-safe
+      description: Safe Remi's RPM repository for Enterprise Linux 7 - $basearch
+      baseurl: http://rpms.remirepo.net/enterprise/7/safe/$basearch
+      enabled: true
+      priority: "2"
+      module_hotfixes: true
+      gpgcheck: true
+      gpgkey: http://rpms.remirepo.net/RPM-GPG-KEY-remi
+      state: present
+    - file: remi-php83
+      name: remi-php83
+      description: Remi's PHP 8.3 RPM repository for Enterprise Linux 7 - $basearch
+      baseurl: http://rpms.remirepo.net/enterprise/7/php83/$basearch
+      enabled: true
+      priority: "2"
+      module_hotfixes: true
+      gpgcheck: true
+      gpgkey: http://rpms.remirepo.net/RPM-GPG-KEY-remi
+      state: present
     - file: home:alvistack
       name: home_alvistack
       description: home:alvistack (CentOS_7)
@@ -87,6 +75,26 @@ _yum_repository:
       gpgkey: http://downloadcontent.opensuse.org/repositories/home:/alvistack/CentOS_7/repodata/repomd.xml.key
       state: present
   "8.2":
+    - file: remi-safe
+      name: remi-safe
+      description: Safe Remi's RPM repository for Enterprise Linux 7 - $basearch
+      baseurl: http://rpms.remirepo.net/enterprise/7/safe/$basearch
+      enabled: true
+      priority: "2"
+      module_hotfixes: true
+      gpgcheck: true
+      gpgkey: http://rpms.remirepo.net/RPM-GPG-KEY-remi
+      state: present
+    - file: remi-php82
+      name: remi-php82
+      description: Remi's PHP 8.2 RPM repository for Enterprise Linux 7 - $basearch
+      baseurl: http://rpms.remirepo.net/enterprise/7/php82/$basearch
+      enabled: true
+      priority: "2"
+      module_hotfixes: true
+      gpgcheck: true
+      gpgkey: http://rpms.remirepo.net/RPM-GPG-KEY-remi
+      state: present
     - file: home:alvistack
       name: home_alvistack
       description: home:alvistack (CentOS_7)
@@ -98,6 +106,26 @@ _yum_repository:
       gpgkey: http://downloadcontent.opensuse.org/repositories/home:/alvistack/CentOS_7/repodata/repomd.xml.key
       state: present
   "8.1":
+    - file: remi-safe
+      name: remi-safe
+      description: Safe Remi's RPM repository for Enterprise Linux 7 - $basearch
+      baseurl: http://rpms.remirepo.net/enterprise/7/safe/$basearch
+      enabled: true
+      priority: "2"
+      module_hotfixes: true
+      gpgcheck: true
+      gpgkey: http://rpms.remirepo.net/RPM-GPG-KEY-remi
+      state: present
+    - file: remi-php81
+      name: remi-php81
+      description: Remi's PHP 8.1 RPM repository for Enterprise Linux 7 - $basearch
+      baseurl: http://rpms.remirepo.net/enterprise/7/php81/$basearch
+      enabled: true
+      priority: "2"
+      module_hotfixes: true
+      gpgcheck: true
+      gpgkey: http://rpms.remirepo.net/RPM-GPG-KEY-remi
+      state: present
     - file: home:alvistack
       name: home_alvistack
       description: home:alvistack (CentOS_7)
@@ -111,19 +139,15 @@ _yum_repository:
 
 _yum_config_manager:
   "8.3":
-    - { state: enable, name: rhel-7-server-optional-rpms }
     - { state: enable, name: remi-php83 }
   "8.2":
-    - { state: enable, name: rhel-7-server-optional-rpms }
     - { state: enable, name: remi-php82 }
   "8.1":
-    - { state: enable, name: rhel-7-server-optional-rpms }
     - { state: enable, name: remi-php81 }
 
 _yum:
   "8.3":
     - { state: latest, name: GeoIP-data }
-    - { state: latest, name: ImageMagick }
     - { state: latest, name: php-cli }
     - { state: latest, name: php-fpm }
     - { state: latest, name: php-bcmath }
@@ -136,7 +160,6 @@ _yum:
     - { state: latest, name: php-opcache }
     - { state: latest, name: php-pecl-apcu }
     - { state: latest, name: php-pecl-geoip }
-    - { state: latest, name: php-pecl-imagick }
     - { state: latest, name: php-pecl-memcache }
     - { state: latest, name: php-pecl-uuid }
     - { state: latest, name: php-pgsql }
@@ -151,7 +174,6 @@ _yum:
     - { state: latest, name: php-cs-fixer }
   "8.2":
     - { state: latest, name: GeoIP-data }
-    - { state: latest, name: ImageMagick }
     - { state: latest, name: php-cli }
     - { state: latest, name: php-fpm }
     - { state: latest, name: php-bcmath }
@@ -164,7 +186,6 @@ _yum:
     - { state: latest, name: php-opcache }
     - { state: latest, name: php-pecl-apcu }
     - { state: latest, name: php-pecl-geoip }
-    - { state: latest, name: php-pecl-imagick }
     - { state: latest, name: php-pecl-memcache }
     - { state: latest, name: php-pecl-uuid }
     - { state: latest, name: php-pgsql }
@@ -179,7 +200,6 @@ _yum:
     - { state: latest, name: php-cs-fixer }
   "8.1":
     - { state: latest, name: GeoIP-data }
-    - { state: latest, name: ImageMagick }
     - { state: latest, name: php-cli }
     - { state: latest, name: php-fpm }
     - { state: latest, name: php-bcmath }
@@ -192,7 +212,6 @@ _yum:
     - { state: latest, name: php-opcache }
     - { state: latest, name: php-pecl-apcu }
     - { state: latest, name: php-pecl-geoip }
-    - { state: latest, name: php-pecl-imagick }
     - { state: latest, name: php-pecl-memcache }
     - { state: latest, name: php-pecl-uuid }
     - { state: latest, name: php-pgsql }
