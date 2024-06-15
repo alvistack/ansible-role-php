@@ -24,6 +24,9 @@ _rpm_key:
     - key: http://downloadcontent.opensuse.org/repositories/devel:/languages:/php:/php83/openSUSE_Leap_15.5/repodata/repomd.xml.key
       fingerprint: E6234A1678CE7256965E3FEC03DB3D1B3E46931C
       state: present
+    - key: http://downloadcontent.opensuse.org/repositories/server:/php:/extensions/15.5/repodata/repomd.xml.key
+      fingerprint: A85CD7EF524211529A7F994A9B41A0481AF1B065
+      state: present
     - key: http://downloadcontent.opensuse.org/repositories/home:/alvistack/openSUSE_Leap_15.5/repodata/repomd.xml.key
       fingerprint: 789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD
       state: present
@@ -31,12 +34,18 @@ _rpm_key:
     - key: http://downloadcontent.opensuse.org/repositories/devel:/languages:/php:/php82/openSUSE_Leap_15.5/repodata/repomd.xml.key
       fingerprint: E6234A1678CE7256965E3FEC03DB3D1B3E46931C
       state: present
+    - key: http://downloadcontent.opensuse.org/repositories/server:/php:/extensions/15.5/repodata/repomd.xml.key
+      fingerprint: A85CD7EF524211529A7F994A9B41A0481AF1B065
+      state: present
     - key: http://downloadcontent.opensuse.org/repositories/home:/alvistack/openSUSE_Leap_15.5/repodata/repomd.xml.key
       fingerprint: 789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD
       state: present
   "8.1":
     - key: http://downloadcontent.opensuse.org/repositories/devel:/languages:/php:/php81/openSUSE_Leap_15.5/repodata/repomd.xml.key
       fingerprint: E6234A1678CE7256965E3FEC03DB3D1B3E46931C
+      state: present
+    - key: http://downloadcontent.opensuse.org/repositories/server:/php:/extensions/15.5/repodata/repomd.xml.key
+      fingerprint: A85CD7EF524211529A7F994A9B41A0481AF1B065
       state: present
     - key: http://downloadcontent.opensuse.org/repositories/home:/alvistack/openSUSE_Leap_15.5/repodata/repomd.xml.key
       fingerprint: 789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD
@@ -53,6 +62,16 @@ _yum_repository:
       module_hotfixes: true
       gpgcheck: true
       gpgkey: http://downloadcontent.opensuse.org/repositories/devel:/languages:/php:/php83/openSUSE_Leap_15.5/repodata/repomd.xml.key
+      state: present
+    - file: server_php_extensions
+      name: server_php_extensions
+      description: PHP extensions (15.5)
+      baseurl: http://downloadcontent.opensuse.org/repositories/server:/php:/extensions/15.5
+      enabled: true
+      priority: "2"
+      module_hotfixes: true
+      gpgcheck: true
+      gpgkey: http://downloadcontent.opensuse.org/repositories/server:/php:/extensions/15.5/repodata/repomd.xml.key
       state: present
     - file: home_alvistack
       name: home_alvistack
@@ -75,6 +94,16 @@ _yum_repository:
       gpgcheck: true
       gpgkey: http://downloadcontent.opensuse.org/repositories/devel:/languages:/php:/php82/openSUSE_Leap_15.5/repodata/repomd.xml.key
       state: present
+    - file: server_php_extensions
+      name: server_php_extensions
+      description: PHP extensions (15.5)
+      baseurl: http://downloadcontent.opensuse.org/repositories/server:/php:/extensions/15.5
+      enabled: true
+      priority: "2"
+      module_hotfixes: true
+      gpgcheck: true
+      gpgkey: http://downloadcontent.opensuse.org/repositories/server:/php:/extensions/15.5/repodata/repomd.xml.key
+      state: present
     - file: home_alvistack
       name: home_alvistack
       description: home:alvistack (openSUSE_Leap_15.5)
@@ -96,6 +125,16 @@ _yum_repository:
       gpgcheck: true
       gpgkey: http://downloadcontent.opensuse.org/repositories/devel:/languages:/php:/php81/openSUSE_Leap_15.5/repodata/repomd.xml.key
       state: present
+    - file: server_php_extensions
+      name: server_php_extensions
+      description: PHP extensions (15.5)
+      baseurl: http://downloadcontent.opensuse.org/repositories/server:/php:/extensions/15.5
+      enabled: true
+      priority: "2"
+      module_hotfixes: true
+      gpgcheck: true
+      gpgkey: http://downloadcontent.opensuse.org/repositories/server:/php:/extensions/15.5/repodata/repomd.xml.key
+      state: present
     - file: home_alvistack
       name: home_alvistack
       description: home:alvistack (openSUSE_Leap_15.5)
@@ -110,16 +149,20 @@ _yum_repository:
 _zypper:
   "8.3":
     - { state: latest, name: xtables-geoip }
+    - { state: latest, name: ImageMagick }    
     - { state: latest, name: ca-certificates }
     - { state: latest, name: php8 }
     - { state: latest, name: php8-fpm }
+    - { state: latest, name: php8-APCu }
     - { state: latest, name: php8-bcmath }
     - { state: latest, name: php8-bz2 }
-    - { state: latest, name: php8-calendar }
     - { state: latest, name: php8-curl }
     - { state: latest, name: php8-gd }
+    - { state: latest, name: php8-imagick }
     - { state: latest, name: php8-intl }
+    - { state: latest, name: php8-maxminddb }
     - { state: latest, name: php8-mbstring }
+    - { state: latest, name: php8-memcache }
     - { state: latest, name: php8-mysql }
     - { state: latest, name: php8-opcache }
     - { state: latest, name: php8-openssl }
@@ -140,16 +183,20 @@ _zypper:
     - { state: latest, name: php-cs-fixer }
   "8.2":
     - { state: latest, name: xtables-geoip }
+    - { state: latest, name: ImageMagick }
     - { state: latest, name: ca-certificates }
     - { state: latest, name: php8 }
     - { state: latest, name: php8-fpm }
+    - { state: latest, name: php8-APCu }
     - { state: latest, name: php8-bcmath }
     - { state: latest, name: php8-bz2 }
-    - { state: latest, name: php8-calendar }
     - { state: latest, name: php8-curl }
     - { state: latest, name: php8-gd }
+    - { state: latest, name: php8-imagick }
     - { state: latest, name: php8-intl }
+    - { state: latest, name: php8-maxminddb }
     - { state: latest, name: php8-mbstring }
+    - { state: latest, name: php8-memcache }
     - { state: latest, name: php8-mysql }
     - { state: latest, name: php8-opcache }
     - { state: latest, name: php8-openssl }
@@ -170,16 +217,20 @@ _zypper:
     - { state: latest, name: php-cs-fixer }
   "8.1":
     - { state: latest, name: xtables-geoip }
+    - { state: latest, name: ImageMagick }
     - { state: latest, name: ca-certificates }
     - { state: latest, name: php8 }
     - { state: latest, name: php8-fpm }
+    - { state: latest, name: php8-APCu }
     - { state: latest, name: php8-bcmath }
     - { state: latest, name: php8-bz2 }
-    - { state: latest, name: php8-calendar }
     - { state: latest, name: php8-curl }
     - { state: latest, name: php8-gd }
+    - { state: latest, name: php8-imagick }
     - { state: latest, name: php8-intl }
+    - { state: latest, name: php8-maxminddb }
     - { state: latest, name: php8-mbstring }
+    - { state: latest, name: php8-memcache }
     - { state: latest, name: php8-mysql }
     - { state: latest, name: php8-opcache }
     - { state: latest, name: php8-openssl }

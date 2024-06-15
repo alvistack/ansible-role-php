@@ -156,6 +156,7 @@ _dnf_module:
 _dnf:
   "8.3":
     - { state: latest, name: GeoIP-data }
+    - { state: latest, name: ImageMagick }
     - { state: latest, name: php-cli }
     - { state: latest, name: php-fpm }
     - { state: latest, name: php-bcmath }
@@ -168,6 +169,7 @@ _dnf:
     - { state: latest, name: php-opcache }
     - { state: latest, name: php-pecl-apcu }
     - { state: latest, name: php-pecl-geoip }
+    - { state: latest, name: php-pecl-imagick }
     - { state: latest, name: php-pecl-memcache }
     - { state: latest, name: php-pecl-uuid }
     - { state: latest, name: php-pgsql }
@@ -182,6 +184,7 @@ _dnf:
     - { state: latest, name: php-cs-fixer }
   "8.2":
     - { state: latest, name: GeoIP-data }
+    - { state: latest, name: ImageMagick }
     - { state: latest, name: php-cli }
     - { state: latest, name: php-fpm }
     - { state: latest, name: php-bcmath }
@@ -194,6 +197,7 @@ _dnf:
     - { state: latest, name: php-opcache }
     - { state: latest, name: php-pecl-apcu }
     - { state: latest, name: php-pecl-geoip }
+    - { state: latest, name: php-pecl-imagick }
     - { state: latest, name: php-pecl-memcache }
     - { state: latest, name: php-pecl-uuid }
     - { state: latest, name: php-pgsql }
@@ -208,6 +212,7 @@ _dnf:
     - { state: latest, name: php-cs-fixer }
   "8.1":
     - { state: latest, name: GeoIP-data }
+    - { state: latest, name: ImageMagick }
     - { state: latest, name: php-cli }
     - { state: latest, name: php-fpm }
     - { state: latest, name: php-bcmath }
@@ -220,6 +225,7 @@ _dnf:
     - { state: latest, name: php-opcache }
     - { state: latest, name: php-pecl-apcu }
     - { state: latest, name: php-pecl-geoip }
+    - { state: latest, name: php-pecl-imagick }
     - { state: latest, name: php-pecl-memcache }
     - { state: latest, name: php-pecl-uuid }
     - { state: latest, name: php-pgsql }
