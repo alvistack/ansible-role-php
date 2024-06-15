@@ -153,16 +153,16 @@ _zypper:
     - { state: latest, name: ca-certificates }
     - { state: latest, name: php8 }
     - { state: latest, name: php8-fpm }
-    - { state: latest, name: php8-APCu }
+    - { state: latest, name: php8-APCu, extra_args: --no-confirm }
     - { state: latest, name: php8-bcmath }
     - { state: latest, name: php8-bz2 }
     - { state: latest, name: php8-curl }
     - { state: latest, name: php8-gd }
-    - { state: latest, name: php8-imagick }
+    - { state: latest, name: php8-imagick, extra_args: --no-confirm }
     - { state: latest, name: php8-intl }
-    - { state: latest, name: php8-maxminddb }
+    - { state: latest, name: php8-maxminddb, extra_args: --no-confirm }
     - { state: latest, name: php8-mbstring }
-    - { state: latest, name: php8-memcache }
+    - { state: latest, name: php8-memcache, extra_args: --no-confirm }
     - { state: latest, name: php8-mysql }
     - { state: latest, name: php8-opcache }
     - { state: latest, name: php8-openssl }
@@ -187,16 +187,16 @@ _zypper:
     - { state: latest, name: ca-certificates }
     - { state: latest, name: php8 }
     - { state: latest, name: php8-fpm }
-    - { state: latest, name: php8-APCu }
+    - { state: latest, name: php8-APCu, extra_args: --no-confirm }
     - { state: latest, name: php8-bcmath }
     - { state: latest, name: php8-bz2 }
     - { state: latest, name: php8-curl }
     - { state: latest, name: php8-gd }
-    - { state: latest, name: php8-imagick }
+    - { state: latest, name: php8-imagick, extra_args: --no-confirm }
     - { state: latest, name: php8-intl }
-    - { state: latest, name: php8-maxminddb }
+    - { state: latest, name: php8-maxminddb, extra_args: --no-confirm }
     - { state: latest, name: php8-mbstring }
-    - { state: latest, name: php8-memcache }
+    - { state: latest, name: php8-memcache, extra_args: --no-confirm }
     - { state: latest, name: php8-mysql }
     - { state: latest, name: php8-opcache }
     - { state: latest, name: php8-openssl }
@@ -221,16 +221,16 @@ _zypper:
     - { state: latest, name: ca-certificates }
     - { state: latest, name: php8 }
     - { state: latest, name: php8-fpm }
-    - { state: latest, name: php8-APCu }
+    - { state: latest, name: php8-APCu, extra_args: --no-confirm }
     - { state: latest, name: php8-bcmath }
     - { state: latest, name: php8-bz2 }
     - { state: latest, name: php8-curl }
     - { state: latest, name: php8-gd }
-    - { state: latest, name: php8-imagick }
+    - { state: latest, name: php8-imagick, extra_args: --no-confirm }
     - { state: latest, name: php8-intl }
-    - { state: latest, name: php8-maxminddb }
+    - { state: latest, name: php8-maxminddb, extra_args: --no-confirm }
     - { state: latest, name: php8-mbstring }
-    - { state: latest, name: php8-memcache }
+    - { state: latest, name: php8-memcache, extra_args: --no-confirm }
     - { state: latest, name: php8-mysql }
     - { state: latest, name: php8-opcache }
     - { state: latest, name: php8-openssl }
