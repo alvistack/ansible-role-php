@@ -139,15 +139,19 @@ _yum_repository:
 
 _yum_config_manager:
   "8.3":
+    - { state: enable, name: rhel-7-server-optional-rpms }
     - { state: enable, name: remi-php83 }
   "8.2":
+    - { state: enable, name: rhel-7-server-optional-rpms }
     - { state: enable, name: remi-php82 }
   "8.1":
+    - { state: enable, name: rhel-7-server-optional-rpms }
     - { state: enable, name: remi-php81 }
 
 _yum:
   "8.3":
     - { state: latest, name: GeoIP-data }
+    - { state: latest, name: ImageMagick }
     - { state: latest, name: php-cli }
     - { state: latest, name: php-fpm }
     - { state: latest, name: php-bcmath }
@@ -160,6 +164,7 @@ _yum:
     - { state: latest, name: php-opcache }
     - { state: latest, name: php-pecl-apcu }
     - { state: latest, name: php-pecl-geoip }
+    - { state: latest, name: php-pecl-imagick }
     - { state: latest, name: php-pecl-memcache }
     - { state: latest, name: php-pecl-uuid }
     - { state: latest, name: php-pgsql }
@@ -174,6 +179,7 @@ _yum:
     - { state: latest, name: php-cs-fixer }
   "8.2":
     - { state: latest, name: GeoIP-data }
+    - { state: latest, name: ImageMagick }
     - { state: latest, name: php-cli }
     - { state: latest, name: php-fpm }
     - { state: latest, name: php-bcmath }
@@ -186,6 +192,7 @@ _yum:
     - { state: latest, name: php-opcache }
     - { state: latest, name: php-pecl-apcu }
     - { state: latest, name: php-pecl-geoip }
+    - { state: latest, name: php-pecl-imagick }
     - { state: latest, name: php-pecl-memcache }
     - { state: latest, name: php-pecl-uuid }
     - { state: latest, name: php-pgsql }
@@ -200,6 +207,7 @@ _yum:
     - { state: latest, name: php-cs-fixer }
   "8.1":
     - { state: latest, name: GeoIP-data }
+    - { state: latest, name: ImageMagick }
     - { state: latest, name: php-cli }
     - { state: latest, name: php-fpm }
     - { state: latest, name: php-bcmath }
@@ -212,6 +220,7 @@ _yum:
     - { state: latest, name: php-opcache }
     - { state: latest, name: php-pecl-apcu }
     - { state: latest, name: php-pecl-geoip }
+    - { state: latest, name: php-pecl-imagick }
     - { state: latest, name: php-pecl-memcache }
     - { state: latest, name: php-pecl-uuid }
     - { state: latest, name: php-pgsql }
