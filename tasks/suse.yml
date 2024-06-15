@@ -63,8 +63,8 @@
   community.general.zypper:
     name: "{{ item.name }}"
     state: "{{ item.state }}"
+    extra_args: "{{ item.extra_args | default(None) or omit }}"
     force_resolution: true
-    extra_args: --no-confirm
   loop: "{{ _zypper[php_release] }}"
   register: result
   until: result is succeeded
