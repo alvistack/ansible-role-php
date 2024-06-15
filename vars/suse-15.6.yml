@@ -149,7 +149,7 @@ _yum_repository:
 _zypper:
   "8.3":
     - { state: latest, name: xtables-geoip }
-    - { state: latest, name: ImageMagick }    
+    - { state: latest, name: ImageMagick }
     - { state: latest, name: ca-certificates }
     - { state: latest, name: php8 }
     - { state: latest, name: php8-fpm }
