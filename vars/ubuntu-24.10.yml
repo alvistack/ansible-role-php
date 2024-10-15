@@ -73,6 +73,7 @@ _apt_repository:
 
 _apt:
   "8.3":
+    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/main/t/tidy-html5/libtidy5deb1_5.6.0-11ubuntu2_amd64.deb }
     - { state: latest, name: imagemagick }
     - { state: latest, name: libpcre2-8-0 }
     - { state: latest, name: libssl-dev }
@@ -106,6 +107,7 @@ _apt:
     - { state: latest, name: php-codesniffer }
     - { state: latest, name: php-cs-fixer }
   "8.2":
+    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/main/t/tidy-html5/libtidy5deb1_5.6.0-11ubuntu2_amd64.deb }
     - { state: latest, name: imagemagick }
     - { state: latest, name: libpcre2-8-0 }
     - { state: latest, name: libssl-dev }
@@ -139,6 +141,7 @@ _apt:
     - { state: latest, name: php-codesniffer }
     - { state: latest, name: php-cs-fixer }
   "8.1":
+    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/main/t/tidy-html5/libtidy5deb1_5.6.0-11ubuntu2_amd64.deb }
     - { state: latest, name: imagemagick }
     - { state: latest, name: libpcre2-8-0 }
     - { state: latest, name: libssl-dev }
