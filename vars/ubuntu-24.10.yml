@@ -26,7 +26,7 @@ _apt_key:
       id: B8DC7E53946656EFBCE4C1DD71DAEAAB4AD4CAB6
       state: present
     - keyring: /etc/apt/trusted.gpg.d/home_alvistack.gpg
-      url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_20.04/Release.key
+      url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.10/Release.key
       id: 789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD
       state: present
   "8.2":
@@ -35,7 +35,7 @@ _apt_key:
       id: B8DC7E53946656EFBCE4C1DD71DAEAAB4AD4CAB6
       state: present
     - keyring: /etc/apt/trusted.gpg.d/home_alvistack.gpg
-      url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_20.04/Release.key
+      url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.10/Release.key
       id: 789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD
       state: present
   "8.1":
@@ -44,38 +44,40 @@ _apt_key:
       id: B8DC7E53946656EFBCE4C1DD71DAEAAB4AD4CAB6
       state: present
     - keyring: /etc/apt/trusted.gpg.d/home_alvistack.gpg
-      url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_20.04/Release.key
+      url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.10/Release.key
       id: 789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD
       state: present
 
 _apt_repository:
   "8.3":
     - filename: ondrej
-      repo: deb http://ppa.launchpad.net/ondrej/php/ubuntu focal main
+      repo: deb http://ppa.launchpad.net/ondrej/php/ubuntu noble main
       state: present
     - filename: home:alvistack
-      repo: deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_20.04/ /
+      repo: deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.10/ /
       state: present
   "8.2":
     - filename: ondrej
-      repo: deb http://ppa.launchpad.net/ondrej/php/ubuntu focal main
+      repo: deb http://ppa.launchpad.net/ondrej/php/ubuntu noble main
       state: present
     - filename: home:alvistack
-      repo: deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_20.04/ /
+      repo: deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.10/ /
       state: present
   "8.1":
     - filename: ondrej
-      repo: deb http://ppa.launchpad.net/ondrej/php/ubuntu focal main
+      repo: deb http://ppa.launchpad.net/ondrej/php/ubuntu noble main
       state: present
     - filename: home:alvistack
-      repo: deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_20.04/ /
+      repo: deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.10/ /
       state: present
 
 _apt:
   "8.3":
+    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/main/t/tidy-html5/libtidy5deb1_5.6.0-11ubuntu2_amd64.deb }
     - { state: latest, name: imagemagick }
     - { state: latest, name: libpcre2-8-0 }
     - { state: latest, name: libssl-dev }
+    - { state: latest, name: php8.3-common }
     - { state: latest, name: php8.3-cli }
     - { state: latest, name: php8.3-fpm }
     - { state: latest, name: php8.3-apcu }
@@ -105,9 +107,11 @@ _apt:
     - { state: latest, name: php-codesniffer }
     - { state: latest, name: php-cs-fixer }
   "8.2":
+    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/main/t/tidy-html5/libtidy5deb1_5.6.0-11ubuntu2_amd64.deb }
     - { state: latest, name: imagemagick }
     - { state: latest, name: libpcre2-8-0 }
     - { state: latest, name: libssl-dev }
+    - { state: latest, name: php8.2-common }
     - { state: latest, name: php8.2-cli }
     - { state: latest, name: php8.2-fpm }
     - { state: latest, name: php8.2-apcu }
@@ -137,9 +141,11 @@ _apt:
     - { state: latest, name: php-codesniffer }
     - { state: latest, name: php-cs-fixer }
   "8.1":
+    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/main/t/tidy-html5/libtidy5deb1_5.6.0-11ubuntu2_amd64.deb }
     - { state: latest, name: imagemagick }
     - { state: latest, name: libpcre2-8-0 }
     - { state: latest, name: libssl-dev }
+    - { state: latest, name: php8.1-common }
     - { state: latest, name: php8.1-cli }
     - { state: latest, name: php8.1-fpm }
     - { state: latest, name: php8.1-apcu }

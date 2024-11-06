@@ -22,8 +22,8 @@ _service:
 _apt_key:
   "8.3":
     - keyring: /etc/apt/trusted.gpg.d/ondrej.gpg
-      url: http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x14AA40EC0831756756D7F66C4F4EA0AAE5267A6C
-      id: 14AA40EC0831756756D7F66C4F4EA0AAE5267A6C
+      url: http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xB8DC7E53946656EFBCE4C1DD71DAEAAB4AD4CAB6
+      id: B8DC7E53946656EFBCE4C1DD71DAEAAB4AD4CAB6
       state: present
     - keyring: /etc/apt/trusted.gpg.d/home_alvistack.gpg
       url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.04/Release.key
@@ -31,8 +31,8 @@ _apt_key:
       state: present
   "8.2":
     - keyring: /etc/apt/trusted.gpg.d/ondrej.gpg
-      url: http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x14AA40EC0831756756D7F66C4F4EA0AAE5267A6C
-      id: 14AA40EC0831756756D7F66C4F4EA0AAE5267A6C
+      url: http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xB8DC7E53946656EFBCE4C1DD71DAEAAB4AD4CAB6
+      id: B8DC7E53946656EFBCE4C1DD71DAEAAB4AD4CAB6
       state: present
     - keyring: /etc/apt/trusted.gpg.d/home_alvistack.gpg
       url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.04/Release.key
@@ -40,8 +40,8 @@ _apt_key:
       state: present
   "8.1":
     - keyring: /etc/apt/trusted.gpg.d/ondrej.gpg
-      url: http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x14AA40EC0831756756D7F66C4F4EA0AAE5267A6C
-      id: 14AA40EC0831756756D7F66C4F4EA0AAE5267A6C
+      url: http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xB8DC7E53946656EFBCE4C1DD71DAEAAB4AD4CAB6
+      id: B8DC7E53946656EFBCE4C1DD71DAEAAB4AD4CAB6
       state: present
     - keyring: /etc/apt/trusted.gpg.d/home_alvistack.gpg
       url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.04/Release.key
