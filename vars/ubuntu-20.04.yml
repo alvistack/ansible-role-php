@@ -19,56 +19,57 @@ _service:
   "8.2": php8.2-fpm.service
   "8.1": php8.1-fpm.service
 
-_apt_key:
+_deb822_repository:
   "8.3":
-    - keyring: /etc/apt/trusted.gpg.d/ondrej.gpg
-      url: http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xB8DC7E53946656EFBCE4C1DD71DAEAAB4AD4CAB6
-      id: B8DC7E53946656EFBCE4C1DD71DAEAAB4AD4CAB6
+    - name: ondrej
+      types: deb
+      uris: http://ppa.launchpad.net/ondrej/php/ubuntu
+      suites: focal
+      components: main
+      signed_by: http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xB8DC7E53946656EFBCE4C1DD71DAEAAB4AD4CAB6
+      enabled: true
       state: present
-    - keyring: /etc/apt/trusted.gpg.d/home_alvistack.gpg
-      url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_20.04/Release.key
-      id: 789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD
+    - name: alvistack
+      types: deb
+      uris: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_20.04
+      suites: /
+      components: ~
+      signed_by: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_20.04/Release.key
+      enabled: true
       state: present
   "8.2":
-    - keyring: /etc/apt/trusted.gpg.d/ondrej.gpg
-      url: http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xB8DC7E53946656EFBCE4C1DD71DAEAAB4AD4CAB6
-      id: B8DC7E53946656EFBCE4C1DD71DAEAAB4AD4CAB6
+    - name: ondrej
+      types: deb
+      uris: http://ppa.launchpad.net/ondrej/php/ubuntu
+      suites: focal
+      components: main
+      signed_by: http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xB8DC7E53946656EFBCE4C1DD71DAEAAB4AD4CAB6
+      enabled: true
       state: present
-    - keyring: /etc/apt/trusted.gpg.d/home_alvistack.gpg
-      url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_20.04/Release.key
-      id: 789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD
-      state: present
-  "8.1":
-    - keyring: /etc/apt/trusted.gpg.d/ondrej.gpg
-      url: http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xB8DC7E53946656EFBCE4C1DD71DAEAAB4AD4CAB6
-      id: B8DC7E53946656EFBCE4C1DD71DAEAAB4AD4CAB6
-      state: present
-    - keyring: /etc/apt/trusted.gpg.d/home_alvistack.gpg
-      url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_20.04/Release.key
-      id: 789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD
-      state: present
-
-_apt_repository:
-  "8.3":
-    - filename: ondrej
-      repo: deb http://ppa.launchpad.net/ondrej/php/ubuntu focal main
-      state: present
-    - filename: home:alvistack
-      repo: deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_20.04/ /
-      state: present
-  "8.2":
-    - filename: ondrej
-      repo: deb http://ppa.launchpad.net/ondrej/php/ubuntu focal main
-      state: present
-    - filename: home:alvistack
-      repo: deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_20.04/ /
+    - name: alvistack
+      types: deb
+      uris: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_20.04
+      suites: /
+      components: ~
+      signed_by: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_20.04/Release.key
+      enabled: true
       state: present
   "8.1":
-    - filename: ondrej
-      repo: deb http://ppa.launchpad.net/ondrej/php/ubuntu focal main
+    - name: ondrej
+      types: deb
+      uris: http://ppa.launchpad.net/ondrej/php/ubuntu
+      suites: focal
+      components: main
+      signed_by: http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xB8DC7E53946656EFBCE4C1DD71DAEAAB4AD4CAB6
+      enabled: true
       state: present
-    - filename: home:alvistack
-      repo: deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_20.04/ /
+    - name: alvistack
+      types: deb
+      uris: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_20.04
+      suites: /
+      components: ~
+      signed_by: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_20.04/Release.key
+      enabled: true
       state: present
 
 _apt:
