@@ -21,7 +21,7 @@ _service:
 
 _deb822_repository:
   "8.3":
-    - name: sury
+    - name: sury-php
       types: deb
       uris: http://packages.sury.org/php
       suites: bullseye
@@ -38,7 +38,7 @@ _deb822_repository:
       enabled: true
       state: present
   "8.2":
-    - name: sury
+    - name: sury-php
       types: deb
       uris: http://packages.sury.org/php
       suites: bullseye
@@ -55,7 +55,7 @@ _deb822_repository:
       enabled: true
       state: present
   "8.1":
-    - name: sury
+    - name: sury-php
       types: deb
       uris: http://packages.sury.org/php
       suites: bullseye
