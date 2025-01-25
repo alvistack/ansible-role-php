@@ -57,7 +57,7 @@ _deb822_repository:
       uris: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_12
       suites: /
       components:
-      /etc/apt/keyrings/home-alvistack.asc
+      signed_by: /etc/apt/keyrings/home-alvistack.asc
       enabled: true
       state: present
   "8.2":
@@ -74,7 +74,7 @@ _deb822_repository:
       uris: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_12
       suites: /
       components:
-      /etc/apt/keyrings/home-alvistack.asc
+      signed_by: /etc/apt/keyrings/home-alvistack.asc
       enabled: true
       state: present
   "8.1":
@@ -91,7 +91,7 @@ _deb822_repository:
       uris: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_12
       suites: /
       components:
-      /etc/apt/keyrings/home-alvistack.asc
+      signed_by: /etc/apt/keyrings/home-alvistack.asc
       enabled: true
       state: present
 
