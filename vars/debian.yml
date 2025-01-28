@@ -19,6 +19,29 @@ _service:
   "8.2": php8.2-fpm.service
   "8.1": php8.1-fpm.service
 
+_apt_key:
+  "8.3":
+    - url: http://packages.sury.org/php/apt.gpg
+      dest: /etc/apt/keyrings/ondrej.asc
+      checksum: "sha256:d63c11bc5067b1849c6a42a2d061916ba7c07632d4c0dbda4789d66fb263a285"
+    - url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_Testing/Release.key
+      dest: /etc/apt/keyrings/home-alvistack.asc
+      checksum: "sha256:90b960d05e9c5f068f70a6afa1c2623c400312f4e719bd97719d85e49b7de2b2"
+  "8.2":
+    - url: http://packages.sury.org/php/apt.gpg
+      dest: /etc/apt/keyrings/ondrej.asc
+      checksum: "sha256:d63c11bc5067b1849c6a42a2d061916ba7c07632d4c0dbda4789d66fb263a285"
+    - url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_Testing/Release.key
+      dest: /etc/apt/keyrings/home-alvistack.asc
+      checksum: "sha256:90b960d05e9c5f068f70a6afa1c2623c400312f4e719bd97719d85e49b7de2b2"
+  "8.1":
+    - url: http://packages.sury.org/php/apt.gpg
+      dest: /etc/apt/keyrings/ondrej.asc
+      checksum: "sha256:d63c11bc5067b1849c6a42a2d061916ba7c07632d4c0dbda4789d66fb263a285"
+    - url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_Testing/Release.key
+      dest: /etc/apt/keyrings/home-alvistack.asc
+      checksum: "sha256:90b960d05e9c5f068f70a6afa1c2623c400312f4e719bd97719d85e49b7de2b2"
+
 _deb822_repository:
   "8.3":
     - name: sury-php
@@ -29,12 +52,12 @@ _deb822_repository:
       signed_by: http://packages.sury.org/php/apt.gpg
       enabled: true
       state: present
-    - name: alvistack
+    - name: home-alvistack
       types: deb
       uris: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_Testing
       suites: /
       components:
-      signed_by: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_Testing/Release.key
+      signed_by: /etc/apt/keyrings/home-alvistack.asc
       enabled: true
       state: present
   "8.2":
@@ -46,12 +69,12 @@ _deb822_repository:
       signed_by: http://packages.sury.org/php/apt.gpg
       enabled: true
       state: present
-    - name: alvistack
+    - name: home-alvistack
       types: deb
       uris: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_Testing
       suites: /
       components:
-      signed_by: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_Testing/Release.key
+      signed_by: /etc/apt/keyrings/home-alvistack.asc
       enabled: true
       state: present
   "8.1":
@@ -63,12 +86,12 @@ _deb822_repository:
       signed_by: http://packages.sury.org/php/apt.gpg
       enabled: true
       state: present
-    - name: alvistack
+    - name: home-alvistack
       types: deb
       uris: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_Testing
       suites: /
       components:
-      signed_by: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_Testing/Release.key
+      signed_by: /etc/apt/keyrings/home-alvistack.asc
       enabled: true
       state: present
 
