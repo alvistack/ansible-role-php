@@ -21,24 +21,24 @@ _service:
 
 _rpm_key:
   "8.3":
-    - key: http://rpms.remirepo.net/RPM-GPG-KEY-remi2021
-      fingerprint: B1ABF71E14C9D74897E198A8B19527F1478F8947
+    - key: http://rpms.remirepo.net/RPM-GPG-KEY-remi2024
+      fingerprint: CF1DF0057CE85DFF5B2F2A37C2FD3B2C2A0948E4
       state: present
-    - key: http://downloadcontent.opensuse.org/repositories/home:/alvistack/CentOS_9_Stream/repodata/repomd.xml.key
+    - key: http://downloadcontent.opensuse.org/repositories/home:/alvistack/CentOS_10_Stream/repodata/repomd.xml.key
       fingerprint: 789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD
       state: present
   "8.2":
-    - key: http://rpms.remirepo.net/RPM-GPG-KEY-remi2021
-      fingerprint: B1ABF71E14C9D74897E198A8B19527F1478F8947
+    - key: http://rpms.remirepo.net/RPM-GPG-KEY-remi2024
+      fingerprint: CF1DF0057CE85DFF5B2F2A37C2FD3B2C2A0948E4
       state: present
-    - key: http://downloadcontent.opensuse.org/repositories/home:/alvistack/CentOS_9_Stream/repodata/repomd.xml.key
+    - key: http://downloadcontent.opensuse.org/repositories/home:/alvistack/CentOS_10_Stream/repodata/repomd.xml.key
       fingerprint: 789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD
       state: present
   "8.1":
-    - key: http://rpms.remirepo.net/RPM-GPG-KEY-remi2021
-      fingerprint: B1ABF71E14C9D74897E198A8B19527F1478F8947
+    - key: http://rpms.remirepo.net/RPM-GPG-KEY-remi2024
+      fingerprint: CF1DF0057CE85DFF5B2F2A37C2FD3B2C2A0948E4
       state: present
-    - key: http://downloadcontent.opensuse.org/repositories/home:/alvistack/CentOS_9_Stream/repodata/repomd.xml.key
+    - key: http://downloadcontent.opensuse.org/repositories/home:/alvistack/CentOS_10_Stream/repodata/repomd.xml.key
       fingerprint: 789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD
       state: present
 
@@ -46,95 +46,95 @@ _yum_repository:
   "8.3":
     - file: remi-safe
       name: remi-safe
-      description: Safe Remi's RPM repository for Enterprise Linux 9 - $basearch
-      baseurl: http://rpms.remirepo.net/enterprise/9/safe/$basearch
+      description: Safe Remi's RPM repository for Enterprise Linux 10 - $basearch
+      baseurl: http://rpms.remirepo.net/enterprise/10/safe/$basearch
       enabled: true
       priority: "2"
       module_hotfixes: true
       gpgcheck: true
-      gpgkey: http://rpms.remirepo.net/RPM-GPG-KEY-remi2021
+      gpgkey: http://rpms.remirepo.net/RPM-GPG-KEY-remi2024
       state: present
     - file: remi-modular
       name: remi-modular
-      description: Remi's Modular repository for Enterprise Linux 9 - $basearch
-      baseurl: http://rpms.remirepo.net/enterprise/9/modular/$basearch
+      description: Remi's Modular repository for Enterprise Linux 10 - $basearch
+      baseurl: http://rpms.remirepo.net/enterprise/10/modular/$basearch
       enabled: true
       priority: "2"
       module_hotfixes: true
       gpgcheck: true
-      gpgkey: http://rpms.remirepo.net/RPM-GPG-KEY-remi2021
+      gpgkey: http://rpms.remirepo.net/RPM-GPG-KEY-remi2024
       state: present
     - file: home:alvistack
       name: home_alvistack
-      description: home:alvistack (CentOS_9_Stream)
-      baseurl: http://downloadcontent.opensuse.org/repositories/home:/alvistack/CentOS_9_Stream
+      description: home:alvistack (CentOS_10_Stream)
+      baseurl: http://downloadcontent.opensuse.org/repositories/home:/alvistack/CentOS_10_Stream
       enabled: true
       priority: "2"
       module_hotfixes: true
       gpgcheck: true
-      gpgkey: http://downloadcontent.opensuse.org/repositories/home:/alvistack/CentOS_9_Stream/repodata/repomd.xml.key
+      gpgkey: http://downloadcontent.opensuse.org/repositories/home:/alvistack/CentOS_10_Stream/repodata/repomd.xml.key
       state: present
   "8.2":
     - file: remi-safe
       name: remi-safe
-      description: Safe Remi's RPM repository for Enterprise Linux 9 - $basearch
-      baseurl: http://rpms.remirepo.net/enterprise/9/safe/$basearch
+      description: Safe Remi's RPM repository for Enterprise Linux 10 - $basearch
+      baseurl: http://rpms.remirepo.net/enterprise/10/safe/$basearch
       enabled: true
       priority: "2"
       module_hotfixes: true
       gpgcheck: true
-      gpgkey: http://rpms.remirepo.net/RPM-GPG-KEY-remi2021
+      gpgkey: http://rpms.remirepo.net/RPM-GPG-KEY-remi2024
       state: present
     - file: remi-modular
       name: remi-modular
-      description: Remi's Modular repository for Enterprise Linux 9 - $basearch
-      baseurl: http://rpms.remirepo.net/enterprise/9/modular/$basearch
+      description: Remi's Modular repository for Enterprise Linux 10 - $basearch
+      baseurl: http://rpms.remirepo.net/enterprise/10/modular/$basearch
       enabled: true
       priority: "2"
       module_hotfixes: true
       gpgcheck: true
-      gpgkey: http://rpms.remirepo.net/RPM-GPG-KEY-remi2021
+      gpgkey: http://rpms.remirepo.net/RPM-GPG-KEY-remi2024
       state: present
     - file: home:alvistack
       name: home_alvistack
-      description: home:alvistack (CentOS_9_Stream)
-      baseurl: http://downloadcontent.opensuse.org/repositories/home:/alvistack/CentOS_9_Stream
+      description: home:alvistack (CentOS_10_Stream)
+      baseurl: http://downloadcontent.opensuse.org/repositories/home:/alvistack/CentOS_10_Stream
       enabled: true
       priority: "2"
       module_hotfixes: true
       gpgcheck: true
-      gpgkey: http://downloadcontent.opensuse.org/repositories/home:/alvistack/CentOS_9_Stream/repodata/repomd.xml.key
+      gpgkey: http://downloadcontent.opensuse.org/repositories/home:/alvistack/CentOS_10_Stream/repodata/repomd.xml.key
       state: present
   "8.1":
     - file: remi-safe
       name: remi-safe
-      description: Safe Remi's RPM repository for Enterprise Linux 9 - $basearch
-      baseurl: http://rpms.remirepo.net/enterprise/9/safe/$basearch
+      description: Safe Remi's RPM repository for Enterprise Linux 10 - $basearch
+      baseurl: http://rpms.remirepo.net/enterprise/10/safe/$basearch
       enabled: true
       priority: "2"
       module_hotfixes: true
       gpgcheck: true
-      gpgkey: http://rpms.remirepo.net/RPM-GPG-KEY-remi2021
+      gpgkey: http://rpms.remirepo.net/RPM-GPG-KEY-remi2024
       state: present
     - file: remi-modular
       name: remi-modular
-      description: Remi's Modular repository for Enterprise Linux 9 - $basearch
-      baseurl: http://rpms.remirepo.net/enterprise/9/modular/$basearch
+      description: Remi's Modular repository for Enterprise Linux 10 - $basearch
+      baseurl: http://rpms.remirepo.net/enterprise/10/modular/$basearch
       enabled: true
       priority: "2"
       module_hotfixes: true
       gpgcheck: true
-      gpgkey: http://rpms.remirepo.net/RPM-GPG-KEY-remi2021
+      gpgkey: http://rpms.remirepo.net/RPM-GPG-KEY-remi2024
       state: present
     - file: home:alvistack
       name: home_alvistack
-      description: home:alvistack (CentOS_9_Stream)
-      baseurl: http://downloadcontent.opensuse.org/repositories/home:/alvistack/CentOS_9_Stream
+      description: home:alvistack (CentOS_10_Stream)
+      baseurl: http://downloadcontent.opensuse.org/repositories/home:/alvistack/CentOS_10_Stream
       enabled: true
       priority: "2"
       module_hotfixes: true
       gpgcheck: true
-      gpgkey: http://downloadcontent.opensuse.org/repositories/home:/alvistack/CentOS_9_Stream/repodata/repomd.xml.key
+      gpgkey: http://downloadcontent.opensuse.org/repositories/home:/alvistack/CentOS_10_Stream/repodata/repomd.xml.key
       state: present
 
 _dnf_config_manager:
