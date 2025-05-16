@@ -21,24 +21,24 @@ _service:
 
 _apt_key:
   "8.3":
-    - url: http://packages.sury.org/php/apt.gpg
+    - url: https://packages.sury.org/php/apt.gpg
       dest: /etc/apt/keyrings/ondrej.asc
       checksum: "sha256:d63c11bc5067b1849c6a42a2d061916ba7c07632d4c0dbda4789d66fb263a285"
-    - url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_Testing/Release.key
+    - url: https://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_Testing/Release.key
       dest: /etc/apt/keyrings/home-alvistack.asc
       checksum: "sha256:90b960d05e9c5f068f70a6afa1c2623c400312f4e719bd97719d85e49b7de2b2"
   "8.2":
-    - url: http://packages.sury.org/php/apt.gpg
+    - url: https://packages.sury.org/php/apt.gpg
       dest: /etc/apt/keyrings/ondrej.asc
       checksum: "sha256:d63c11bc5067b1849c6a42a2d061916ba7c07632d4c0dbda4789d66fb263a285"
-    - url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_Testing/Release.key
+    - url: https://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_Testing/Release.key
       dest: /etc/apt/keyrings/home-alvistack.asc
       checksum: "sha256:90b960d05e9c5f068f70a6afa1c2623c400312f4e719bd97719d85e49b7de2b2"
   "8.1":
-    - url: http://packages.sury.org/php/apt.gpg
+    - url: https://packages.sury.org/php/apt.gpg
       dest: /etc/apt/keyrings/ondrej.asc
       checksum: "sha256:d63c11bc5067b1849c6a42a2d061916ba7c07632d4c0dbda4789d66fb263a285"
-    - url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_Testing/Release.key
+    - url: https://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_Testing/Release.key
       dest: /etc/apt/keyrings/home-alvistack.asc
       checksum: "sha256:90b960d05e9c5f068f70a6afa1c2623c400312f4e719bd97719d85e49b7de2b2"
 
@@ -46,15 +46,15 @@ _deb822_repository:
   "8.3":
     - name: sury-php
       types: deb
-      uris: http://packages.sury.org/php
+      uris: https://packages.sury.org/php
       suites: bookworm
       components: main
-      signed_by: http://packages.sury.org/php/apt.gpg
+      signed_by: https://packages.sury.org/php/apt.gpg
       enabled: true
       state: present
     - name: home-alvistack
       types: deb
-      uris: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_Testing
+      uris: https://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_Testing
       suites: /
       components:
       signed_by: /etc/apt/keyrings/home-alvistack.asc
@@ -63,15 +63,15 @@ _deb822_repository:
   "8.2":
     - name: sury-php
       types: deb
-      uris: http://packages.sury.org/php
+      uris: https://packages.sury.org/php
       suites: bookworm
       components: main
-      signed_by: http://packages.sury.org/php/apt.gpg
+      signed_by: https://packages.sury.org/php/apt.gpg
       enabled: true
       state: present
     - name: home-alvistack
       types: deb
-      uris: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_Testing
+      uris: https://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_Testing
       suites: /
       components:
       signed_by: /etc/apt/keyrings/home-alvistack.asc
@@ -80,15 +80,15 @@ _deb822_repository:
   "8.1":
     - name: sury-php
       types: deb
-      uris: http://packages.sury.org/php
+      uris: https://packages.sury.org/php
       suites: bookworm
       components: main
-      signed_by: http://packages.sury.org/php/apt.gpg
+      signed_by: https://packages.sury.org/php/apt.gpg
       enabled: true
       state: present
     - name: home-alvistack
       types: deb
-      uris: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_Testing
+      uris: https://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_Testing
       suites: /
       components:
       signed_by: /etc/apt/keyrings/home-alvistack.asc
