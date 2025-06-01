@@ -169,6 +169,7 @@ _zypper:
     - { state: latest, name: php8-pdo }
     - { state: latest, name: php8-pgsql }
     - { state: latest, name: php8-phar }
+    - { state: latest, name: php8-redis }
     - { state: latest, name: php8-soap }
     - { state: latest, name: php8-sqlite }
     - { state: latest, name: php8-tidy }
@@ -203,6 +204,7 @@ _zypper:
     - { state: latest, name: php8-pdo }
     - { state: latest, name: php8-pgsql }
     - { state: latest, name: php8-phar }
+    - { state: latest, name: php8-redis }
     - { state: latest, name: php8-soap }
     - { state: latest, name: php8-sqlite }
     - { state: latest, name: php8-tidy }
@@ -237,6 +239,7 @@ _zypper:
     - { state: latest, name: php8-pdo }
     - { state: latest, name: php8-pgsql }
     - { state: latest, name: php8-phar }
+    - { state: latest, name: php8-redis }
     - { state: latest, name: php8-soap }
     - { state: latest, name: php8-sqlite }
     - { state: latest, name: php8-tidy }

@@ -118,6 +118,7 @@ _apt:
     - { state: latest, name: php8.3-mysql }
     - { state: latest, name: php8.3-opcache }
     - { state: latest, name: php8.3-pgsql }
+    - { state: latest, name: php8.3-redis }
     - { state: latest, name: php8.3-soap }
     - { state: latest, name: php8.3-sqlite3 }
     - { state: latest, name: php8.3-tidy }
@@ -152,6 +153,7 @@ _apt:
     - { state: latest, name: php8.2-mysql }
     - { state: latest, name: php8.2-opcache }
     - { state: latest, name: php8.2-pgsql }
+    - { state: latest, name: php8.2-redis }
     - { state: latest, name: php8.2-soap }
     - { state: latest, name: php8.2-sqlite3 }
     - { state: latest, name: php8.2-tidy }
@@ -186,6 +188,7 @@ _apt:
     - { state: latest, name: php8.1-mysql }
     - { state: latest, name: php8.1-opcache }
     - { state: latest, name: php8.1-pgsql }
+    - { state: latest, name: php8.1-redis }
     - { state: latest, name: php8.1-soap }
     - { state: latest, name: php8.1-sqlite3 }
     - { state: latest, name: php8.1-tidy }
