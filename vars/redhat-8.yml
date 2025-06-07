@@ -171,6 +171,7 @@ _dnf:
     - { state: latest, name: php-pecl-geoip }
     - { state: latest, name: php-pecl-imagick }
     - { state: latest, name: php-pecl-memcache }
+    - { state: latest, name: php-pecl-redis }
     - { state: latest, name: php-pecl-uuid }
     - { state: latest, name: php-pgsql }
     - { state: latest, name: php-soap }
@@ -199,6 +200,7 @@ _dnf:
     - { state: latest, name: php-pecl-geoip }
     - { state: latest, name: php-pecl-imagick }
     - { state: latest, name: php-pecl-memcache }
+    - { state: latest, name: php-pecl-redis }
     - { state: latest, name: php-pecl-uuid }
     - { state: latest, name: php-pgsql }
     - { state: latest, name: php-soap }
@@ -227,6 +229,7 @@ _dnf:
     - { state: latest, name: php-pecl-geoip }
     - { state: latest, name: php-pecl-imagick }
     - { state: latest, name: php-pecl-memcache }
+    - { state: latest, name: php-pecl-redis }
     - { state: latest, name: php-pecl-uuid }
     - { state: latest, name: php-pgsql }
     - { state: latest, name: php-soap }
