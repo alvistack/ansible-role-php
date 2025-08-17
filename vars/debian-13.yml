@@ -47,7 +47,7 @@ _deb822_repository:
     - name: sury-php
       types: deb
       uris: https://packages.sury.org/php
-      suites: bookworm
+      suites: trixie
       components: main
       signed_by: https://packages.sury.org/php/apt.gpg
       enabled: true
@@ -64,7 +64,7 @@ _deb822_repository:
     - name: sury-php
       types: deb
       uris: https://packages.sury.org/php
-      suites: bookworm
+      suites: trixie
       components: main
       signed_by: https://packages.sury.org/php/apt.gpg
       enabled: true
@@ -81,7 +81,7 @@ _deb822_repository:
     - name: sury-php
       types: deb
       uris: https://packages.sury.org/php
-      suites: bookworm
+      suites: trixie
       components: main
       signed_by: https://packages.sury.org/php/apt.gpg
       enabled: true
