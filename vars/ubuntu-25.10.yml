@@ -1,0 +1,215 @@
+---
+
+# Copyright 2025 Wong Hoi Sing Edison <hswong3i@pantarei-design.com>
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+_service:
+  "8.3": php8.3-fpm.service
+  "8.2": php8.2-fpm.service
+  "8.1": php8.1-fpm.service
+
+_apt_key:
+  "8.3":
+    - url: http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xB8DC7E53946656EFBCE4C1DD71DAEAAB4AD4CAB6
+      dest: /etc/apt/keyrings/ondrej.asc
+      checksum: "sha256:7258b1cb18300b87cd5668a6d64ce78184d9c0e129382879a0d79291c4ef463d"
+    - url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_25.10/Release.key
+      dest: /etc/apt/keyrings/home-alvistack.asc
+      checksum: "sha256:90b960d05e9c5f068f70a6afa1c2623c400312f4e719bd97719d85e49b7de2b2"
+  "8.2":
+    - url: http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xB8DC7E53946656EFBCE4C1DD71DAEAAB4AD4CAB6
+      dest: /etc/apt/keyrings/ondrej.asc
+      checksum: "sha256:7258b1cb18300b87cd5668a6d64ce78184d9c0e129382879a0d79291c4ef463d"
+    - url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_25.10/Release.key
+      dest: /etc/apt/keyrings/home-alvistack.asc
+      checksum: "sha256:90b960d05e9c5f068f70a6afa1c2623c400312f4e719bd97719d85e49b7de2b2"
+  "8.1":
+    - url: http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xB8DC7E53946656EFBCE4C1DD71DAEAAB4AD4CAB6
+      dest: /etc/apt/keyrings/ondrej.asc
+      checksum: "sha256:7258b1cb18300b87cd5668a6d64ce78184d9c0e129382879a0d79291c4ef463d"
+    - url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_25.10/Release.key
+      dest: /etc/apt/keyrings/home-alvistack.asc
+      checksum: "sha256:90b960d05e9c5f068f70a6afa1c2623c400312f4e719bd97719d85e49b7de2b2"
+
+_deb822_repository:
+  "8.3":
+    - name: ondrej-php
+      types: deb
+      uris: http://ppa.launchpad.net/ondrej/php/ubuntu
+      suites: noble
+      components: main
+      signed_by: /etc/apt/keyrings/ondrej.asc
+      enabled: true
+      state: present
+    - name: home-alvistack
+      types: deb
+      uris: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_25.10
+      suites: /
+      components:
+      signed_by: /etc/apt/keyrings/home-alvistack.asc
+      enabled: true
+      state: present
+  "8.2":
+    - name: ondrej-php
+      types: deb
+      uris: http://ppa.launchpad.net/ondrej/php/ubuntu
+      suites: noble
+      components: main
+      signed_by: /etc/apt/keyrings/ondrej.asc
+      enabled: true
+      state: present
+    - name: home-alvistack
+      types: deb
+      uris: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_25.10
+      suites: /
+      components:
+      signed_by: /etc/apt/keyrings/home-alvistack.asc
+      enabled: true
+      state: present
+  "8.1":
+    - name: ondrej-php
+      types: deb
+      uris: http://ppa.launchpad.net/ondrej/php/ubuntu
+      suites: noble
+      components: main
+      signed_by: /etc/apt/keyrings/ondrej.asc
+      enabled: true
+      state: present
+    - name: home-alvistack
+      types: deb
+      uris: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_25.10
+      suites: /
+      components:
+      signed_by: /etc/apt/keyrings/home-alvistack.asc
+      enabled: true
+      state: present
+
+_apt:
+  "8.3":
+    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/universe/i/imagemagick/libmagickcore-6.q16-7t64_6.9.13.12+dfsg1-1_amd64.deb }
+    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/universe/i/imagemagick/libmagickwand-6.q16-7t64_6.9.13.12+dfsg1-1_amd64.deb }
+    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/main/t/tidy-html5/libtidy5deb1_5.6.0-11ubuntu2_amd64.deb }
+    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/main/i/icu/libicu74_74.2-1ubuntu4_amd64.deb }
+    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/universe/libz/libzip/libzip4t64_1.7.3-1.1ubuntu2_amd64.deb }
+    - { state: latest, name: imagemagick }
+    - { state: latest, name: libpcre2-8-0 }
+    - { state: latest, name: libssl-dev }
+    - { state: latest, name: php8.3-common }
+    - { state: latest, name: php8.3-cli }
+    - { state: latest, name: php8.3-fpm }
+    - { state: latest, name: php8.3-apcu }
+    - { state: latest, name: php8.3-bcmath }
+    - { state: latest, name: php8.3-bz2 }
+    - { state: latest, name: php8.3-curl }
+    - { state: latest, name: php8.3-gd }
+    - { state: latest, name: php8.3-imagick }
+    - { state: latest, name: php8.3-imap }
+    - { state: latest, name: php8.3-intl }
+    - { state: latest, name: php8.3-maxminddb }
+    - { state: latest, name: php8.3-mbstring }
+    - { state: latest, name: php8.3-memcache }
+    - { state: latest, name: php8.3-mysql }
+    - { state: latest, name: php8.3-opcache }
+    - { state: latest, name: php8.3-pgsql }
+    - { state: latest, name: php8.3-redis }
+    - { state: latest, name: php8.3-soap }
+    - { state: latest, name: php8.3-sqlite3 }
+    - { state: latest, name: php8.3-tidy }
+    - { state: latest, name: php8.3-uuid }
+    - { state: latest, name: php8.3-xml }
+    - { state: latest, name: php8.3-xmlrpc }
+    - { state: latest, name: php8.3-xsl }
+    - { state: latest, name: php8.3-zip }
+    - { state: latest, name: composer }
+    - { state: latest, name: phpunit }
+    - { state: latest, name: php-codesniffer }
+    - { state: latest, name: php-cs-fixer }
+  "8.2":
+    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/universe/i/imagemagick/libmagickcore-6.q16-7t64_6.9.13.12+dfsg1-1_amd64.deb }
+    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/universe/i/imagemagick/libmagickwand-6.q16-7t64_6.9.13.12+dfsg1-1_amd64.deb }
+    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/main/t/tidy-html5/libtidy5deb1_5.6.0-11ubuntu2_amd64.deb }
+    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/main/i/icu/libicu74_74.2-1ubuntu4_amd64.deb }
+    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/universe/libz/libzip/libzip4t64_1.7.3-1.1ubuntu2_amd64.deb }
+    - { state: latest, name: imagemagick }
+    - { state: latest, name: libpcre2-8-0 }
+    - { state: latest, name: libssl-dev }
+    - { state: latest, name: php8.2-common }
+    - { state: latest, name: php8.2-cli }
+    - { state: latest, name: php8.2-fpm }
+    - { state: latest, name: php8.2-apcu }
+    - { state: latest, name: php8.2-bcmath }
+    - { state: latest, name: php8.2-bz2 }
+    - { state: latest, name: php8.2-curl }
+    - { state: latest, name: php8.2-gd }
+    - { state: latest, name: php8.2-imagick }
+    - { state: latest, name: php8.2-imap }
+    - { state: latest, name: php8.2-intl }
+    - { state: latest, name: php8.2-maxminddb }
+    - { state: latest, name: php8.2-mbstring }
+    - { state: latest, name: php8.2-memcache }
+    - { state: latest, name: php8.2-mysql }
+    - { state: latest, name: php8.2-opcache }
+    - { state: latest, name: php8.2-pgsql }
+    - { state: latest, name: php8.2-redis }
+    - { state: latest, name: php8.2-soap }
+    - { state: latest, name: php8.2-sqlite3 }
+    - { state: latest, name: php8.2-tidy }
+    - { state: latest, name: php8.2-uuid }
+    - { state: latest, name: php8.2-xml }
+    - { state: latest, name: php8.2-xmlrpc }
+    - { state: latest, name: php8.2-xsl }
+    - { state: latest, name: php8.2-zip }
+    - { state: latest, name: composer }
+    - { state: latest, name: phpunit }
+    - { state: latest, name: php-codesniffer }
+    - { state: latest, name: php-cs-fixer }
+  "8.1":
+    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/universe/i/imagemagick/libmagickcore-6.q16-7t64_6.9.13.12+dfsg1-1_amd64.deb }
+    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/universe/i/imagemagick/libmagickwand-6.q16-7t64_6.9.13.12+dfsg1-1_amd64.deb }
+    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/main/t/tidy-html5/libtidy5deb1_5.6.0-11ubuntu2_amd64.deb }
+    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/main/i/icu/libicu74_74.2-1ubuntu4_amd64.deb }
+    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/universe/libz/libzip/libzip4t64_1.7.3-1.1ubuntu2_amd64.deb }
+    - { state: latest, name: imagemagick }
+    - { state: latest, name: libpcre2-8-0 }
+    - { state: latest, name: libssl-dev }
+    - { state: latest, name: php8.1-common }
+    - { state: latest, name: php8.1-cli }
+    - { state: latest, name: php8.1-fpm }
+    - { state: latest, name: php8.1-apcu }
+    - { state: latest, name: php8.1-bcmath }
+    - { state: latest, name: php8.1-bz2 }
+    - { state: latest, name: php8.1-curl }
+    - { state: latest, name: php8.1-gd }
+    - { state: latest, name: php8.1-imagick }
+    - { state: latest, name: php8.1-imap }
+    - { state: latest, name: php8.1-intl }
+    - { state: latest, name: php8.1-maxminddb }
+    - { state: latest, name: php8.1-mbstring }
+    - { state: latest, name: php8.1-memcache }
+    - { state: latest, name: php8.1-mysql }
+    - { state: latest, name: php8.1-opcache }
+    - { state: latest, name: php8.1-pgsql }
+    - { state: latest, name: php8.1-redis }
+    - { state: latest, name: php8.1-soap }
+    - { state: latest, name: php8.1-sqlite3 }
+    - { state: latest, name: php8.1-tidy }
+    - { state: latest, name: php8.1-uuid }
+    - { state: latest, name: php8.1-xml }
+    - { state: latest, name: php8.1-xmlrpc }
+    - { state: latest, name: php8.1-xsl }
+    - { state: latest, name: php8.1-zip }
+    - { state: latest, name: composer }
+    - { state: latest, name: phpunit }
+    - { state: latest, name: php-codesniffer }
+    - { state: latest, name: php-cs-fixer }
