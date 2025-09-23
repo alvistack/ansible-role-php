@@ -24,21 +24,21 @@ _apt_key:
     - url: http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xB8DC7E53946656EFBCE4C1DD71DAEAAB4AD4CAB6
       dest: /etc/apt/keyrings/ondrej.asc
       checksum: "sha256:7258b1cb18300b87cd5668a6d64ce78184d9c0e129382879a0d79291c4ef463d"
-    - url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.10/Release.key
+    - url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_25.10/Release.key
       dest: /etc/apt/keyrings/home-alvistack.asc
       checksum: "sha256:90b960d05e9c5f068f70a6afa1c2623c400312f4e719bd97719d85e49b7de2b2"
   "8.2":
     - url: http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xB8DC7E53946656EFBCE4C1DD71DAEAAB4AD4CAB6
       dest: /etc/apt/keyrings/ondrej.asc
       checksum: "sha256:7258b1cb18300b87cd5668a6d64ce78184d9c0e129382879a0d79291c4ef463d"
-    - url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.10/Release.key
+    - url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_25.10/Release.key
       dest: /etc/apt/keyrings/home-alvistack.asc
       checksum: "sha256:90b960d05e9c5f068f70a6afa1c2623c400312f4e719bd97719d85e49b7de2b2"
   "8.1":
     - url: http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xB8DC7E53946656EFBCE4C1DD71DAEAAB4AD4CAB6
       dest: /etc/apt/keyrings/ondrej.asc
       checksum: "sha256:7258b1cb18300b87cd5668a6d64ce78184d9c0e129382879a0d79291c4ef463d"
-    - url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.10/Release.key
+    - url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_25.10/Release.key
       dest: /etc/apt/keyrings/home-alvistack.asc
       checksum: "sha256:90b960d05e9c5f068f70a6afa1c2623c400312f4e719bd97719d85e49b7de2b2"
 
@@ -54,7 +54,7 @@ _deb822_repository:
       state: present
     - name: home-alvistack
       types: deb
-      uris: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.10
+      uris: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_25.10
       suites: /
       components:
       signed_by: /etc/apt/keyrings/home-alvistack.asc
@@ -71,7 +71,7 @@ _deb822_repository:
       state: present
     - name: home-alvistack
       types: deb
-      uris: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.10
+      uris: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_25.10
       suites: /
       components:
       signed_by: /etc/apt/keyrings/home-alvistack.asc
@@ -88,7 +88,7 @@ _deb822_repository:
       state: present
     - name: home-alvistack
       types: deb
-      uris: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.10
+      uris: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_25.10
       suites: /
       components:
       signed_by: /etc/apt/keyrings/home-alvistack.asc
@@ -97,7 +97,11 @@ _deb822_repository:
 
 _apt:
   "8.3":
+    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/universe/i/imagemagick/libmagickcore-6.q16-7t64_6.9.13.12+dfsg1-1_amd64.deb }
+    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/universe/i/imagemagick/libmagickwand-6.q16-7t64_6.9.13.12+dfsg1-1_amd64.deb }
     - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/main/t/tidy-html5/libtidy5deb1_5.6.0-11ubuntu2_amd64.deb }
+    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/main/i/icu/libicu74_74.2-1ubuntu4_amd64.deb }
+    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/universe/libz/libzip/libzip4t64_1.7.3-1.1ubuntu2_amd64.deb }
     - { state: latest, name: imagemagick }
     - { state: latest, name: libpcre2-8-0 }
     - { state: latest, name: libssl-dev }
@@ -132,7 +136,11 @@ _apt:
     - { state: latest, name: php-codesniffer }
     - { state: latest, name: php-cs-fixer }
   "8.2":
+    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/universe/i/imagemagick/libmagickcore-6.q16-7t64_6.9.13.12+dfsg1-1_amd64.deb }
+    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/universe/i/imagemagick/libmagickwand-6.q16-7t64_6.9.13.12+dfsg1-1_amd64.deb }
     - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/main/t/tidy-html5/libtidy5deb1_5.6.0-11ubuntu2_amd64.deb }
+    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/main/i/icu/libicu74_74.2-1ubuntu4_amd64.deb }
+    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/universe/libz/libzip/libzip4t64_1.7.3-1.1ubuntu2_amd64.deb }
     - { state: latest, name: imagemagick }
     - { state: latest, name: libpcre2-8-0 }
     - { state: latest, name: libssl-dev }
@@ -167,7 +175,11 @@ _apt:
     - { state: latest, name: php-codesniffer }
     - { state: latest, name: php-cs-fixer }
   "8.1":
+    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/universe/i/imagemagick/libmagickcore-6.q16-7t64_6.9.13.12+dfsg1-1_amd64.deb }
+    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/universe/i/imagemagick/libmagickwand-6.q16-7t64_6.9.13.12+dfsg1-1_amd64.deb }
     - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/main/t/tidy-html5/libtidy5deb1_5.6.0-11ubuntu2_amd64.deb }
+    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/main/i/icu/libicu74_74.2-1ubuntu4_amd64.deb }
+    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/universe/libz/libzip/libzip4t64_1.7.3-1.1ubuntu2_amd64.deb }
     - { state: latest, name: imagemagick }
     - { state: latest, name: libpcre2-8-0 }
     - { state: latest, name: libssl-dev }
