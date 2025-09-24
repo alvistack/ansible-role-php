@@ -97,10 +97,10 @@ _deb822_repository:
 
 _apt:
   "8.3":
-    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/universe/i/imagemagick/libmagickcore-6.q16-7t64_6.9.13.12+dfsg1-1_amd64.deb }
-    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/universe/i/imagemagick/libmagickwand-6.q16-7t64_6.9.13.12+dfsg1-1_amd64.deb }
+    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/universe/i/imagemagick/libmagickcore-6.q16-7t64_6.9.12.98+dfsg1-5.2build2_amd64.deb }
+    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/universe/i/imagemagick/libmagickwand-6.q16-7t64_6.9.12.98+dfsg1-5.2build2_amd64.deb }
     - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/main/t/tidy-html5/libtidy5deb1_5.6.0-11ubuntu2_amd64.deb }
-    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/main/i/icu/libicu74_74.2-1ubuntu4_amd64.deb }
+    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/main/i/icu/libicu74_74.2-1ubuntu3.1_amd64.deb }
     - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/universe/libz/libzip/libzip4t64_1.7.3-1.1ubuntu2_amd64.deb }
     - { state: latest, name: imagemagick }
     - { state: latest, name: libpcre2-8-0 }
@@ -136,10 +136,10 @@ _apt:
     - { state: latest, name: php-codesniffer }
     - { state: latest, name: php-cs-fixer }
   "8.2":
-    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/universe/i/imagemagick/libmagickcore-6.q16-7t64_6.9.13.12+dfsg1-1_amd64.deb }
-    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/universe/i/imagemagick/libmagickwand-6.q16-7t64_6.9.13.12+dfsg1-1_amd64.deb }
+    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/universe/i/imagemagick/libmagickcore-6.q16-7t64_6.9.12.98+dfsg1-5.2build2_amd64.deb }
+    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/universe/i/imagemagick/libmagickwand-6.q16-7t64_6.9.12.98+dfsg1-5.2build2_amd64.deb }
     - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/main/t/tidy-html5/libtidy5deb1_5.6.0-11ubuntu2_amd64.deb }
-    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/main/i/icu/libicu74_74.2-1ubuntu4_amd64.deb }
+    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/main/i/icu/libicu74_74.2-1ubuntu3.1_amd64.deb }
     - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/universe/libz/libzip/libzip4t64_1.7.3-1.1ubuntu2_amd64.deb }
     - { state: latest, name: imagemagick }
     - { state: latest, name: libpcre2-8-0 }
@@ -175,10 +175,10 @@ _apt:
     - { state: latest, name: php-codesniffer }
     - { state: latest, name: php-cs-fixer }
   "8.1":
-    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/universe/i/imagemagick/libmagickcore-6.q16-7t64_6.9.13.12+dfsg1-1_amd64.deb }
-    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/universe/i/imagemagick/libmagickwand-6.q16-7t64_6.9.13.12+dfsg1-1_amd64.deb }
+    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/universe/i/imagemagick/libmagickcore-6.q16-7t64_6.9.12.98+dfsg1-5.2build2_amd64.deb }
+    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/universe/i/imagemagick/libmagickwand-6.q16-7t64_6.9.12.98+dfsg1-5.2build2_amd64.deb }
     - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/main/t/tidy-html5/libtidy5deb1_5.6.0-11ubuntu2_amd64.deb }
-    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/main/i/icu/libicu74_74.2-1ubuntu4_amd64.deb }
+    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/main/i/icu/libicu74_74.2-1ubuntu3.1_amd64.deb }
     - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/universe/libz/libzip/libzip4t64_1.7.3-1.1ubuntu2_amd64.deb }
     - { state: latest, name: imagemagick }
     - { state: latest, name: libpcre2-8-0 }
