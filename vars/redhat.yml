@@ -24,21 +24,21 @@ _rpm_key:
     - key: https://rpms.remirepo.net/RPM-GPG-KEY-remi2024
       fingerprint: CF1DF0057CE85DFF5B2F2A37C2FD3B2C2A0948E4
       state: present
-    - key: https://downloadcontent.opensuse.org/repositories/home:/alvistack/Fedora_Rawhide/repodata/repomd.xml.key
+    - key: https://download.opensuse.org/repositories/home:/alvistack/Fedora_Rawhide/repodata/repomd.xml.key
       fingerprint: 789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD
       state: present
   "8.2":
     - key: https://rpms.remirepo.net/RPM-GPG-KEY-remi2024
       fingerprint: CF1DF0057CE85DFF5B2F2A37C2FD3B2C2A0948E4
       state: present
-    - key: https://downloadcontent.opensuse.org/repositories/home:/alvistack/Fedora_Rawhide/repodata/repomd.xml.key
+    - key: https://download.opensuse.org/repositories/home:/alvistack/Fedora_Rawhide/repodata/repomd.xml.key
       fingerprint: 789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD
       state: present
   "8.1":
     - key: https://rpms.remirepo.net/RPM-GPG-KEY-remi2024
       fingerprint: CF1DF0057CE85DFF5B2F2A37C2FD3B2C2A0948E4
       state: present
-    - key: https://downloadcontent.opensuse.org/repositories/home:/alvistack/Fedora_Rawhide/repodata/repomd.xml.key
+    - key: https://download.opensuse.org/repositories/home:/alvistack/Fedora_Rawhide/repodata/repomd.xml.key
       fingerprint: 789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD
       state: present
 
@@ -67,12 +67,12 @@ _yum_repository:
     - file: home:alvistack
       name: home_alvistack
       description: home:alvistack (Fedora_Rawhide)
-      baseurl: https://downloadcontent.opensuse.org/repositories/home:/alvistack/Fedora_Rawhide
+      baseurl: https://download.opensuse.org/repositories/home:/alvistack/Fedora_Rawhide
       enabled: true
       priority: "2"
       module_hotfixes: true
       gpgcheck: true
-      gpgkey: https://downloadcontent.opensuse.org/repositories/home:/alvistack/Fedora_Rawhide/repodata/repomd.xml.key
+      gpgkey: https://download.opensuse.org/repositories/home:/alvistack/Fedora_Rawhide/repodata/repomd.xml.key
       state: present
   "8.2":
     - file: remi
@@ -98,12 +98,12 @@ _yum_repository:
     - file: home:alvistack
       name: home_alvistack
       description: home:alvistack (Fedora_Rawhide)
-      baseurl: https://downloadcontent.opensuse.org/repositories/home:/alvistack/Fedora_Rawhide
+      baseurl: https://download.opensuse.org/repositories/home:/alvistack/Fedora_Rawhide
       enabled: true
       priority: "2"
       module_hotfixes: true
       gpgcheck: true
-      gpgkey: https://downloadcontent.opensuse.org/repositories/home:/alvistack/Fedora_Rawhide/repodata/repomd.xml.key
+      gpgkey: https://download.opensuse.org/repositories/home:/alvistack/Fedora_Rawhide/repodata/repomd.xml.key
       state: present
   "8.1":
     - file: remi
@@ -129,12 +129,12 @@ _yum_repository:
     - file: home:alvistack
       name: home_alvistack
       description: home:alvistack (Fedora_Rawhide)
-      baseurl: https://downloadcontent.opensuse.org/repositories/home:/alvistack/Fedora_Rawhide
+      baseurl: https://download.opensuse.org/repositories/home:/alvistack/Fedora_Rawhide
       enabled: true
       priority: "2"
       module_hotfixes: true
       gpgcheck: true
-      gpgkey: https://downloadcontent.opensuse.org/repositories/home:/alvistack/Fedora_Rawhide/repodata/repomd.xml.key
+      gpgkey: https://download.opensuse.org/repositories/home:/alvistack/Fedora_Rawhide/repodata/repomd.xml.key
       state: present
 
 _dnf_config_manager:
