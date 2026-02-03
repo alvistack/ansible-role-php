@@ -24,21 +24,21 @@ _apt_key:
     - url: http://packages.sury.org/php/apt.gpg
       dest: /etc/apt/keyrings/ondrej.asc
       checksum: "sha256:d63c11bc5067b1849c6a42a2d061916ba7c07632d4c0dbda4789d66fb263a285"
-    - url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_12/Release.key
+    - url: http://download.opensuse.org/repositories/home:/alvistack/Debian_12/Release.key
       dest: /etc/apt/keyrings/home-alvistack.asc
       checksum: "sha256:2959bf5709615cba0109715e4c2001066a4536398fa54f0f602abc208f04017e"
   "8.2":
     - url: http://packages.sury.org/php/apt.gpg
       dest: /etc/apt/keyrings/ondrej.asc
       checksum: "sha256:d63c11bc5067b1849c6a42a2d061916ba7c07632d4c0dbda4789d66fb263a285"
-    - url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_12/Release.key
+    - url: http://download.opensuse.org/repositories/home:/alvistack/Debian_12/Release.key
       dest: /etc/apt/keyrings/home-alvistack.asc
       checksum: "sha256:2959bf5709615cba0109715e4c2001066a4536398fa54f0f602abc208f04017e"
   "8.1":
     - url: http://packages.sury.org/php/apt.gpg
       dest: /etc/apt/keyrings/ondrej.asc
       checksum: "sha256:d63c11bc5067b1849c6a42a2d061916ba7c07632d4c0dbda4789d66fb263a285"
-    - url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_12/Release.key
+    - url: http://download.opensuse.org/repositories/home:/alvistack/Debian_12/Release.key
       dest: /etc/apt/keyrings/home-alvistack.asc
       checksum: "sha256:2959bf5709615cba0109715e4c2001066a4536398fa54f0f602abc208f04017e"
 
@@ -54,7 +54,7 @@ _deb822_repository:
       state: present
     - name: home-alvistack
       types: deb
-      uris: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_12
+      uris: http://download.opensuse.org/repositories/home:/alvistack/Debian_12
       suites: /
       components:
       signed_by: /etc/apt/keyrings/home-alvistack.asc
@@ -71,7 +71,7 @@ _deb822_repository:
       state: present
     - name: home-alvistack
       types: deb
-      uris: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_12
+      uris: http://download.opensuse.org/repositories/home:/alvistack/Debian_12
       suites: /
       components:
       signed_by: /etc/apt/keyrings/home-alvistack.asc
@@ -88,7 +88,7 @@ _deb822_repository:
       state: present
     - name: home-alvistack
       types: deb
-      uris: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_12
+      uris: http://download.opensuse.org/repositories/home:/alvistack/Debian_12
       suites: /
       components:
       signed_by: /etc/apt/keyrings/home-alvistack.asc

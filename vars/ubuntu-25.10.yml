@@ -24,21 +24,21 @@ _apt_key:
     - url: http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xB8DC7E53946656EFBCE4C1DD71DAEAAB4AD4CAB6
       dest: /etc/apt/keyrings/ondrej.asc
       checksum: "sha256:7258b1cb18300b87cd5668a6d64ce78184d9c0e129382879a0d79291c4ef463d"
-    - url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_25.10/Release.key
+    - url: http://download.opensuse.org/repositories/home:/alvistack/xUbuntu_25.10/Release.key
       dest: /etc/apt/keyrings/home-alvistack.asc
       checksum: "sha256:2959bf5709615cba0109715e4c2001066a4536398fa54f0f602abc208f04017e"
   "8.2":
     - url: http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xB8DC7E53946656EFBCE4C1DD71DAEAAB4AD4CAB6
       dest: /etc/apt/keyrings/ondrej.asc
       checksum: "sha256:7258b1cb18300b87cd5668a6d64ce78184d9c0e129382879a0d79291c4ef463d"
-    - url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_25.10/Release.key
+    - url: http://download.opensuse.org/repositories/home:/alvistack/xUbuntu_25.10/Release.key
       dest: /etc/apt/keyrings/home-alvistack.asc
       checksum: "sha256:2959bf5709615cba0109715e4c2001066a4536398fa54f0f602abc208f04017e"
   "8.1":
     - url: http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xB8DC7E53946656EFBCE4C1DD71DAEAAB4AD4CAB6
       dest: /etc/apt/keyrings/ondrej.asc
       checksum: "sha256:7258b1cb18300b87cd5668a6d64ce78184d9c0e129382879a0d79291c4ef463d"
-    - url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_25.10/Release.key
+    - url: http://download.opensuse.org/repositories/home:/alvistack/xUbuntu_25.10/Release.key
       dest: /etc/apt/keyrings/home-alvistack.asc
       checksum: "sha256:2959bf5709615cba0109715e4c2001066a4536398fa54f0f602abc208f04017e"
 
@@ -54,7 +54,7 @@ _deb822_repository:
       state: present
     - name: home-alvistack
       types: deb
-      uris: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_25.10
+      uris: http://download.opensuse.org/repositories/home:/alvistack/xUbuntu_25.10
       suites: /
       components:
       signed_by: /etc/apt/keyrings/home-alvistack.asc
@@ -71,7 +71,7 @@ _deb822_repository:
       state: present
     - name: home-alvistack
       types: deb
-      uris: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_25.10
+      uris: http://download.opensuse.org/repositories/home:/alvistack/xUbuntu_25.10
       suites: /
       components:
       signed_by: /etc/apt/keyrings/home-alvistack.asc
@@ -88,7 +88,7 @@ _deb822_repository:
       state: present
     - name: home-alvistack
       types: deb
-      uris: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_25.10
+      uris: http://download.opensuse.org/repositories/home:/alvistack/xUbuntu_25.10
       suites: /
       components:
       signed_by: /etc/apt/keyrings/home-alvistack.asc
