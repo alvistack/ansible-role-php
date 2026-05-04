@@ -54,7 +54,7 @@
     state: "{{ item.state }}"
   loop: "{{ _yum_repository[php_release] }}"
 
-- name: dnf config-manager
+- name: dnf config-manager --set-enable
   ansible.builtin.command:
     cmd: dnf config-manager --set-{{ item.state }} {{ item.name }}
   loop: "{{ _dnf_config_manager[php_release] }}"
