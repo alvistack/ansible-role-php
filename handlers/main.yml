@@ -15,7 +15,7 @@
 
 - name: php | systemctl restart php-fpm.service
   ansible.builtin.service:
-    name: "{{ _service[php_release] }}"
+    name: "{{ _service }}"
     state: restarted
     enabled: true
   loop: "{{ ansible_play_hosts }}"

@@ -51,9 +51,11 @@
     checksum: "{{ item.checksum }}"
     mode: "{{ item.mode | default('0644') }}"
     timeout: 300
-  loop: "{{ _apt_key[php_release] }}"
+  loop: "{{ _apt_key }}"
   register: result
   until: result is succeeded
+  tags:
+    - _apt_key
 
 - name: apt-add-repository
   ansible.builtin.deb822_repository:
@@ -66,9 +68,11 @@
     enabled: "{{ item.enabled }}"
     state: "{{ item.state }}"
     architectures: "{{ item.architectures | default(None) or omit }}"
-  loop: "{{ _deb822_repository[php_release] }}"
+  loop: "{{ _deb822_repository }}"
   register: result
   until: result is succeeded
+  tags:
+    - _deb822_repository
 
 - name: apt-get update
   ansible.builtin.apt:
@@ -81,11 +85,13 @@
     name: "{{ item.name | default(None) or omit }}"
     deb: "{{ item.deb | default(None) or omit }}"
     install_recommends: false
-  loop: "{{ _apt[php_release] }}"
+  loop: "{{ _apt }}"
   register: result
   until: result is succeeded
   notify:
     - php | systemctl restart php-fpm.service
+  tags:
+    - _apt
 
 - name: prepare directories
   ansible.builtin.file:

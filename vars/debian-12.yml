@@ -14,12 +14,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-_service:
+_service: "{{ __service[php_release] }}"
+__service:
   "8.3": php8.3-fpm.service
   "8.2": php8.2-fpm.service
   "8.1": php8.1-fpm.service
 
-_apt_key:
+_apt_key: "{{ __apt_key[php_release] }}"
+__apt_key:
   "8.3":
     - url: http://packages.sury.org/php/apt.gpg
       dest: /etc/apt/keyrings/ondrej.asc
@@ -42,7 +44,8 @@ _apt_key:
       dest: /etc/apt/keyrings/home-alvistack.asc
       checksum: "sha256:2959bf5709615cba0109715e4c2001066a4536398fa54f0f602abc208f04017e"
 
-_deb822_repository:
+_deb822_repository: "{{ __deb822_repository[php_release] }}"
+__deb822_repository:
   "8.3":
     - name: sury-php
       types: deb
@@ -95,7 +98,8 @@ _deb822_repository:
       enabled: true
       state: present
 
-_apt:
+_apt: "{{ __apt[php_release] }}"
+__apt:
   "8.3":
     - { state: latest, name: imagemagick }
     - { state: latest, name: libpcre2-8-0 }

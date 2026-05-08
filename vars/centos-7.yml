@@ -14,12 +14,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-_service:
+_service: "{{ __service[php_release] }}"
+__service:
   "8.3": php-fpm.service
   "8.2": php-fpm.service
   "8.1": php-fpm.service
 
-_rpm_key:
+_rpm_key: "{{ __rpm_key[php_release] }}"
+__rpm_key:
   "8.3":
     - key: http://rpms.remirepo.net/RPM-GPG-KEY-remi
       fingerprint: 1EE04CCE88A4AE4AA29A5DF5004E6F4700F97F56
@@ -42,7 +44,8 @@ _rpm_key:
       fingerprint: 789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD
       state: present
 
-_yum_repository:
+_yum_repository: "{{ __yum_repository[php_release] }}"
+__yum_repository:
   "8.3":
     - file: remi-safe
       name: remi-safe
@@ -137,7 +140,8 @@ _yum_repository:
       gpgkey: http://downloadcontent.opensuse.org/repositories/home:/alvistack/CentOS_7/repodata/repomd.xml.key
       state: present
 
-_yum_config_manager:
+_yum_config_manager: "{{ __yum_config_manager[php_release] }}"
+__yum_config_manager:
   "8.3":
     - { state: enable, name: remi-php83 }
   "8.2":
@@ -145,7 +149,8 @@ _yum_config_manager:
   "8.1":
     - { state: enable, name: remi-php81 }
 
-_yum:
+_yum: "{{ __yum[php_release] }}"
+__yum:
   "8.3":
     - { state: latest, name: GeoIP-data }
     - { state: latest, name: ImageMagick }
