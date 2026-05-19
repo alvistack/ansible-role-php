@@ -14,12 +14,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-_service:
+_service: "{{ __service[php_release] }}"
+__service:
   "8.3": php-fpm.service
   "8.2": php-fpm.service
   "8.1": php-fpm.service
 
-_rpm_key:
+_rpm_key: "{{ __rpm_key[php_release] }}"
+__rpm_key:
   "8.3":
     - key: http://downloadcontent.opensuse.org/repositories/devel:/languages:/php:/php83/16.0/repodata/repomd.xml.key
       fingerprint: E6234A1678CE7256965E3FEC03DB3D1B3E46931C
@@ -51,7 +53,8 @@ _rpm_key:
       fingerprint: 789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD
       state: present
 
-_yum_repository:
+_yum_repository: "{{ __yum_repository[php_release] }}"
+__yum_repository:
   "8.3":
     - file: devel_languages_php
       name: devel_languages_php
@@ -146,7 +149,8 @@ _yum_repository:
       gpgkey: http://downloadcontent.opensuse.org/repositories/home:/alvistack/openSUSE_Leap_16.0/repodata/repomd.xml.key
       state: present
 
-_zypper:
+_zypper: "{{ __zypper[php_release] }}"
+__zypper:
   "8.3":
     - { state: latest, name: xtables-geoip }
     - { state: latest, name: ImageMagick }

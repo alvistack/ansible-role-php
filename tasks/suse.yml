@@ -38,9 +38,11 @@
     key: "{{ item.key }}"
     fingerprint: "{{ item.fingerprint }}"
     state: "{{ item.state }}"
-  loop: "{{ _rpm_key[php_release] }}"
+  loop: "{{ _rpm_key }}"
   register: result
   until: result is succeeded
+  tags:
+    - _rpm_key
 
 - name: yum-config-manager --add-repo
   ansible.builtin.yum_repository:
@@ -55,7 +57,9 @@
     gpgkey: "{{ item.gpgkey }}"
     state: "{{ item.state }}"
     reposdir: "{{ item.reposdir | default('/etc/zypp/repos.d') }}"
-  loop: "{{ _yum_repository[php_release] }}"
+  loop: "{{ _yum_repository }}"
+  tags:
+    - _yum_repository
 
 - name: zypper install
   vars:
@@ -65,11 +69,13 @@
     state: "{{ item.state }}"
     extra_args: "{{ item.extra_args | default(None) or omit }}"
     force_resolution: true
-  loop: "{{ _zypper[php_release] }}"
+  loop: "{{ _zypper }}"
   register: result
   until: result is succeeded
   notify:
     - php | systemctl restart php-fpm.service
+  tags:
+    - _zypper
 
 - name: prepare directories
   ansible.builtin.file:
