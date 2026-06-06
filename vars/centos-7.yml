@@ -16,27 +16,27 @@
 
 _service: "{{ __service[php_release] }}"
 __service:
+  "8.5": php-fpm.service
+  "8.4": php-fpm.service
   "8.3": php-fpm.service
-  "8.2": php-fpm.service
-  "8.1": php-fpm.service
 
 _rpm_key: "{{ __rpm_key[php_release] }}"
 __rpm_key:
+  "8.5":
+    - key: http://rpms.remirepo.net/RPM-GPG-KEY-remi
+      fingerprint: 1EE04CCE88A4AE4AA29A5DF5004E6F4700F97F56
+      state: present
+    - key: http://downloadcontent.opensuse.org/repositories/home:/alvistack/CentOS_7/repodata/repomd.xml.key
+      fingerprint: 789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD
+      state: present
+  "8.4":
+    - key: http://rpms.remirepo.net/RPM-GPG-KEY-remi
+      fingerprint: 1EE04CCE88A4AE4AA29A5DF5004E6F4700F97F56
+      state: present
+    - key: http://downloadcontent.opensuse.org/repositories/home:/alvistack/CentOS_7/repodata/repomd.xml.key
+      fingerprint: 789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD
+      state: present
   "8.3":
-    - key: http://rpms.remirepo.net/RPM-GPG-KEY-remi
-      fingerprint: 1EE04CCE88A4AE4AA29A5DF5004E6F4700F97F56
-      state: present
-    - key: http://downloadcontent.opensuse.org/repositories/home:/alvistack/CentOS_7/repodata/repomd.xml.key
-      fingerprint: 789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD
-      state: present
-  "8.2":
-    - key: http://rpms.remirepo.net/RPM-GPG-KEY-remi
-      fingerprint: 1EE04CCE88A4AE4AA29A5DF5004E6F4700F97F56
-      state: present
-    - key: http://downloadcontent.opensuse.org/repositories/home:/alvistack/CentOS_7/repodata/repomd.xml.key
-      fingerprint: 789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD
-      state: present
-  "8.1":
     - key: http://rpms.remirepo.net/RPM-GPG-KEY-remi
       fingerprint: 1EE04CCE88A4AE4AA29A5DF5004E6F4700F97F56
       state: present
@@ -46,7 +46,7 @@ __rpm_key:
 
 _yum_repository: "{{ __yum_repository[php_release] }}"
 __yum_repository:
-  "8.3":
+  "8.5":
     - file: remi-safe
       name: remi-safe
       description: Safe Remi's RPM repository for Enterprise Linux 7 - $basearch
@@ -59,7 +59,7 @@ __yum_repository:
       state: present
     - file: remi-php83
       name: remi-php83
-      description: Remi's PHP 8.3 RPM repository for Enterprise Linux 7 - $basearch
+      description: Remi's PHP 8.5 RPM repository for Enterprise Linux 7 - $basearch
       baseurl: http://rpms.remirepo.net/enterprise/7/php83/$basearch
       enabled: true
       priority: "2"
@@ -77,7 +77,7 @@ __yum_repository:
       gpgcheck: true
       gpgkey: http://downloadcontent.opensuse.org/repositories/home:/alvistack/CentOS_7/repodata/repomd.xml.key
       state: present
-  "8.2":
+  "8.4":
     - file: remi-safe
       name: remi-safe
       description: Safe Remi's RPM repository for Enterprise Linux 7 - $basearch
@@ -90,7 +90,7 @@ __yum_repository:
       state: present
     - file: remi-php82
       name: remi-php82
-      description: Remi's PHP 8.2 RPM repository for Enterprise Linux 7 - $basearch
+      description: Remi's PHP 8.4 RPM repository for Enterprise Linux 7 - $basearch
       baseurl: http://rpms.remirepo.net/enterprise/7/php82/$basearch
       enabled: true
       priority: "2"
@@ -108,7 +108,7 @@ __yum_repository:
       gpgcheck: true
       gpgkey: http://downloadcontent.opensuse.org/repositories/home:/alvistack/CentOS_7/repodata/repomd.xml.key
       state: present
-  "8.1":
+  "8.3":
     - file: remi-safe
       name: remi-safe
       description: Safe Remi's RPM repository for Enterprise Linux 7 - $basearch
@@ -121,7 +121,7 @@ __yum_repository:
       state: present
     - file: remi-php81
       name: remi-php81
-      description: Remi's PHP 8.1 RPM repository for Enterprise Linux 7 - $basearch
+      description: Remi's PHP 8.3 RPM repository for Enterprise Linux 7 - $basearch
       baseurl: http://rpms.remirepo.net/enterprise/7/php81/$basearch
       enabled: true
       priority: "2"
@@ -142,15 +142,72 @@ __yum_repository:
 
 _yum_config_manager: "{{ __yum_config_manager[php_release] }}"
 __yum_config_manager:
-  "8.3":
+  "8.5":
     - { state: enable, name: remi-php83 }
-  "8.2":
+  "8.4":
     - { state: enable, name: remi-php82 }
-  "8.1":
+  "8.3":
     - { state: enable, name: remi-php81 }
 
 _yum: "{{ __yum[php_release] }}"
 __yum:
+  "8.5":
+    - { state: latest, name: GeoIP-data }
+    - { state: latest, name: ImageMagick }
+    - { state: latest, name: php-cli }
+    - { state: latest, name: php-fpm }
+    - { state: latest, name: php-bcmath }
+    - { state: latest, name: php-gd }
+    - { state: latest, name: php-imap }
+    - { state: latest, name: php-intl }
+    - { state: latest, name: php-json }
+    - { state: latest, name: php-mbstring }
+    - { state: latest, name: php-mysqlnd }
+    - { state: latest, name: php-pecl-apcu }
+    - { state: latest, name: php-pecl-geoip }
+    - { state: latest, name: php-pecl-imagick }
+    - { state: latest, name: php-pecl-memcached }
+    - { state: latest, name: php-pecl-redis }
+    - { state: latest, name: php-pecl-uuid }
+    - { state: latest, name: php-pgsql }
+    - { state: latest, name: php-soap }
+    - { state: latest, name: php-tidy }
+    - { state: latest, name: php-xml }
+    - { state: latest, name: php-xmlrpc }
+    - { state: latest, name: php-zip }
+    - { state: latest, name: composer }
+    - { state: latest, name: phpunit }
+    - { state: latest, name: php-codesniffer }
+    - { state: latest, name: php-cs-fixer }
+  "8.4":
+    - { state: latest, name: GeoIP-data }
+    - { state: latest, name: ImageMagick }
+    - { state: latest, name: php-cli }
+    - { state: latest, name: php-fpm }
+    - { state: latest, name: php-bcmath }
+    - { state: latest, name: php-gd }
+    - { state: latest, name: php-imap }
+    - { state: latest, name: php-intl }
+    - { state: latest, name: php-json }
+    - { state: latest, name: php-mbstring }
+    - { state: latest, name: php-mysqlnd }
+    - { state: latest, name: php-opcache }
+    - { state: latest, name: php-pecl-apcu }
+    - { state: latest, name: php-pecl-geoip }
+    - { state: latest, name: php-pecl-imagick }
+    - { state: latest, name: php-pecl-memcached }
+    - { state: latest, name: php-pecl-redis }
+    - { state: latest, name: php-pecl-uuid }
+    - { state: latest, name: php-pgsql }
+    - { state: latest, name: php-soap }
+    - { state: latest, name: php-tidy }
+    - { state: latest, name: php-xml }
+    - { state: latest, name: php-xmlrpc }
+    - { state: latest, name: php-zip }
+    - { state: latest, name: composer }
+    - { state: latest, name: phpunit }
+    - { state: latest, name: php-codesniffer }
+    - { state: latest, name: php-cs-fixer }
   "8.3":
     - { state: latest, name: GeoIP-data }
     - { state: latest, name: ImageMagick }
@@ -167,65 +224,7 @@ __yum:
     - { state: latest, name: php-pecl-apcu }
     - { state: latest, name: php-pecl-geoip }
     - { state: latest, name: php-pecl-imagick }
-    - { state: latest, name: php-pecl-memcache }
-    - { state: latest, name: php-pecl-redis }
-    - { state: latest, name: php-pecl-uuid }
-    - { state: latest, name: php-pgsql }
-    - { state: latest, name: php-soap }
-    - { state: latest, name: php-tidy }
-    - { state: latest, name: php-xml }
-    - { state: latest, name: php-xmlrpc }
-    - { state: latest, name: php-zip }
-    - { state: latest, name: composer }
-    - { state: latest, name: phpunit }
-    - { state: latest, name: php-codesniffer }
-    - { state: latest, name: php-cs-fixer }
-  "8.2":
-    - { state: latest, name: GeoIP-data }
-    - { state: latest, name: ImageMagick }
-    - { state: latest, name: php-cli }
-    - { state: latest, name: php-fpm }
-    - { state: latest, name: php-bcmath }
-    - { state: latest, name: php-gd }
-    - { state: latest, name: php-imap }
-    - { state: latest, name: php-intl }
-    - { state: latest, name: php-json }
-    - { state: latest, name: php-mbstring }
-    - { state: latest, name: php-mysqlnd }
-    - { state: latest, name: php-opcache }
-    - { state: latest, name: php-pecl-apcu }
-    - { state: latest, name: php-pecl-geoip }
-    - { state: latest, name: php-pecl-imagick }
-    - { state: latest, name: php-pecl-memcache }
-    - { state: latest, name: php-pecl-redis }
-    - { state: latest, name: php-pecl-uuid }
-    - { state: latest, name: php-pgsql }
-    - { state: latest, name: php-soap }
-    - { state: latest, name: php-tidy }
-    - { state: latest, name: php-xml }
-    - { state: latest, name: php-xmlrpc }
-    - { state: latest, name: php-zip }
-    - { state: latest, name: composer }
-    - { state: latest, name: phpunit }
-    - { state: latest, name: php-codesniffer }
-    - { state: latest, name: php-cs-fixer }
-  "8.1":
-    - { state: latest, name: GeoIP-data }
-    - { state: latest, name: ImageMagick }
-    - { state: latest, name: php-cli }
-    - { state: latest, name: php-fpm }
-    - { state: latest, name: php-bcmath }
-    - { state: latest, name: php-gd }
-    - { state: latest, name: php-imap }
-    - { state: latest, name: php-intl }
-    - { state: latest, name: php-json }
-    - { state: latest, name: php-mbstring }
-    - { state: latest, name: php-mysqlnd }
-    - { state: latest, name: php-opcache }
-    - { state: latest, name: php-pecl-apcu }
-    - { state: latest, name: php-pecl-geoip }
-    - { state: latest, name: php-pecl-imagick }
-    - { state: latest, name: php-pecl-memcache }
+    - { state: latest, name: php-pecl-memcached }
     - { state: latest, name: php-pecl-redis }
     - { state: latest, name: php-pecl-uuid }
     - { state: latest, name: php-pgsql }

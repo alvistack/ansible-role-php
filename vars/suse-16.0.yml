@@ -16,13 +16,13 @@
 
 _service: "{{ __service[php_release] }}"
 __service:
+  "8.5": php-fpm.service
+  "8.4": php-fpm.service
   "8.3": php-fpm.service
-  "8.2": php-fpm.service
-  "8.1": php-fpm.service
 
 _rpm_key: "{{ __rpm_key[php_release] }}"
 __rpm_key:
-  "8.3":
+  "8.5":
     - key: http://downloadcontent.opensuse.org/repositories/devel:/languages:/php:/php83/16.0/repodata/repomd.xml.key
       fingerprint: E6234A1678CE7256965E3FEC03DB3D1B3E46931C
       state: present
@@ -32,7 +32,7 @@ __rpm_key:
     - key: http://downloadcontent.opensuse.org/repositories/home:/alvistack/openSUSE_Leap_16.0/repodata/repomd.xml.key
       fingerprint: 789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD
       state: present
-  "8.2":
+  "8.4":
     - key: http://downloadcontent.opensuse.org/repositories/devel:/languages:/php:/php82/16.0/repodata/repomd.xml.key
       fingerprint: E6234A1678CE7256965E3FEC03DB3D1B3E46931C
       state: present
@@ -42,7 +42,7 @@ __rpm_key:
     - key: http://downloadcontent.opensuse.org/repositories/home:/alvistack/openSUSE_Leap_16.0/repodata/repomd.xml.key
       fingerprint: 789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD
       state: present
-  "8.1":
+  "8.3":
     - key: http://downloadcontent.opensuse.org/repositories/devel:/languages:/php:/php81/16.0/repodata/repomd.xml.key
       fingerprint: E6234A1678CE7256965E3FEC03DB3D1B3E46931C
       state: present
@@ -55,7 +55,7 @@ __rpm_key:
 
 _yum_repository: "{{ __yum_repository[php_release] }}"
 __yum_repository:
-  "8.3":
+  "8.5":
     - file: devel_languages_php
       name: devel_languages_php
       description: devel:languages:php (openSUSE_Leap_16.0)
@@ -86,7 +86,7 @@ __yum_repository:
       gpgcheck: true
       gpgkey: http://downloadcontent.opensuse.org/repositories/home:/alvistack/openSUSE_Leap_16.0/repodata/repomd.xml.key
       state: present
-  "8.2":
+  "8.4":
     - file: devel_languages_php
       name: devel_languages_php
       description: devel:languages:php (openSUSE_Leap_16.0)
@@ -117,7 +117,7 @@ __yum_repository:
       gpgcheck: true
       gpgkey: http://downloadcontent.opensuse.org/repositories/home:/alvistack/openSUSE_Leap_16.0/repodata/repomd.xml.key
       state: present
-  "8.1":
+  "8.3":
     - file: devel_languages_php
       name: devel_languages_php
       description: devel:languages:php (openSUSE_Leap_16.0)
@@ -151,6 +151,75 @@ __yum_repository:
 
 _zypper: "{{ __zypper[php_release] }}"
 __zypper:
+  "8.5":
+    - { state: latest, name: xtables-geoip }
+    - { state: latest, name: ImageMagick }
+    - { state: latest, name: ca-certificates }
+    - { state: latest, name: php8 }
+    - { state: latest, name: php8-fpm }
+    - { state: latest, name: php8-APCu }
+    - { state: latest, name: php8-bcmath }
+    - { state: latest, name: php8-bz2 }
+    - { state: latest, name: php8-curl }
+    - { state: latest, name: php8-gd }
+    - { state: latest, name: php8-imagick }
+    - { state: latest, name: php8-intl }
+    - { state: latest, name: php8-maxminddb }
+    - { state: latest, name: php8-mbstring }
+    - { state: latest, name: php8-memcached }
+    - { state: latest, name: php8-mysql }
+    - { state: latest, name: php8-openssl }
+    - { state: latest, name: php8-pdo }
+    - { state: latest, name: php8-pgsql }
+    - { state: latest, name: php8-phar }
+    - { state: latest, name: php8-redis }
+    - { state: latest, name: php8-soap }
+    - { state: latest, name: php8-sqlite }
+    - { state: latest, name: php8-tidy }
+    - { state: latest, name: php8-tokenizer }
+    - { state: latest, name: php8-xmlreader }
+    - { state: latest, name: php8-xmlwriter }
+    - { state: latest, name: php8-xsl }
+    - { state: latest, name: php8-zip }
+    - { state: latest, name: composer }
+    - { state: latest, name: phpunit }
+    - { state: latest, name: php-codesniffer }
+    - { state: latest, name: php-cs-fixer }
+  "8.4":
+    - { state: latest, name: xtables-geoip }
+    - { state: latest, name: ImageMagick }
+    - { state: latest, name: ca-certificates }
+    - { state: latest, name: php8 }
+    - { state: latest, name: php8-fpm }
+    - { state: latest, name: php8-APCu }
+    - { state: latest, name: php8-bcmath }
+    - { state: latest, name: php8-bz2 }
+    - { state: latest, name: php8-curl }
+    - { state: latest, name: php8-gd }
+    - { state: latest, name: php8-imagick }
+    - { state: latest, name: php8-intl }
+    - { state: latest, name: php8-maxminddb }
+    - { state: latest, name: php8-mbstring }
+    - { state: latest, name: php8-memcached }
+    - { state: latest, name: php8-mysql }
+    - { state: latest, name: php8-opcache }
+    - { state: latest, name: php8-openssl }
+    - { state: latest, name: php8-pdo }
+    - { state: latest, name: php8-pgsql }
+    - { state: latest, name: php8-phar }
+    - { state: latest, name: php8-redis }
+    - { state: latest, name: php8-soap }
+    - { state: latest, name: php8-sqlite }
+    - { state: latest, name: php8-tidy }
+    - { state: latest, name: php8-tokenizer }
+    - { state: latest, name: php8-xmlreader }
+    - { state: latest, name: php8-xmlwriter }
+    - { state: latest, name: php8-xsl }
+    - { state: latest, name: php8-zip }
+    - { state: latest, name: composer }
+    - { state: latest, name: phpunit }
+    - { state: latest, name: php-codesniffer }
+    - { state: latest, name: php-cs-fixer }
   "8.3":
     - { state: latest, name: xtables-geoip }
     - { state: latest, name: ImageMagick }
@@ -166,77 +235,7 @@ __zypper:
     - { state: latest, name: php8-intl }
     - { state: latest, name: php8-maxminddb }
     - { state: latest, name: php8-mbstring }
-    - { state: latest, name: php8-memcache }
-    - { state: latest, name: php8-mysql }
-    - { state: latest, name: php8-opcache }
-    - { state: latest, name: php8-openssl }
-    - { state: latest, name: php8-pdo }
-    - { state: latest, name: php8-pgsql }
-    - { state: latest, name: php8-phar }
-    - { state: latest, name: php8-redis }
-    - { state: latest, name: php8-soap }
-    - { state: latest, name: php8-sqlite }
-    - { state: latest, name: php8-tidy }
-    - { state: latest, name: php8-tokenizer }
-    - { state: latest, name: php8-xmlreader }
-    - { state: latest, name: php8-xmlwriter }
-    - { state: latest, name: php8-xsl }
-    - { state: latest, name: php8-zip }
-    - { state: latest, name: composer }
-    - { state: latest, name: phpunit }
-    - { state: latest, name: php-codesniffer }
-    - { state: latest, name: php-cs-fixer }
-  "8.2":
-    - { state: latest, name: xtables-geoip }
-    - { state: latest, name: ImageMagick }
-    - { state: latest, name: ca-certificates }
-    - { state: latest, name: php8 }
-    - { state: latest, name: php8-fpm }
-    - { state: latest, name: php8-APCu }
-    - { state: latest, name: php8-bcmath }
-    - { state: latest, name: php8-bz2 }
-    - { state: latest, name: php8-curl }
-    - { state: latest, name: php8-gd }
-    - { state: latest, name: php8-imagick }
-    - { state: latest, name: php8-intl }
-    - { state: latest, name: php8-maxminddb }
-    - { state: latest, name: php8-mbstring }
-    - { state: latest, name: php8-memcache }
-    - { state: latest, name: php8-mysql }
-    - { state: latest, name: php8-opcache }
-    - { state: latest, name: php8-openssl }
-    - { state: latest, name: php8-pdo }
-    - { state: latest, name: php8-pgsql }
-    - { state: latest, name: php8-phar }
-    - { state: latest, name: php8-redis }
-    - { state: latest, name: php8-soap }
-    - { state: latest, name: php8-sqlite }
-    - { state: latest, name: php8-tidy }
-    - { state: latest, name: php8-tokenizer }
-    - { state: latest, name: php8-xmlreader }
-    - { state: latest, name: php8-xmlwriter }
-    - { state: latest, name: php8-xsl }
-    - { state: latest, name: php8-zip }
-    - { state: latest, name: composer }
-    - { state: latest, name: phpunit }
-    - { state: latest, name: php-codesniffer }
-    - { state: latest, name: php-cs-fixer }
-  "8.1":
-    - { state: latest, name: xtables-geoip }
-    - { state: latest, name: ImageMagick }
-    - { state: latest, name: ca-certificates }
-    - { state: latest, name: php8 }
-    - { state: latest, name: php8-fpm }
-    - { state: latest, name: php8-APCu }
-    - { state: latest, name: php8-bcmath }
-    - { state: latest, name: php8-bz2 }
-    - { state: latest, name: php8-curl }
-    - { state: latest, name: php8-gd }
-    - { state: latest, name: php8-imagick }
-    - { state: latest, name: php8-intl }
-    - { state: latest, name: php8-maxminddb }
-    - { state: latest, name: php8-mbstring }
-    - { state: latest, name: php8-memcache }
+    - { state: latest, name: php8-memcached }
     - { state: latest, name: php8-mysql }
     - { state: latest, name: php8-opcache }
     - { state: latest, name: php8-openssl }

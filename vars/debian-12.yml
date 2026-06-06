@@ -16,27 +16,27 @@
 
 _service: "{{ __service[php_release] }}"
 __service:
+  "8.5": php8.5-fpm.service
+  "8.4": php8.4-fpm.service
   "8.3": php8.3-fpm.service
-  "8.2": php8.2-fpm.service
-  "8.1": php8.1-fpm.service
 
 _apt_key: "{{ __apt_key[php_release] }}"
 __apt_key:
+  "8.5":
+    - url: http://packages.sury.org/php/apt.gpg
+      dest: /etc/apt/keyrings/ondrej.asc
+      checksum: "sha256:d63c11bc5067b1849c6a42a2d061916ba7c07632d4c0dbda4789d66fb263a285"
+    - url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_12/Release.key
+      dest: /etc/apt/keyrings/home-alvistack.asc
+      checksum: "sha256:2959bf5709615cba0109715e4c2001066a4536398fa54f0f602abc208f04017e"
+  "8.4":
+    - url: http://packages.sury.org/php/apt.gpg
+      dest: /etc/apt/keyrings/ondrej.asc
+      checksum: "sha256:d63c11bc5067b1849c6a42a2d061916ba7c07632d4c0dbda4789d66fb263a285"
+    - url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_12/Release.key
+      dest: /etc/apt/keyrings/home-alvistack.asc
+      checksum: "sha256:2959bf5709615cba0109715e4c2001066a4536398fa54f0f602abc208f04017e"
   "8.3":
-    - url: http://packages.sury.org/php/apt.gpg
-      dest: /etc/apt/keyrings/ondrej.asc
-      checksum: "sha256:d63c11bc5067b1849c6a42a2d061916ba7c07632d4c0dbda4789d66fb263a285"
-    - url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_12/Release.key
-      dest: /etc/apt/keyrings/home-alvistack.asc
-      checksum: "sha256:2959bf5709615cba0109715e4c2001066a4536398fa54f0f602abc208f04017e"
-  "8.2":
-    - url: http://packages.sury.org/php/apt.gpg
-      dest: /etc/apt/keyrings/ondrej.asc
-      checksum: "sha256:d63c11bc5067b1849c6a42a2d061916ba7c07632d4c0dbda4789d66fb263a285"
-    - url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_12/Release.key
-      dest: /etc/apt/keyrings/home-alvistack.asc
-      checksum: "sha256:2959bf5709615cba0109715e4c2001066a4536398fa54f0f602abc208f04017e"
-  "8.1":
     - url: http://packages.sury.org/php/apt.gpg
       dest: /etc/apt/keyrings/ondrej.asc
       checksum: "sha256:d63c11bc5067b1849c6a42a2d061916ba7c07632d4c0dbda4789d66fb263a285"
@@ -46,41 +46,41 @@ __apt_key:
 
 _deb822_repository: "{{ __deb822_repository[php_release] }}"
 __deb822_repository:
+  "8.5":
+    - name: sury-php
+      types: deb
+      uris: http://packages.sury.org/php
+      suites: bookworm
+      components: main
+      signed_by: http://packages.sury.org/php/apt.gpg
+      enabled: true
+      state: present
+    - name: home-alvistack
+      types: deb
+      uris: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_12
+      suites: /
+      components:
+      signed_by: /etc/apt/keyrings/home-alvistack.asc
+      enabled: true
+      state: present
+  "8.4":
+    - name: sury-php
+      types: deb
+      uris: http://packages.sury.org/php
+      suites: bookworm
+      components: main
+      signed_by: http://packages.sury.org/php/apt.gpg
+      enabled: true
+      state: present
+    - name: home-alvistack
+      types: deb
+      uris: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_12
+      suites: /
+      components:
+      signed_by: /etc/apt/keyrings/home-alvistack.asc
+      enabled: true
+      state: present
   "8.3":
-    - name: sury-php
-      types: deb
-      uris: http://packages.sury.org/php
-      suites: bookworm
-      components: main
-      signed_by: http://packages.sury.org/php/apt.gpg
-      enabled: true
-      state: present
-    - name: home-alvistack
-      types: deb
-      uris: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_12
-      suites: /
-      components:
-      signed_by: /etc/apt/keyrings/home-alvistack.asc
-      enabled: true
-      state: present
-  "8.2":
-    - name: sury-php
-      types: deb
-      uris: http://packages.sury.org/php
-      suites: bookworm
-      components: main
-      signed_by: http://packages.sury.org/php/apt.gpg
-      enabled: true
-      state: present
-    - name: home-alvistack
-      types: deb
-      uris: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_12
-      suites: /
-      components:
-      signed_by: /etc/apt/keyrings/home-alvistack.asc
-      enabled: true
-      state: present
-  "8.1":
     - name: sury-php
       types: deb
       uris: http://packages.sury.org/php
@@ -100,6 +100,71 @@ __deb822_repository:
 
 _apt: "{{ __apt[php_release] }}"
 __apt:
+  "8.5":
+    - { state: latest, name: imagemagick }
+    - { state: latest, name: libpcre2-8-0 }
+    - { state: latest, name: libssl-dev }
+    - { state: latest, name: php8.5-cli }
+    - { state: latest, name: php8.5-fpm }
+    - { state: latest, name: php8.5-apcu }
+    - { state: latest, name: php8.5-bcmath }
+    - { state: latest, name: php8.5-bz2 }
+    - { state: latest, name: php8.5-curl }
+    - { state: latest, name: php8.5-gd }
+    - { state: latest, name: php8.5-imagick }
+    - { state: latest, name: php8.5-imap }
+    - { state: latest, name: php8.5-intl }
+    - { state: latest, name: php8.5-maxminddb }
+    - { state: latest, name: php8.5-mbstring }
+    - { state: latest, name: php8.5-memcached }
+    - { state: latest, name: php8.5-mysql }
+    - { state: latest, name: php8.5-pgsql }
+    - { state: latest, name: php8.5-redis }
+    - { state: latest, name: php8.5-soap }
+    - { state: latest, name: php8.5-sqlite3 }
+    - { state: latest, name: php8.5-tidy }
+    - { state: latest, name: php8.5-uuid }
+    - { state: latest, name: php8.5-xml }
+    - { state: latest, name: php8.5-xmlrpc }
+    - { state: latest, name: php8.5-xsl }
+    - { state: latest, name: php8.5-zip }
+    - { state: latest, name: composer }
+    - { state: latest, name: phpunit }
+    - { state: latest, name: php-codesniffer }
+    - { state: latest, name: php-cs-fixer }
+  "8.4":
+    - { state: latest, name: imagemagick }
+    - { state: latest, name: libpcre2-8-0 }
+    - { state: latest, name: libssl-dev }
+    - { state: latest, name: php8.4-cli }
+    - { state: latest, name: php8.4-fpm }
+    - { state: latest, name: php8.4-apcu }
+    - { state: latest, name: php8.4-bcmath }
+    - { state: latest, name: php8.4-bz2 }
+    - { state: latest, name: php8.4-curl }
+    - { state: latest, name: php8.4-gd }
+    - { state: latest, name: php8.4-imagick }
+    - { state: latest, name: php8.4-imap }
+    - { state: latest, name: php8.4-intl }
+    - { state: latest, name: php8.4-maxminddb }
+    - { state: latest, name: php8.4-mbstring }
+    - { state: latest, name: php8.4-memcached }
+    - { state: latest, name: php8.4-mysql }
+    - { state: latest, name: php8.4-opcache }
+    - { state: latest, name: php8.4-pgsql }
+    - { state: latest, name: php8.4-redis }
+    - { state: latest, name: php8.4-soap }
+    - { state: latest, name: php8.4-sqlite3 }
+    - { state: latest, name: php8.4-tidy }
+    - { state: latest, name: php8.4-uuid }
+    - { state: latest, name: php8.4-xml }
+    - { state: latest, name: php8.4-xmlrpc }
+    - { state: latest, name: php8.4-xsl }
+    - { state: latest, name: php8.4-zip }
+    - { state: latest, name: composer }
+    - { state: latest, name: phpunit }
+    - { state: latest, name: php-codesniffer }
+    - { state: latest, name: php-cs-fixer }
   "8.3":
     - { state: latest, name: imagemagick }
     - { state: latest, name: libpcre2-8-0 }
@@ -116,7 +181,7 @@ __apt:
     - { state: latest, name: php8.3-intl }
     - { state: latest, name: php8.3-maxminddb }
     - { state: latest, name: php8.3-mbstring }
-    - { state: latest, name: php8.3-memcache }
+    - { state: latest, name: php8.3-memcached }
     - { state: latest, name: php8.3-mysql }
     - { state: latest, name: php8.3-opcache }
     - { state: latest, name: php8.3-pgsql }
@@ -129,72 +194,6 @@ __apt:
     - { state: latest, name: php8.3-xmlrpc }
     - { state: latest, name: php8.3-xsl }
     - { state: latest, name: php8.3-zip }
-    - { state: latest, name: composer }
-    - { state: latest, name: phpunit }
-    - { state: latest, name: php-codesniffer }
-    - { state: latest, name: php-cs-fixer }
-  "8.2":
-    - { state: latest, name: imagemagick }
-    - { state: latest, name: libpcre2-8-0 }
-    - { state: latest, name: libssl-dev }
-    - { state: latest, name: php8.2-cli }
-    - { state: latest, name: php8.2-fpm }
-    - { state: latest, name: php8.2-apcu }
-    - { state: latest, name: php8.2-bcmath }
-    - { state: latest, name: php8.2-bz2 }
-    - { state: latest, name: php8.2-curl }
-    - { state: latest, name: php8.2-gd }
-    - { state: latest, name: php8.2-imagick }
-    - { state: latest, name: php8.2-imap }
-    - { state: latest, name: php8.2-intl }
-    - { state: latest, name: php8.2-maxminddb }
-    - { state: latest, name: php8.2-mbstring }
-    - { state: latest, name: php8.2-memcache }
-    - { state: latest, name: php8.2-mysql }
-    - { state: latest, name: php8.2-opcache }
-    - { state: latest, name: php8.2-pgsql }
-    - { state: latest, name: php8.2-redis }
-    - { state: latest, name: php8.2-soap }
-    - { state: latest, name: php8.2-sqlite3 }
-    - { state: latest, name: php8.2-tidy }
-    - { state: latest, name: php8.2-uuid }
-    - { state: latest, name: php8.2-xml }
-    - { state: latest, name: php8.2-xmlrpc }
-    - { state: latest, name: php8.2-xsl }
-    - { state: latest, name: php8.2-zip }
-    - { state: latest, name: composer }
-    - { state: latest, name: phpunit }
-    - { state: latest, name: php-codesniffer }
-    - { state: latest, name: php-cs-fixer }
-  "8.1":
-    - { state: latest, name: imagemagick }
-    - { state: latest, name: libpcre2-8-0 }
-    - { state: latest, name: libssl-dev }
-    - { state: latest, name: php8.1-cli }
-    - { state: latest, name: php8.1-fpm }
-    - { state: latest, name: php8.1-apcu }
-    - { state: latest, name: php8.1-bcmath }
-    - { state: latest, name: php8.1-bz2 }
-    - { state: latest, name: php8.1-curl }
-    - { state: latest, name: php8.1-gd }
-    - { state: latest, name: php8.1-imagick }
-    - { state: latest, name: php8.1-imap }
-    - { state: latest, name: php8.1-intl }
-    - { state: latest, name: php8.1-maxminddb }
-    - { state: latest, name: php8.1-mbstring }
-    - { state: latest, name: php8.1-memcache }
-    - { state: latest, name: php8.1-mysql }
-    - { state: latest, name: php8.1-opcache }
-    - { state: latest, name: php8.1-pgsql }
-    - { state: latest, name: php8.1-redis }
-    - { state: latest, name: php8.1-soap }
-    - { state: latest, name: php8.1-sqlite3 }
-    - { state: latest, name: php8.1-tidy }
-    - { state: latest, name: php8.1-uuid }
-    - { state: latest, name: php8.1-xml }
-    - { state: latest, name: php8.1-xmlrpc }
-    - { state: latest, name: php8.1-xsl }
-    - { state: latest, name: php8.1-zip }
     - { state: latest, name: composer }
     - { state: latest, name: phpunit }
     - { state: latest, name: php-codesniffer }
