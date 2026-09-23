@@ -23,23 +23,23 @@ __service:
 _apt_key: "{{ __apt_key[php_release] }}"
 __apt_key:
   "8.5":
-    - url: http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xB8DC7E53946656EFBCE4C1DD71DAEAAB4AD4CAB6
-      dest: /etc/apt/keyrings/ondrej.asc
-      checksum: "sha256:7258b1cb18300b87cd5668a6d64ce78184d9c0e129382879a0d79291c4ef463d"
+    - url: http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x15058500A0235D97F5D10063B188E2B695BD4743
+      dest: /etc/apt/keyrings/sury.asc
+      checksum: "sha256:023b08fdf09fcf0a123ebef0b247765bad2481327bbdee3599bf7bbae3ae2061"
     - url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_22.04/Release.key
       dest: /etc/apt/keyrings/home-alvistack.asc
       checksum: "sha256:2959bf5709615cba0109715e4c2001066a4536398fa54f0f602abc208f04017e"
   "8.4":
-    - url: http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xB8DC7E53946656EFBCE4C1DD71DAEAAB4AD4CAB6
-      dest: /etc/apt/keyrings/ondrej.asc
-      checksum: "sha256:7258b1cb18300b87cd5668a6d64ce78184d9c0e129382879a0d79291c4ef463d"
+    - url: http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x15058500A0235D97F5D10063B188E2B695BD4743
+      dest: /etc/apt/keyrings/sury.asc
+      checksum: "sha256:023b08fdf09fcf0a123ebef0b247765bad2481327bbdee3599bf7bbae3ae2061"
     - url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_22.04/Release.key
       dest: /etc/apt/keyrings/home-alvistack.asc
       checksum: "sha256:2959bf5709615cba0109715e4c2001066a4536398fa54f0f602abc208f04017e"
   "8.3":
-    - url: http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xB8DC7E53946656EFBCE4C1DD71DAEAAB4AD4CAB6
-      dest: /etc/apt/keyrings/ondrej.asc
-      checksum: "sha256:7258b1cb18300b87cd5668a6d64ce78184d9c0e129382879a0d79291c4ef463d"
+    - url: http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x15058500A0235D97F5D10063B188E2B695BD4743
+      dest: /etc/apt/keyrings/sury.asc
+      checksum: "sha256:023b08fdf09fcf0a123ebef0b247765bad2481327bbdee3599bf7bbae3ae2061"
     - url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_22.04/Release.key
       dest: /etc/apt/keyrings/home-alvistack.asc
       checksum: "sha256:2959bf5709615cba0109715e4c2001066a4536398fa54f0f602abc208f04017e"
@@ -47,12 +47,12 @@ __apt_key:
 _deb822_repository: "{{ __deb822_repository[php_release] }}"
 __deb822_repository:
   "8.5":
-    - name: ondrej-php
+    - name: sury-php
       types: deb
-      uris: http://ppa.launchpad.net/ondrej/php/ubuntu
+      uris: http://packages.sury.org/php
       suites: jammy
       components: main
-      signed_by: /etc/apt/keyrings/ondrej.asc
+      signed_by: /etc/apt/keyrings/sury.asc
       enabled: true
       state: present
     - name: home-alvistack
@@ -64,12 +64,12 @@ __deb822_repository:
       enabled: true
       state: present
   "8.4":
-    - name: ondrej-php
+    - name: sury-php
       types: deb
-      uris: http://ppa.launchpad.net/ondrej/php/ubuntu
+      uris: http://packages.sury.org/php
       suites: jammy
       components: main
-      signed_by: /etc/apt/keyrings/ondrej.asc
+      signed_by: /etc/apt/keyrings/sury.asc
       enabled: true
       state: present
     - name: home-alvistack
@@ -81,12 +81,12 @@ __deb822_repository:
       enabled: true
       state: present
   "8.3":
-    - name: ondrej-php
+    - name: sury-php
       types: deb
-      uris: http://ppa.launchpad.net/ondrej/php/ubuntu
+      uris: http://packages.sury.org/php
       suites: jammy
       components: main
-      signed_by: /etc/apt/keyrings/ondrej.asc
+      signed_by: /etc/apt/keyrings/sury.asc
       enabled: true
       state: present
     - name: home-alvistack
