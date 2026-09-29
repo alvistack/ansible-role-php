@@ -23,24 +23,24 @@ __service:
 _apt_key: "{{ __apt_key[php_release] }}"
 __apt_key:
   "8.5":
-    - url: https://packages.sury.org/php/apt.gpg
-      dest: /etc/apt/keyrings/ondrej.asc
-      checksum: "sha256:d63c11bc5067b1849c6a42a2d061916ba7c07632d4c0dbda4789d66fb263a285"
-    - url: https://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_13/Release.key
+    - url: http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x15058500A0235D97F5D10063B188E2B695BD4743
+      dest: /etc/apt/keyrings/sury.asc
+      checksum: "sha256:023b08fdf09fcf0a123ebef0b247765bad2481327bbdee3599bf7bbae3ae2061"
+    - url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_13/Release.key
       dest: /etc/apt/keyrings/home-alvistack.asc
       checksum: "sha256:2959bf5709615cba0109715e4c2001066a4536398fa54f0f602abc208f04017e"
   "8.4":
-    - url: https://packages.sury.org/php/apt.gpg
-      dest: /etc/apt/keyrings/ondrej.asc
-      checksum: "sha256:d63c11bc5067b1849c6a42a2d061916ba7c07632d4c0dbda4789d66fb263a285"
-    - url: https://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_13/Release.key
+    - url: http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x15058500A0235D97F5D10063B188E2B695BD4743
+      dest: /etc/apt/keyrings/sury.asc
+      checksum: "sha256:023b08fdf09fcf0a123ebef0b247765bad2481327bbdee3599bf7bbae3ae2061"
+    - url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_13/Release.key
       dest: /etc/apt/keyrings/home-alvistack.asc
       checksum: "sha256:2959bf5709615cba0109715e4c2001066a4536398fa54f0f602abc208f04017e"
   "8.3":
-    - url: https://packages.sury.org/php/apt.gpg
-      dest: /etc/apt/keyrings/ondrej.asc
-      checksum: "sha256:d63c11bc5067b1849c6a42a2d061916ba7c07632d4c0dbda4789d66fb263a285"
-    - url: https://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_13/Release.key
+    - url: http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x15058500A0235D97F5D10063B188E2B695BD4743
+      dest: /etc/apt/keyrings/sury.asc
+      checksum: "sha256:023b08fdf09fcf0a123ebef0b247765bad2481327bbdee3599bf7bbae3ae2061"
+    - url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_13/Release.key
       dest: /etc/apt/keyrings/home-alvistack.asc
       checksum: "sha256:2959bf5709615cba0109715e4c2001066a4536398fa54f0f602abc208f04017e"
 
@@ -49,15 +49,15 @@ __deb822_repository:
   "8.5":
     - name: sury-php
       types: deb
-      uris: https://packages.sury.org/php
+      uris: http://packages.sury.org/php
       suites: trixie
       components: main
-      signed_by: https://packages.sury.org/php/apt.gpg
+      signed_by: /etc/apt/keyrings/sury.asc
       enabled: true
       state: present
     - name: home-alvistack
       types: deb
-      uris: https://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_13
+      uris: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_13
       suites: /
       components:
       signed_by: /etc/apt/keyrings/home-alvistack.asc
@@ -66,15 +66,15 @@ __deb822_repository:
   "8.4":
     - name: sury-php
       types: deb
-      uris: https://packages.sury.org/php
+      uris: http://packages.sury.org/php
       suites: trixie
       components: main
-      signed_by: https://packages.sury.org/php/apt.gpg
+      signed_by: /etc/apt/keyrings/sury.asc
       enabled: true
       state: present
     - name: home-alvistack
       types: deb
-      uris: https://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_13
+      uris: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_13
       suites: /
       components:
       signed_by: /etc/apt/keyrings/home-alvistack.asc
@@ -83,15 +83,15 @@ __deb822_repository:
   "8.3":
     - name: sury-php
       types: deb
-      uris: https://packages.sury.org/php
+      uris: http://packages.sury.org/php
       suites: trixie
       components: main
-      signed_by: https://packages.sury.org/php/apt.gpg
+      signed_by: /etc/apt/keyrings/sury.asc
       enabled: true
       state: present
     - name: home-alvistack
       types: deb
-      uris: https://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_13
+      uris: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_13
       suites: /
       components:
       signed_by: /etc/apt/keyrings/home-alvistack.asc
