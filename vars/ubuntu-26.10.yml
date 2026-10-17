@@ -101,6 +101,7 @@ __deb822_repository:
 _apt: "{{ __apt[php_release] }}"
 __apt:
   "8.5":
+    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/main/libs/libsodium/libsodium23_1.0.18-2_amd64.deb }
     - { state: latest, name: imagemagick }
     - { state: latest, name: libpcre2-8-0 }
     - { state: latest, name: libssl-dev }
@@ -133,6 +134,7 @@ __apt:
     - { state: latest, name: php-codesniffer }
     - { state: latest, name: php-cs-fixer }
   "8.4":
+    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/main/libs/libsodium/libsodium23_1.0.18-2_amd64.deb }
     - { state: latest, name: imagemagick }
     - { state: latest, name: libpcre2-8-0 }
     - { state: latest, name: libssl-dev }
@@ -166,6 +168,7 @@ __apt:
     - { state: latest, name: php-codesniffer }
     - { state: latest, name: php-cs-fixer }
   "8.3":
+    - { state: present, deb: http://archive.ubuntu.com/ubuntu/pool/main/libs/libsodium/libsodium23_1.0.18-2_amd64.deb }
     - { state: latest, name: imagemagick }
     - { state: latest, name: libpcre2-8-0 }
     - { state: latest, name: libssl-dev }
