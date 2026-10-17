@@ -50,7 +50,7 @@ __deb822_repository:
     - name: sury-php
       types: deb
       uris: http://packages.sury.org/php
-      suites: stonking
+      suites: resolute
       components: main
       signed_by: /etc/apt/keyrings/sury.asc
       enabled: true
@@ -67,7 +67,7 @@ __deb822_repository:
     - name: sury-php
       types: deb
       uris: http://packages.sury.org/php
-      suites: stonking
+      suites: resolute
       components: main
       signed_by: /etc/apt/keyrings/sury.asc
       enabled: true
@@ -84,7 +84,7 @@ __deb822_repository:
     - name: sury-php
       types: deb
       uris: http://packages.sury.org/php
-      suites: stonking
+      suites: resolute
       components: main
       signed_by: /etc/apt/keyrings/sury.asc
       enabled: true
